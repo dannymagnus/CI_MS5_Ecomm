@@ -1,7 +1,7 @@
-<!-- # Elgini's Restaurant
+# Scubasport International
 (Developer: Daniel Richards)
 
-![Mockup of Elgini's Restaurant](readme/mockup.png)
+![Mockup of Scubasport International](readme/mockup.png)
 
 [View live site](https://elginis-restaurant.herokuapp.com/)
 
@@ -65,27 +65,27 @@
 ### Primary Goal
 The primary goal of the website from the site 
 owners perspective is as follows:
-- To attract customers to the business by showing an attractive and appealing variety of food.
-- To allow a user to navigate the website and see food options easily
-- To allow a user to make a reservation
+- To attract customers to the business by showing an attractive and appealing set of products and services.
+- To allow a user to navigate the website and see course and product options easily
+- To allow a user to make reservations, bookings, enquiries and purchases
+- To allow users to engage with the business through local business and industry news
 
 The primary goal of the website from a site users perspective is as follows:
-- To view the restaurants menu
-- To view details about food dishes, including allergens, description and prices
-- To be able to filter dishes by allergies
-- To make a reservation
-- To contact the restaurant
-- To view opening hours
-- To post a review or comment about their experience
-- To view other customer’s reviews and comments
+- To view and purchase the dive shops products
+- To view details about courses and book courses
+- To search and filter the site for products
+- To shop the site by category
+- To contact the business or make enquiries
+- To be made aware of social events
 
 ## Target Audience
 - Families
 - Couples
 - Small groups of friends
-- People living within a 20 mile radius
-- Italian food lovers
-- People who love organic and homemade food
+- Diving enthusiasts
+- Holiday makers (potential)
+- Hobyists
+- People looking for activities to increase social network (make friends)
 
 ## User Requirements and Expectations
 - An easy navigation system with instant learning.
@@ -94,6 +94,7 @@ The primary goal of the website from a site users perspective is as follows:
 - Responsive and visually appealing on all devices.
 - Ability to contact the business
 
+<!-- 
 ## Structure
 ### Code Structure
 The project is organised into a variety of applications, as is constructed using the Django Framework.
@@ -824,6 +825,7 @@ This page covers the following user stories
 
 ### Frameworks & Tools
 - [Bootstrap 5.0](https://getbootstrap.com/docs/5.0) - for general site layout, grid, flex, carousel.
+- [Bootstrap Icons 1.8](https://getbootstrap.com/) - for various icons in the site
 - [Postgres](https://www.postgresql.org/) - the site is deployed on Heroku using a Postgress database.
 - [SQLLite](https://www.sqlite.org/index.html) - this database was used in local development.
 - [VSCode](https://code.visualstudio.com/) - my IDE of choice for this project.
@@ -841,6 +843,7 @@ This page covers the following user stories
 - [JSHint](https://jshint.com/) - for javascript validation.
 - [PEP8](https://www.python.org/dev/peps/pep-0008/) - for python validation.
 - [Quick Database diagrams](https://www.quickdatabasediagrams.com)- for the database schema diagram.
+- [Facebook](https://www.facebook.com) - for social media marketing
 
 ## Validation
 
