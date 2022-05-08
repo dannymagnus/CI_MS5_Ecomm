@@ -37,17 +37,74 @@
     </head>
     <body>
         <header>
-            <nav class="navbar navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                  <a class="navbar-brand">Scubasport International</a>
-                  <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                  </form>
-                  <a class = "navbar-item">Login/Signup</a>
+                  <a class="navbar-brand" href="#">Scubasport</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse d-lg-none" id="navbarTogglerDemo02">
+                    <ul class="d-lg-none navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Shop</a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Regulators</a></li>
+                          <li><a class="dropdown-item" href="#">BCDs</a></li>
+                          <li><a class="dropdown-item" href="#">Computers</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Wetsuits</a></li>
+                          <li><a class="dropdown-item" href="#">Drysuits</a></li>
+                          <li><a class="dropdown-item" href="#">Masks</a></li>
+                          <li><a class="dropdown-item" href="#">Fins</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Learn to Scuba</a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Discover Scuba</a></li>
+                          <li><a class="dropdown-item" href="#">Open Wate Diver</a></li>
+                          <li><a class="dropdown-item" href="#">Advanced Diver</a></li>
+                          <li><a class="dropdown-item" href="#">Rescue Diver</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Become a PADI Pro</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <form class="d-none d-lg-flex mx-auto">
+                      <input class="form-control" type="search" placeholder="What are you looking for?" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0">
+                        <!--Use all allauth in django to manage users and authentication-->
+                        {% if user.is_authenticated %}
+                            <li class="nav-item lg-align-self-lg-center">
+                                <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item align-self-lg-center">
+                                <a class="nav-link" href="{% url 'account_login' %}">Login/Signup</a>
+                            </li>
+                        {% endif %}                                    
+                        <li class="nav-item">
+                            <a class="nav-link"><i class="bi bi-bag"></i></a>
+                        </li>
+                    </ul>
+                  </div>
                 </div>
               </nav>
+              <div>
+                <form class="d-lg-none d-flex">
+                    <input class="form-control me-2" type="search" placeholder="What are you looking for?" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+              </div>
         </header>
+        {% if messages %}
+            <div class="message-container"></div>
+        {% endif %}
     
 
     {% block page_header %}
