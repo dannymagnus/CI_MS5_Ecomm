@@ -1,9 +1,10 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
+/* Style bag icon */
 .bi-bag{
     font-size: 1.5em;
 }
 
-.line-height-1halfem{
-    line-height: 1.5em;
+.bi-person{
+    font-size: 1.7em;
 }
