@@ -1473,6 +1473,8 @@ User story too vague - rejected.
 | Transluscent overlay remaining after resevervation request has been received  | Applied style to form instead of parent div |
 | Comment edit does not show awaiting approval | Fix would be to require additional view, bout out of scope for projectt timebox |
 
+-->
+
 ## Deployment
 
 ### Heroku
@@ -1518,6 +1520,7 @@ Heroku Postgres
 16. Push the code to Heroku using the command git push heroku master
 
 17. Ensure the following environment variables are set in Heroku
+
 18. Heroku Env variables
 
 19. Connect the app to GitHub, and enable automatic deploys from main
@@ -1572,4 +1575,4 @@ Media from the following artists was used throughout the site.
 - To my mentor Mo Shami for his invaluable guidance and direction.
 - To the Code Institute slack community of students.
 - To the Code Institute Tutors
- -->
+

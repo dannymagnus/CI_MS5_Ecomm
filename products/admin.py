@@ -4,17 +4,32 @@
 from django.contrib import admin
 
 # Internal
-from .models import Category, Product, Brand
+from .models import Category, Product, Brand, Size, Inventory, Color
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @admin.register(Category)
-class MealAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     """
     Admin Class for Category Model
     """
     list_display = (
         'name',
     )
+
+
+@admin.register(Color)
+class ColorAdmin(admin.ModelAdmin):
+    """
+    Admin Class for Category Model
+    """
+    list_display = (
+        'name',
+    )
+
+
+class InventoryInline(admin.TabularInline):
+    model = Inventory
+    extra = 1
 
 
 @admin.register(Product)
@@ -26,8 +41,10 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'brand',
-        'sku',
     )
+    prepopulated_fields = {
+        "slug": ("name",)
+        }  # new
     list_filter = (
         'category',
         'brand',
@@ -40,12 +57,24 @@ class ProductAdmin(admin.ModelAdmin):
         'brand',
         'color',
         )
-
+    inlines = (
+        InventoryInline,
+        )
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     """
     Admin class for Brand Model
+    """
+    list_display = (
+        'name',
+    )
+
+
+@admin.register(Size)
+class SizeAdmin(admin.ModelAdmin):
+    """
+    Admin class for Sizes Model
     """
     list_display = (
         'name',

@@ -1,4 +1,5 @@
 from django.db import models
+import random
 
 class Category(models.Model):
     """
@@ -16,7 +17,17 @@ class Category(models.Model):
         null=True,
         blank=True
     )
-
+    
+    # Show object by name in admin panel
+    def __str__(self):
+        """
+        Returns the category name string
+        Args:
+            self (object): self.
+        Returns:
+            The category name string
+        """
+        return self.name
 
 class Product(models.Model):
     """
@@ -47,14 +58,10 @@ class Product(models.Model):
         null=True,
         blank=True,
         )
-    size = models.CharField(
+    holding = models.ManyToManyField(
+        'Size',
+        through='Inventory',
         max_length=254,
-        null=True,
-        blank=True
-        )
-    color = models.CharField(
-        max_length=254,
-        null=True,
         blank=True,
         )
     price = models.DecimalField(
@@ -62,22 +69,19 @@ class Product(models.Model):
         max_digits=6,
         )
     rating = models.DecimalField(
-        decimal_places=2,
-        max_digits=6,
+        decimal_places=1,
+        max_digits=2,
         null=True,
         blank=True,
         )
-    sku = models.IntegerField(
-        )
-    image_url = models.URLField(
-        )
     image = models.ImageField(
-        upload_to='meals/',
-        blank=True
+        upload_to='products/',
+        blank=True,
         )
     slug = models.SlugField(
         blank=True,
-        null=True
+        null=True,
+        unique=True,
         )
 
     # Overide save function to create a slug on save -
@@ -88,7 +92,7 @@ class Product(models.Model):
         """
         if not self.slug and self.name:
             self.slug = slugify(self.name)
-        super(Meal, self).save(*args, **kwargs)
+        super(Product, self).save(*args, **kwargs)
 
     # Show object by name in admin panel
     def __str__(self):
@@ -122,3 +126,87 @@ class Brand(models.Model):
             The category name string
         """
         return self.name
+
+
+class Size(models.Model):
+    class Meta:
+        verbose_name = "Size"
+        verbose_name_plural = "Sizes"
+
+    name = models.CharField(
+        max_length=254
+    )
+    
+    # Show object by name in admin panel
+    def __str__(self):
+        """
+        Returns the category name string
+        Args:
+            self (object): self.
+        Returns:
+            The category name string
+        """
+        return self.name
+
+
+class Color(models.Model):
+    name = models.CharField(
+        max_length=254,
+        )
+
+    # Show object by name in admin panel
+    def __str__(self):
+        """
+        Returns the category name string
+        Args:
+            self (object): self.
+        Returns:
+            The category name string
+        """
+        return self.name
+
+
+class Inventory(models.Model):
+    size = models.ForeignKey(
+        Size,
+        on_delete=models.CASCADE
+        )
+    color = models.ForeignKey(
+        Color,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        )
+    product = models.ForeignKey(
+        Product, on_delete=models.CASCADE
+        )
+    count = models.IntegerField(
+        default=0
+        )
+    
+            #Function to create unique SKU number
+    def create_new_sku_number():
+        not_unique = True
+        while not_unique:
+            unique_ref = random.randint(100000, 999999)
+            if not Inventory.objects.filter(sku=unique_ref):
+                not_unique = False
+        return str(unique_ref)
+    sku = models.CharField(
+        max_length = 10,
+        blank=False,
+        editable=False,
+        unique=True,
+        default=create_new_sku_number
+        )
+
+    # Show object by name in admin panel
+    def __str__(self):
+        """
+        Returns the category name string
+        Args:
+            self (object): self.
+        Returns:
+            The category name string
+        """
+        return self.sku
