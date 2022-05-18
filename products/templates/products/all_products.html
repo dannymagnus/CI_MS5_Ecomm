@@ -1,7 +1,29 @@
 {% extends "base.html" %}
 
+
+
+
+
+
+
+
+
+<!-- Test code for reverse relationship lookup
 {% block content %}
 
 <h1>This is the products page</h1>
+{{ products }}
+
+{% for product in products %}
+    Rendering the product: {{ product }}
+    Rendering the product color: {{ product.color }}
+    {% for product in product.inventory_set.all %}
+        product: {{product.product}}
+        qty: {{ product.count }}
+        color: {{ product.color }}
+    {% endfor %}
+{% endfor %} -->
+
+
 
 {% endblock %}

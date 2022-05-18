@@ -64,6 +64,12 @@ class Product(models.Model):
         max_length=254,
         blank=True,
         )
+    color = models.ManyToManyField(
+        'Color',
+        through='Inventory',
+        max_length=254,
+        blank=True,
+        )
     price = models.DecimalField(
         decimal_places=2,
         max_digits=6,
