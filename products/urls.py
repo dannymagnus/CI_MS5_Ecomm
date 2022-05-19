@@ -11,5 +11,6 @@ from . import views
 app_name = 'meals'
 
 urlpatterns = [
-    path('', views.all_products, name='all_products'),
+    # path('', views.all_products, name='all_products'),
+    path('', views.ProductListView.as_view(), name='all_products'),
 ]
