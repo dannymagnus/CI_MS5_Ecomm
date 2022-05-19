@@ -1,19 +1,22 @@
 {% extends "base.html" %}
+{% block content %}
 
-{% for product in product_list %}
+{% for product in object_list %}
 
 {{product.name}}
 
+<a href="{% url 'product_detail' product.slug %}">Click here</a>
+
 {% endfor %}
 
+{% endblock %}
 
 
 
 
 
+<!-- Test code for reverse relationship lookup
 
-Test code for reverse relationship lookup
-{% block content %}
 
 <h1>This is the products page</h1>
 {{ products }}
@@ -30,4 +33,4 @@ Test code for reverse relationship lookup
 
 
 
-{% endblock %}
+-->
