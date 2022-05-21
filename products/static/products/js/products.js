@@ -12,12 +12,20 @@ function disableOption(){
     });
 }
 
+function populateAvailableQty(){
+    ($('.qty-input').val("1"));
+    ($('.qty-input').attr("max", $('option:selected').attr('data-count')));
+}
+
 
 window.onload = function() {
     disableOption();
+    populateAvailableQty();
   };
 
 
 $('select').on('change', function () {
+    console.log('tried to run your function');
     disableOption();
+    populateAvailableQty();
 });
