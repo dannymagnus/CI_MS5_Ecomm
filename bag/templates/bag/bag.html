@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+<!-- {# {% load bag_tools %} #} -->
+
+
+{% block content %}
+<h1>Bag page</h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+            <div class="table-responsive"></div>
+            {% else %}
+            <p>Your bag is empty</p>
+            {% endif %}
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
