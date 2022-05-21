@@ -22,9 +22,7 @@
       <select name = "stockable" class="form-control" id="exampleFormControlSelect1">
         <option value="">Choose</option>
         {% for variant in inventory %}
-        <option class = "size-options" value = "{{ variant.count }}">{{variant.size}}<span class = ".option-span d.none">(Out of stock)</span></option>
-        {% empty %}
-        <option disabled>Out of stock</option>
+        <option class = "size-option" data-size = "{{ variant.size }}"" value = "{{ variant.count }}">{{variant.size}}</option>
         {% endfor %}
       </select>
     </div>

@@ -1,26 +1,23 @@
 function disableOption(){
-    let options = Array.from(document.querySelectorAll('.size-options'));
-    options.forEach(function(option){
-        console.log(option);
-        let qty = option.getAttribute('value');
-        console.log(qty);
-        if (qty == 0) {
-            console.log("value is 0!!");
-            option.setAttribute('disabled', '');
+    $(".size-option").each(function(){
+        console.log($(this).val());
+        // Test if the div element is empty
+        if($(this).attr("value") == 0){
+            $(this).attr("disabled", "disabled");
+            $(this).text($(this).attr("data-size")+" (Out of Stock)");
         }else{
-            option.removeAttribute('disabled');
+            $(this).removeAttr('disabled');
+            $(this).text($(this).attr("data-size"));
         }
     });
 }
-//     for (let option in options){
-//         if (option.getAttribute('value') === 0) {
-//             option.setAttribute('disabled',);
-//         }else{
-//             option.removeAttribute('disabled');
-//         }
-//     }
-// }
+
 
 window.onload = function() {
     disableOption();
   };
+
+
+$('select').on('change', function () {
+    disableOption();
+});
