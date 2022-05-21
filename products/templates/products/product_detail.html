@@ -1,16 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <h1>{{ object.name }}</h1>
 <h1>{{ product.name }}</h1>
 <h1>{% with product.inventory_set.all as inventory %}</h1>
 <h1>{% for variant in inventory %}</h1>
-<h1>{{ variant.sku }}: {{variant.size}}: {{variant.color}}</h1>
-<h1>{% endfor %}</h1>
-<h1>{% endwith %}</h1>
+<h1>{{ variant.sku }}: {{variant.size}}: {{variant.color}}: {{ variant.count }}</h1>
+{% endfor %}
+
+
+
+<form>
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Example select</label>
+      <select name = "stockable" class="form-control" id="exampleFormControlSelect1">
+        <option value="">Choose</option>
+        {% for variant in inventory %}
+        <option class = "size-options" value = "{{ variant.count }}">{{variant.size}}<span class = ".option-span d.none">(Out of stock)</span></option>
+        {% empty %}
+        <option disabled>Out of stock</option>
+        {% endfor %}
+      </select>
+    </div>
+  </form>
+  {% endwith %}
+  <h1 id = "js"></h1>
 
 {% endblock %}
 
+{% block postloadjs %}
+    {{ block.super }}
+        <script src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}
 
 
 
