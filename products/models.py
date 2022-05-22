@@ -1,5 +1,5 @@
 from django.db import models
-from django.shortcuts import reverse
+from django.urls import reverse
 from django.utils.text import slugify
 import random
 
@@ -103,6 +103,9 @@ class Product(models.Model):
             self.slug = slugify(self.name)+str(self.id)
         super(Product, self).save(*args, **kwargs)
 
+    def get_absolute_url(self): # new
+        return reverse('product_detail', args=[str(self.slug)])
+    
     # Show object by name in admin panel
     def __str__(self):
         """
