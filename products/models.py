@@ -1,4 +1,6 @@
 from django.db import models
+from django.shortcuts import reverse
+from django.utils.text import slugify
 import random
 
 class Category(models.Model):
@@ -96,8 +98,9 @@ class Product(models.Model):
         """
         Function to take slug or create on if none exist
         """
+        super(Product, self).save(*args, **kwargs)
         if not self.slug and self.name:
-            self.slug = slugify(self.name)
+            self.slug = slugify(self.name)+str(self.id)
         super(Product, self).save(*args, **kwargs)
 
     # Show object by name in admin panel

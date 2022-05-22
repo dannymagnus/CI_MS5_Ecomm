@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from .models import Product, Inventory
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm
@@ -54,3 +54,4 @@ class ProductCreateView(CreateView):
     template_name = 'products/create_product.html'
     form_class = ProductModelForm
     queryset = Product.objects.all()
+    success_url = '/products'
