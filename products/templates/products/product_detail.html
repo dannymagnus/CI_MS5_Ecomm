@@ -9,7 +9,7 @@
 <h1>{{ variant.sku }}: {{variant.size}}: {{variant.color}}: {{ variant.count }}</h1>
 {% endfor %}
 
-
+<a href="{% url 'update_product' product.slug %}"> Update product</a>
 
 <form method ="POST" action = "{% url 'add_to_bag' product.id %}">
     {% csrf_token %}

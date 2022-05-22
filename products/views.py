@@ -55,3 +55,17 @@ class ProductCreateView(CreateView):
     form_class = ProductModelForm
     queryset = Product.objects.all()
     success_url = '/products'
+
+
+class ProductUpdateView(UpdateView):
+    template_name = 'products/create_product.html'
+    form_class = ProductModelForm
+    queryset = Product.objects.all()
+
+    def get_object(self):
+        slug_ = self.kwargs.get("slug")
+        return get_object_or_404(Product, slug=slug_)
+
+    def form_valid(self, form):
+        print(form.cleaned_data)
+        return super().form_valid(form)
