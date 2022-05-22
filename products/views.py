@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Product, Inventory
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
+from .forms import ProductModelForm
 
 # Create your views here.
 class ProductListView(ListView):
@@ -48,3 +49,8 @@ def product_detail(request, slug):
         'variants': variants,
         }
     return render(request, 'products/product_detail.html', context)
+
+class ProductCreateView(CreateView):
+    template_name = 'products/create_product.html'
+    form_class = ProductModelForm
+    queryset = Product.objects.all()

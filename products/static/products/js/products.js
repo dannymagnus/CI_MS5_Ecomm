@@ -13,10 +13,32 @@ function disableOption(){
 }
 
 function populateAvailableQty(){
-    ($('.qty-input').val("1"));
+    ($('.qty-input').val(1));
     ($('.qty-input').attr("max", $('option:selected').attr('data-count')));
 }
 
+$('#decrement-qty').on('click', function (e){
+    e.preventDefault();
+    $('#id_qty').val( function(i, oldval) {
+        return parseInt( oldval, 10) - 1;
+    });
+});
+
+$('#increment-qty').on('click', function (e){
+    e.preventDefault();
+    $('#id_qty').val( function(i, oldval) {
+        return parseInt( oldval, 10) + 1;
+    });
+});
+
+$('.qty-input').on('change', function(){
+    console.log($(this).val());
+    if ($(this).val() >= $(this).attr("max")){
+        $('#increment-qty').attr("disabled", "disabled");
+    } else if ($(this).val() <= $(this).attr("min")){
+        $('#decrement-qty').attr("disabled", "disabled");
+    }
+});
 
 window.onload = function() {
     disableOption();
@@ -28,4 +50,6 @@ $('select').on('change', function () {
     console.log('tried to run your function');
     disableOption();
     populateAvailableQty();
+    disableQtyButtons();
 });
+
