@@ -69,3 +69,12 @@ class ProductUpdateView(UpdateView):
     def form_valid(self, form):
         print(form.cleaned_data)
         return super().form_valid(form)
+
+
+class ProductDeleteView(DeleteView):
+    template_name = 'products/delete_product.html'
+    success_url = '/products'
+    
+    def get_object(self):
+        slug_ = self.kwargs.get("slug")
+        return get_object_or_404(Product, slug=slug_)

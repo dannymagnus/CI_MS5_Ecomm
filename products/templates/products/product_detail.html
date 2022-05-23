@@ -10,6 +10,7 @@
 {% endfor %}
 
 <a href="{% url 'update_product' product.slug %}"> Update product</a>
+<a href="{% url 'delete_product' product.slug %}"> Delete product</a>
 
 <form method ="POST" action = "{% url 'add_to_bag' product.id %}">
     {% csrf_token %}
