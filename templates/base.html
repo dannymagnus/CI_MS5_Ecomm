@@ -43,7 +43,7 @@
                     <span class="navbar-toggler-icon"></span>
                   </button>
                   <div class="collapse navbar-collapse d-lg-none" id="navbarTogglerDemo02">
-                    <ul class="d-lg-none navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="d-lg-none d-xl-flex navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                       </li>
@@ -51,6 +51,7 @@
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu">
+                          <li><a class="dropdown-item"href="{% url 'all_products' %}">All Products</a></li>
                           <li><a class="dropdown-item" href="#">Regulators</a></li>
                           <li><a class="dropdown-item" href="#">BCDs</a></li>
                           <li><a class="dropdown-item" href="#">Computers</a></li>
@@ -62,7 +63,7 @@
                         </ul>
                       </li>
                       <!-- Dropdown menu for courses -->
-                      <li class="nav-item dropdown">
+                      <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Learn to Scuba</a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item" href="#">Discover Scuba</a></li>
@@ -72,7 +73,7 @@
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" href="#">Become a PADI Pro</a></li>
                         </ul>
-                      </li>
+                      </li> -->
                     </ul>
                     <form class="d-none d-lg-flex mx-auto">
                       <input class="form-control ms-5" type="search" placeholder="What are you looking for?" aria-label="Search">

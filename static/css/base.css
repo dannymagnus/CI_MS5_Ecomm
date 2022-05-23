@@ -8,3 +8,25 @@
 .bi-person{
     font-size: 1.7em;
 }
+
+/*-------------- Styling home page --------------------*/
+
+.height-85{
+    height:85vh;
+}
+
+.carousel-item img{
+    object-fit: cover;
+    object-position: center center;
+    height: 100%;
+}
+
+#carouselExampleIndicators{ 
+    width:100%;
+}
+
+.cover-center-h100{
+    object-fit: cover;
+    object-position: center center;
+    height: 100%;
+}
