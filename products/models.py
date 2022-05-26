@@ -48,6 +48,11 @@ class Product(models.Model):
         null=True,
         blank=True
         )
+    description = models.TextField(
+        max_length=254,
+        null=True,
+        blank=True,
+    )
     category = models.ForeignKey(
         'Category',
         on_delete=models.SET_NULL,

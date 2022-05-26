@@ -1,5 +1,6 @@
+from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, reverse
-from .models import Product, Inventory
+from .models import Product, Inventory, Category
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm
 
@@ -10,6 +11,7 @@ class ProductListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
         return context
 
 
@@ -78,3 +80,23 @@ class ProductDeleteView(DeleteView):
     def get_object(self):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
+
+
+class ProductSearchView(View):
+    def get(self, request, *args, **kwargs):
+        queryset = Product.objects.all()
+        query = request.GET.get('q')
+        print(query)
+        categories= Category.objects.all()
+        if query:
+            queryset = queryset.filter(
+                Q(name__icontains=query) |
+                Q(description__icontains=query) |
+                Q(category__name__icontains=query) |
+                Q(brand__name__icontains=query)
+            ).distinct()
+        context = {
+            'object_list': queryset,
+            'categories': categories,
+        }
+        return render(request, 'products/product_list.html', context)
