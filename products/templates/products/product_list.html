@@ -1,6 +1,25 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        {% for product in object_list %}
+            <div class="col-sm product-list">
+                <div class="card product-list mx-auto ms-md-0" style = "width:320px;">
+                    <a href="{% url 'product_detail' product.slug %}"><img class="card-img-top" src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap""></a>
+                    <div class="card-body">
+                      <h5 class="card-title">{{product.name}}</h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">£{{product.price}}</li>
+                      <li class="list-group-item">Rating: {{product.rating}}</li>
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
 {% for product in object_list %}
 
 {{product.name}}

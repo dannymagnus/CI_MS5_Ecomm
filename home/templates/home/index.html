@@ -46,13 +46,61 @@
     <hr>
 </div>
 <div class = "container">
-    <div class="row">
-        <div class="col-md p-3" style ="background-color:aqua; height:320px;">
-            <img src="{% static 'img/garbage-home-triple.webp' %}" class="d-block w-100 cover-center-h100" alt="...">
+    <div class="row d-flex justify-content-around">
+        <div class="col-md mt-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Learn to Dive</h5>
+                  <p class="card-text">Discover Scuba with us...</p>
+                  <a href="#" class="btn btn-primary">Try it now</a>
+                </div>
+            </div>
         </div>
-        <div class="col-md p-3" style ="background-color:rgb(8, 0, 255); height:320px;">col-md</div>
-        <div class="col-md p-3" style ="background-color:rgb(0, 255, 51); height:320px;">col-md</div>
+        <div class="col-md">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Continue your diving</h5>
+                  <p class="card-text">Learn diving specialties and niches</p>
+                  <a href="#" class="btn btn-primary">Join us</a>
+                </div>
+              </div>
+        </div>
+        <div class="col-md mt-md-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Pro Diving Courses</h5>
+                  <p class="card-text">Work the dream...</p>
+                  <a href="#" class="btn btn-primary">Go Pro</a>
+                </div>
+              </div>
+        </div>
     </div>
 </div>
+<div>
+    <hr>
+</div>
+<div class="container-fluid">
+    <div>
+        <div class="bg-img-holder-home">
+            <div class="holder-home-inner">
+                <div class="home-inner-headline">
+                    <h2><strong>SCUBA DIVING EQUIPMENT</strong></h2>
+                </div>
+                <div class="home-inner-body">
+                    <p>
+                        EQUIPMENT TRUSTED BY OUR INSTRUCTORS
+                    </p>
+                </div>
+                <div role="button" class="home-inner-button-container" href="{% url 'products'}">
+                    Shop Now
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 {% endblock %}
