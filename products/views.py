@@ -93,7 +93,9 @@ class ProductSearchView(View):
                 Q(name__icontains=query) |
                 Q(description__icontains=query) |
                 Q(category__name__icontains=query) |
-                Q(brand__name__icontains=query)
+                Q(brand__name__icontains=query)  |
+                Q(holding__name__icontains=query)   |
+                Q(holding__friendly_name__icontains=query)       
             ).distinct()
         context = {
             'object_list': queryset,

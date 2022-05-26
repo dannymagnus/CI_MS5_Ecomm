@@ -153,7 +153,14 @@ class Size(models.Model):
     name = models.CharField(
         max_length=254
     )
-    
+
+    friendly_name = models.CharField(
+        max_length=254,
+        null=True,
+        blank=True
+    )
+
+
     # Show object by name in admin panel
     def __str__(self):
         """
@@ -209,6 +216,7 @@ class Inventory(models.Model):
             if not Inventory.objects.filter(sku=unique_ref):
                 not_unique = False
         return str(unique_ref)
+    
     sku = models.CharField(
         max_length = 10,
         blank=False,
