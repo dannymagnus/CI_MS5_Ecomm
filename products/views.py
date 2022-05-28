@@ -6,6 +6,9 @@ from .forms import ProductModelForm, InventoryModelForm
 
 # Create your views here.
 class ProductListView(ListView):
+    """
+    A class view to view all products
+    """
     model = Product
     paginate_by = 15
 
@@ -53,6 +56,9 @@ def product_detail(request, slug):
     return render(request, 'products/product_detail.html', context)
 
 class ProductCreateView(CreateView):
+    """
+    A class view to create products
+    """
     template_name = 'products/create_product.html'
     form_class = ProductModelForm
     queryset = Product.objects.all()
@@ -60,6 +66,9 @@ class ProductCreateView(CreateView):
 
 
 class ProductUpdateView(UpdateView):
+    """
+    A class view to update products
+    """
     template_name = 'products/create_product.html'
     form_class = ProductModelForm
     queryset = Product.objects.all()
@@ -73,6 +82,9 @@ class ProductUpdateView(UpdateView):
 
 
 class ProductDeleteView(DeleteView):
+    """
+    A class view to delete products
+    """
     template_name = 'products/delete_product.html'
     success_url = '/products'
     
@@ -82,6 +94,9 @@ class ProductDeleteView(DeleteView):
 
 
 class ProductSearchView(View):
+    """
+    A class to perform basic search functions
+    """
     def get(self, request, *args, **kwargs):
         queryset = Product.objects.all()
         query = request.GET.get('q')
@@ -104,6 +119,9 @@ class ProductSearchView(View):
 
 
 class InventoryListView(ListView):
+    """
+    A class to render all the product inventory
+    """
     model = Inventory
     paginate_by = 15
 
@@ -132,6 +150,9 @@ def update_inventory(request, slug):
 
 
 class InventoryUpdateView(UpdateView):
+    """
+    A class to update the product inventory item count
+    """
     template_name = 'products/update_inventory.html'
     form_class = InventoryModelForm
     queryset = Inventory.objects.all()
