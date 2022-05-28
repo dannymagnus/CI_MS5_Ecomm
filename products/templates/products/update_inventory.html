@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div>
+    <p>SKU: {{ object.sku }}</p>
+    <p>Brand: {{ object.product.brand }}</p>
+    <p>Product: {{ object.product}}</p>
+    <p>Size: {{ object.size }}</p>
+<form action='.' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save' />
+</form>
+</div>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+        <script src="{% static 'products/js/inventory.js' %}"></script>
+{% endblock %}
+
+
+<!-- Test code for reverse relationship lookup
+
+
+<h1>This is the products page</h1>
+{{ products }}
+
+{% for product in products %}
+    Rendering the product: {{ product }}
+    Rendering the product color: {{ product.color }}
+    {% for product in product.inventory_set.all %}
+        product: {{product.product}}
+        qty: {{ product.count }}
+        color: {{ product.color }}
+    {% endfor %}
+{% endfor %}
+
+
+
+-->

@@ -9,8 +9,11 @@
 <h1>{{ variant.sku }}: {{variant.size}}: {{variant.color}}: {{ variant.count }}</h1>
 {% endfor %}
 
-<a href="{% url 'update_product' product.slug %}"> Update product</a>
+<h2 style="color:red;">{{product.inventory_set.id}}</h2>
+
+<a href="{% url 'update_product' product.slug %}"> Update product description</a>
 <a href="{% url 'delete_product' product.slug %}"> Delete product</a>
+
 
 <form method ="POST" action = "{% url 'add_to_bag' product.id %}">
     {% csrf_token %}

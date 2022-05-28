@@ -1,0 +1,1 @@
+$('#id_count').attr('min', "0");

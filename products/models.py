@@ -39,6 +39,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+        ordering = ('name',)
         
     name = models.CharField(
         max_length=254,
@@ -191,6 +192,10 @@ class Color(models.Model):
 
 
 class Inventory(models.Model):
+    
+    class Meta:
+        ordering = ('product',)
+
     size = models.ForeignKey(
         Size,
         on_delete=models.CASCADE

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+{{object.product.name}}
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">SKU</th>
+        <th scope="col">Product</th>
+        <th scope="col">Size</th>
+        <th scope="col">Qty</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        {% for object in object_list %}
+        <th scope="row">{{object.sku}}</th>
+        <td>{{object.product}}</td>
+        <td>{{object.size}}</td>
+        <td>{{object.count}}</td>
+        <td><a href="{% url 'update_inventory' object.id %}">Update</a></td>
+      </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}
+
+
+
+
+
+<!-- Test code for reverse relationship lookup
+
+
+<h1>This is the products page</h1>
+{{ products }}
+
+{% for product in products %}
+    Rendering the product: {{ product }}
+    Rendering the product color: {{ product.color }}
+    {% for product in product.inventory_set.all %}
+        product: {{product.product}}
+        qty: {{ product.count }}
+        color: {{ product.color }}
+    {% endfor %}
+{% endfor %}
+
+
+
+-->
