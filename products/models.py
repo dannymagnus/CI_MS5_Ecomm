@@ -198,7 +198,9 @@ class Inventory(models.Model):
 
     size = models.ForeignKey(
         Size,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        null=True,
+        blank = True,
         )
     color = models.ForeignKey(
         Color,

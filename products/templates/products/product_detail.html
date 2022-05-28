@@ -2,7 +2,6 @@
 {% load static %}
 
 {% block content %}
-<h1>{{ object.name }}</h1>
 <h1>{{ product.name }}</h1>
 <h1>{% with product.inventory_set.all as inventory %}</h1>
 <h1>{% for variant in inventory %}</h1>
@@ -15,13 +14,13 @@
 <a href="{% url 'delete_product' product.slug %}"> Delete product</a>
 
 
-<form method ="POST" action = "{% url 'add_to_bag' product.id %}">
+<form method ="POST" action = "{% url 'add_to_bag' %}">
     {% csrf_token %}
     <div class="form-group">
       <label for="exampleFormControlSelect1">Example select</label>
       <select name = "stockable" class="form-control" id="exampleFormControlSelect1">
         {% for variant in inventory %}
-        <option name = 'product_size' class = "size-option" value = "{{ variant.size }}"" data-count = "{{ variant.count }}">{{variant.size}}</option>
+        <option name = 'product_size' class = "size-option" value = "{{ variant.size }}" data-sku = "{{variant.sku}}" data-count = "{{ variant.count }}">{{variant.size}}</option>
         {% endfor %}
       </select>
       <div class="col-12">
@@ -30,15 +29,14 @@
               <div class="input-group">
                   <div class="input-group-prepend">
                       <input class="form-control qty_input qty-input" type="number" name="quantity" value="1" min="1"
-                          max="99""
-                    id=" id_qty">
+                          max="{{ variant.count }}" id=" id_qty_{{product.id}} " data_item_id="{{ product.id }}">
                   </div>
               </div>
           </div>
       <div>
           <input type="submit" value = "Add to Cart" class = "btn btn-primary">
       </div>
-      <input type="hidden" value = "sku" value = "{{variant.sku}}">
+      <input name = "sku" value = "" id = "sku">
       <input type="hidden" name = "redirect_url" value = "{{request.path}}">
     </div>
   </form>

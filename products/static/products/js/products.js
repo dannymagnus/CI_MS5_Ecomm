@@ -17,6 +17,10 @@ function populateAvailableQty(){
     ($('.qty-input').attr("max", $('option:selected').attr('data-count')));
 }
 
+function populateSku(){
+    ($('#sku').val($('option:selected').attr('data-sku')));
+}
+
 $('#decrement-qty').on('click', function (e){
     e.preventDefault();
     $('#id_qty').val( function(i, oldval) {
@@ -43,6 +47,7 @@ $('.qty-input').on('change', function(){
 window.onload = function() {
     disableOption();
     populateAvailableQty();
+    populateSku();
   };
 
 
@@ -50,6 +55,6 @@ $('select').on('change', function () {
     console.log('tried to run your function');
     disableOption();
     populateAvailableQty();
-    disableQtyButtons();
+    populateSku();
 });
 
