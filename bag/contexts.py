@@ -12,12 +12,15 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     for sku, quantity in bag.items():
-        item = get_object_or_404(Inventory, sku=sku)
-        total += quantity * item.product.price
+        inventory = get_object_or_404(Inventory, sku=sku)
+        subtotal = inventory.product.price * quantity
+        total += quantity * inventory.product.price
+        print(total)
         product_count += quantity
         bag_items.append({
             'quantity': quantity,
-            'item': item,
+            'inventory': inventory,
+            'subtotal': subtotal,
         })
 
 

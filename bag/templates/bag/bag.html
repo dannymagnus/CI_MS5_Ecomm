@@ -4,22 +4,58 @@
 
 
 {% block content %}
-<h1>Bag page</h1>
+<div class="container d-flex justify-content-center">
+    <h1 class = "d-inline-block">Shopping Cart</h1>
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col">
             {% if bag_items %}
-            {% for item in bag_items %}
-            <h1>{{ item }}</h1>
-            {% endfor %}
+            <div class="container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Item</th>
+                            <th scope="col"></th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in bag_items %}
+                        <tr>
+                            <td class="w-25">
+                                   <img class="img-fluid rounded" src="{% if item.inventory.product.image %} {{ item.inventory.product.image.url }} {% else %} {% static 'img/garbage-home-triple.webp' %} {% endif %}"
+                                   alt="{{item.inventory.product.friendly_name}}">
+                            </td>
+                            <td>
+                                <p>
+                                    {{item.inventory.product.brand | upper }}
+                                </p>
+                                <p>
+                                    {{item.inventory.product.friendly_name}}
+                                </p>
+                                {% if item.inventory.product.size %}
+                                <p>
+                                    {{item.inventory.product.size}}
+                                </p>
+                                {% endif %}
+                            </td>
+                            <td>{{item.inventory.product.price}}</td>
+                            <td>{{item.quantity}}</td>
+                            <td>£{{ item.subtotal }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
             {% else %}
             <p>Your bag is empty</p>
             {% endif %}
         </div>
     </div>
-
 </div>
-
-
 
 {% endblock %}
