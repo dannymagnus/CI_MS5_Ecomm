@@ -9,7 +9,15 @@
     font-size: 1.7em;
 }
 
-/*-------------- Styling home page --------------------*/
+/* -----------Toasts---------------------------------------*/
+.message-container{
+    position: fixed;
+    top:72px;
+    right:72px;
+    z-index: 1000;
+}
+
+/*------------Styling home page ---------------------------*/
 
 .height-85{
     height:85vh;

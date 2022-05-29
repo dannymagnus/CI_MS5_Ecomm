@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.contrib import messages
+from products.models import Inventory, Product
 
 # Create your views here.
 
@@ -14,14 +16,18 @@ def add_to_bag(request):
     bag = request.session.get('bag', {})
     redirect_url = request.POST.get('redirect_url')
     sku = request.POST.get('sku')
+    print(sku)
+    item = get_object_or_404(Inventory, sku=sku)
+    name = item.product.friendly_name
+    print(f"Added {name} to your bag")
 
     if sku in list(bag.keys()):
         bag[sku] += quantity
     else:
-        bag[sku] = quantity
+        bag[sku] = quantity        
+        messages.success(request, f'Added {name} to your bag')
 
     request.session['bag'] = bag
-    print(request.session['bag'])
     return redirect(redirect_url)
 
 
