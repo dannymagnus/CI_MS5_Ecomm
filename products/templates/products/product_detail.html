@@ -14,7 +14,7 @@
 <a href="{% url 'delete_product' product.slug %}"> Delete product</a>
 
 
-<form method ="POST" action = "{% url 'add_to_bag' %}">
+<form method ="POST" action = "{% url 'add_to_bag' product.slug %}">
     {% csrf_token %}
     <div class="form-group">
       <label for="exampleFormControlSelect1">Example select</label>
@@ -37,7 +37,7 @@
           <input type="submit" value = "Add to Cart" class = "btn btn-primary">
       </div>
       <input name = "sku" value = "" id = "sku">
-      <input type="hidden" name = "redirect_url" value = "{{request.path}}">
+      <input name = "redirect_url" value = "{{request.path}}" >
     </div>
   </form>
   {% endwith %}

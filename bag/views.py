@@ -9,23 +9,24 @@ def view_bag(request):
 
     return render(request, 'bag/bag.html')
 
-def add_to_bag(request):
+def add_to_bag(request, slug):
     """ Add a quantity of the specified product to the shopping bag """
 
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
     redirect_url = request.POST.get('redirect_url')
     sku = request.POST.get('sku')
-    print(sku)
     item = get_object_or_404(Inventory, sku=sku)
     name = item.product.friendly_name
-    print(f"Added {name} to your bag")
+    product = get_object_or_404(Product, slug=slug)
 
     if sku in list(bag.keys()):
         bag[sku] += quantity
+        messages.success(request, f'Added {item.product.friendly_name} to your bag')
+
     else:
         bag[sku] = quantity        
-        messages.success(request, f'Added {name} to your bag')
+        messages.success(request, f'Added {item.product.friendly_name} to your bag')
 
     request.session['bag'] = bag
     return redirect(redirect_url)
