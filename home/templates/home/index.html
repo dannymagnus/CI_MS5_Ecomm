@@ -48,7 +48,7 @@
 <div class = "container">
     <div class="row d-flex justify-content-around">
         <div class="col-md mt-3">
-            <div class="card mx-auto">
+            <div class="card mx-auto no-border">
                 <img class="card-img-top mx-auto" src="{% static 'img/garbage-home-triple.webp' %}" alt="Learn to dive">
                 <div class="card-body">
                   <h5 class="card-title">Learn to Dive</h5>
@@ -58,7 +58,7 @@
             </div>
         </div>
         <div class="col-md">
-            <div class="card mx-auto">
+            <div class="card mx-auto no-border">
                 <img class="card-img-top" src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Continue your diving</h5>
@@ -68,7 +68,7 @@
               </div>
         </div>
         <div class="col-md mt-md-3">
-            <div class="card mx-auto">
+            <div class="card mx-auto no-border">
                 <img class="card-img-top" src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">Pro Diving Courses</h5>
@@ -84,7 +84,7 @@
 </div>
 <div class="container-fluid">
     <div>
-        <div class="bg-img-holder-home">
+        <div id ="shop-now-holder" class="bg-img-holder-home">
             <div class="holder-home-inner">
                 <div class="home-inner-headline">
                     <h2><strong>SCUBA DIVING EQUIPMENT</strong></h2>
@@ -94,8 +94,8 @@
                         EQUIPMENT TRUSTED BY OUR INSTRUCTORS
                     </p>
                 </div>
-                <div role="button" class="home-inner-button-container" href="{% url 'products'}">
-                    Shop Now
+                <div role="button" class="home-inner-button-container">
+                    <a id="shop-now" href="{% url 'all_products' %}">Shop Now</a>
                 </div>
             </div>
         </div>

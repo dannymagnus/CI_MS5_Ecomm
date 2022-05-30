@@ -57,7 +57,6 @@
 
 .bg-img-holder-home {
     align-items: center;
-    cursor: pointer;
     display: flex;
     text-decoration: none;
     justify-content: flex-start;
@@ -83,14 +82,14 @@
     font-size: 55px;
     font-weight: 400;
     min-height: 48px;
-    color: #444444;
+    color: rgba(255,255,255,1);
 }
 
 .home-inner-body {
     font-size: 18px;
     margin-top: 8px;
     min-height: 27px;
-    color: #444444;
+    color: rgba(255,255,255,1);
 }
 
 .home-inner-button-container {
@@ -115,6 +114,15 @@
     pointer-events: auto;
     font-family: inherit;
   }
+
+#shop-now{
+    text-decoration: none;
+    color: rgba(255,255,255,1);
+}
+
+.card.no-border{
+    border:none;
+}
 
 @media screen and (min-width: 801px) {
     .bg-img-holder-home {
@@ -152,4 +160,19 @@
     .card.product-list {
         max-width: 200px;
     }
+}
+
+
+/* -------------------Create / Edit Product ----------------- */
+
+.font-size-96{
+    font-size:96px;
+}
+
+.white-text{
+    color: white;
+}
+
+.create-edit{
+    text-justify: center;
 }
