@@ -19,7 +19,7 @@ urlpatterns = [
     path('<slug:slug>/delete/', views.ProductDeleteView.as_view(), name='delete_product'),
     path('search/', views.ProductSearchView.as_view(), name='search_products'),
     path('<int:id>/update-inventory/', views.InventoryUpdateView.as_view(), name='update_inventory'),
-    path('inventory/', views.InventoryListView.as_view(), name='inventory'),
+    path('inventory/', views.InventoryListView.as_view(), name='inventory_list'),
 
 
 ]

@@ -1,5 +1,6 @@
 from django.db.models import Q
-from django.shortcuts import render, get_object_or_404, reverse
+from django.contrib import messages
+from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect
 from .models import Product, Inventory, Category
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
@@ -62,6 +63,16 @@ class ProductCreateView(CreateView):
     template_name = 'products/create_product.html'
     form_class = ProductModelForm
     queryset = Product.objects.all()
+    
+    def form_valid(self, form):
+        messages.success(self.request, f'Product created successfully')
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        return self.render_to_response(context)
+
     success_url = '/products'
 
 
@@ -77,9 +88,12 @@ class ProductUpdateView(UpdateView):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
 
+    # def form_valid(self, form):
+    #     return super().form_valid(form)
     def form_valid(self, form):
-        return super().form_valid(form)
-
+        messages.success(self.request, "Product updated succesfully")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())
 
 class ProductDeleteView(DeleteView):
     """
@@ -163,4 +177,5 @@ class InventoryUpdateView(UpdateView):
         return get_object_or_404(Inventory, id=id_)
 
     def form_valid(self, form):
+        messages.success(self.request, f'Inventory updated successfully')
         return super().form_valid(form)

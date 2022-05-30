@@ -60,6 +60,11 @@
                           <li><a class="dropdown-item" href="#">Drysuits</a></li>
                           <li><a class="dropdown-item" href="#">Masks</a></li>
                           <li><a class="dropdown-item" href="#">Fins</a></li>
+                          {% if user.is_authenticated %}
+                          {% if user.is_staff %}
+                          <li><a class="dropdown-item staff" href="{% url 'inventory_list' %}">Manage Inventory</a></li>
+                          {% endif %}
+                          {% endif %}
                         </ul>
                       </li>
                       <li class="nav-item dropdown">

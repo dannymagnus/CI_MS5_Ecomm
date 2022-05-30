@@ -12,6 +12,7 @@
 
 <a href="{% url 'update_product' product.slug %}"> Update product description</a>
 <a href="{% url 'delete_product' product.slug %}"> Delete product</a>
+<a href="{% url 'update_inventory' product.slug %}"> Update inventory</a>
 
 
 <form method ="POST" action = "{% url 'add_to_bag' product.slug %}">

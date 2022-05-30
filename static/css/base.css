@@ -1,5 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
+
+.staff{
+    color:goldenrod;
+    font-weight:bold;
+}
+
 /* Style bag icon */
 .bi-bag{
     font-size: 1.5em;
@@ -7,6 +13,10 @@
 
 .bi-person{
     font-size: 1.7em;
+}
+
+.white-text{
+    color: rgba(255,255,255,1);
 }
 
 /* -----------Toasts---------------------------------------*/
@@ -18,6 +28,14 @@
 }
 
 /*------------Styling home page ---------------------------*/
+
+.z-index-9999{
+    z-index:9999;
+}
+
+.font-size-3em{
+    font-size:3em;
+}
 
 .height-85{
     height:85vh;
@@ -39,6 +57,17 @@
     height: 100%;
 }
 
+.bg-img-holder-home {
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative;
+    padding: 21px 21px 42px 21px;
+    min-height: 300px;
+  }
+
 .bg-img-holder-home::after{
     content: '';
     background-image: url(../img/buy-scuba-equipment.webp);
@@ -54,17 +83,6 @@
     z-index: -1;
     opacity: calc(100 / 100);
 }
-
-.bg-img-holder-home {
-    align-items: center;
-    display: flex;
-    text-decoration: none;
-    justify-content: flex-start;
-    text-align: center;
-    position: relative;
-    padding: 21px 21px 42px 21px;
-    min-height: 300px;
-  }
 
 .holder-home-inner{
     display: flex;
