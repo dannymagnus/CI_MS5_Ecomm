@@ -62,6 +62,14 @@
                           <li><a class="dropdown-item" href="#">Fins</a></li>
                         </ul>
                       </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Brands</a>
+                        <ul class="dropdown-menu">
+                          {% for brand in brands %}
+                          <li><a class="dropdown-item"href="#">{{ brand.name | upper }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </li>
                       <!-- Dropdown menu for courses -->
                       <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Learn to Scuba</a>
