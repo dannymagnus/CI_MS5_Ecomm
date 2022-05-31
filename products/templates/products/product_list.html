@@ -9,6 +9,10 @@
             <h5>{{ category.name }}</h5>
             {% endfor %}
         </div>
+        <form method = "GET">
+        {{ filter.form }}
+        <button type ="submit" class = "btn btn-primary">Search</button>
+        </form>
         <div class="col">
             <div class="row">
                 {% for product in filter.qs %}
