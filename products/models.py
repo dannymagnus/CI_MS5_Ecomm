@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.utils.text import slugify
 import random
 
+
 class Category(models.Model):
     """
     A class for the category model
@@ -50,7 +51,7 @@ class Product(models.Model):
         blank=True
         )
     description = models.TextField(
-        max_length=254,
+        max_length=1000,
         null=True,
         blank=True,
     )
@@ -60,6 +61,19 @@ class Product(models.Model):
         null=True,
         blank=True,
         )
+    
+    GENDER_CHOICES = (
+    ('M', 'Male'),
+    ('F', 'Female'),
+    )
+
+    gender = models.CharField(
+        max_length=1,
+        choices=GENDER_CHOICES,
+        blank=True,
+        null=True,
+        )
+
     brand = models.ForeignKey(
         'Brand',
         on_delete=models.SET_NULL,

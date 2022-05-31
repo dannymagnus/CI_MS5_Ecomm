@@ -55,14 +55,14 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Shop</a>
                         <ul class="dropdown-menu">
                           <li><a class="dropdown-item"href="{% url 'all_products' %}">All Products</a></li>
-                          <li><a class="dropdown-item" href="#">Regulators</a></li>
-                          <li><a class="dropdown-item" href="#">BCDs</a></li>
-                          <li><a class="dropdown-item" href="#">Computers</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}?category=regs"">Regulators</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}?category=bcd"">BCDs</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}?category=computer">Computers</a></li>
                           <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Wetsuits</a></li>
-                          <li><a class="dropdown-item" href="#">Drysuits</a></li>
-                          <li><a class="dropdown-item" href="#">Masks</a></li>
-                          <li><a class="dropdown-item" href="#">Fins</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}">Wetsuits</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}">Drysuits</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}">Masks</a></li>
+                          <li><a class="dropdown-item" href="{% url 'all_products' %}">Fins</a></li>
                           {% if user.is_authenticated %}
                           {% if user.is_staff %}
                           <li><a class="dropdown-item staff" href="{% url 'inventory_list' %}">Manage Inventory</a></li>

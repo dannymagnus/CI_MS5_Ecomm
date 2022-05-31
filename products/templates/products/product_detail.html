@@ -10,10 +10,10 @@
 
 <h2 style="color:red;">{{product.inventory_set.id}}</h2>
 
+{% if request.user.is_staff %}
 <a href="{% url 'update_product' product.slug %}"> Update product description</a>
 <a href="{% url 'delete_product' product.slug %}"> Delete product</a>
-<a href="{% url 'update_inventory' product.slug %}"> Update inventory</a>
-
+{% endif %}
 
 <form method ="POST" action = "{% url 'add_to_bag' product.slug %}">
     {% csrf_token %}

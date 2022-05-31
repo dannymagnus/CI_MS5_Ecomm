@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRed
 from .models import Product, Inventory, Category
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
+from .filters import ProductFilter
 
 # Create your views here.
 class ProductListView(ListView):
@@ -11,11 +12,11 @@ class ProductListView(ListView):
     A class view to view all products
     """
     model = Product
-    paginate_by = 15
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['filter'] = ProductFilter(self.request.GET, queryset=self.get_queryset())
         return context
 
 
