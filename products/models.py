@@ -72,10 +72,10 @@ class Product(models.Model):
         max_length=254,
         blank=True,
         )
-    color = models.ManyToManyField(
+    color = models.ForeignKey(
         'Color',
-        through='Inventory',
-        max_length=254,
+        on_delete=models.SET_NULL,
+        null=True,
         blank=True,
         )
     price = models.DecimalField(
@@ -200,12 +200,6 @@ class Inventory(models.Model):
         on_delete=models.CASCADE,
         null=True,
         blank = True,
-        )
-    color = models.ForeignKey(
-        Color,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True,
         )
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE
