@@ -74,7 +74,7 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Brands</a>
                         <ul class="dropdown-menu">
                           {% for brand in brands %}
-                          <li><a class="dropdown-item"href="#">{{ brand.name | upper }}</a></li>
+                          <li><a class="dropdown-item"href="{% url 'all_products' %}?brand__name__iexact={{brand.name}}">{{ brand.name | upper }}</a></li>
                           {% endfor %}
                         </ul>
                       </li>

@@ -1,10 +1,12 @@
 from django.db.models import Q
 from django.contrib import messages
-from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect
+from django.utils.http import urlencode
+from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
 from .models import Product, Inventory, Category
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
 class ProductListView(ListView):
@@ -12,33 +14,19 @@ class ProductListView(ListView):
     A class view to view all products
     """
     model = Product
+    paginate_by = 10
+    
+    def get_queryset(self, **kwargs):
+        search_results = ProductFilter(self.request.GET, self.queryset)
+        self.no_search_result = True if not search_results.qs else False
+        # Returns the default queryset if an empty queryset is returned by the django_filters
+        return search_results.qs.distinct() or self.model.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         context['filter'] = ProductFilter(self.request.GET, queryset=self.get_queryset())
         return context
-
-
-# def all_products(request):
-    
-#     products = Product.objects.all()
-    
-    
-#     context = {
-#         'products':products,
-#         # 'inventory':inventory,
-#         }
-    
-#     return render(request, 'products/all_products.html', context)
-
-# class ProductDetailView(DetailView):
-#     model = Product
-#     template_name = 'products/product_detail.html'
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         return context
     
 
 def product_detail(request, slug):
@@ -57,13 +45,22 @@ def product_detail(request, slug):
         }
     return render(request, 'products/product_detail.html', context)
 
-class ProductCreateView(CreateView):
+class ProductCreateView(UserPassesTestMixin, CreateView):
     """
     A class view to create products
     """
     template_name = 'products/create_product.html'
     form_class = ProductModelForm
     queryset = Product.objects.all()
+    
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
+    
+        
     
     def form_valid(self, form):
         messages.success(self.request, f'Product created successfully')
