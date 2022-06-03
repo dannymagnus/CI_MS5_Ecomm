@@ -83,6 +83,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'bag.context_processors.bag_contents',
                 'products.context_processors.brands',
+                'products.context_processors.categories',
             ],
         },
     },
