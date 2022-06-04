@@ -3,15 +3,25 @@
 
 {% block content %}
 
-<h1>{% with product.inventory_set.all as inventory %}</h1>
-{% if request.user.is_staff %}
-<a href="{% url 'update_product' product.slug %}"> Update product description</a>
-<a href="{% url 'delete_product' product.slug %}"> Delete product</a>
-{% endif %}
+{% with product.inventory_set.all as inventory %}
+
+<div class="container d-flex justify-content-center">
+
+</div>
 
 <div class="container">
-    <div class="row" style="height:50px;">
-        <div class="col"></div>
+    <div class="row" style="min-height:50px;">
+        <div class="col">
+            {% if request.user.is_staff %}
+            <hr>
+            <div class="container d-flex align-items-center justify-content-center my-5">
+            <div><strong>Staff Action: </strong></div>
+            <a class="btn btn-primary mx-3" href="{% url 'update_product' product.slug %}"> Update product description</a>
+            <a class="btn btn-danger mx-3" href="{% url 'delete_product' product.slug %}"> Delete product</a>
+            </div>
+            <hr>
+            {% endif %}
+        </div>
     </div>
     <div class="row">
         <div class="col col-md-6">
@@ -20,7 +30,7 @@
         <div class="col col-md-6">
             <h1 class="fs-2 mb-4">{{ product.name }}</h1>
             <h2 class="fs-5 my-3">{{ product.brand | upper }}</h2>
-            <p class="w-lg-75 my-4">{{ product.description }}</p>
+            <p class="w-lg-75 my-4">{{ product.description|linebreaks }}</p>
             <form method="POST" action="{% url 'add_to_bag' product.slug %}">
                 {% csrf_token %}
                 <div class="form-group">
@@ -65,9 +75,9 @@
         </div>
     </div>
 
-    <h1>{% for variant in inventory %}</h1>
+    <!-- <h1>{% for variant in inventory %}</h1>
     <h1>{{ variant.sku }}: {{variant.size}}: {{variant.color}}: {{ variant.count }}</h1>
-    {% endfor %}
+    {% endfor %} -->
 
 
     {% endwith %}
