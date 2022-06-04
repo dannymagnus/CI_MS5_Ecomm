@@ -15,43 +15,53 @@
 <a href="{% url 'delete_product' product.slug %}"> Delete product</a>
 {% endif %}
 
-<form method ="POST" action = "{% url 'add_to_bag' product.slug %}">
+<form method="POST" action="{% url 'add_to_bag' product.slug %}">
     {% csrf_token %}
     <div class="form-group">
-      <label for="exampleFormControlSelect1">Example select</label>
-      <select name = "stockable" class="form-control" id="exampleFormControlSelect1">
-        {% for variant in inventory %}
-        <option name = 'product_size' class = "size-option" value = "{{ variant.size }}" data-sku = "{{variant.sku}}" data-count = "{{ variant.count }}">{{variant.size}}</option>
-        {% endfor %}
-      </select>
-      <div class="col-12">
-          <p class="mt-3"><strong>Quantity:</strong></p>
-          <div class="form-group w-50">
-              <div class="input-group">
-                  <div class="input-group-prepend">
-                      <input class="form-control qty_input qty-input" type="number" name="quantity" value="1" min="1"
-                          max="{{ variant.count }}" id=" id_qty_{{product.id}} " data_item_id="{{ product.id }}">
-                  </div>
-              </div>
-          </div>
-      <div>
-          <input type="submit" value = "Add to Cart" class = "btn btn-primary">
-      </div>
-      <input name = "sku" value = "" id = "sku">
-      <input name = "redirect_url" value = "{{request.path}}" >
-    </div>
-  </form>
-  {% endwith %}
+        <label for="exampleFormControlSelect1">Example select</label>
+        <select name="stockable" class="form-control" id="exampleFormControlSelect1">
+            {% for variant in inventory %}
+            <option name='product_size' class="size-option" value="{{ variant.size }}" data-sku="{{variant.sku}}"
+                data-count="{{ variant.count }}">{{variant.size}}</option>
+            {% endfor %}
+        </select>
+        <div class="col-12">
+            <p class="mt-3"><strong>Quantity:</strong></p>
+            <div class="form-group w-50">
+                <div class="input-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                                    data-type="minus" data-field="">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </button>
+                            </span>
+                        </div>
+                        <input class="form-control qty_input qty-input input-number" type="number" name="quantity"
+                            value="1" min="1" max="{{ variant.count }}" id=" id_qty_{{product.id}} "
+                            data_item_id="{{ product.id }}">
+                        <div class="input-group-append">
+                            <span class="input-group-btn">
+                                <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                                    data-type="plus" data-field="">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Add to Cart" class="btn btn-primary">
+            </div>
+            <input name="sku" value="" id="sku">
+            <input name="redirect_url" value="{{request.path}}">
+        </div>
+</form>
+{% endwith %}
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-        <script src="{% static 'products/js/products.js' %}"></script>
+{{ block.super }}
+<script src="{% static 'products/js/products.js' %}"></script>
 {% endblock %}
-
-
-
-
-
-

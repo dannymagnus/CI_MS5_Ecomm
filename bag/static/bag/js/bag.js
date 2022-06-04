@@ -11,8 +11,9 @@
         var quantity = parseInt(quantityInput.val());
 
 //         // If is not undefined
-
-        quantityInput.val(quantity + 1);
+        if (quantity < quantityInput.attr('data-inventory-count')) {
+            quantityInput.val(quantity + 1);
+        }
 
 
 //         // Increment
