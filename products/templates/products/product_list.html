@@ -12,46 +12,47 @@
         </div>
     </div>
     <div class="row">
-        <div class="d-none d-lg-block col-lg-3">
+        <div class="d-none d-md-block col-md-3">
+            <h2 class = "fs-6">CATEGORIES</h2>
+            <hr>
             {% for category in categories %}
-            <h5>{{ category.name }}</h5>
+            <p>{{ category.name }}</p>
             {% endfor %}
         </div>
         <div class="col">
             <div class="row mb-5">
-                <div class = "col">
-                    <form>
-                            {{ filter.form }}
+                <div class = "col d-flex flex-column justify-content-end align-items-end">
+                    <form class = "w-75 d-flex justify-content-end align-items-center">
+                        {{ filter.form.name__iexact.as_hidden }}
+                        {{ filter.form.category__name__iexact.as_hidden }}
+                        <label for="id_ordering">Order by:</label>
+                        {{ filter.form.ordering }}
                         <button type="submit" class="btn btn-primary">Search</button>
                     </form>
-                </div>
-                <div class="pagination">
-                    {% load my_tags %}
-
-                    {% if is_paginated %}
-                      {% if page_obj.has_previous %}
-                        <a href="?{% param_replace page=1 %}">First</a>
-                        {% if page_obj.previous_page_number != 1 %}
-                          <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+                    <div class="pagination">
+                        {% load my_tags %}    
+                        {% if is_paginated %}
+                          {% if page_obj.has_previous %}
+                            <a href="?{% param_replace page=1 %}">First</a>
+                            {% if page_obj.previous_page_number != 1 %}
+                              <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+                            {% endif %}
+                          {% endif %}                        
+                          Page {{ page_obj.number }} of {{ paginator.num_pages }}                        
+                          {% if page_obj.has_next %}
+                            {% if page_obj.next_page_number != paginator.num_pages %}
+                              <a href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
+                            {% endif %}
+                            <a href="?{% param_replace page=paginator.num_pages %}">Last</a>
+                          {% endif %}                        
+                          <p>Objects {{ page_obj.start_index }}—{{ page_obj.end_index }}</p>
                         {% endif %}
-                      {% endif %}
-                    
-                      Page {{ page_obj.number }} of {{ paginator.num_pages }}
-                    
-                      {% if page_obj.has_next %}
-                        {% if page_obj.next_page_number != paginator.num_pages %}
-                          <a href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
-                        {% endif %}
-                        <a href="?{% param_replace page=paginator.num_pages %}">Last</a>
-                      {% endif %}
-                    
-                      <p>Objects {{ page_obj.start_index }}—{{ page_obj.end_index }}</p>
-                    {% endif %}
+                    </div>
                 </div>
             <div class="row">
+                <div class="col-sm product-list d-flex flex-wrap">
                 {% for product in object_list %}
-                <div class="col-sm product-list">
-                    <div class="card product-list mx-auto ms-md-0" style="width:320px;">
+                    <div class="card product-list m-3 me-md-3" style="width:320px;">
                         {% if product.image %}
                         <a href="{% url 'product_detail' product.slug %}"><img class="card-img-top"
                             src="{{ product.image.url }}" alt="Card image cap""></a>
@@ -67,19 +68,12 @@
                         <li class="list-group-item">Rating: {{product.rating}}</li>
                     </ul>
                     </div>
-                </div>
                 {% endfor %}
+            </div>
             </div>
         </div>
     </div>
 </div>
-{% for product in object_list %}
-
-{{product.name}}
-
-<a href="{% url 'product_detail' product.slug %}">Click here</a>
-
-{% endfor %}
 
 {% endblock %}
 

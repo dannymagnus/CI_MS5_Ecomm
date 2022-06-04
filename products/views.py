@@ -14,7 +14,7 @@ class ProductListView(ListView):
     A class view to view all products
     """
     model = Product
-    paginate_by = 10
+    paginate_by = 12
     
     def get_queryset(self, **kwargs):
         search_results = ProductFilter(self.request.GET, self.queryset)
