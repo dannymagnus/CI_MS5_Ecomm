@@ -14,19 +14,19 @@ function disableOption(){
 
 function populateAvailableQty(){
     ($('.qty-input').val(1));
-    ($('.qty-input').attr("max", $('option:selected').attr('data-count')));
+    // ($('.qty-input').attr("max", $('option:selected').attr('data-count')));
+    sessionQtyRaw = parseInt($('option:selected').attr('session-quantity'));
+    console.log(sessionQtyRaw);
+    if (Number.isNaN(sessionQtyRaw)){
+        ($('.qty-input').attr("max", parseInt($('option:selected').attr('data-count'))));
+    } else{
+        ($('.qty-input').attr("max", parseInt($('option:selected').attr('data-count')) - parseInt($('option:selected').attr('session-quantity'))));
+    }
 }
 
 function populateSku(){
     ($('#sku').val($('option:selected').attr('data-sku')));
 }
-
-$('#decrement-qty').on('click', function (e){
-    e.preventDefault();
-    $('#id_qty').val( function(i, oldval) {
-        return parseInt( oldval, 10) - 1;
-    });
-});
 
 $('.quantity-right-plus').click(function (e) {
     // Stop acting like a button
@@ -82,4 +82,3 @@ $('select').on('change', function () {
     populateAvailableQty();
     populateSku();
 });
-

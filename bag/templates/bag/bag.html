@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="container d-flex justify-content-center">
-    <h1 class = "d-inline-block">Shopping Cart</h1>
+    <h1 class="d-inline-block">Shopping Cart</h1>
 </div>
 
 <div class="container">
@@ -27,8 +27,9 @@
                         {% for item in bag_items %}
                         <tr>
                             <td class="w-25">
-                                   <img class="img-fluid rounded" src="{% if item.inventory.product.image %} {{ item.inventory.product.image.url }} {% else %} {% static 'img/garbage-home-triple.webp' %} {% endif %}"
-                                   alt="{{item.inventory.product.friendly_name}}">
+                                <img class="img-fluid rounded"
+                                    src="{% if item.inventory.product.image %} {{ item.inventory.product.image.url }} {% else %} {% static 'img/garbage-home-triple.webp' %} {% endif %}"
+                                    alt="{{item.inventory.product.friendly_name}}">
                             </td>
                             <td>
                                 <p>
@@ -45,45 +46,46 @@
                             </td>
                             <td>{{item.inventory.product.price}}</td>
                             <td>
-                                <div class="container">
-                                    <div class="col-lg-2">
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                                <button type="button"
-                                                    class="quantity-left-minus btn btn-danger btn-number"
-                                                    data-type="minus" data-field="">
-                                                    <span class="glyphicon glyphicon-minus"></span>
-                                                </button>
-                                            </span>
-                                            <input type="number" id="quantity" name="quantity"
-                                                class="form-control input-number" value="{{item.quantity}}" min="1" max="100" data-inventory-count = "{{item.inventory.count}}">
-                                            <span class="input-group-btn">
-                                                <button type="button"
-                                                    class="quantity-right-plus btn btn-success btn-number"
-                                                    data-type="plus" data-field="">
-                                                    <span class="glyphicon glyphicon-plus"></span>
-                                                </button>
-                                            </span>
-                                        </div>
+                                <div class="input-group d-flex">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
+                                                data-type="minus" data-field="">
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                        </span>
                                     </div>
-                                </div>
-                            </td>
-                            <td>£{{ item.subtotal }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+                                    <input type="number" id="quantity" name="quantity" class="form-control qty_input qty-input input-number"
+                                        value="{{item.quantity}}" min="1" max="{{item.inventory.count}}"
+                                        data-inventory-count="{{item.inventory.count}}">
+                                    <div class="input-group-append">
+                                        <span class="input-group-btn">
+                                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
+                                                data-type="plus" data-field="">
+                                                <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                            </div>
+                            </form>
             </div>
-            {% else %}
-            <p>Your bag is empty</p>
-            {% endif %}
+            </td>
+            <td>£{{ item.subtotal }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            </table>
         </div>
+        {% else %}
+        <p>Your bag is empty</p>
+        {% endif %}
     </div>
+</div>
 </div>
 
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-        <script src="{% static 'bag/js/bag.js' %}"></script>
+{{ block.super }}
+<script src="{% static 'bag/js/bag.js' %}"></script>
 {% endblock %}

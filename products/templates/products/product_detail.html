@@ -21,7 +21,8 @@
         <label for="exampleFormControlSelect1">Example select</label>
         <select name="stockable" class="form-control" id="exampleFormControlSelect1">
             {% for variant in inventory %}
-            <option name='product_size' class="size-option" value="{{ variant.size }}" data-sku="{{variant.sku}}"
+            <option name='product_size' class="size-option" value="{{ variant.size }}" data-sku="{{variant.sku}}" 
+                session-quantity = "{% if bag_items %} {% for item in bag_items %} {% if item.inventory.sku == variant.sku %}{{ item.quantity }}{% endif %}{% endfor %}{% endif %}"
                 data-count="{{ variant.count }}">{{variant.size}}</option>
             {% endfor %}
         </select>
@@ -39,8 +40,8 @@
                             </span>
                         </div>
                         <input class="form-control qty_input qty-input input-number" type="number" name="quantity"
-                            value="1" min="1" max="{{ variant.count }}" id=" id_qty_{{product.id}} "
-                            data_item_id="{{ product.id }}" data-sku = >
+                            value="1" min="1" max="{{ variant.count }}" id="id_qty"
+                            data_item_id="{{ product.id }}" data-sku = "" >
                         <div class="input-group-append">
                             <span class="input-group-btn">
                                 <button type="button" class="quantity-right-plus btn btn-success btn-number"

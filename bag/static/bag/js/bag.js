@@ -4,7 +4,7 @@
         e.preventDefault();
         console.log(this);
         // Get the field name
-        var parent = $(this).closest('.input-group-btn');
+        var parent = $(this).closest('.input-group-append');
         console.log(parent);
         var quantityInput = parent.siblings('.input-number');
         console.log(quantityInput);
@@ -28,7 +28,7 @@ $('.quantity-left-minus').click(function (e) {
         e.preventDefault();
         console.log(this);
         // Get the field name
-        var parent = $(this).closest('.input-group-btn');
+        var parent = $(this).closest('.input-group-prepend');
         console.log(parent);
         var quantityInput = parent.siblings('.input-number');
         console.log(quantityInput);
