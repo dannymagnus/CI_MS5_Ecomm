@@ -19,6 +19,20 @@
     color: rgba(255,255,255,1);
 }
 
+/* ---Hide spinners in number fields (W3Schools)-----------*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* -----------Toasts---------------------------------------*/
 .message-container{
     position: fixed;

@@ -4,11 +4,16 @@
 
 
 {% block content %}
-<div class="container d-flex justify-content-center">
-    <h1 class="d-inline-block">Shopping Cart</h1>
-</div>
+
 
 <div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="my-5">
+                SHOPPING CART
+            </h1>
+        </div>
+    </div>
     <div class="row">
         <div class="col">
             {% if bag_items %}
@@ -21,6 +26,7 @@
                             <th scope="col">Price</th>
                             <th scope="col">Qty</th>
                             <th scope="col">Total</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,49 +44,53 @@
                                 <p>
                                     {{item.inventory.product.friendly_name}}
                                 </p>
-                                {% if item.inventory.product.size %}
                                 <p>
-                                    {{item.inventory.product.size}}
+                                    Size: {{item.inventory.size}}
                                 </p>
-                                {% endif %}
+
                             </td>
-                            <td>{{item.inventory.product.price}}</td>
                             <td>
-                                <div class="input-group d-flex">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="quantity-left-minus btn btn-danger btn-number"
-                                                data-type="minus" data-field="">
-                                                <span class="glyphicon glyphicon-minus"></span>
-                                            </button>
-                                        </span>
+                                {{item.inventory.product.price}}
+                            </td>
+                            <td style="width:150px">
+                                <form id="update_qty" method="POST" action="{% url 'adjust_bag' item.inventory.id %}">
+                                    {% csrf_token %}
+                                    <div class="input-group d-flex">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-btn">
+                                                <button type="submit"
+                                                    class="quantity-left-minus btn btn-secondary bi bi-dash-lg"
+                                                    data-type="minus" data-field="">
+                                                </button>
+                                            </span>
+                                        </div>
+                                        <input type="number" id="quantity" name="quantity"
+                                            class="form-control qty_input qty-input input-number"
+                                            value="{{item.quantity}}" min="1" max="{{item.inventory.count}}"
+                                            data-inventory-count="{{item.inventory.count}}">
+                                        <div class="input-group-append">
+                                            <span class="input-group-btn">
+                                                <button type="button"
+                                                    class="quantity-right-plus btn btn-secondary bi bi-plus-lg"
+                                                    data-type="plus" data-field="">
+                                                </button>
+                                            </span>
+                                        </div>
                                     </div>
-                                    <input type="number" id="quantity" name="quantity" class="form-control qty_input qty-input input-number"
-                                        value="{{item.quantity}}" min="1" max="{{item.inventory.count}}"
-                                        data-inventory-count="{{item.inventory.count}}">
-                                    <div class="input-group-append">
-                                        <span class="input-group-btn">
-                                            <button type="button" class="quantity-right-plus btn btn-success btn-number"
-                                                data-type="plus" data-field="">
-                                                <span class="glyphicon glyphicon-plus"></span>
-                                            </button>
-                                        </span>
-                                    </div>
-                            </div>
-                            </form>
+                                </form>
+                            </td>
+                            <td>£{{ item.subtotal }}</td>
+                            <td><i class="bi bi-trash3"></i></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-            </td>
-            <td>£{{ item.subtotal }}</td>
-            </tr>
-            {% endfor %}
-            </tbody>
-            </table>
+            {% else %}
+            <p>Your bag is empty</p>
+            {% endif %}
         </div>
-        {% else %}
-        <p>Your bag is empty</p>
-        {% endif %}
     </div>
-</div>
 </div>
 
 {% endblock %}

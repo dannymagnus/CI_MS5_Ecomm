@@ -5,15 +5,18 @@ from products.models import Inventory, Product
 # Create your views here.
 
 def view_bag(request):
-    """ A view that renders the bag contents page """
-
+    """
+    A view that renders the bag contents page
+    """
     return render(request, 'bag/bag.html')
 
 def add_to_bag(request, slug):
-    """ Add a quantity of the specified product to the shopping bag """
-
+    """ 
+    Add a quantity of the specified product to the shopping bag
+    """
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
+    # redirect url credit Code Institute Boutique Ado Project
     redirect_url = request.POST.get('redirect_url')
     sku = request.POST.get('sku')
     item = get_object_or_404(Inventory, sku=sku)
@@ -32,52 +35,35 @@ def add_to_bag(request, slug):
     return redirect(redirect_url)
 
 
-# def adjust_bag(request, item_id):
-#     """Adjust the quantity of the specified product to the specified amount"""
+def adjust_bag(request, inventory_id):
+    """
+    Adjust the quantity of the specified product to the specified amount
+    """
+    quantity = int(request.POST.get('quantity'))
+    bag = request.session.get('bag', {})
+    item = get_object_or_404(Inventory, pk=inventory_id)
+    sku = item.sku
+    
+    if quantity > 0:
+        bag[sku] = quantity
+    
+    else:
+        messages.success(request, f'Removed {item.product.friendly_name} from your bag')
+        bag.pop(sku)
 
-#     quantity = int(request.POST.get('quantity'))
-#     size = None
-#     if 'product_size' in request.POST:
-#         size = request.POST['product_size']
-#         sku = request.POST['sku']
-#     bag = request.session.get('bag', {})
-
-#     if size:
-#         if quantity > 0:
-#             bag[item_id]['items_by_size'][size] = quantity
-#             bag[item_id]['items_by_sku'][]
-#         else:
-#             del bag[item_id]['items_by_size'][size]
-#             if not bag[item_id]['items_by_size']:
-#                 bag.pop(item_id)
-#     else:
-#         if quantity > 0:
-#             bag[item_id] = quantity
-#         else:
-#             bag.pop(item_id)
-
-#     request.session['bag'] = bag
-#     return redirect(reverse('view_bag'))
+    request.session['bag'] = bag
+    return redirect(reverse('view_bag'))
 
 
 def remove_from_bag(request, item_id):
-    """Remove the item from the shopping bag"""
-
+    """
+    Remove the item from the shopping bag
+    """
     bag = request.session.get('bag', {})
-    try:
-        size = None
-        if 'product_size' in request.POST:
-            size = request.POST['product_size']
+    item = get_object_or_404(Inventory, pk=inventory_id)
+    sku = item.sku
 
-        if size:
-            del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['items_by_size']:
-                bag.pop(item_id)
-        else:
-            bag.pop(item_id)
-
-        request.session['bag'] = bag
-        return HttpResponse(status=200)
-
-    except Exception as e:
-        return HttpResponse(status=500)
+    bag.pop(sku)
+    messages.success(request, f'Removed {item.product.friendly_name} from your bag')
+    
+    return redirect(reverse('view_bag'))
