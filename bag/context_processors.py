@@ -23,7 +23,7 @@ def bag_contents(request):
             'subtotal': subtotal,
         })
 
-
+    # Delivery variables courtesy of Code Institute Boutique Ado
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
         free_delivery_delta = settings.FREE_DELIVERY_THRESHOLD - total

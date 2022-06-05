@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-<!-- {# {% load bag_tools %} #} -->
 
 
 {% block content %}
@@ -85,6 +84,24 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                <div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8"></div>
+                            <div class = "col d-flex flex-column align-items-end">
+                                <p><strong>Delivery:</strong></p>
+                                <p><strong>Grand Total:</strong></p>
+                            </div>
+                            <div class="col d-flex flex-column align-items-end">
+                                <p>£{{delivery}}</p>
+                                <p>£{{grand_total}}</p>
+                            </div>
+                            <div class = "w-100 d-flex justify-content-end">
+                                <a class="btn btn-primary" href="#">Proceed to Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             {% else %}
             <p>Your bag is empty</p>
