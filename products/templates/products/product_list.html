@@ -16,18 +16,18 @@
             <h2 class = "fs-6">CATEGORIES</h2>
             <hr>
             {% for category in categories %}
-            <p>{{ category.name }}</p>
+            <p><a class = "text-decoration-none text-reset" href="{% url 'all_products' %}?category__name__iexact={{category.name}}">{{ category.friendly_name }}</a></p>
             {% endfor %}
         </div>
         <div class="col">
             <div class="row mb-5">
-                <div class = "col d-flex flex-column justify-content-end align-items-end">
+                <div class = "col d-flex flex-column justify-content-end align-items-end me-5">
                     <form class = "w-75 d-flex justify-content-end align-items-center">
                         {{ filter.form.name__iexact.as_hidden }}
                         {{ filter.form.category__name__iexact.as_hidden }}
                         <label for="id_ordering">Order by:</label>
                         {{ filter.form.ordering }}
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary px-2 py-0 mx-2">Search</button>
                     </form>
                     <div class="pagination">
                         {% load my_tags %}    
@@ -41,31 +41,31 @@
                           Page {{ page_obj.number }} of {{ paginator.num_pages }}                        
                           {% if page_obj.has_next %}
                             {% if page_obj.next_page_number != paginator.num_pages %}
-                              <a href="?{% param_replace page=page_obj.next_page_number %}">Next</a>
+                              <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
                             {% endif %}
-                            <a href="?{% param_replace page=paginator.num_pages %}">Last</a>
+                            <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i></a>
                           {% endif %}                        
-                          <p>Objects {{ page_obj.start_index }}—{{ page_obj.end_index }}</p>
+                          <p>{{ page_obj.start_index }}—{{ page_obj.end_index }}</p>
                         {% endif %}
                     </div>
                 </div>
             <div class="row">
                 <div class="col-sm product-list d-flex flex-wrap">
                 {% for product in object_list %}
-                    <div class="card product-list m-3 me-md-3" style="width:320px;">
+                    <div class="card product-list m-3 me-md-3">
                         {% if product.image %}
-                        <a href="{% url 'product_detail' product.slug %}"><img class="card-img-top"
-                            src="{{ product.image.url }}" alt="Card image cap""></a>
+                        <a href="{% url 'product_detail' product.slug %}"><img class="card-img-top product-list-image"
+                            src="{{ product.image.url }}" alt="Card image cap"></a>
                         {% else %}
                         <a href="{% url 'product_detail' product.slug %}"><img class="card-img-top"
-                                src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap""></a>
+                                src="{% static 'img/garbage-home-triple.webp' %}" alt="Card image cap"></a>
                         {% endif %}
                         <div class=" card-body">
-                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-title fs-6"><strong>{{product.friendly_name}}</strong></p>
                         </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">£{{product.price}}</li>
-                        <li class="list-group-item">Rating: {{product.rating}}</li>
+                    <ul class="list-group list-group-flush border-top-0">
+                        <li class="list-group-item border-0">£{{product.price}}</li>
+                        <li class="list-group-item border-0">Rating: {{product.rating}}<a href="{% url 'product_detail' product.slug %}" class="btn btn-light">Details</a></li>
                     </ul>
                     </div>
                 {% endfor %}
@@ -76,27 +76,3 @@
 </div>
 
 {% endblock %}
-
-
-
-
-
-<!-- Test code for reverse relationship lookup
-
-
-<h1>This is the products page</h1>
-{{ products }}
-
-{% for product in products %}
-    Rendering the product: {{ product }}
-    Rendering the product color: {{ product.color }}
-    {% for product in product.inventory_set.all %}
-        product: {{product.product}}
-        qty: {{ product.count }}
-        color: {{ product.color }}
-    {% endfor %}
-{% endfor %}
-
-
-
--->

@@ -182,6 +182,17 @@
     height: 160px;
 }
 
+.product-list-image{
+    width:198px; 
+    height:198px; 
+    object-fit:contain;
+}
+
+.border-none{
+    border:none;
+}
+
+
 @media screen and (min-width: 801px) {
     .card.product-list {
         max-width: 200px;

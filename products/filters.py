@@ -28,9 +28,9 @@ class ProductFilter(django_filters.FilterSet):
     
     def filter_by_order(self,queryset,name,value):
         if value == 'priceasc':
-            expression = '-price'
-        elif value == 'pricedesc':
             expression = 'price'
+        elif value == 'pricedesc':
+            expression = '-price'
         elif value == 'namedesc':
             expression = 'name'
         else:
