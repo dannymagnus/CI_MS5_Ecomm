@@ -88,10 +88,10 @@ input[type=number] {
 
 .bg-img-holder-home::after{
     content: '';
-    background-image: url(../img/buy-scuba-equipment.webp);
+    background-image: url(../img/scuba-equipment-shop.jpg);
     background-size: cover;
     background-position-x: center;
-    background-position-y: top;
+    background-position-y: center;
     background-repeat: no-repeat;
     position: absolute;
     top: 0px;
