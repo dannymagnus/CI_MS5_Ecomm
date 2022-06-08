@@ -142,12 +142,14 @@ class OrderLineItem(models.Model):
         on_delete=models.CASCADE,
         related_name='lineitems'
         )
-    product = models.ForeignKey(
-        Product, null=False, blank=False,
+    sku = models.ForeignKey(
+        Inventory, null=False,
+        blank=False,
         on_delete=models.CASCADE
         )
-    inventory = models.ForeignKey(
-        Inventory, null=False, blank=False,
+    product = models.ForeignKey(
+        Product, null=False,
+        blank=False,
         on_delete=models.CASCADE
         )
     quantity = models.IntegerField(
@@ -158,7 +160,8 @@ class OrderLineItem(models.Model):
     lineitem_total = models.DecimalField(
         max_digits=6, 
         decimal_places=2,
-        null=False, blank=False,
+        null=False,
+        blank=False,
         editable=False
         )
 
