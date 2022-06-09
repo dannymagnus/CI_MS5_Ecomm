@@ -147,10 +147,10 @@ class OrderLineItem(models.Model):
         blank=False,
         on_delete=models.CASCADE
         )
-    product = models.ForeignKey(
-        Product, null=False,
-        blank=False,
-        on_delete=models.CASCADE
+    product = models.CharField(
+        max_length=80,
+        null=True,
+        blank=True
         )
     quantity = models.IntegerField(
         null=False,
