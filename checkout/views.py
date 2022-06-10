@@ -65,7 +65,6 @@ def checkout(request):
             for sku, quantity in bag.items():
                 try:
                     sku = Inventory.objects.get(sku=sku)
-                    print(sku)
                     order_line_item = OrderLineItem(
                             order=order,
                             sku=sku,
