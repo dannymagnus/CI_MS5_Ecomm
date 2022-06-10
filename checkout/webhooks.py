@@ -7,7 +7,6 @@ from checkout.webhook_handler import StripeWH_Handler
 
 import stripe
 
-
 @require_POST
 @csrf_exempt
 def webhook(request):
@@ -23,36 +22,33 @@ def webhook(request):
 
     try:
         event = stripe.Webhook.construct_event(
-            payload, sig_header, wh_secret
+        payload, sig_header, wh_secret
         )
     except ValueError as e:
         # Invalid payload
-        return HttpResponse(content=e, status=400)
+        return HttpResponse(status=400)
     except stripe.error.SignatureVerificationError as e:
         # Invalid signature
-        return HttpResponse(content=e, status=400)
+        return HttpResponse(status=400)
     except Exception as e:
         return HttpResponse(content=e, status=400)
-    
-    print('Success')
-    return HttpResponse(status=200)
 
-    # # Set up a webhook handler
-    # handler = StripeWH_Handler(request)
+    # Set up a webhook handler
+    handler = StripeWH_Handler(request)
 
-    # # Map webhook events to relevant handler functions
-    # event_map = {
-    #     'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
-    #     'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
-    # }
+    # Map webhook events to relevant handler functions
+    event_map = {
+        'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
+        'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
+    }
 
-    # # Get the webhook type from Stripe
-    # event_type = event['type']
+    # Get the webhook type from Stripe
+    event_type = event['type']
 
-    # # If there's a handler for it, get it from the event map
-    # # Use the generic one by default
-    # event_handler = event_map.get(event_type, handler.handle_event)
+    # If there's a handler for it, get it from the event map
+    # Use the generic one by default
+    event_handler = event_map.get(event_type, handler.handle_event)
 
-    # # Call the event handler with the event
-    # response = event_handler(event)
-    # return response
+    # Call the event handler with the event
+    response = event_handler(event)
+    return response
