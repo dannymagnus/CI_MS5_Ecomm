@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'checkout',
     'django_filters',
     'bootstrapform',
+    'profiles',
 
 ]
 
