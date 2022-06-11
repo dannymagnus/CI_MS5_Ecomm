@@ -41,6 +41,11 @@ input[type=number] {
     z-index: 1000;
 }
 
+/*------------Profile Pages--------------------------------*/
+.vh-90{
+    height:80vh;
+}
+
 /*------------Styling home page ---------------------------*/
 
 .navbar{
