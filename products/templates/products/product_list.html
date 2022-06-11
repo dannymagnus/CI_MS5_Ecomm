@@ -29,8 +29,7 @@
                         {{ filter.form.ordering }}
                         <button type="submit" class="btn btn-primary px-2 py-0 mx-2">Search</button>
                     </form>
-                    <div class="pagination">
-                        {% load my_tags %}    
+                    <div class="pagination">  
                         {% if is_paginated %}
                           {% if page_obj.has_previous %}
                             <a href="?{% param_replace page=1 %}">First</a>

@@ -1,5 +1,5 @@
 import django_filters
-from .models import Product
+from .models import Product, Inventory
 from django.forms.widgets import HiddenInput
 from django import forms
 
@@ -36,4 +36,17 @@ class ProductFilter(django_filters.FilterSet):
         else:
             expression = '-name'
         return queryset.order_by(expression)
-            
+
+
+class InventoryFilter(django_filters.FilterSet):
+    """
+    A class to filter the inventory model
+    """
+
+    class Meta:
+        model = Inventory
+        fields = {
+            'sku': ['iexact'],
+            'product__name': ['icontains'],
+            'product__brand__name': ['icontains'],
+        }

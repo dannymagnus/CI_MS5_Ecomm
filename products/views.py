@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRed
 from .models import Product, Inventory, Category
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
-from .filters import ProductFilter
+from .filters import ProductFilter, InventoryFilter
 from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
@@ -137,10 +137,18 @@ class InventoryListView(ListView):
     model = Inventory
     paginate_by = 15
 
+    def get_queryset(self, **kwargs):
+        search_results = InventoryFilter(self.request.GET, self.queryset)
+        self.no_search_result = True if not search_results.qs else False
+        # Returns the default queryset if an empty queryset is returned by the django_filters
+        return search_results.qs.distinct() or self.model.objects.all()
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
+        context['filter'] = InventoryFilter(self.request.GET, queryset=self.get_queryset())
         return context
+
 
 
 def update_inventory(request, slug):
