@@ -1,10 +1,34 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+
+from .models import UserProfile
+from django.views.generic import DetailView, UpdateView
+from .models import UserProfile, User
+from .forms import UserProfileForm
 
 
-def profile(request):
-    """ Display the user's profile. """
+class ProfileDetailView(DetailView):
 
-    template = 'profiles/profile.html'
-    context = {}
+    model = UserProfile
+    context_object_name = 'user_object'
+    template_name = 'profiles/profile.html'
 
-    return render(request, template, context)
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        return context
+
+
+class ProfileUpdateView(UpdateView):
+    """
+    A class view to update products
+    """
+    template_name = 'profiles/update_profile.html'
+    form_class = UserProfileForm
+
+    # def form_valid(self, form):
+    #     return super().form_valid(form)
+    def form_valid(self, form):
+        messages.success(self.request, "Product updated succesfully")
+        super().form_valid(form)
+        return HttpResponseRedirect(self.get_success_url())

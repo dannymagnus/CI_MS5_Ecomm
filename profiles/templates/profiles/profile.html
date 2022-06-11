@@ -2,25 +2,72 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
-{% endblock %}
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
+<link rel="stylesheet" href="{% static 'profiles/css/profile.css' %}">
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Profile</h2>
-                <hr>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="my-5">
+                PROFILE
+            </h1>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row p-3">
+        <div class="col-12 col-md-6">
+            <h2>PROFILE INFO</h2>
+            <hr>
+            <div class="container">
+                <table>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>{% if object.default_phone_number%}{{ object.default_phone_number }}{% else %}{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Street Adress:</td>
+                        <td>{% if object.default_street_address1 %}{{object.default_street_address1}}
+                            {% else %}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>{% if object.default_street_address2 %}{{object.default_street_address2}}
+                            {% else %}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td>Town/City:</td>
+                        <td>{% if object.default_town_or_city %}{{object.default_town_or_city}} {% else %}{% endif %}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>County:</td>
+                        <td>{% if object.default_county %}{{ object.default_county }} {% else %}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td>Postcode:</td>
+                        <td>{% if object.default_postcode %}{{ object.default_postcode }} {% else %}{% endif %}</td>
+                    </tr>
+                    <tr>
+                        <td>Postcode:</td>
+                        <td>{% if object.default_country %}{{ object.default_country }} {% else %}{% endif %}</td>
+                    </tr>
+                </table>
             </div>
         </div>
+        <div class="col-12 col-md-6">
+            <h2>ORDER HISTORY</h2>
+            <hr>
+            {% with object.orders.all as orders %}
+            {% for order in orders %}
+            <a href="{% url 'order_detail' order.id %}">{{order}}</a>
+            {% endfor %}
+            {% endwith %}
+        </div>
+
+    </div>
+</div>
+
 {% endblock %}

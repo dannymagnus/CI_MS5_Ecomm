@@ -115,7 +115,7 @@
                 aria-expanded="false"><i class="bi bi-person"></i></a>
               <ul class="dropdown-menu left-auto">
                 {% if user.is_authenticated %}
-                <li><a class="dropdown-item" href="{% url 'profile' %}">My Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' user.userprofile.id %}">My Profile</a></li>
                 <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
                 {% else %}
                 <li><a class="dropdown-item" href="{% url 'account_login' %}"">Login</a></li>
