@@ -19,6 +19,11 @@
     color: rgba(255,255,255,1);
 }
 
+.dropdown-menu[data-bs-popper].left-auto{
+    left:auto;
+    right:0;
+}
+
 /* ---Hide spinners in number fields (W3Schools)-----------*/
 
 /* Chrome, Safari, Edge, Opera */
