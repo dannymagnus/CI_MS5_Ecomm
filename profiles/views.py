@@ -21,14 +21,13 @@ class ProfileDetailView(DetailView):
 
 class ProfileUpdateView(UpdateView):
     """
-    A class view to update products
+    A class view to update userprofile
     """
-    template_name = 'profiles/update_profile.html'
+    model = UserProfile
     form_class = UserProfileForm
+    template_name = 'profiles/update_profile.html'
 
-    # def form_valid(self, form):
-    #     return super().form_valid(form)
     def form_valid(self, form):
-        messages.success(self.request, "Product updated succesfully")
+        messages.success(self.request, "Profile updated succesfully")
         super().form_valid(form)
         return HttpResponseRedirect(self.get_success_url())

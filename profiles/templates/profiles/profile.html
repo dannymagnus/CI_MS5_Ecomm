@@ -20,50 +20,66 @@
         <div class="col-12 col-md-6">
             <h2>PROFILE INFO</h2>
             <hr>
-            <div class="container">
+            <div class="row">
+                <div class="col-9">
                 <table>
                     <tr>
-                        <td>Phone:</td>
-                        <td>{% if object.default_phone_number%}{{ object.default_phone_number }}{% else %}{% endif %}
-                        </td>
+                        <td class = "px-3 py-1">Phone:</td>
+                        <td class = "px-3 py-1">{% if object.default_phone_number%}{{ object.default_phone_number }}{% else %}{% endif %}</td>
                     </tr>
                     <tr>
-                        <td>Street Adress:</td>
-                        <td>{% if object.default_street_address1 %}{{object.default_street_address1}}
+                        <td class = "px-3 py-1">Street Adress:</td>
+                        <td class = "px-3 py-1">{% if object.default_street_address1 %}{{object.default_street_address1}}
                             {% else %}{% endif %}</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td>{% if object.default_street_address2 %}{{object.default_street_address2}}
+                        <td class = "px-3 py-1"></td>
+                        <td class = "px-3 py-1">{% if object.default_street_address2 %}{{object.default_street_address2}}
                             {% else %}{% endif %}</td>
                     </tr>
                     <tr>
-                        <td>Town/City:</td>
-                        <td>{% if object.default_town_or_city %}{{object.default_town_or_city}} {% else %}{% endif %}
-                        </td>
+                        <td class = "px-3 py-1">Town/City:</td>
+                        <td class = "px-3 py-1">{% if object.default_town_or_city %}{{object.default_town_or_city}} {% else %}{% endif %}</td>
                     </tr>
                     <tr>
-                        <td>County:</td>
-                        <td>{% if object.default_county %}{{ object.default_county }} {% else %}{% endif %}</td>
+                        <td class = "px-3 py-1">County:</td>
+                        <td class = "px-3 py-1">{% if object.default_county %}{{ object.default_county }} {% else %}{% endif %}</td>
                     </tr>
                     <tr>
-                        <td>Postcode:</td>
-                        <td>{% if object.default_postcode %}{{ object.default_postcode }} {% else %}{% endif %}</td>
+                        <td class = "px-3 py-1">Postcode:</td>
+                        <td class = "px-3 py-1">{% if object.default_postcode %}{{ object.default_postcode }} {% else %}{% endif %}</td>
                     </tr>
                     <tr>
-                        <td>Postcode:</td>
-                        <td>{% if object.default_country %}{{ object.default_country }} {% else %}{% endif %}</td>
+                        <td class = "px-3 py-1">Postcode:</td>
+                        <td class = "px-3 py-1">{% if object.default_country %}{{ object.default_country }} {% else %}{% endif %}</td>
                     </tr>
                 </table>
+            </div>
+            <div class="col-3 position-relative">
+                <a class="btn btn-primary position-absolute bottom-0 end-0 me-3" href="{% url 'update_profile' object.id %}">Update</a>
+            </div>
             </div>
         </div>
         <div class="col-12 col-md-6">
             <h2>ORDER HISTORY</h2>
             <hr>
             {% with object.orders.all as orders %}
+            <table>
+                <tr>
+                    <th class = "px-3 py-1">Date</th>
+                    <th class = "px-3 py-1">Value</th>
+                    <th class = "px-3 py-1">Order</th>
+                </tr>
             {% for order in orders %}
-            <a href="{% url 'order_detail' order.id %}">{{order}}</a>
+            <tr>
+                <td class = "px-3 py-1">{{ order.date }}</td>
+                <td class = "px-3 py-1">${{ order.grand_total }}</td>
+                <td class = "px-3 py-1"><a class = "btn btn-primary" href="{% url 'order_detail' order.id %}">View</a></td>
+            </tr>
+            {% empty %}
+            <p>You have no previous orders linked to this profile</p>
             {% endfor %}
+            </table>
             {% endwith %}
         </div>
 
