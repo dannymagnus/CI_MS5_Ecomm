@@ -6,7 +6,7 @@
     font-weight:bold;
 }
 
-/* Style bag icon */
+/* --Style bag icon--------------------------------------- */
 .bi-bag{
     font-size: 1.5em;
 }
@@ -22,6 +22,29 @@
 .dropdown-menu[data-bs-popper].left-auto{
     left:auto;
     right:0;
+}
+
+
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    width: 600px;
+  }
+
+.visually_hidden { 
+    border: 0; 
+    clip: rect(0 0 0 0); 
+    height: 1px; 
+    margin: -1px; 
+    overflow: hidden; 
+    padding: 0; 
+    position: absolute; 
+    width: 1px; 
+}
+
+#mce-responses{
+    width:0;
+    margin:0;
 }
 
 /* ---Hide spinners in number fields (W3Schools)-----------*/
