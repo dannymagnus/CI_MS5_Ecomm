@@ -69,13 +69,18 @@
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                 aria-expanded="false">Shop</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'all_products' %}">All Products</a></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'all_products' %}">All Products</a>
+                </li>
                 {% for category in categories %}
-                <li><a class="dropdown-item" href="{% url 'all_products' %}?category__name__iexact={{category.name}}"">{{category.friendly_name}}</a></li>
-                          {% endfor %}
-                          {% if user.is_authenticated %}
-                          {% if user.is_staff %}
-                          <li><a class=" dropdown-item staff" href="{% url 'inventory_list' %}">Manage Inventory</a>
+                <li>
+                  <a class="dropdown-item" href="{% url 'all_products' %}?category__name__iexact={{category.name}}"">{{category.friendly_name}}</a>
+                </li>
+                {% endfor %}
+                {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                <li>
+                  <a class=" dropdown-item staff" href="{% url 'inventory_list' %}">Manage Inventory</a>
                 </li>
                 {% endif %}
                 {% endif %}
@@ -116,18 +121,29 @@
                 aria-expanded="false"><i class="bi bi-person"></i></a>
               <ul class="dropdown-menu left-auto">
                 {% if user.is_authenticated %}
-                <li><a class="dropdown-item" href="{% url 'profile' user.userprofile.id %}">My Profile</a></li>
-                <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'profile' user.userprofile.id %}">My Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                </li>
                 {% else %}
-                <li><a class="dropdown-item" href="{% url 'account_login' %}"">Login</a></li>
-                        <li><a class=" dropdown-item staff" href="{% url 'account_signup' %}">Register</a></li>
+                <li>
+                  <a class="dropdown-item" href="{% url 'account_login' %}"">Login</a>
+                </li>
+                <li>
+                  <a class=" dropdown-item staff" href="{% url 'account_signup' %}">Register</a>
+                </li>
                 {% endif %}
             </li>
-            <!-- Shopping cart link bootstrap icons -->
-
           </ul>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'view_bag' %}"><i class="bi bi-bag"></i></a>
+            <div class="bag-qty-container">
+            <a class="nav-link postition-relative me-2" href="{% url 'view_bag' %}"><i class="bi bi-bag"></i></a>
+            <div class = "bag-qty border-radius-50">
+            <h6 class = "text-center fs-6">{{product_count}}</h6>
+            </div>
+          </div>
           </li>
         </div>
       </div>
@@ -154,10 +170,9 @@
   {% block content %}
   {% endblock %}
 
-  <footer class="footer">
+  <footer class="footer mt-5">
     <!-- Begin Mailchimp Signup Form -->
-    </style>
-    <div class="container d-flex justify-content-center">
+    <div class="container d-flex justify-content-center w-100">
     <div id="mc_embed_signup">
       <form
         action="https://featherstar.us17.list-manage.com/subscribe/post?u=9149d14a7f81b786be4a1ee54&amp;id=4e6fba4a14"
@@ -180,10 +195,7 @@
               name="b_9149d14a7f81b786be4a1ee54_4e6fba4a14" tabindex="-1" value=""></div>
           <div class="optionalParent">
             <div class="clear foot">
-              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-              <p class="brandingLogo"><a href="http://eepurl.com/h4c7DD"
-                  title="Mailchimp - email marketing made easy and fun"><img
-                    src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+              <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button mx-auto">
             </div>
           </div>
         </div>
@@ -221,8 +233,6 @@
     var $mcj = jQuery.noConflict(true);
   </script>
   {% endblock %}
-
-
 </body>
 
 </html>
