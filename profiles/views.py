@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
+from django.contrib import messages
 
 from .models import UserProfile
 from django.views.generic import DetailView, UpdateView
