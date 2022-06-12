@@ -202,7 +202,45 @@
       </form>
     </div>
   </div>
-  </footer>
+  <div class="container-fluid ps-3 pt-3 pe-3 white-text bg-dark">
+    <div class="row">
+      <div class="col-md-4">
+        <h6 class="fs-5">Scubasport</h6>
+        <p>
+          Scubasport<br>
+          50 Diving Lane<br>
+          Dive Course Town<br>
+          Divesville<br>
+          D1 VNG
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h6 class = "fs-5">Shop</h6>
+        <p>
+        <a class = "text-reset text-decoration-none" href="{% url 'all_products' %}">Products</a><br>
+        <a class = "text-reset text-decoration-none" href="#">Courses</a>
+        </p>
+      </div>
+      <div class="col-md-2">
+        <h6 class = "fs-5">Information</h6>
+        <a class = "text-reset text-decoration-none" href="#">Contact</a>
+        <a class = "text-reset text-decoration-none" href="#">About</a>
+      </div>
+      <div class="col-md-2">
+        <h6 class = "fs-5">Account</h6>
+        <p>
+          <a class = "text-reset text-decoration-none" href="{% url 'account_signup' %}">Register</a><br>
+          <a class = "text-reset text-decoration-none" href = "{% url 'account_login' %}">Login</a>
+        </p>
+      </div>
+      <div class="col-md-2">
+        <a href="https://www.instagram.com" rel="noopener noreferrer" target="_blank"></a><i class="bi bi-instagram fs-3 me-1"></i></a>
+        <a href="https://www.facebook.com" rel="noopener noreferrer" target="_blank"></a><i class="bi bi-facebook fs-3 me-1"></i></a>
+        <a href="https://www.twitter.com" rel="noopener noreferrer" target="_blank"></a><i class="bi bi-twitter fs-3"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
   {% block postloadjs %}
   <script type="text/javascript">
