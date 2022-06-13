@@ -2,12 +2,14 @@
 
 
 html, body {
-    height: 100%;
+    min-height: 100%;
   }
 
 body {
 display: flex;
 flex-direction: column;
+padding: 0;
+margin:0;
 }
 
 .content {
@@ -16,6 +18,8 @@ flex-direction: column;
 
 .footer {
     flex-shrink: 0;
+    padding: 0;
+    margin:0;
 }
 
 .staff{
