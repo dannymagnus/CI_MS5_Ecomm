@@ -23,9 +23,11 @@
             <div class="row mb-5">
                 <div class = "col d-flex flex-column justify-content-end align-items-end me-5">
                     <form class = "w-75 d-flex justify-content-end align-items-center">
-                        {{ filter.form.name__iexact.as_hidden }}
-                        {{ filter.form.category__name__iexact.as_hidden }}
+                        {{ filter.form.name__iexact.as_hidden}}
+                        {{ filter.form.category__name__iexact.as_hidden}}
+                        {{ filter.form.brand__name__iexact.as_hidden}}
                         <label for="id_ordering">Order by:</label>
+                        <input type="hidden" name = "q" value = "{{request.GET.q }}">
                         {{ filter.form.ordering }}
                         <button type="submit" class="btn btn-primary px-2 py-0 mx-2">Search</button>
                     </form>

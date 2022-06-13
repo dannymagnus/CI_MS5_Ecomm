@@ -60,7 +60,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-lg-none" id="navbarTogglerDemo02">
-          <ul class="d-lg-none d-xl-flex navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="d-xl-flex navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
@@ -79,6 +79,9 @@
                 {% endfor %}
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
+                <li>
+                  <a class=" dropdown-item staff" href="{% url 'create_product' %}">Create Product</a>
+                </li>
                 <li>
                   <a class=" dropdown-item staff" href="{% url 'inventory_list' %}">Manage Inventory</a>
                 </li>

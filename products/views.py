@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRed
 from .models import Product, Inventory, Category
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
-from .filters import ProductFilter, InventoryFilter
+from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
 from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
@@ -60,8 +60,6 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
     
-        
-    
     def form_valid(self, form):
         messages.success(self.request, f'Product created successfully')
         return super().form_valid(form)
@@ -105,29 +103,36 @@ class ProductDeleteView(DeleteView):
         return get_object_or_404(Product, slug=slug_)
 
 
-class ProductSearchView(View):
+class ProductSearchView(ListView):
     """
-    A class to perform basic search functions
+    A class view to view all products
     """
-    def get(self, request, *args, **kwargs):
+    model = Product
+    paginate_by = 12
+    
+    
+    def get_queryset(self, **kwargs):
         queryset = Product.objects.all()
-        query = request.GET.get('q')
-        print(query)
+        query = self.request.GET.get('q')
         categories= Category.objects.all()
         if query:
-            queryset = queryset.filter(
+            queryset = Product.objects.filter(                
                 Q(name__icontains=query) |
                 Q(description__icontains=query) |
                 Q(category__name__icontains=query) |
                 Q(brand__name__icontains=query)  |
                 Q(holding__name__icontains=query)   |
-                Q(holding__friendly_name__icontains=query)       
-            ).distinct()
-        context = {
-            'object_list': queryset,
-            'categories': categories,
-        }
-        return render(request, 'products/product_list.html', context)
+                Q(holding__friendly_name__icontains=query)).distinct()
+        search_results = ProductFilter(self.request.GET, queryset)
+        self.no_search_result = True if not search_results.qs else False
+        # Returns the default queryset if an empty queryset is returned by the django_filters
+        return search_results.qs.distinct() or self.model.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['filter'] = ProductOrderFilter(self.request.GET, queryset=self.get_queryset())
+        return context
 
 
 class InventoryListView(ListView):

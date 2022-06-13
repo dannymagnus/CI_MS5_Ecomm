@@ -5,8 +5,14 @@
 
 {% with product.inventory_set.all as inventory %}
 
-<div class="container d-flex justify-content-center">
-
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="my-5">
+          PRODUCT DETAILS
+        </h1>
+      </div>
+    </div>
 </div>
 
 <div class="container">
@@ -68,8 +74,11 @@
                             </div>
                         </div>
                         <div class = "mt-5">
+                            <div>
                         <input type="submit" value="Add to Cart" class="btn btn-primary">
                         <a class = "btn btn-primary" href="{% url 'view_bag' %}">Go to bag</a>
+                    </div>
+                        <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-dark mt-2"><i class="bi bi-chevron-double-left"></i>Continue Shopping</a>
                     </div>
                     <input type="hidden" name="sku" value="" id="sku">
                     <input type="hidden" name="redirect_url" value="{{request.path}}">

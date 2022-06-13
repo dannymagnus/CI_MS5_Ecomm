@@ -6,7 +6,11 @@ from .models import Product, Inventory
 class ProductModelForm(forms.ModelForm):
     class Meta:
         model = Product
-        exclude = ['slug','holding', 'color',]
+        exclude = ['slug', 'color',]
+        widgets = {
+            'holding': forms.CheckboxSelectMultiple,
+        }
+
 
 
 class InventoryModelForm(forms.ModelForm):

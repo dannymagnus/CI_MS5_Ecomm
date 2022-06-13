@@ -24,8 +24,8 @@ class ProductFilter(django_filters.FilterSet):
             'category__name': ['iexact'],
             'brand__name': ['iexact'],
         }
-        widgets = {'name': forms.HiddenInput()}
-    
+
+
     def filter_by_order(self,queryset,name,value):
         if value == 'priceasc':
             expression = 'price'
@@ -51,33 +51,3 @@ class InventoryFilter(django_filters.FilterSet):
             'product__brand__name': ['icontains'],
         }
         
-
-class ProductOrderFilter(django_filters.FilterSet):
-    """
-    A class to filter the product model
-    """
-    
-    CHOICES = (
-        ('priceasc' , 'Price (Ascending)'),
-        ('pricedesc','Price (Descending)'),
-        ('namedesc','Name (Descending)'),
-        ('nameasc','Name (Ascending)'),
-    )
-    
-    ordering = django_filters.ChoiceFilter(label='Ordering', choices=CHOICES, method='filter_by_order')
-    
-    class Meta:
-        model = Product
-        fields = {}
-
-
-    def filter_by_order(self,queryset,name,value):
-        if value == 'priceasc':
-            expression = 'price'
-        elif value == 'pricedesc':
-            expression = '-price'
-        elif value == 'namedesc':
-            expression = 'name'
-        else:
-            expression = '-name'
-        return queryset.order_by(expression)
