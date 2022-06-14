@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="my-5">
+          DELETE BRAND
+        </h1>
+      </div>
+    </div>
+</div>
+<div class = "w-25 mx-auto border rounded p-5 ">
+  <form action='.' method='POST'>{% csrf_token %}
+      <p>Are you sure you want to delete {{ object.name }}?</p>
+      <p>This will set all values to blank in linked items.</p>
+      <p><input class = "btn btn-primary" type = 'submit' value='Yes'/>  <a class = "btn btn-secondary" href='../'>Cancel</a></p>
+  </form>
+</div>
+
+{% endblock %}

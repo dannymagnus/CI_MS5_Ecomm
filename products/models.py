@@ -96,12 +96,6 @@ class Product(models.Model):
         decimal_places=2,
         max_digits=6,
         )
-    rating = models.DecimalField(
-        decimal_places=1,
-        max_digits=2,
-        null=True,
-        blank=True,
-        )
     image = models.ImageField(
         upload_to='products/',
         blank=True,

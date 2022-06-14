@@ -24,5 +24,12 @@ urlpatterns = [
     path('<int:pk>/delete_color/', views.ColorDeleteView.as_view(), name='delete_color'),
     path('<int:pk>/update_color/', views.ColorUpdateView.as_view(), name='update_color'),
     path('create_color/', views.ColorCreateView.as_view(), name='add_color'),
-
+    path('brands/', views.BrandListView.as_view(), name='brand_list'),
+    path('<int:pk>/delete_brand/', views.BrandDeleteView.as_view(), name='delete_brand'),
+    path('<int:pk>/update_brand/', views.BrandUpdateView.as_view(), name='update_brand'),
+    path('create_brand/', views.BrandCreateView.as_view(), name='add_brand'),
+    path('categories/', views.CategoryListView.as_view(), name='category_list'),
+    path('<int:pk>/delete_category/', views.CategoryDeleteView.as_view(), name='delete_category'),
+    path('<int:pk>/update_category/', views.CategoryUpdateView.as_view(), name='update_category'),
+    path('create_category/', views.CategoryCreateView.as_view(), name='add_category'),
 ]

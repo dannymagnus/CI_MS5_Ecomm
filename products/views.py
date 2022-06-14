@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.utils.http import urlencode
 from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
-from .models import Product, Inventory, Category, Color
+from .models import Product, Inventory, Category, Color, Brand
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
@@ -258,3 +258,202 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
         return self.render_to_response(context)
 
     success_url = '/products/colors'
+
+
+class BrandListView(ListView):
+    
+    model = Brand
+    template_name = '/products/brand_list.html'
+
+
+class BrandDeleteView(DeleteView):
+    """
+    A class view to delete brands
+    """
+    model = Brand
+    template_name = 'products/delete_brand.html'
+    
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, 'Brand removed successfully')
+        success_url = '/products/brands'
+        return success_url
+
+
+class BrandUpdateView(UpdateView):
+    """
+    A class view to update colors
+    """
+    model = Brand
+    fields = ('__all__')
+    template_name = 'products/update_brand.html'
+    success_url = '/products/brands'
+    
+    def form_valid(self, form):
+        messages.success(self.request, f'Brand updated successfully')
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        messages.success(self.request, 'Sorry, something went wrong')
+        return self.render_to_response(context)
+
+
+class BrandCreateView(UserPassesTestMixin, CreateView):
+    """
+    A class view to create brands
+    """
+    model = Brand
+    fields = ('__all__')
+    template_name = 'products/add_brand.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
+
+    def form_valid(self, form):
+        messages.success(self.request, f'Brand added successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        return self.render_to_response(context)
+
+    success_url = '/products/brands'
+
+
+class ColorListView(ListView):
+    
+    model = Color
+    template_name = '/products/color_list.html'
+
+
+class ColorDeleteView(DeleteView):
+    """
+    A class view to delete colors
+    """
+    model = Color
+    template_name = 'products/delete_color.html'
+    
+    
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, 'Color removed successfully')
+        success_url = '/products/colors/'
+        return success_url
+
+
+class ColorUpdateView(UpdateView):
+    """
+    A class view to update colors
+    """
+    model = Color
+    fields = ('__all__')
+    template_name = 'products/update_color.html'
+    success_url = '/products/colors/'
+    
+    def form_valid(self, form):
+        messages.success(self.request, f'Color updated successfully')
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        messages.success(self.request, 'Sorry, something went wrong')
+        return self.render_to_response(context)
+
+
+class ColorCreateView(UserPassesTestMixin, CreateView):
+    """
+    A class view to create products
+    """
+    model = Color
+    fields = ('__all__')
+    template_name = 'products/add_color.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
+
+    def form_valid(self, form):
+        messages.success(self.request, f'Color added successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        return self.render_to_response(context)
+
+    success_url = '/products/colors'
+
+
+class CategoryListView(ListView):
+    
+    model = Category
+    template_name = '/products/category_list.html'
+
+
+class CategoryDeleteView(DeleteView):
+    """
+    A class view to delete categories
+    """
+    model = Category
+    template_name = 'products/delete_category.html'
+    
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, 'Category removed successfully')
+        success_url = '/products/categories'
+        return success_url
+
+
+class CategoryUpdateView(UpdateView):
+    """
+    A class view to update colors
+    """
+    model = Category
+    fields = ('__all__')
+    template_name = 'products/update_category.html'
+    success_url = '/products/categories'
+    
+    def form_valid(self, form):
+        messages.success(self.request, f'Category updated successfully')
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        messages.success(self.request, 'Sorry, something went wrong')
+        return self.render_to_response(context)
+
+
+class CategoryCreateView(UserPassesTestMixin, CreateView):
+    """
+    A class view to create brands
+    """
+    model = Category
+    fields = ('__all__')
+    template_name = 'products/update_category.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
+
+    def form_valid(self, form):
+        messages.success(self.request, f'Category added successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        return self.render_to_response(context)
+
+    success_url = '/products/categories'

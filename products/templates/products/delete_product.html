@@ -10,8 +10,11 @@
       </div>
     </div>
 </div>
-<form action='.' method='POST'>{% csrf_token %}
-    <h1>Are you sure you want to delete the product?"{{ object.name }}"?</h1>
-    <p><input type='submit' value='Yes' />  <a href='../'>Cancel</a></p>
-</form>
+<div class = "w-25 mx-auto border rounded p-5 ">
+    <form action='.' method='POST'>{% csrf_token %}
+        <h1>Are you sure you want to delete {{ object.name }}?</h1>
+        <p><input class = "btn btn-primary" type = 'submit' value='Yes' />  <a class = "btn btn-secondary" href='../'>Cancel</a></p>
+    </form>
+</div>
+
 {% endblock %}
