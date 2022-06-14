@@ -32,6 +32,16 @@ class Category(models.Model):
         """
         return self.name
 
+    def get_friendly_name(self):
+        """
+        Returns the category friendly name string
+        Args:
+            self (object): self.
+        Returns:
+            The category friendly name string
+        """
+        return self.friendly_name
+
 class Product(models.Model):
     """
     A class for the product model
@@ -41,7 +51,7 @@ class Product(models.Model):
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
         ordering = ('name',)
-        
+
     name = models.CharField(
         max_length=254,
         )
@@ -50,6 +60,17 @@ class Product(models.Model):
         null=True,
         blank=True
         )
+    
+    def get_friendly_name(self):
+        """
+        Returns the category friendly name string
+        Args:
+            self (object): self.
+        Returns:
+            The category friendly name string
+        """
+        return self.friendly_name
+    
     description = models.TextField(
         max_length=1000,
         null=True,
@@ -99,6 +120,7 @@ class Product(models.Model):
     image = models.ImageField(
         upload_to='products/',
         blank=True,
+        null=True,
         )
     slug = models.SlugField(
         blank=True,
@@ -167,7 +189,16 @@ class Size(models.Model):
         null=True,
         blank=True
     )
-
+    
+    def get_friendly_name(self):
+        """
+        Returns the category friendly name string
+        Args:
+            self (object): self.
+        Returns:
+            The category friendly name string
+        """
+        return self.friendly_name    
 
     # Show object by name in admin panel
     def __str__(self):

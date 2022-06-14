@@ -393,10 +393,17 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
     success_url = '/products/colors'
 
 
-class CategoryListView(ListView):
+class CategoryListView(UserPassesTestMixin,ListView):
     
     model = Category
     template_name = '/products/category_list.html'
+    
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
 
 class CategoryDeleteView(DeleteView):
@@ -427,7 +434,7 @@ class CategoryUpdateView(UpdateView):
     
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
-        context.update({"Error": "Soemthing went wrong"})
+        context.update({"Error": "Something went wrong"})
         messages.success(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
