@@ -1,11 +1,3 @@
-#id_description{
-    height:100px;
-};
-
-#div_id_brand::after{
-    content:".";
-}
-
 table.table-fit {
     width: auto !important;
     table-layout: auto !important;

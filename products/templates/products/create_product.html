@@ -31,6 +31,9 @@
                     <form method="POST" class="p-1">
                         {% csrf_token %}
                         {{ form | crispy }}
+                        <a id = "color_link" class = "btn btn-primary" href = "{% url 'color_list' %}">Colors</a>
+                        <a id = "category_link" class = "btn btn-primary" href = "{% url 'all_products' %}">Categories</a>
+                        <a id = "brand_link" class = "btn btn-primary" href = "{% url 'all_products' %}">Brand</a>
                         <br>
                         <button class="btn btn-primary ms-auto me-3" type="submit">Save</button><a
                             href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-secondary">Cancel</a>

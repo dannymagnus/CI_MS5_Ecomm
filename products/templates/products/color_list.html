@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h1 class="my-5">
+          COLOR MANAGEMENT
+        </h1>
+      </div>
+    </div>
+</div>
+<div class = "container">
+    <div class=" mx-auto w-50 table-responsive">
+        <div class = "d-flex w-100 justify-content-end"><a class = "btn btn-success" href="{% url 'add_color' %}">Add</a></div>
+    <table class="table table-sm">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Color</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {% for object in object_list %}
+          <th scope="row">{{ object.name }}</th>
+          <td><div class = 'd-flex justify-content-end'><a class = 'me-3 btn btn-primary' href="{% url 'update_color' object.id %}">Update</a><a class = 'btn btn-danger' href="{% url 'delete_color' object.id %}">Remove</a></div></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+{% endblock %}

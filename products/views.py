@@ -2,13 +2,14 @@ from django.db.models import Q
 from django.contrib import messages
 from django.utils.http import urlencode
 from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
-from .models import Product, Inventory, Category
+from .models import Product, Inventory, Category, Color
 from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
 from django.contrib.auth.mixins import UserPassesTestMixin
+from django.contrib.messages.views import SuccessMessageMixin
 
-# Create your views here.
+
 class ProductListView(ListView):
     """
     A class view to view all products
@@ -27,7 +28,7 @@ class ProductListView(ListView):
         context['categories'] = Category.objects.all()
         context['filter'] = ProductFilter(self.request.GET, queryset=self.get_queryset())
         return context
-    
+
 
 def product_detail(request, slug):
     """
@@ -44,6 +45,7 @@ def product_detail(request, slug):
         'variants': variants,
         }
     return render(request, 'products/product_detail.html', context)
+
 
 class ProductCreateView(UserPassesTestMixin, CreateView):
     """
@@ -91,13 +93,14 @@ class ProductUpdateView(UpdateView):
         super().form_valid(form)
         return HttpResponseRedirect(self.get_success_url())
 
+
 class ProductDeleteView(DeleteView):
     """
     A class view to delete products
     """
     template_name = 'products/delete_product.html'
     success_url = '/products'
-    
+
     def get_object(self):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
@@ -109,8 +112,7 @@ class ProductSearchView(ListView):
     """
     model = Product
     paginate_by = 12
-    
-    
+  
     def get_queryset(self, **kwargs):
         queryset = Product.objects.all()
         query = self.request.GET.get('q')
@@ -155,7 +157,6 @@ class InventoryListView(ListView):
         return context
 
 
-
 def update_inventory(request, slug):
     """
     A view to detailed product view, all product information
@@ -190,3 +191,70 @@ class InventoryUpdateView(UpdateView):
     def form_valid(self, form):
         messages.success(self.request, f'Inventory updated successfully')
         return super().form_valid(form)
+
+
+class ColorListView(ListView):
+    
+    model = Color
+    template_name = '/products/color_list.html'
+
+
+class ColorDeleteView(DeleteView):
+    """
+    A class view to delete colors
+    """
+    model = Color
+    template_name = 'products/delete_color.html'
+    
+    
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, 'Color removed successfully')
+        success_url = '/products/colors/'
+        return success_url
+
+
+class ColorUpdateView(UpdateView):
+    """
+    A class view to update colors
+    """
+    model = Color
+    fields = ('__all__')
+    template_name = 'products/update_color.html'
+    success_url = '/products/colors/'
+    
+    def form_valid(self, form):
+        messages.success(self.request, f'Color updated successfully')
+        return super().form_valid(form)
+    
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        messages.success(self.request, 'Sorry, something went wrong')
+        return self.render_to_response(context)
+
+
+class ColorCreateView(UserPassesTestMixin, CreateView):
+    """
+    A class view to create products
+    """
+    model = Color
+    fields = ('__all__')
+    template_name = 'products/add_color.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
+
+    def form_valid(self, form):
+        messages.success(self.request, f'Color added successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        context = self.get_context_data(form=form)
+        context.update({"Error": "Soemthing went wrong"})
+        return self.render_to_response(context)
+
+    success_url = '/products/colors'

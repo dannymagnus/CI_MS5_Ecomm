@@ -83,14 +83,20 @@ $('select').on('change', function () {
     populateSku();
 });
 
-$('<a id = "brands_link" class = "btn btn-primary" href = {% url "products" %}>Brands</a>').insertAfter("#id_brand");
+$('#id_color').closest('div').addClass(('color-div'));
+$('.color-div').addClass('position-relative');
+$('.color-div').append($("#color_link"));
+$('#color_link').addClass('position-absolute top-0 end-0').css('width','110px');
+
 $('#id_brand').closest('div').addClass(('brand-div'));
 $('.brand-div').addClass('position-relative');
-$('#brands_link').addClass('position-absolute top-0 end-0').css('width','110px');
+$('.brand-div').append($("#brand_link"));
+$('#brand_link').addClass('position-absolute top-0 end-0').css('width','110px');
 
-$('<a id = "category_link" class = "btn btn-primary" href = {% url "products" %}>Categories</a>').insertAfter("#id_category");
 $('#id_category').closest('div').addClass(('category-div'));
 $('.category-div').addClass('position-relative');
+$('.category-div').append($("#category_link"));
 $('#category_link').addClass('position-absolute top-0 end-0').css('width','110px');
+
 
 

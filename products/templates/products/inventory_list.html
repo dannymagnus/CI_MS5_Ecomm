@@ -3,7 +3,10 @@
 {% load my_tags %}
 {% block content %}
 {% load crispy_forms_tags %}
-
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'products/css/products.css' %}">
+{% endblock %}
 {{object.product.name}}
   <div class="container">
     <div class="row">
@@ -61,6 +64,7 @@
     </div>
     </div>
     <div class = "container">
+      <div class="table-responsive">
       <table class="table">
         <thead class="thead-dark">
           <tr>
@@ -80,11 +84,12 @@
             <td>{{ object.product }}</td>
             <td>{{ object.size }}</td>
             <td>{{ object.count }}</td>
-            <td><a href="{% url 'update_inventory' object.id %}">Update</a></td>
+            <td><a href="{% url 'update_inventory' object.id %}">Ajust Qty</a></td>
           </tr>
           {% endfor %}
         </tbody>
       </table>
+    </div>
     </div>
     <div class="ms-auto">
       {% if is_paginated %}

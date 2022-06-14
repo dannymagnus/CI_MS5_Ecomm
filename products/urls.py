@@ -14,12 +14,15 @@ urlpatterns = [
     path('', views.ProductListView.as_view(), name='all_products'),
     # path('detail/<slug:slug>/', views.ProductDetailView.as_view(), name='product_detail'),
     path('detail/<slug:slug>/', views.product_detail, name='product_detail'),
-    path('create/', views.ProductCreateView.as_view(), name='create_product'),
+    path('create_product/', views.ProductCreateView.as_view(), name='create_product'),
     path('<slug:slug>/update/', views.ProductUpdateView.as_view(), name='update_product'),
     path('<slug:slug>/delete/', views.ProductDeleteView.as_view(), name='delete_product'),
     path('search/', views.ProductSearchView.as_view(), name='search_products'),
     path('<int:id>/update-inventory/', views.InventoryUpdateView.as_view(), name='update_inventory'),
     path('inventory/', views.InventoryListView.as_view(), name='inventory_list'),
-
+    path('colors/', views.ColorListView.as_view(), name='color_list'),
+    path('<int:pk>/delete_color/', views.ColorDeleteView.as_view(), name='delete_color'),
+    path('<int:pk>/update_color/', views.ColorUpdateView.as_view(), name='update_color'),
+    path('create_color/', views.ColorCreateView.as_view(), name='add_color'),
 
 ]
