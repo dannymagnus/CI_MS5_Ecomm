@@ -1,7 +1,7 @@
+import random
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-import random
 
 
 class Category(models.Model):
@@ -20,7 +20,7 @@ class Category(models.Model):
         null=True,
         blank=True
     )
-    
+
     # Show object by name in admin panel
     def __str__(self):
         """
@@ -30,7 +30,7 @@ class Category(models.Model):
         Returns:
             The category name string
         """
-        return self.name
+        return str(self.name)
 
     def get_friendly_name(self):
         """
@@ -46,7 +46,7 @@ class Product(models.Model):
     """
     A class for the product model
     """
-    
+
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
@@ -60,7 +60,7 @@ class Product(models.Model):
         null=True,
         blank=True
         )
-    
+
     def get_friendly_name(self):
         """
         Returns the category friendly name string
@@ -70,7 +70,7 @@ class Product(models.Model):
             The category friendly name string
         """
         return self.friendly_name
-    
+
     description = models.TextField(
         max_length=1000,
         null=True,
@@ -82,7 +82,7 @@ class Product(models.Model):
         null=True,
         blank=True,
         )
-    
+
     GENDER_CHOICES = (
     ('M', 'Male'),
     ('F', 'Female'),
@@ -136,10 +136,15 @@ class Product(models.Model):
         """
         super(Product, self).save(*args, **kwargs)
         if not self.slug and self.name:
-            self.slug = slugify(self.name)+str(self.id)
+            self.slug = slugify(self.name)
         super(Product, self).save(*args, **kwargs)
 
+
+
     def get_absolute_url(self):
+        """
+        A method to return the absolute url
+        """
         return reverse('product_detail', args=[str(self.slug)])
     
     def __str__(self):
@@ -150,11 +155,13 @@ class Product(models.Model):
         Returns:
             The category name string
         """
-        return self.name
+        return str(self.name)
 
 
 class Brand(models.Model):
-    
+    """
+    A class for product brands
+    """
     class Meta:
         verbose_name = "Brand"
         verbose_name_plural = "Brands"
@@ -172,10 +179,13 @@ class Brand(models.Model):
         Returns:
             The category name string
         """
-        return self.name
+        return str(self.name)
 
 
 class Size(models.Model):
+    """
+    A class for product sizes
+    """
     class Meta:
         verbose_name = "Size"
         verbose_name_plural = "Sizes"
@@ -183,13 +193,12 @@ class Size(models.Model):
     name = models.CharField(
         max_length=254
     )
-
     friendly_name = models.CharField(
         max_length=254,
         null=True,
         blank=True
     )
-    
+
     def get_friendly_name(self):
         """
         Returns the category friendly name string
@@ -198,7 +207,7 @@ class Size(models.Model):
         Returns:
             The category friendly name string
         """
-        return self.friendly_name    
+        return self.friendly_name
 
     # Show object by name in admin panel
     def __str__(self):
@@ -209,10 +218,13 @@ class Size(models.Model):
         Returns:
             The category name string
         """
-        return self.name
+        return str(self.name)
 
 
 class Color(models.Model):
+    """
+    A class for the color model
+    """
     name = models.CharField(
         max_length=254,
         )
@@ -226,11 +238,13 @@ class Color(models.Model):
         Returns:
             The category name string
         """
-        return self.name
+        return str(self.name)
 
 
 class Inventory(models.Model):
-    
+    """
+    A class for the Inventory model
+    """
     class Meta:
         ordering = ('product',)
 
@@ -246,16 +260,19 @@ class Inventory(models.Model):
     count = models.IntegerField(
         default=0
         )
-    
+
             #Function to create unique SKU number
-    def create_new_sku_number():
+    def create_new_sku_number(self):
+        """
+        Create new SKU number
+        """
         not_unique = True
         while not_unique:
             unique_ref = random.randint(100000, 999999)
             if not Inventory.objects.filter(sku=unique_ref):
                 not_unique = False
         return str(unique_ref)
-    
+
     sku = models.CharField(
         max_length = 10,
         blank=False,
@@ -273,4 +290,4 @@ class Inventory(models.Model):
         Returns:
             The category name string
         """
-        return self.sku
+        return str(self.sku)

@@ -1,13 +1,11 @@
 from django.db.models import Q
 from django.contrib import messages
-from django.utils.http import urlencode
-from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from .models import Product, Inventory, Category, Color, Brand
-from django.views.generic import View, ListView, DetailView, CreateView, DeleteView, UpdateView
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.contrib.messages.views import SuccessMessageMixin
 
 
 class ProductListView(ListView):
@@ -16,7 +14,7 @@ class ProductListView(ListView):
     """
     model = Product
     paginate_by = 12
-    
+
     def get_queryset(self, **kwargs):
         search_results = ProductFilter(self.request.GET, self.queryset)
         self.no_search_result = True if not search_results.qs else False
@@ -54,18 +52,18 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
     template_name = 'products/create_product.html'
     form_class = ProductModelForm
     queryset = Product.objects.all()
-    
+
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
     redirect_field_name='/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
-    
+
     def form_valid(self, form):
-        messages.success(self.request, f'Product created successfully')
+        messages.success(self.request, 'Product created successfully')
         return super().form_valid(form)
-    
+
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
@@ -82,7 +80,7 @@ class ProductUpdateView(UpdateView):
     form_class = ProductModelForm
     queryset = Product.objects.all()
 
-    def get_object(self):
+    def get_object(self,queryset=queryset):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
 
@@ -112,13 +110,12 @@ class ProductSearchView(ListView):
     """
     model = Product
     paginate_by = 12
-  
+
     def get_queryset(self, **kwargs):
         queryset = Product.objects.all()
         query = self.request.GET.get('q')
-        categories= Category.objects.all()
         if query:
-            queryset = Product.objects.filter(                
+            queryset = Product.objects.filter(
                 Q(name__icontains=query) |
                 Q(description__icontains=query) |
                 Q(category__name__icontains=query) |
@@ -167,7 +164,7 @@ def update_inventory(request, slug):
     """
     product = get_object_or_404(Product, slug=slug)
     variants = product.inventory_set.all()
-    
+
     context = {
         'product': product,
         'variants': variants,
@@ -184,17 +181,19 @@ class InventoryUpdateView(UpdateView):
     queryset = Inventory.objects.all()
     success_url = '/products/inventory'
 
-    def get_object(self):
+    def get_object(self, queryset=queryset):
         id_ = self.kwargs.get("id")
         return get_object_or_404(Inventory, id=id_)
 
     def form_valid(self, form):
-        messages.success(self.request, f'Inventory updated successfully')
+        messages.success(self.request, 'Inventory updated successfully')
         return super().form_valid(form)
 
 
 class ColorListView(ListView):
-    
+    """
+    A class view to list colors
+    """
     model = Color
     template_name = '/products/color_list.html'
 
@@ -205,8 +204,7 @@ class ColorDeleteView(DeleteView):
     """
     model = Color
     template_name = 'products/delete_color.html'
-    
-    
+
     def get_success_url(self, **kwargs):
         messages.success(self.request, 'Color removed successfully')
         success_url = '/products/colors/'
@@ -221,11 +219,11 @@ class ColorUpdateView(UpdateView):
     fields = ('__all__')
     template_name = 'products/update_color.html'
     success_url = '/products/colors/'
-    
+
     def form_valid(self, form):
-        messages.success(self.request, f'Color updated successfully')
+        messages.success(self.request, 'Color updated successfully')
         return super().form_valid(form)
-    
+
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
@@ -249,7 +247,7 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
     login_url = '/accounts/login'
 
     def form_valid(self, form):
-        messages.success(self.request, f'Color added successfully')
+        messages.success(self.request, 'Color added successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -261,7 +259,9 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
 
 
 class BrandListView(ListView):
-    
+    """
+    A view for to list brands
+    """
     model = Brand
     template_name = '/products/brand_list.html'
 
@@ -272,7 +272,7 @@ class BrandDeleteView(DeleteView):
     """
     model = Brand
     template_name = 'products/delete_brand.html'
-    
+
     def get_success_url(self, **kwargs):
         messages.success(self.request, 'Brand removed successfully')
         success_url = '/products/brands'
@@ -281,17 +281,17 @@ class BrandDeleteView(DeleteView):
 
 class BrandUpdateView(UpdateView):
     """
-    A class view to update colors
+    A class view to update brands
     """
     model = Brand
     fields = ('__all__')
     template_name = 'products/update_brand.html'
     success_url = '/products/brands'
-    
+
     def form_valid(self, form):
-        messages.success(self.request, f'Brand updated successfully')
+        messages.success(self.request, 'Brand updated successfully')
         return super().form_valid(form)
-    
+
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
@@ -315,7 +315,7 @@ class BrandCreateView(UserPassesTestMixin, CreateView):
     login_url = '/accounts/login'
 
     def form_valid(self, form):
-        messages.success(self.request, f'Brand added successfully')
+        messages.success(self.request, 'Brand added successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):
@@ -326,78 +326,13 @@ class BrandCreateView(UserPassesTestMixin, CreateView):
     success_url = '/products/brands'
 
 
-class ColorListView(ListView):
-    
-    model = Color
-    template_name = '/products/color_list.html'
-
-
-class ColorDeleteView(DeleteView):
-    """
-    A class view to delete colors
-    """
-    model = Color
-    template_name = 'products/delete_color.html'
-    
-    
-    def get_success_url(self, **kwargs):
-        messages.success(self.request, 'Color removed successfully')
-        success_url = '/products/colors/'
-        return success_url
-
-
-class ColorUpdateView(UpdateView):
-    """
-    A class view to update colors
-    """
-    model = Color
-    fields = ('__all__')
-    template_name = 'products/update_color.html'
-    success_url = '/products/colors/'
-    
-    def form_valid(self, form):
-        messages.success(self.request, f'Color updated successfully')
-        return super().form_valid(form)
-    
-    def form_invalid(self, form):
-        context = self.get_context_data(form=form)
-        context.update({"Error": "Soemthing went wrong"})
-        messages.success(self.request, 'Sorry, something went wrong')
-        return self.render_to_response(context)
-
-
-class ColorCreateView(UserPassesTestMixin, CreateView):
-    """
-    A class view to create products
-    """
-    model = Color
-    fields = ('__all__')
-    template_name = 'products/add_color.html'
-
-    def test_func(self):
-        return self.request.user.is_staff
-    raise_exception = False
-    redirect_field_name='/'
-    permission_denied_message = "You are not authorised to view this page"
-    login_url = '/accounts/login'
-
-    def form_valid(self, form):
-        messages.success(self.request, f'Color added successfully')
-        return super().form_valid(form)
-
-    def form_invalid(self, form):
-        context = self.get_context_data(form=form)
-        context.update({"Error": "Soemthing went wrong"})
-        return self.render_to_response(context)
-
-    success_url = '/products/colors'
-
-
 class CategoryListView(UserPassesTestMixin,ListView):
-    
+    """
+    A class view to list categories
+    """
     model = Category
     template_name = '/products/category_list.html'
-    
+
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
@@ -412,7 +347,7 @@ class CategoryDeleteView(DeleteView):
     """
     model = Category
     template_name = 'products/delete_category.html'
-    
+
     def get_success_url(self, **kwargs):
         messages.success(self.request, 'Category removed successfully')
         success_url = '/products/categories'
@@ -427,11 +362,11 @@ class CategoryUpdateView(UpdateView):
     fields = ('__all__')
     template_name = 'products/update_category.html'
     success_url = '/products/categories'
-    
+
     def form_valid(self, form):
-        messages.success(self.request, f'Category updated successfully')
+        messages.success(self.request, 'Category updated successfully')
         return super().form_valid(form)
-    
+
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Something went wrong"})
@@ -455,7 +390,7 @@ class CategoryCreateView(UserPassesTestMixin, CreateView):
     login_url = '/accounts/login'
 
     def form_valid(self, form):
-        messages.success(self.request, f'Category added successfully')
+        messages.success(self.request, 'Category added successfully')
         return super().form_valid(form)
 
     def form_invalid(self, form):

@@ -1,16 +1,37 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&family=Urbanist:wght@200;600&display=swap');
 
 
 html, body {
     height: 100%;
   }
 
+/* root colors and styles */
+:root {
+    --body-font:'Urbanist', sans-serif;
+    --body-weight: 200;
+    --heading-weight: 600;
+    --heading-font: 'Urbanist', sans-serif;
+    --green:#5A753A;
+    --dark-green:#445c27;
+    --burnt-orange:#703D30;
+    --white:#FFFFFF;
+    --off-white:#FBF4E1;
+    --charcoal: #212529;
+    --grey: #4F4F4F;
+}
+
 body {
 display: flex;
 flex-direction: column;
 padding: 0;
 margin:0;
+font-family: var(--body-font);
+font-weight: var(--body-weight);
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: var(--heading-weight);
 }
 
 .content {

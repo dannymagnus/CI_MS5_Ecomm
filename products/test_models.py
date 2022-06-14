@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 
 # Internal:
-from products.models import Category, Product, Inventory, Brand, Color
+from products.models import Category, Product, Inventory, Brand, Color, Size
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -18,35 +18,33 @@ class TestProductModels(TestCase):
         Create test user, category, product
         """
         # test_user = User.objects.create_user(
-        #     username='test_user', 
+        #     username='test_user',
         #     password='test_password'
         #     )
-        
-        brand = Brand.objects.create(
+        Brand.objects.create(
             name = 'test_brand',
             )
-
-        category = Category.objects.create(
-            name='test_category', 
+        Category.objects.create(
+            name='test_category',
             friendly_name='test_category',
             )
-        
-        color = Color.objects.create(
+        Color.objects.create(
             name = 'Test_Color',
         )
-
-        product = Product.objects.create(
+        size = Size.objects.create(
+            name='test size'
+        )
+        Product.objects.create(
             name='my product',
             friendly_name='my product',
             holding=size,
             price='399.00',
-            
         )
-        
+
         # inventory = Inventory.objects.create(
         #     sku = '565456'
         # )
-        
+
     def tearDown(self):
         """
         Delete test user, category, product and review
@@ -57,7 +55,6 @@ class TestProductModels(TestCase):
         Brand.objects.all().delete()
         Color.objects.all().delete()
         Inventory.objects.all().delete()
-        
 
     def test_category_str_method(self):
         """
@@ -67,18 +64,17 @@ class TestProductModels(TestCase):
         self.assertEqual((category.__str__()), category.name)
         self.assertEqual(category.get_friendly_name(), category.friendly_name)
 
-    # def test_product_str_method(self):
-    #     """
-    #     This test tests the products str method and verifies
-    #     """
-    #     product = Product.objects.get(name='my-product')
-    #     self.assertEqual((product.__str__()), product.name)
-    #     self.assertEqual(product.get_friendly_name(), product.friendly_name)
+    def test_product_str_method(self):
+        """
+        This test tests the products str method and verifies
+        """
+        product = Product.objects.get(name='my-product')
+        self.assertEqual((product.__str__()), product.name)
+        self.assertEqual(product.get_friendly_name(), product.friendly_name)
 
     def test_brand_str_method(self):
         """
         This test tests the reviews str method and verifies
         """
-        review = Brand.objects.get(name='test_brand')
+        brand = Brand.objects.get(name='test_brand')
         self.assertEqual((brand.__str__()), brand.name)
-
