@@ -1,3 +1,6 @@
+"""
+A module for filters in the products app
+"""
 import django_filters
 from django import forms
 from .models import Product, Inventory
@@ -29,7 +32,7 @@ class ProductFilter(django_filters.FilterSet):
         }
         widgets = {'name': forms.HiddenInput()}
 
-    def filter_by_order(self,queryset,value):
+    def filter_by_order(self,queryset,name,value):
         """
         A method to order items by value
         """

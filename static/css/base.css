@@ -12,13 +12,10 @@ html, body {
     --body-weight: 200;
     --heading-weight: 600;
     --heading-font: 'Urbanist', sans-serif;
-    --green:#5A753A;
-    --dark-green:#445c27;
-    --burnt-orange:#703D30;
-    --white:#FFFFFF;
-    --off-white:#FBF4E1;
-    --charcoal: #212529;
-    --grey: #4F4F4F;
+    --staff-color:goldenrod;
+    --ocean-blue:rgb(49,86,115);
+    --baby-blue:rgb(104,182,242);
+    --spume:rgb(83,146,194);
 }
 
 body {
@@ -34,6 +31,10 @@ h1,h2,h3,h4,h5,h6{
     font-weight: var(--heading-weight);
 }
 
+.navbar-nav a{
+    font-weight:600;
+}
+
 .content {
     flex: 1 0 auto;
 }
@@ -44,8 +45,12 @@ h1,h2,h3,h4,h5,h6{
     margin:0;
 }
 
+.logo{
+    height:70px;
+}
+
 .staff{
-    color:goldenrod;
+    color: var(--staff-color);
     font-weight:bold;
 }
 
@@ -257,6 +262,37 @@ input[type=number] {
     pointer-events: auto;
     font-family: inherit;
   }
+
+.btn-primary{
+    background-color:var(--ocean-blue);
+    border:var(--ocean-blue);
+}
+
+.btn-primary:hover{
+    background-color:var(--spume);
+    border:var(--spume);
+}
+
+.btn-ocean-blue{
+    background-color:var(--ocean-blue);
+    border:var(--ocean-blue);
+}
+
+.btn-outline-success{
+    border-color:var(--spume);
+    color: var(--spume);
+}
+
+.btn-outline-success:hover{
+    background-color:var(--spume);
+    border:var(--spume);
+    color:white;
+}
+
+.btn-baby-blue{
+    background-color:var(--baby-blue);
+    border:var(--baby-blue);
+}
 
 #shop-now{
     text-decoration: none;

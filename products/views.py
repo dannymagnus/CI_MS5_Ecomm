@@ -1,3 +1,6 @@
+"""
+A module for views in the products app
+"""
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
@@ -15,9 +18,13 @@ class ProductListView(ListView):
     model = Product
     paginate_by = 12
 
+    def __init__(self):
+        self.no_search_result = True
+
     def get_queryset(self, **kwargs):
         search_results = ProductFilter(self.request.GET, self.queryset)
-        self.no_search_result = True if not search_results.qs else False
+        if search_results.qs:
+            self.no_search_result = False
         # Returns the default queryset if an empty queryset is returned by the django_filters
         return search_results.qs.distinct() or self.model.objects.all()
 
@@ -99,7 +106,7 @@ class ProductDeleteView(DeleteView):
     template_name = 'products/delete_product.html'
     success_url = '/products'
 
-    def get_object(self):
+    def get_object(self, queryset=None):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
 
@@ -110,6 +117,9 @@ class ProductSearchView(ListView):
     """
     model = Product
     paginate_by = 12
+
+    def __init__(self):
+        self.no_search_result = True
 
     def get_queryset(self, **kwargs):
         queryset = Product.objects.all()
@@ -123,7 +133,8 @@ class ProductSearchView(ListView):
                 Q(holding__name__icontains=query)   |
                 Q(holding__friendly_name__icontains=query)).distinct()
         search_results = ProductFilter(self.request.GET, queryset)
-        self.no_search_result = True if not search_results.qs else False
+        if search_results.qs:
+            self.no_search_result = False
         # Returns the default queryset if an empty queryset is returned by the django_filters
         return search_results.qs.distinct() or self.model.objects.all()
 
@@ -141,9 +152,13 @@ class InventoryListView(ListView):
     model = Inventory
     paginate_by = 15
 
+    def __init__(self):
+        self.no_search_result = True
+
     def get_queryset(self, **kwargs):
         search_results = InventoryFilter(self.request.GET, self.queryset)
-        self.no_search_result = True if not search_results.qs else False
+        if search_results.qs:
+            self.no_search_result = False
         # Returns the default queryset if an empty queryset is returned by the django_filters
         return search_results.qs.distinct() or self.model.objects.all()
 

@@ -30,8 +30,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col col-md-6">
+        <div class="col col-md-6 {% if not product.image %}{% endif %}">
+            {% if product.image %}
             <img class="img-fluid" src="{{product.image.url}}" alt="{{product.name}}">
+            {% else %}
+            <p class = 'fs-4 text-center my-auto'>AWAITING IMAGE</p>
+            {% endif %}
         </div>
         <div class="col col-md-6">
             <h1 class="fs-2 mb-4">{{ product.name }}</h1>

@@ -1,3 +1,6 @@
+"""
+A module for forms in the products app
+"""
 from django import forms
 from .models import Product, Inventory
 

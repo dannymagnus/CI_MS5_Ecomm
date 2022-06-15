@@ -1,3 +1,7 @@
+"""
+A module for models in the products app
+"""
+
 import random
 from django.db import models
 from django.urls import reverse
@@ -54,6 +58,7 @@ class Product(models.Model):
 
     name = models.CharField(
         max_length=254,
+        unique=True,
         )
     friendly_name = models.CharField(
         max_length=254,
@@ -125,20 +130,23 @@ class Product(models.Model):
     slug = models.SlugField(
         blank=True,
         null=True,
-        unique=True,
         )
 
     # Overide save function to create a slug on save -
     # courtesy of Mahmoud Ahmed
-    def save(self, *args, **kwargs):
-        """
-        Function to take slug or create on if none exist
-        """
+    # def save(self, *args, **kwargs):
+    #     """
+    #     Function to take slug or create on if none exist
+    #     """
+    #     super(Product, self).save(*args, **kwargs)
+    #     if not self.slug and self.name:
+    #         self.slug = slugify(self.name)
+    #     super(Product, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):  # new
         super(Product, self).save(*args, **kwargs)
-        if not self.slug and self.name:
+        if not self.slug:
             self.slug = slugify(self.name)
-        super(Product, self).save(*args, **kwargs)
-
+        return super().save(*args, **kwargs)
 
 
     def get_absolute_url(self):
@@ -146,7 +154,7 @@ class Product(models.Model):
         A method to return the absolute url
         """
         return reverse('product_detail', args=[str(self.slug)])
-    
+
     def __str__(self):
         """
         Returns the category name string
@@ -255,14 +263,16 @@ class Inventory(models.Model):
         blank = True,
         )
     product = models.ForeignKey(
-        Product, on_delete=models.CASCADE
+        Product, on_delete=models.CASCADE,
+        blank = True,
+        null = True,
         )
     count = models.IntegerField(
         default=0
         )
 
             #Function to create unique SKU number
-    def create_new_sku_number(self):
+    def create_new_sku_number():
         """
         Create new SKU number
         """
