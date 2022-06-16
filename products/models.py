@@ -58,7 +58,6 @@ class Product(models.Model):
 
     name = models.CharField(
         max_length=254,
-        unique=True,
         )
     friendly_name = models.CharField(
         max_length=254,
@@ -122,6 +121,9 @@ class Product(models.Model):
         decimal_places=2,
         max_digits=6,
         )
+    promoted = models.BooleanField(
+        default=False,
+    )
     image = models.ImageField(
         upload_to='products/',
         blank=True,

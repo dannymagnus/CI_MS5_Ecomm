@@ -154,8 +154,7 @@ def checkout_success(request, order_number):
         inventory_item = get_object_or_404(Inventory, sku=sku)
         inventory_item.count -= item.quantity
         inventory_item.save()
-        
-        
+
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
@@ -193,6 +192,9 @@ def checkout_success(request, order_number):
 
 
 class OrderDetailView(DetailView):
+    """
+    A class view for order details
+    """
     model = Order
     template_name = 'checkout/checkout_success.html'
     context_object_name = 'order'
@@ -200,4 +202,3 @@ class OrderDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
-    

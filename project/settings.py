@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'profiles',
     'courses',
+    'contact',
 ]
 
 MIDDLEWARE = [

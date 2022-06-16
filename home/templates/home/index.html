@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% block corecss %}
+{{ block.super }}
+
+{% endblock %}
 
 {% block content %}
 <div class="container-fluid content">
@@ -94,6 +98,11 @@
 </div>
 <div>
     <hr>
+</div>
+<div class="container no-wrap overflow-scroll">
+    {% for product in products %}
+    <a href="{% url 'product_detail' product.slug %}"><img class = "height-320px" src="{{ product.image.url }}" alt="{{ product.friendly_name }}"></a>
+    {% endfor %}
 </div>
 </div>
 

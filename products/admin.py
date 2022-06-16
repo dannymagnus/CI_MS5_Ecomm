@@ -44,6 +44,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'category',
         'brand',
+        'promoted',
     )
     prepopulated_fields = {
         "slug": ("name",)
@@ -63,6 +64,20 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = (
         InventoryInline,
         )
+
+    actions = ['promote', 'unpromote']
+
+    def promote(self, request, queryset):
+        """
+        method to set promoted to true
+        """
+        queryset.update(promoted=True)
+
+    def unpromote(self, request, queryset):
+        """
+        method to set promoted to false
+        """
+        queryset.update(promoted=False)
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):

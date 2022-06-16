@@ -345,6 +345,14 @@ input[type=number] {
     height: 160px;
 }
 
+.height-320px{
+    height: 320px;
+}
+
+.no-wrap{
+    white-space: nowrap;
+}
+
 .product-list-image{
     width:198px; 
     height:198px; 
