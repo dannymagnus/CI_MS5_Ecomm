@@ -83,7 +83,7 @@ class ProductOrderFilter(django_filters.FilterSet):
         model = Product
         fields = {}
 
-    def filter_by_order(self,queryset,value):
+    def filter_by_order(self,queryset,name,value):
         """
         A method to order items by value
         """

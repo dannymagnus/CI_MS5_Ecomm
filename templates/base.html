@@ -106,17 +106,28 @@
               </ul>
             </li>
             <!-- Dropdown menu for courses -->
-            <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Learn to Scuba</a>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">Discover Scuba</a></li>
-                          <li><a class="dropdown-item" href="#">Open Wate Diver</a></li>
-                          <li><a class="dropdown-item" href="#">Advanced Diver</a></li>
-                          <li><a class="dropdown-item" href="#">Rescue Diver</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Become a PADI Pro</a></li>
-                        </ul>
-                      </li> -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                aria-expanded="false">Courses</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'course_list' %}">All courses</a></li>
+                <li><a class="dropdown-item" href="#">Discover Scuba</a></li>
+                <li><a class="dropdown-item" href="#">Open Water Diver</a></li>
+                <li><a class="dropdown-item" href="#">Advanced Diver</a></li>
+                <li><a class="dropdown-item" href="#">Rescue Diver</a></li>
+                <li><a class="dropdown-item" href="#">Become a PADI Pro</a></li>
+                {% if user.is_authenticated %}
+                {% if user.is_staff %}
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class=" dropdown-item staff" href="{% url 'create_course' %}">Create Course</a>
+                </li>
+                {% endif %}
+                {% endif %}
+              </ul>
+            </li>
           </ul>
           <form class="d-none d-lg-flex mx-auto" method="GET" action="{% url 'search_products' %}">
             {% csrf_token %}
@@ -168,7 +179,23 @@
   {% if messages %}
   <div class="message-container content">
     {% for message in messages %}
-    {% include 'includes/success.html' %}
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+            {% with message.level as level %}
+                {% if level == 40 %}
+                    {% include 'includes/error.html' %}
+                {% elif level == 30 %}
+                    {% include 'includes/warning.html' %}
+                {% elif level == 25 %}
+                    {% include 'includes/success.html' %}
+                {% else %}
+                    {% include 'includes/info.html' %}
+                {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+{% endif %}
     {% endfor %}
   </div>
   {% endif %}

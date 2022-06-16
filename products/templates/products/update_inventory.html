@@ -11,15 +11,17 @@
       </div>
     </div>
 </div>
-<div>
+<div class="container d-flex flex-column align-items-center content justify-content-center">
+  <div>
     <p>SKU: {{ object.sku }}</p>
     <p>Brand: {{ object.product.brand }}</p>
     <p>Product: {{ object.product}}</p>
     <p>Size: {{ object.size }}</p>
 <form action='.' method='POST'>{% csrf_token %}
     {{ form.as_p }}
-    <input type='submit' value='Save' />
-</form>
+    <input class = "btn btn-primary me-3" type='submit' value='Save'><a class = "btn btn-secondary" href="{% url 'inventory_list' %}">Cancel</a>
+  </form>
+</div>
 </div>
 
 {% endblock %}

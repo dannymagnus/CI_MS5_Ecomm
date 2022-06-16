@@ -34,6 +34,43 @@ class ProductListView(ListView):
         context['filter'] = ProductFilter(self.request.GET, queryset=self.get_queryset())
         return context
 
+class ProductSearchView(ListView):
+    """
+    A class view to view all products
+    """
+    model = Product
+    paginate_by = 12
+
+    def __init__(self):
+        self.no_search_result = True
+
+    def get_queryset(self, **kwargs):
+        search_results = ProductFilter(self.request.GET, self.queryset)
+        queryset=search_results.qs.distinct()
+        query = self.request.GET.get('q')
+        if not query:
+            messages.info(self.request,'You did not enter any search criteria')
+            return Product.objects.none()
+        if query:
+            search_results = queryset.filter(
+                Q(name__icontains=query) |
+                Q(description__icontains=query) |
+                Q(category__name__icontains=query) |
+                Q(brand__name__icontains=query)  |
+                Q(holding__name__icontains=query)   |
+                Q(holding__friendly_name__icontains=query)).distinct()
+        # search_results = ProductOrderFilter(self.request.GET, queryset)
+        if search_results:
+            self.no_search_result = False
+        # Returns the default queryset if an empty queryset is returned by the django_filters
+        return search_results #or self.model.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        context['filter'] = ProductOrderFilter(self.request.GET, queryset=Product.objects.all())
+        return context
+
 
 def product_detail(request, slug):
     """
@@ -87,6 +124,13 @@ class ProductUpdateView(UpdateView):
     form_class = ProductModelForm
     queryset = Product.objects.all()
 
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
+
     def get_object(self,queryset=queryset):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
@@ -104,48 +148,25 @@ class ProductDeleteView(DeleteView):
     A class view to delete products
     """
     template_name = 'products/delete_product.html'
-    success_url = '/products'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def get_object(self, queryset=None):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
 
-
-class ProductSearchView(ListView):
-    """
-    A class view to view all products
-    """
-    model = Product
-    paginate_by = 12
-
-    def __init__(self):
-        self.no_search_result = True
-
-    def get_queryset(self, **kwargs):
-        queryset = Product.objects.all()
-        query = self.request.GET.get('q')
-        if query:
-            queryset = Product.objects.filter(
-                Q(name__icontains=query) |
-                Q(description__icontains=query) |
-                Q(category__name__icontains=query) |
-                Q(brand__name__icontains=query)  |
-                Q(holding__name__icontains=query)   |
-                Q(holding__friendly_name__icontains=query)).distinct()
-        search_results = ProductFilter(self.request.GET, queryset)
-        if search_results.qs:
-            self.no_search_result = False
-        # Returns the default queryset if an empty queryset is returned by the django_filters
-        return search_results.qs.distinct() or self.model.objects.all()
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
-        context['filter'] = ProductOrderFilter(self.request.GET, queryset=self.get_queryset())
-        return context
+    def get_success_url(self, **kwargs):
+        messages.success(self.request, "Product removed successfully")
+        success_url = '/products'
+        return success_url
 
 
-class InventoryListView(ListView):
+class InventoryListView(UserPassesTestMixin, ListView):
     """
     A class to render all the product inventory
     """
@@ -154,6 +175,13 @@ class InventoryListView(ListView):
 
     def __init__(self):
         self.no_search_result = True
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def get_queryset(self, **kwargs):
         search_results = InventoryFilter(self.request.GET, self.queryset)
@@ -169,25 +197,7 @@ class InventoryListView(ListView):
         return context
 
 
-def update_inventory(request, slug):
-    """
-    A view to detailed product view, all product information
-    Args:
-        request (object): HTTP request object.
-    Returns:
-        Render of products page with context
-    """
-    product = get_object_or_404(Product, slug=slug)
-    variants = product.inventory_set.all()
-
-    context = {
-        'product': product,
-        'variants': variants,
-        }
-    return render(request, 'products/update_inventory.html', context)
-
-
-class InventoryUpdateView(UpdateView):
+class InventoryUpdateView(UserPassesTestMixin, UpdateView):
     """
     A class to update the product inventory item count
     """
@@ -195,6 +205,13 @@ class InventoryUpdateView(UpdateView):
     form_class = InventoryModelForm
     queryset = Inventory.objects.all()
     success_url = '/products/inventory'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def get_object(self, queryset=queryset):
         id_ = self.kwargs.get("id")
@@ -205,20 +222,33 @@ class InventoryUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class ColorListView(ListView):
+class ColorListView(UserPassesTestMixin,ListView):
     """
     A class view to list colors
     """
     model = Color
     template_name = '/products/color_list.html'
 
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
-class ColorDeleteView(DeleteView):
+class ColorDeleteView(UserPassesTestMixin,DeleteView):
     """
     A class view to delete colors
     """
     model = Color
     template_name = 'products/delete_color.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def get_success_url(self, **kwargs):
         messages.success(self.request, 'Color removed successfully')
@@ -226,7 +256,7 @@ class ColorDeleteView(DeleteView):
         return success_url
 
 
-class ColorUpdateView(UpdateView):
+class ColorUpdateView(UserPassesTestMixin, UpdateView):
     """
     A class view to update colors
     """
@@ -234,6 +264,13 @@ class ColorUpdateView(UpdateView):
     fields = ('__all__')
     template_name = 'products/update_color.html'
     success_url = '/products/colors/'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def form_valid(self, form):
         messages.success(self.request, 'Color updated successfully')
@@ -273,20 +310,34 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
     success_url = '/products/colors'
 
 
-class BrandListView(ListView):
+class BrandListView(UserPassesTestMixin, ListView):
     """
     A view for to list brands
     """
     model = Brand
     template_name = '/products/brand_list.html'
 
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
-class BrandDeleteView(DeleteView):
+
+class BrandDeleteView(UserPassesTestMixin, DeleteView):
     """
     A class view to delete brands
     """
     model = Brand
     template_name = 'products/delete_brand.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def get_success_url(self, **kwargs):
         messages.success(self.request, 'Brand removed successfully')
@@ -294,7 +345,7 @@ class BrandDeleteView(DeleteView):
         return success_url
 
 
-class BrandUpdateView(UpdateView):
+class BrandUpdateView(UserPassesTestMixin, UpdateView):
     """
     A class view to update brands
     """
@@ -302,6 +353,13 @@ class BrandUpdateView(UpdateView):
     fields = ('__all__')
     template_name = 'products/update_brand.html'
     success_url = '/products/brands'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def form_valid(self, form):
         messages.success(self.request, 'Brand updated successfully')
@@ -356,12 +414,18 @@ class CategoryListView(UserPassesTestMixin,ListView):
     login_url = '/accounts/login'
 
 
-class CategoryDeleteView(DeleteView):
+class CategoryDeleteView(UserPassesTestMixin, DeleteView):
     """
     A class view to delete categories
     """
     model = Category
     template_name = 'products/delete_category.html'
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def get_success_url(self, **kwargs):
         messages.success(self.request, 'Category removed successfully')
@@ -369,7 +433,7 @@ class CategoryDeleteView(DeleteView):
         return success_url
 
 
-class CategoryUpdateView(UpdateView):
+class CategoryUpdateView(UserPassesTestMixin, UpdateView):
     """
     A class view to update colors
     """
@@ -377,6 +441,13 @@ class CategoryUpdateView(UpdateView):
     fields = ('__all__')
     template_name = 'products/update_category.html'
     success_url = '/products/categories'
+
+    def test_func(self):
+        return self.request.user.is_staff
+    raise_exception = False
+    redirect_field_name='/'
+    permission_denied_message = "You are not authorised to view this page"
+    login_url = '/accounts/login'
 
     def form_valid(self, form):
         messages.success(self.request, 'Category updated successfully')

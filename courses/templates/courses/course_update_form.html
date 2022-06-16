@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'courses/css/courses.css' %}">
+{% endblock %}
+{% block content %}
+
+{% with product.inventory_set.all as inventory %}
+
+<div class="container content">
+    <div class="row">
+        <div class="col test">
+            <h1 class="my-5">
+                CREATE/UPDATE COURSE
+            </h1>
+        </div>
+    </div>
+</div>
+
+<div class="container content">
+    <div class="d-flex align-items-center p-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 pt-2">
+                    <img class="img-fluid"
+                        src="{%if not object.image.url %}{% static 'img/scuba-equipment-shop.jpg'%} {% else %}{{object.image.url}}{% endif %}" alt="{{object.name}}">
+                </div>
+                <div class="col-12 col-lg-6 translucent-body mb-5">
+                    <form method="POST" class="p-1">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <button class="btn btn-primary ms-auto me-3" type="submit">Save</button><a
+                            href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endwith %}
+
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'courses/js/courses.js' %}"></script>
+{% endblock %}

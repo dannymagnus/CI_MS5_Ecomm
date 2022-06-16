@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container content">
+    <div class="row">
+      <div class="col">
+        <h1 class="my-5">
+          COURSE DETAILS
+        </h1>
+      </div>
+    </div>
+</div>
+
+<div class="row content" style="min-height:50px;">
+    <div class="col">
+        {% if request.user.is_staff %}
+        <hr>
+        <div class="container d-flex align-items-center justify-content-center my-5">
+        <div><strong>Staff Action: </strong></div>
+        <a class="btn btn-primary mx-3" href="{% url 'update_course' object.slug %}">Update details</a>
+        <a class="btn btn-danger mx-3" href="{% url 'delete_course' object.slug %}">Delete</a>
+        </div>
+        <hr>
+        {% endif %}
+    </div>
+</div>
+
+<div class="content container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            {% if not object.image %}
+            <img src="" alt="awaiting image" class="img-responsive w-100 mt-3">
+            {% else %}
+            <img src="{{ object.image.url }}" alt="{{ object.friendly_name }}" class="img-responsive w-100 mt-3">
+            {% endif %}
+        </div>
+        <div class="col-12 col-md-6 d-flex flex-column">
+            <h2>{{ object.friendly_name }}</h2>
+            <p>{{ object.description }}</p>
+            <p><strong>Duration:</strong> {{ object.duration_weeks }} week</p>
+            <p><strong>Price:</strong> ${{object.price}} </p>
+            <div class = "align-self-end">
+            <a class = "btn btn-primary me-3" href="#">Reserve now!</a>
+            </div>
+        </div>
+    </div>
+    <div class = "container">
+        <hr>
+    </div>
+</div>
+
+{% endblock %}

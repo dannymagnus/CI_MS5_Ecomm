@@ -28,6 +28,9 @@ class ColorAdmin(admin.ModelAdmin):
 
 
 class InventoryInline(admin.TabularInline):
+    """
+    Inline admin class for Inventory Model
+    """
     model = Inventory
     extra = 1
 
@@ -44,7 +47,7 @@ class ProductAdmin(admin.ModelAdmin):
     )
     prepopulated_fields = {
         "slug": ("name",)
-        }  # new
+        }
     list_filter = (
         'category',
         'brand',
