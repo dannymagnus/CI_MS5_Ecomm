@@ -58,31 +58,31 @@
         <div class="collapse navbar-collapse d-lg-none" id="navbarTogglerDemo02">
           <ul class="d-xl-flex navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">HOME</a>
             </li>
             <!-- Dropdown menu for shop - bootstrap -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false">Shop</a>
+                aria-expanded="false">SHOP</a>
               <ul class="dropdown-menu">
                 <li>
-                  <a class="dropdown-item" href="{% url 'all_products' %}">All Products</a>
+                  <a class="dropdown-item" href="{% url 'all_products' %}">ALL PRODUCTS</a>
                 </li>
                 {% for category in categories %}
                 <li>
-                  <a class="dropdown-item" href="{% url 'all_products' %}?category__name__iexact={{category.name}}"">{{category.friendly_name}}</a>
+                  <a class="dropdown-item" href="{% url 'all_products' %}?category__name__iexact={{category.name}}"">{{category.friendly_name|upper}}</a>
                 </li>
                 {% endfor %}
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
                 <li>
-                  <a class=" dropdown-item staff" href="{% url 'create_product' %}">Create Product</a>
+                  <a class=" dropdown-item staff" href="{% url 'create_product' %}">CREATE PRODUCT</a>
                 </li>
                 <li>
-                  <a class=" dropdown-item staff" href="{% url 'category_list' %}">Manage Categories</a>
+                  <a class=" dropdown-item staff" href="{% url 'category_list' %}">MANAGE CATEGORIES</a>
                 </li>
                 <li>
-                  <a class=" dropdown-item staff" href="{% url 'inventory_list' %}">Manage Inventory</a>
+                  <a class=" dropdown-item staff" href="{% url 'inventory_list' %}">MANAGE INVENTORY</a>
                 </li>
                 {% endif %}
                 {% endif %}
@@ -99,7 +99,7 @@
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
                 <li>
-                  <a class=" dropdown-item staff" href="{% url 'brand_list' %}">Manage Brands</a>
+                  <a class=" dropdown-item staff" href="{% url 'brand_list' %}">MANAGE BRANDS</a>
                 </li>
                 {% endif %}
                 {% endif %}
@@ -108,21 +108,19 @@
             <!-- Dropdown menu for courses -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false">Courses</a>
+                aria-expanded="false">COURSES</a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'course_list' %}">All courses</a></li>
-                <li><a class="dropdown-item" href="#">Discover Scuba</a></li>
-                <li><a class="dropdown-item" href="#">Open Water Diver</a></li>
-                <li><a class="dropdown-item" href="#">Advanced Diver</a></li>
-                <li><a class="dropdown-item" href="#">Rescue Diver</a></li>
-                <li><a class="dropdown-item" href="#">Become a PADI Pro</a></li>
+                <li><a class="dropdown-item" href="{% url 'course_list' %}">ALL COURSES</a></li>
+                {% for course in courses %}
+                <li><a class="dropdown-item" href="{% url 'course_detail' course.slug %}">{{course.name|upper}}</a></li>
+                {% endfor %}
                 {% if user.is_authenticated %}
                 {% if user.is_staff %}
                 <li>
                   <hr class="dropdown-divider">
                 </li>
                 <li>
-                  <a class=" dropdown-item staff" href="{% url 'create_course' %}">Create Course</a>
+                  <a class=" dropdown-item staff" href="{% url 'create_course' %}">CREATE COURSE</a>
                 </li>
                 {% endif %}
                 {% endif %}
@@ -138,28 +136,28 @@
           <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false"><span class = "d-lg-none">Account</span><i class="d-none d-lg-inline-block bi bi-person"></i></a>
+                aria-expanded="false"><span class = "d-lg-none">ACCOUNT</span><i class="d-none d-lg-inline-block bi bi-person"></i></a>
               <ul class="dropdown-menu left-auto">
                 {% if user.is_authenticated %}
                 <li>
-                  <a class="dropdown-item" href="{% url 'profile' user.userprofile.id %}">My Profile</a>
+                  <a class="dropdown-item" href="{% url 'profile' user.userprofile.id %}">MY PROFILE</a>
                 </li>
                 <li>
-                  <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                  <a class="dropdown-item" href="{% url 'account_logout' %}">LOGOUT</a>
                 </li>
                 {% else %}
                 <li>
-                  <a class="dropdown-item" href="{% url 'account_login' %}"">Login</a>
+                  <a class="dropdown-item" href="{% url 'account_login' %}"">LOGIN</a>
                 </li>
                 <li>
-                  <a class=" dropdown-item staff" href="{% url 'account_signup' %}">Register</a>
+                  <a class=" dropdown-item staff" href="{% url 'account_signup' %}">REGISTER</a>
                 </li>
                 {% endif %}
             </li>
           </ul>
           <li class="nav-item">
             <div class="bag-qty-container">
-            <a class="nav-link postition-relative me-2" href="{% url 'view_bag' %}"><span class = "d-lg-none">Cart ({{ product_count }})</span><i class="d-none d-lg-block bi bi-bag"></i></a>
+            <a class="nav-link postition-relative me-2" href="{% url 'view_bag' %}"><span class = "d-lg-none">CART ({{ product_count }})</span><i class="d-none d-lg-block bi bi-bag"></i></a>
             <div class = "d-none d-lg-block bag-qty border-radius-50">
             <h6 class = "text-center fs-6">{{product_count}}</h6>
             </div>

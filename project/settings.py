@@ -89,6 +89,7 @@ TEMPLATES = [
                 'products.context_processors.brands',
                 'products.context_processors.categories',
                 'django.template.context_processors.media',
+                'courses.context_processors.courses',
 
             ],
             'builtins': [
