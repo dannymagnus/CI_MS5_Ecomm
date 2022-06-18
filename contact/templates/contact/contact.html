@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<section>
+    <div class = "about-background contact-background d-flex flex-column justify-content-center content align-items-center p-5">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-12 col-md-5 mb-5 my-auto bg-light bg-gradient rounded">
+                    <h1 class = "text-center p-3 fs-3">CONTACT US</h1>
+                    {% if contacted %}
+                        <div class="alert alert-success">
+                            Thank you for your message, we'll be in touch soon!
+                        </div>
+                    {% else %}
+                        <form method = "POST" class = "p-3 translucent-body">
+                            {% csrf_token %}
+                            {{ contact_form | crispy }}
+                            <br>
+                            <button class="btn btn-primary me-3" type="submit">Send message</button><a class ="btn btn-secondary" href="../">Cancel</a>
+                        </form>
+                    {% endif %}
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

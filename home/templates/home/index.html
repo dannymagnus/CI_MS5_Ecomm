@@ -99,11 +99,40 @@
 <div>
     <hr>
 </div>
-<div class="container no-wrap overflow-scroll">
+<p class = "fs-4 text-bold" >OUR INSTRUCTORS RECOMMEND...</p>
+<div class="container flex-row d-flex flex-nowrap no-wrap overflow-scroll">
+    
     {% for product in products %}
-    <a href="{% url 'product_detail' product.slug %}"><img class = "height-320px" src="{{ product.image.url }}" alt="{{ product.friendly_name }}"></a>
+    <div class = "d-flex flex-column width-320px me-5">
+        <a href="{% url 'product_detail' product.slug %}"><img class="img fluid height-320px" src="{{ product.image.url }}"
+                alt="{{ product.friendly_name }}"></a>
+            <p class = "d-inline-block">
+                {{product.friendly_name}}<br>${{product.price}}
+            </p>
+        </div>
     {% endfor %}
 </div>
+<div>
+    <hr>
+</div>
+<div class="container-fluid p-0 about-background home">
+    <div id="shop-now-holder" class="bg-img-holder-home about-background">
+        <div class="holder-home-inner">
+            <div class="home-inner-headline">
+                <h2><strong>GET IN TOUCH</strong></h2>
+            </div>
+            <div class="home-inner-body">
+                <p>
+                    WE'D LOVE TO HEAR FROM YOU
+                </p>
+            </div>
+            <div role="button" class="home-inner-button-container btn btn-primary">
+                <a id="shop-now" href="{% url 'contact' %}">Contact</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 </div>
 
 

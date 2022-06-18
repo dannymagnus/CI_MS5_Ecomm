@@ -11,11 +11,17 @@ class Contact(models.Model):
     """
     A class for the contact model
     """
-    reason = models.ForeignKey(
-        'Reason',
-        on_delete=models.CASCADE,
-        related_name='reasons'
-        )
+    class Reason(models.TextChoices):
+        SHOP = "1", "Dive Equipment Shop / Online Orders"
+        COURSE = "2", "Diving Courses"
+        GENERAL = "3", "General Enquiry"
+        # (...)
+
+    month = models.CharField(
+        max_length=2,
+        choices=Reason.choices,
+        default=Reason.SHOP
+    )
     name = models.CharField(
         max_length=50
         )
@@ -43,18 +49,3 @@ class Contact(models.Model):
         Returns the contact name as a string
         """
         return self.name
-
-
-class Reason(models.Model):
-    """
-    A class for the Reasons model
-    """
-    reason = models.CharField(
-        max_length=100
-        )
-
-    def __str__(self):
-        """
-        Returns the reason name as a string
-        """
-        return self.reason

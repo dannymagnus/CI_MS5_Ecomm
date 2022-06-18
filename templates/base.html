@@ -90,7 +90,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false">Brands</a>
+                aria-expanded="false">BRANDS</a>
               <ul class="dropdown-menu">
                 {% for brand in brands %}
                 <li><a class="dropdown-item"
@@ -125,6 +125,9 @@
                 {% endif %}
                 {% endif %}
               </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact' %}">CONTACT</a>
             </li>
           </ul>
           <form class="d-none d-lg-flex mx-auto" method="GET" action="{% url 'search_products' %}">

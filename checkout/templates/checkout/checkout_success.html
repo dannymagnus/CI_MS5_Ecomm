@@ -186,25 +186,14 @@
             </div>
         </div>
     </div>
-    {% comment %}     <!--     <div class="row">
+    <div class="row">
         <div class="col-12 col-lg-7 text-right">
-            {% if from_profile %}
-                <a href="{% url 'profile' %}" class="btn btn-black rounded-0 my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-angle-left"></i>
-                    </span>
-                    <span class="text-uppercase">Back to Profile</span>
-                </a>
-            {% else %}
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-black rounded-0 my-2">
-                    <span class="icon mr-2">
-                        <i class="fas fa-gifts"></i>
-                    </span>
-                    <span class="text-uppercase">Now check out the latest deals!</span>
-                </a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'profile' user.userprofile.id %}" class="btn btn-secondary rounded-0 my-2">My Profile</a>
             {% endif %}
-        </div> -->
-        {% endcomment %}
+            <a href="{% url 'all_products' %}" class="btn btn-primary rounded-0 my-2">Carry on shopping</a>
+        </div>
+
     </div>
 </div>
 {% endblock %}

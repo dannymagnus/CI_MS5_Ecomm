@@ -75,6 +75,12 @@ h1,h2,h3,h4,h5,h6{
     color: rgba(255,255,255,1);
 }
 
+.black-text{
+    color:black;
+}
+
+
+
 .dropdown-menu[data-bs-popper].left-auto{
     left:auto;
     right:0;
@@ -220,6 +226,7 @@ input[type=number] {
     opacity: calc(100 / 100);
 }
 
+
 .holder-home-inner{
     display: flex;
     text-align: left;
@@ -309,6 +316,14 @@ input[type=number] {
     border:none;
 }
 
+.bg-img-holder-home.about-background{
+    background-image: url(../img/get-in-touch-learn-to-scuba-dive.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: auto;
+}
+
 @media screen and (min-width: 801px) {
     .bg-img-holder-home {
         max-height: none;
@@ -347,6 +362,10 @@ input[type=number] {
 
 .height-320px{
     height: 320px;
+}
+
+.width-320px{
+    width: 320px;
 }
 
 .no-wrap{
