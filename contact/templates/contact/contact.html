@@ -8,16 +8,19 @@
 {% load crispy_forms_tags %}
 
 <section>
-    <div class = "about-background contact-background d-flex flex-column justify-content-center content align-items-center p-5">
+    <div class = "about-background contact-background d-flex flex-column justify-content-center content align-items-center">
         
         <div class="container">
             <div class="row">
-                <div class="col"></div>
-                <div class="col-12 col-md-5 mb-5 my-auto bg-light bg-gradient rounded">
+                <div class="d-none d-md-block col"></div>
+                <div class="col-12 col-md-5 my-md-5 my-auto bg-light bg-gradient rounded">
                     <h1 class = "text-center p-3 fs-3">CONTACT US</h1>
                     {% if contacted %}
                         <div class="alert alert-success">
                             Thank you for your message, we'll be in touch soon!
+                        </div>
+                        <div >
+                            <a href="{% url 'all_products' %}" class="btn btn-primary my-3">Back to Shopping</a>
                         </div>
                     {% else %}
                         <form method = "POST" class = "p-3 translucent-body">

@@ -5,4 +5,6 @@
 #div_id_image {
     color:blue;
 }
-
+.course-list-image{
+    max-height: 450px;
+}

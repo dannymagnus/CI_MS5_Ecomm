@@ -12,12 +12,15 @@ class Contact(models.Model):
     A class for the contact model
     """
     class Reason(models.TextChoices):
+        """
+        A subclass for reasons choices
+        """
         SHOP = "1", "Dive Equipment Shop / Online Orders"
         COURSE = "2", "Diving Courses"
         GENERAL = "3", "General Enquiry"
         # (...)
 
-    month = models.CharField(
+    reason = models.CharField(
         max_length=2,
         choices=Reason.choices,
         default=Reason.SHOP

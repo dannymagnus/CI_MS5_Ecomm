@@ -407,3 +407,7 @@ input[type=number] {
 .h-150px{
     height: 150px;
 }
+
+.form-control.qty_input{
+    width: 25px;
+}

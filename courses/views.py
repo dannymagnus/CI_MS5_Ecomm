@@ -3,16 +3,50 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
+from .filters import CourseFilter
 
 from .models import Course
 
 # Create your views here.
+
+# class CourseListView(ListView):
+#     """
+#     A class view to view all products
+#     """
+#     model = Course
+
+
+
+
 
 class CourseListView(ListView):
     """
     A class view to view all products
     """
     model = Course
+
+    def __init__(self):
+        self.no_search_result = True
+
+    def get_queryset(self, **kwargs):
+        search_results = CourseFilter(self.request.GET, self.queryset)
+        if search_results.qs:
+            self.no_search_result = False
+        # Returns the default queryset if an empty queryset is returned by the django_filters
+        return search_results.qs.distinct() or self.model.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = CourseFilter(self.request.GET, queryset=self.get_queryset())
+        return context
+
+
+
+
+
+
+
+
 
 class CourseDetailView(DetailView):
     """

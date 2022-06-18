@@ -37,11 +37,12 @@
         </div>
         <div class="col-12 col-md-6 d-flex flex-column">
             <h2>{{ object.friendly_name }}</h2>
-            <p>{{ object.description }}</p>
+            <p>{{ object.description | linebreaks}}</p>
+            <p>{{ object.extra_details | linebreaks}}</p>
             <p><strong>Duration:</strong> {{ object.duration_weeks }} week</p>
             <p><strong>Price:</strong> ${{object.price}} </p>
             <div class = "align-self-end">
-            <a class = "btn btn-primary me-3" href="#">Reserve now!</a>
+            <a class="btn btn-secondary" href = "">Back</a><a class = "btn btn-primary me-3" href="{ url 'contact' }">Reserve now!</a>
             </div>
         </div>
     </div>

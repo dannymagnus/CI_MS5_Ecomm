@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'courses/css/courses.css' %}">
+{% endblock %}
 {% block content %}
+{% load crispy_forms_tags %}
 
 <div class="container content">
     <div class="row">
@@ -21,14 +26,14 @@
             <p><strong>Duration:</strong> {{ object.duration_weeks }} week</p>
             <p><strong>Price:</strong> ${{object.price}} </p>
             <div class = "align-self-end">
-            <a class = "btn btn-primary  me-3" href="#">Enquire now</a><a class = "btn btn-primary" href="{% url 'course_detail' object.slug %}">More Details</a>
+            <a class = "btn btn-primary  me-3" href="{% url 'contact' %}">Enquire now</a><a class = "btn btn-primary" href="{% url 'course_detail' object.slug %}">More Details</a>
             </div>
         </div>
         <div class="col-12 col-md-6">
             {% if not object.image %}
             <img src="" alt="awaiting image" class="img-responsive mt-3 w-100">
             {% else %}
-            <img src="{{ object.image.url }}" alt="{{ object.friendly_name }}" class="img-responsive w-100 mt-3">
+            <img src="{{ object.image.url }}" alt="{{ object.friendly_name }}" class="course-list-image img-responsive w-100 mt-3">
             {% endif %}
         </div>
     </div>

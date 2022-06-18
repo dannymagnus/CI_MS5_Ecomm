@@ -24,11 +24,27 @@ class Course(models.Model):
     description = models.TextField(
         max_length=(1000)
     )
+    extra_details = models.TextField(
+        max_length=(1000),
+        blank=True,
+        null=True,
+    )
     price = models.DecimalField(
         decimal_places=2,
         max_digits = 6,
     )
     duration_weeks = models.IntegerField( 
+    )
+    class Level(models.TextChoices):
+        BEGINNER = "beginner", "Beginner"
+        INTERMEDIATE = "intermediate", "Intermediate"
+        ADVANCED = "advanced", "Advanced"
+        PRO = "4", "professional"
+
+    level = models.CharField(
+        max_length=50,
+        choices=Level.choices,
+        default=Level.BEGINNER
     )
     image = models.ImageField(
         upload_to='courses/',
