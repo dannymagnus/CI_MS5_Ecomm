@@ -1,10 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
-
 {% block content %}
-
-
 <div class="container content">
     <div class="row">
         <div class="col">
@@ -34,9 +30,7 @@
                         {% for item in bag_items %}
                         <tr>
                             <td class="w-25">
-                                <img class="img-fluid rounded h-150px"
-                                    src="{% if item.inventory.product.image %} {{ item.inventory.product.image.url }} {% else %} {% static 'img/garbage-home-triple.webp' %} {% endif %}"
-                                    alt="{{item.inventory.product.friendly_name}}">
+                                <img class="img-fluid rounded h-150px" src="{% if item.inventory.product.image %} {{ item.inventory.product.image.url }} {% else %} {% static 'img/garbage-home-triple.webp' %} {% endif %}" alt="{{item.inventory.product.friendly_name}}">
                             </td>
                             <td>
                                 <p>
@@ -48,7 +42,6 @@
                                 <p>
                                     Size: {{item.inventory.size}}
                                 </p>
-
                             </td>
                             <td>
                                 {{item.inventory.product.price}}
@@ -59,9 +52,7 @@
                                     <div class="input-group d-flex">
                                         <div class="input-group-prepend">
                                             <span class="input-group-btn">
-                                                <button type="submit"
-                                                    class="quantity-left-minus btn btn-secondary bi bi-dash-lg"
-                                                    data-type="minus" data-field="">
+                                                <button type="submit" class="quantity-left-minus btn btn-secondary bi bi-dash-lg" data-type="minus" data-field="">
                                                 </button>
                                             </span>
                                         </div>
@@ -71,9 +62,7 @@
                                             data-inventory-count="{{item.inventory.count}}">
                                         <div class="input-group-append">
                                             <span class="input-group-btn">
-                                                <button type="button"
-                                                    class="quantity-right-plus btn btn-secondary bi bi-plus-lg"
-                                                    data-type="plus" data-field="">
+                                                <button type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
                                                 </button>
                                             </span>
                                         </div>
@@ -155,15 +144,10 @@
                                         </button>
                                     </span>
                                 </div>
-                                <input type="number" id="quantity" name="quantity"
-                                    class="form-control qty_input qty-input input-number"
-                                    value="{{item.quantity}}" min="1" max="{{item.inventory.count}}"
-                                    data-inventory-count="{{item.inventory.count}}">
+                                <input type="number" id="quantity" name="quantity" class="form-control qty_input qty-input input-number" value="{{item.quantity}}" min="1" max="{{item.inventory.count}}" data-inventory-count="{{item.inventory.count}}">
                                 <div class="input-group-append">
                                     <span class="input-group-btn">
-                                        <button type="button"
-                                            class="quantity-right-plus btn btn-secondary bi bi-plus-lg"
-                                            data-type="plus" data-field="">
+                                        <button type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
                                         </button>
                                     </span>
                                 </div>
@@ -193,9 +177,7 @@
     </p>
     {% endif %}
 </div>
-
 {% endblock %}
-
 {% block postloadjs %}
 {{ block.super }}
 <script src="{% static 'bag/js/bag.js' %}"></script>

@@ -94,17 +94,17 @@ The primary goal of the website from a site users perspective is as follows:
 - Responsive and visually appealing on all devices.
 - Ability to contact the business
 
-<!-- 
+
 ## Structure
 ### Code Structure
-The project is organised into a variety of applications, as is constructed using the Django Framework.
+<!-- The project is organised into a variety of applications, as is constructed using the Django Framework.
 
 App details as follows:
 - Home - this app contains information about the restaurant home page with quick links to the menus on page and table booking via the nav bar.
 - Meals - this app contains the menu structure, users can choose between the lunch drink and dinner menu.  Clicking individual items opens a sub  page where users can see detailed food information including allergens and calories.
 - About - this app contains information relating to the business heritage the opportunity for users to view, add, edit, delete comments with authentication.
 - Contact - this app is for users to be able to submit a message to the site owners and recieve acknowledgment.
-- Booking - this app is for users to be able to submit a booking reqeuest with date validation so cannot be booked in past and also only within restaurant opening hours.
+- Booking - this app is for users to be able to submit a booking reqeuest with date validation so cannot be booked in past and also only within restaurant opening hours. -->
 
 To complement the apps there are
 - project: Project level files - settings.py for project level settings and urls.py to route the website URLS
@@ -131,66 +131,50 @@ This model contains all fields stored in the database collections with their dat
 - The User model contains information about the user. It is part of the Django allauth library
 - The model contains the following fields: username, password, first_name, last_name, email, is_staff, is_active, is_superuser, last_login, date_joined
 
-##### Meal Model
-- The Meal model contains information about meals available within each of the menus
+##### Product Model
+- The Product model contains information about products available within each of the categories
 - It contains Category as a foreign-key.
-- It contains Allergen as a Many-toMany relationship.
-- The model contains the following fields:  Name, Category, Description, Allergen, Lunch, Dinner, Calories, Price, Vegetarian, Vegan, Image, Slug.
+- It contains holding(Inventory) as a Many-toMany relationship.
+- The model contains the following fields:  name, friendly_name, description,  category, gender, brand, holding, color, price, promoted, image, slug.
 
 ##### Category Model
-- The category model contains the available categories for a meal item
+- The category model contains the available categories for a product item
+- The model contains the following fields: name, friendly_name
+
+##### Brand Model
+- The Brand model contains brands for the products.
 - The model contains the following fields: name
 
-##### Allergen Model
-- The Allergen model contains allergens that may be contained in the meals, this has a many to many relationship with meals model.
-- It contains images so to be easily understood to non english speakers.
-- The model contains the following fields: name, image.
+##### Size Model
+- The Size model contains a the sizes available for each product. This is linked to the product model through a custom intermediate model as a many to many relationship.
+- It acts as a foreign-key for Inventory model and through to Product
+- The model contains the following fields: name, friendly_name
 
-##### Drink Model
-- The Drink model contains a the drinks available at the restaurant
-- It has DrinkCategory as a foreign-key.
-- The model contains the following fields: name, description, category, image.
-
-##### DrinkCategory Model
-- The News model contains viable categories for the drinks.
-- It acts as a foreign-key for Drinks model
+##### Color Model
+- The Color model contains viable colors for the products.
+- It acts as a foreign-key for Product model
 - The model contains the following fields: name
 
-##### Comment Model
-- The News model contains a comment that renders on the about page.
-- The model contains the following fields: user, comment_text, created_date
+##### Inventory Model
+- The Inventory model is a custom intermediate model that between Size Model and Product model as a many to many relationship.  It has an inventory count as an additional field and self generates a unique SKU on save
+- The model contains the following fields: product, size, sku, count
 
-##### Booking Model
-- The Booking model contains a collection of data submitted by the user when requesting a reservation.
-- The model contains the following fields: name, email, phone, party_size, date, ,time
+##### Course Model
+- The Course model contains a courses that customers can enquire about.  There is a subclass for different difficulty levels.
+- The model contains the following fields: name, friendly_name, description, extra_details, price, duration ,level, image, slug
 
 ##### Contact Model
 - The Contact model contains a collection of data submitted by the user when messaging the site owner.
-- It contains Reasons as a foreign-key.
-- The model contains the following fields: reason, email, phone, postcode, street_address, message.
+- It contains Reasons subclass as a with preconfigured choices for the user to select
+- The model contains the following fields: reason, name, email, phone, postcode, street_address, message.
 
-#### Reason Model
-- The Contact model contains a collection pre configured headers that the user can use to send the message.
-- It acts as a foreign-key for Contact model.
-- The model contains the following fields: reason
+#### Faq Model
+- The Faq model contains a collection of frequently asked questions and answers for users to be able to get commonly sought information from the site without having to get in touch.
+- The model contains the following fields: name, friendly-name, question, answer.
 
-#### About Model
-- The About model contains a collection of data and image to show the restaurant heritage..
-- The model contains the following fields: title, body, image.
 
-#### Reasons Model
-- The Reasons model contains a collection reasons as to why the user should use the establishment.
-- The model contains the following fields: reason, body.
-
-#### Chefs Model
-- The Chefs model contains the chef images, names and biography.
-- The model contains the following fields: name, image, bio.
-
-#### Home Model
-- The Home model contains the items for the carousel on the home page.
-- The model contains the following fields: Title, body, image.
-
-## Scope
+------------------------TBC------------------------------------------------
+<!-- ## Scope
 ### User stories:
 
 #### First time user
@@ -1472,8 +1456,8 @@ User story too vague - rejected.
 | Site images not rendering on Heroku | Change source path from relative to static directory |
 | Transluscent overlay remaining after resevervation request has been received  | Applied style to form instead of parent div |
 | Comment edit does not show awaiting approval | Fix would be to require additional view, bout out of scope for projectt timebox |
+ -->
 
--->
 
 ## Deployment
 
