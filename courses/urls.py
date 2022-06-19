@@ -8,14 +8,14 @@ urlpatterns = [
         name = 'course_list'
         ),
         path(
-        '<slug:slug>/',
-        views.CourseDetailView.as_view(),
-        name='course_detail'
-        ),
-        path(
         'create/',
         views.CourseCreateView.as_view(),
         name='create_course'
+        ),
+        path(
+        '<slug:slug>/',
+        views.CourseDetailView.as_view(),
+        name='course_detail'
         ),
         path(
         '<slug:slug>/update/',

@@ -13,6 +13,8 @@
             </h1>
         </div>
     </div>
+</div>
+<div class="d-none d-md-block container content">
     <div class="row">
         <div class="col">
             {% if bag_items %}
@@ -109,6 +111,79 @@
             {% endif %}
         </div>
     </div>
+</div>
+<div class=" d-md-none container content">
+    {% if bag_items %}
+    <div class="container table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in bag_items %}
+                <tr>
+                    <td class="w-50">
+                        <img class="img-fluid rounded h-150px"
+                            src="{% if item.inventory.product.image %} {{ item.inventory.product.image.url }} {% else %} {% static 'img/garbage-home-triple.webp' %} {% endif %}"
+                            alt="{{item.inventory.product.friendly_name}}">
+                    </td>
+                    <td>
+                        <p>
+                            {{item.inventory.product.brand | upper }}
+                        </p>
+                        <p>
+                            {{item.inventory.product.friendly_name}}
+                        </p>
+                        <p>
+                            Size: {{item.inventory.size}}
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:150px">
+                        <form id="update_qty" method="POST" action="{% url 'adjust_bag' item.inventory.id %}">
+                            {% csrf_token %}
+                            <div class="input-group d-flex">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-btn">
+                                        <button type="submit"
+                                            class="quantity-left-minus btn btn-secondary bi bi-dash-lg"
+                                            data-type="minus" data-field="">
+                                        </button>
+                                    </span>
+                                </div>
+                                <input type="number" id="quantity" name="quantity"
+                                    class="form-control qty_input qty-input input-number"
+                                    value="{{item.quantity}}" min="1" max="{{item.inventory.count}}"
+                                    data-inventory-count="{{item.inventory.count}}">
+                                <div class="input-group-append">
+                                    <span class="input-group-btn">
+                                        <button type="button"
+                                            class="quantity-right-plus btn btn-secondary bi bi-plus-lg"
+                                            data-type="plus" data-field="">
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </td>
+                    <td>£{{ item.subtotal }}</td>
+                    <td>
+                        <a href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i></a>
+                    </td>  
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p>
+        You're bag is empty.
+    </p>
+    {% endif %}
 </div>
 
 {% endblock %}

@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'courses/css/courses.css' %}">
+{% endblock %}
 {% block content %}
 
 <div class="container content">
@@ -41,8 +45,8 @@
             <p>{{ object.extra_details | linebreaks}}</p>
             <p><strong>Duration:</strong> {{ object.duration_weeks }} week</p>
             <p><strong>Price:</strong> ${{object.price}} </p>
-            <div class = "align-self-end">
-            <a class="btn btn-secondary" href = "">Back</a><a class = "btn btn-primary me-3" href="{ url 'contact' }">Reserve now!</a>
+            <div class = "align-self-start">
+            <a class="btn btn-secondary me-3" href = "../">Back</a><a class = "btn btn-primary me-3" href="{ url 'contact' }">Reserve now!</a>
             </div>
         </div>
     </div>

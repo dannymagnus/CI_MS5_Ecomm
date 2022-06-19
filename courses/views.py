@@ -7,18 +7,6 @@ from .filters import CourseFilter
 
 from .models import Course
 
-# Create your views here.
-
-# class CourseListView(ListView):
-#     """
-#     A class view to view all products
-#     """
-#     model = Course
-
-
-
-
-
 class CourseListView(ListView):
     """
     A class view to view all products
@@ -39,13 +27,6 @@ class CourseListView(ListView):
         context = super().get_context_data(**kwargs)
         context['filter'] = CourseFilter(self.request.GET, queryset=self.get_queryset())
         return context
-
-
-
-
-
-
-
 
 
 class CourseDetailView(DetailView):
@@ -122,5 +103,5 @@ class CourseDeleteView(UserPassesTestMixin, DeleteView):
         return get_object_or_404(Course, slug=slug_)
 
     def get_success_url(self):
-        messages.success(self.request, "Product removed successfully")
+        messages.success(self.request, "Course removed successfully")
         return reverse('course_list')
