@@ -14,7 +14,7 @@ class Course(models.Model):
     name = models.CharField(
         max_length=(254),
         null=True,
-        blank=True,   
+        blank=True,
     )
     friendly_name = models.CharField(
         max_length=(254),
@@ -33,9 +33,12 @@ class Course(models.Model):
         decimal_places=2,
         max_digits = 6,
     )
-    duration_weeks = models.IntegerField( 
+    duration_weeks = models.IntegerField(
     )
     class Level(models.TextChoices):
+        """
+        A class for choices of dive level
+        """
         BEGINNER = "beginner", "Beginner"
         INTERMEDIATE = "intermediate", "Intermediate"
         ADVANCED = "advanced", "Advanced"

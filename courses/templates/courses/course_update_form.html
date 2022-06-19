@@ -27,7 +27,7 @@
                         src="{%if not object.image.url %}{% static 'img/scuba-equipment-shop.jpg'%} {% else %}{{object.image.url}}{% endif %}" alt="{{object.name}}">
                 </div>
                 <div class="col-12 col-lg-6 translucent-body mb-5">
-                    <form method="POST" class="p-1">
+                    <form method="POST" class="p-1" enctype='multipart/form-data'>
                         {% csrf_token %}
                         {{ form | crispy }}
                         <button class="btn btn-primary ms-auto me-3" type="submit">Save</button><a

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container content">
+    <div class="row">
+        <div class="col">
+            <h1 class="my-5">
+                ABOUT US
+            </h1>
+        </div>
+    </div>
+</div>
+<div class="container content">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h2>WELCOME TO SCUBASPORT</h2>
+            <p>
+                Our facilities include a 3 metre deep heated training pool, multi-media classrooms, a huge retail diving shop with all the top brands at excellent prices, a fully equipped service centre, and an IDEST cylinder testing station, as well as a fully equipped service centre and IDEST cylinder testing station.
+            </p>
+            <p>
+                As an award-winning PADI 5 Star Instructor Development Center, you can expect the best levels of scuba diver training at Aquasport, and you may earn a globally recognised certification ranging from PADI Open Water Diver to PADI Instructor.
+            </p>
+            <p>
+                If you learn to scuba dive with Scubasport, you will be surrounded by a devoted crew who will work with the greatest equipment in a facility that has been constructed from the ground up to make your experience the best it can be.
+            </p>
+        </div>
+        <div class="col-12 col-lg-6">
+            <img class="img-fluid mt-3" src="{% static 'img/buy-scuba-equipment.webp'%}" alt="about us">
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="d-none d-lg-block col-3"></div>
+        <div class="col-lg-6">
+            <div class="mx-auto accordion accordion-flush content" id="accordionFlushExample">
+                <h3 class="fs-4">FAQS</h3>
+                {% for faq in faqs %}
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="true" aria-controls="collapse{{ forloop.counter }}">
+                            {{ faq.name }}
+                        </button>
+                    </h2>
+                    <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <p class="bold">{{ faq.question }}</p>
+                            <p>{{ faq.answer | linebreaks}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="d-none d-lg-block col-3"></div>
+    </div>
+</div>
+{% endblock %}
