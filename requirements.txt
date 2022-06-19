@@ -11,7 +11,9 @@ django-allauth==0.50.0
 django-bootstrap-form==3.4
 django-countries==7.3.2
 django-crispy-forms==1.14.0
+django-extensions==3.1.5
 django-filter==21.1
+djhtml==1.5.0
 idna==3.3
 isort==5.10.1
 lazy-object-proxy==1.7.1
@@ -20,8 +22,12 @@ oauthlib==3.2.0
 Pillow==9.1.0
 platformdirs==2.5.2
 pycparser==2.21
+pydot==1.4.2
 PyJWT==2.3.0
 pylint==2.13.8
+pylint-django==2.5.3
+pylint-plugin-utils==0.7
+pyparsing==3.0.9
 python3-openid==3.2.0
 pytz==2022.1
 requests==2.27.1
