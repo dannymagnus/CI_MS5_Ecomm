@@ -134,21 +134,10 @@ class Product(models.Model):
         null=True,
         )
 
-    # Overide save function to create a slug on save -
-    # courtesy of Mahmoud Ahmed
-    # def save(self, *args, **kwargs):
-    #     """
-    #     Function to take slug or create on if none exist
-    #     """
-    #     super(Product, self).save(*args, **kwargs)
-    #     if not self.slug and self.name:
-    #         self.slug = slugify(self.name)
-    #     super(Product, self).save(*args, **kwargs)
-    def save(self, *args, **kwargs):  # new
-        super(Product, self).save(*args, **kwargs)
-        if not self.slug:
+    def save(self, *args, **kwargs):
+        if not self.slug and self.name:
             self.slug = slugify(self.name)
-        return super().save(*args, **kwargs)
+        super(Product, self).save(*args, **kwargs)
 
 
     def get_absolute_url(self):

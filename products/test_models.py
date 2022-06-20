@@ -34,13 +34,13 @@ class TestProductModels(TestCase):
         test_color = Color.objects.create(
             name = 'test-color',
         )
-        # product = Product.objects.create(
-        #     name='Test Name',
-        #     price=100,
-        #     brand=test_brand,
-        #     description='Test Description',
-        #     slug = 'Test-Name'
-        # )
+        product = Product.objects.create(
+            name='test-name',
+            friendly_name='Test Name',
+            price=100,
+            brand=test_brand,
+            description='Test Description',
+        )
 
 
     def tearDown(self):
@@ -76,3 +76,30 @@ class TestProductModels(TestCase):
         color = Color.objects.get(name='test-color')
         self.assertEqual((color.__str__()), color.name)
 
+    def test_product_str_method(self):
+        """
+        This test tests the categories str method and verifies
+        """
+        product = Product.objects.get(name='test-name')
+        self.assertEqual((product.__str__()), product.name)
+
+    def test_product_save_method(self):
+        """
+        This test tests the categories str method and verifies
+        """
+        product = Product.objects.get(name='test-name')
+        self.assertEqual(product.slug, 'test-name')
+
+    def test_get_absolute_url(self):
+        """
+        This test tests the product get absolute url method and verifies
+        """
+        product = Product.objects.get(name='test-name')
+        self.assertEqual("/products/detail/test-name/", product.get_absolute_url())
+
+    def test_get_friendly_name(self):
+        """
+        This test tests the product get friendly name method and verifies
+        """
+        product = Product.objects.get(name='test-name')
+        self.assertEqual(product.get_friendly_name(), 'Test Name')

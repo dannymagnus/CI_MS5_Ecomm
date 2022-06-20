@@ -13,6 +13,9 @@
     --baby-blue:rgb(104,182,242);
     --spume:rgb(83,146,194);
 }
+html, body{
+    height: 100%;
+}
 
 body {
     height:100%;

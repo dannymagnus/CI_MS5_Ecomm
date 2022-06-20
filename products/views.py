@@ -4,12 +4,11 @@ A module for views in the products app
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, HttpResponseRedirect,reverse
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from .models import Product, Inventory, Category, Color, Brand
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
-
 
 class ProductListView(ListView):
     """
@@ -99,7 +98,7 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
 
     def test_func(self):
         return self.request.user.is_staff
-    raise_exception = False
+    raise_exception = True
     redirect_field_name='/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
@@ -111,12 +110,13 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
-    success_url = '/products'
+    # success_url = '/products'
 
 
-class ProductUpdateView(UpdateView):
+class ProductUpdateView(UserPassesTestMixin,UpdateView):
     """
     A class view to update products
     """
@@ -126,8 +126,7 @@ class ProductUpdateView(UpdateView):
 
     def test_func(self):
         return self.request.user.is_staff
-    raise_exception = False
-    redirect_field_name='/'
+    raise_exception = True
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -142,8 +141,13 @@ class ProductUpdateView(UpdateView):
         super().form_valid(form)
         return HttpResponseRedirect(self.get_success_url())
 
+    def form_invalid(self, form):
+        """If the form is invalid, render the invalid form."""
+        messages.error(self.request, "Sorry there was an error")
+        return self.render_to_response(self.get_context_data(form=form))
 
-class ProductDeleteView(DeleteView):
+
+class ProductDeleteView(UserPassesTestMixin,DeleteView):
     """
     A class view to delete products
     """
@@ -162,7 +166,7 @@ class ProductDeleteView(DeleteView):
 
     def get_success_url(self, **kwargs):
         messages.success(self.request, "Product removed successfully")
-        success_url = '/products'
+        success_url = reverse('all_products')
         return success_url
 
 
@@ -221,6 +225,11 @@ class InventoryUpdateView(UserPassesTestMixin, UpdateView):
         messages.success(self.request, 'Inventory updated successfully')
         return super().form_valid(form)
 
+    def form_invalid(self, form):
+        """If the form is invalid, render the invalid form."""
+        messages.error(self.request, "Sorry there was an error")
+        return self.render_to_response(self.get_context_data(form=form))
+
 
 class ColorListView(UserPassesTestMixin,ListView):
     """
@@ -235,6 +244,7 @@ class ColorListView(UserPassesTestMixin,ListView):
     redirect_field_name='/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
+
 
 class ColorDeleteView(UserPassesTestMixin,DeleteView):
     """
@@ -279,7 +289,7 @@ class ColorUpdateView(UserPassesTestMixin, UpdateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
-        messages.success(self.request, 'Sorry, something went wrong')
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
 
@@ -304,7 +314,8 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
 
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
-        context.update({"Error": "Soemthing went wrong"})
+        context.update({"Error": "Something went wrong"})
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
     success_url = '/products/colors'
@@ -368,7 +379,7 @@ class BrandUpdateView(UserPassesTestMixin, UpdateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
-        messages.success(self.request, 'Sorry, something went wrong')
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
 
@@ -394,6 +405,7 @@ class BrandCreateView(UserPassesTestMixin, CreateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
     success_url = '/products/brands'
@@ -456,7 +468,7 @@ class CategoryUpdateView(UserPassesTestMixin, UpdateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Something went wrong"})
-        messages.success(self.request, 'Sorry, something went wrong')
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
 
@@ -482,6 +494,7 @@ class CategoryCreateView(UserPassesTestMixin, CreateView):
     def form_invalid(self, form):
         context = self.get_context_data(form=form)
         context.update({"Error": "Soemthing went wrong"})
+        messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
     success_url = '/products/categories'

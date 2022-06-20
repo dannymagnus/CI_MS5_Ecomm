@@ -3,7 +3,19 @@
 
 {% block content %}
 
-<h1>You are not authorised to access this space</h1>
-<h1>Return <a href = "{% url 'home' %}">HOME</a>
+<div class="container content">
+    <div class="row">
+      <div class="col">
+        <h1 class="my-5">
+          ERROR 403
+        </h1>
+      </div>
+    </div>
+</div>
+
+<div class="container d-flex flex-column align-items-center content justify-content-center content">
+<p>You are not authorised to access this space</p>
+<p>Return <a href = "{% url 'home' %}">HOME</a></p>
+</div>
 
 {% endblock %}

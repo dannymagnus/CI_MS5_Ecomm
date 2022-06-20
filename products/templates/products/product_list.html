@@ -68,6 +68,8 @@
                         <li class="list-group-item border-0"><a href="{% url 'product_detail' product.slug %}" class="btn btn-light">Details</a></li>
                     </ul>
                     </div>
+                    {% empty %}
+                    <p class = "fs-6">Sorry no products match your search</p>
                 {% endfor %}
             </div>
             <div class="pagination justify-content-end">  

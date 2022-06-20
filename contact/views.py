@@ -21,15 +21,23 @@ def contact_us(request):
     contact_form = ContactForm()
     contacted = False
     if request.method == 'GET':
-        contact_form = ContactForm(
-            initial={
-                'email': request.user.email,
-                
-                'phone': request.user.userprofile.default_phone_number,
-                'postcode': request.user.userprofile.default_postcode,
-                'street_address': request.user.userprofile.default_street_address1,
-                    }
-            )
+        if not request.user.is_authenticated:
+            contact_form = ContactForm()
+        elif request.user.userprofile:
+            contact_form = ContactForm(
+                initial={
+                    'email': request.user.email,
+                    'phone': request.user.userprofile.default_phone_number,
+                    'postcode': request.user.userprofile.default_postcode,
+                    'street_address': request.user.userprofile.default_street_address1,
+                        }
+                )
+        else:
+            contact_form = ContactForm(
+                initial={
+                    'email': request.user.email,
+                        }
+                )
     if request.method == 'POST':
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
