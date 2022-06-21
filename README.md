@@ -31,9 +31,6 @@
             10. [Course Model](#contact-model)
             11. [Contact Model](#reason-model)
             12. [Faq Model](#about-model)
-            13. [Chef Model](#chef-model)
-            14. [Reasons Model](#reasons-model)
-            15. [Home Model](#home-model)
     3. [Scope](#scope)
         1. [User Stories](#user-stories)
     4. [Skeleton](#skeleton)
@@ -179,7 +176,6 @@ This model contains all fields stored in the database collections with their dat
 - The model contains the following fields: name, friendly-name, question, answer.
 
 
-------------------------TBC------------------------------------------------
 ## Scope
 ### User stories:
 
@@ -189,53 +185,47 @@ This model contains all fields stored in the database collections with their dat
 2. As an unauthenticated user, I want to browse all products available
 3. As an unauthenticated user, I want to be able to search the website for specific products and brands.
 4. As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
-5. As an unauthenticated user, I want to be able to order the product pages by price, high to low, and alphabetically.
-6. As an unauthenticated user, I want to be able to view all products on the site.
+5. As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
+6. As an unauthenticated user, I want to have the option to view all products on the site.
 7. As an unauthenticated user, I want to be able to sort products by category.
-8. As an unauthenticated user, I want to be able to view brands sold on the site.
-9. As an unauthenticated user, I want to be able to add a product to my bag and see how many items are in my bag.
-10. As an unauthenticated user, I want to be able to sort products by category.
-11. As an unauthenticated user, I want to be able to view my shopping bag.
+8. As an unauthenticated user, I want to be able to view certain brand’s products sold on the site.
+9. As an unauthenticated user, I want to be able to add a product to my bag.
+10. As an unauthenticated user, I want to be able to quickly navigate through pages
+11. As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
 12. As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
-13. As an unauthenticated user, I want to be able to view products in my shopping bag.
+13. As an unauthenticated user, I want to be able to view products added to my shopping bag.
 14. As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag.
 15. As an unauthenticated user, I want to be able to checkout and purchase products.
 16. As an unauthenticated user, I want to be able to create an account.
-17. As an unauthenticated user, I want to be able to log in to  / sign out of an existing account.
+17. As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
 18. As an authenticated user, I want to be able to view and update my profile information.
 19. As an authenticated user, I want to be able to view my order history.
 20. As an unauthenticated user, I want to be able contact the business
 21. As an unauthenticated user, I want to be able to receive news and updates from the business
 22. As an unauthenticated user, I want to be able to view the business location
+23. As a site owner, I want users to be able to navigate the website quickly and easily
+24. As a site owner, I want users to be sign up to a newsletter to capture user information.
+25. As a site owner, I want users to be able to view the business social media
+26. As a staff user, I want to be able to update and edit product descriptions, details and prices.
+27. As a staff user, I want to be able to view, add, update or remove the brands listed.
+28. As a staff user, I want to be able to view, add, update and delete products and product categories
+29. As a staff user, I want to be able to manage product inventory
+30. As a staff user, I want to be able to view customer orders
+31. As an authenticated user, I want confirmation that I have signed out of my account
+32. As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+33. As an unauthenticated user, I want to be able to browse available courses
+34. As an unauthenticated user, I want to be able to view course details and request a booking
+35. As a staff user, I want to be able to view, add, update or remove the courses listed.
+36. As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful.
+
+#### Error Flow
+37. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
+38. As a site owner, I want error pages that enables users to be able to return to valid areas of the site without using browser controls.
+
+------------------------TBC------------------------------------------------
 
 
 <!--
-#### Site Owner
-19.	As a site owner, I want to attract customers to our restaurant
-20.	As a site owner, I show appealing and professional images of our food
-21.	As a site owner, I want users to be to view our full menu
-22.	As a site owner, I want users to be able to view the food descriptions and prices
-23.	As a site owner, I want users to be able to view allergies and calories
-24.	As a site owner, I want users to be able to make a reservation with data validation so they can only book future dates and in valid opening time.
-25.	As a site owner, I want users to be able to leave a comment or review
-26.	As a site owner, I want users to be able to view other comments and reviews
-27.	As a site owner, I want users to be able to edit and delete comments or reviews
-28.	As a site owner, I want users to be able to contact the business
-29.	As a site owner, I want users to be able to view the location and opening times
-30.	As a site owner, I want users to be able to find out about our business ethos
-31.	As a site owner, I want users to be able to have an idea of the restaurant’s welcoming atmosphere so they will make a reservation
-32.	As a site owner, I want users to be able to navigate the site easily and quickly
-33. As a site owner, I want to be able to promote special offers and events.
-34. As a site owner, I want users to be able to sign in to, or create an account
-35. As a site owner, I want users to be able to log out of their account
-36. As a site owner, I want users to be able to see separate menus for lunch, dinner and drinks
-37. As a logged in administrator, I want to be able to review and approve or delete user comments.
-38. As a site owner, I want users to be able to view the business’ social media
-39. As a logged in administrator, I want to be able to create, edit or remove content on the website.
-
-#### Error Flow
-40. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
-41. As a site owner, I want a 404 page that enables users to be able to return to valid areas of the site without using browser controls.
 
 ## Skeleton
 
