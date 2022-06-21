@@ -1,11 +1,17 @@
 {% extends "account/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "E-mail Addresses" %}{% endblock %}
 
 {% block inner_content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+<div class = "col-12 col-lg-4 d-flex flex-column mt-5 p-3 auth-pages-border bg-light">
+  <div class="w-100 d-flex align-items-center">
+<h1 class = "fs-3 text-uppercase w-75">{% trans "E-mail Addresses" %}</h1>
+<img class = "w-25" src="{% static 'img/form-logo.webp' %}" alt="scubasport logo">
+</div>
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
@@ -31,9 +37,9 @@
   {% endfor %}
 
 <div class="buttonHolder">
-      <button class="secondaryAction" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
-      <button class="secondaryAction" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
-      <button class="primaryAction" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
+      <button class="secondaryAction btn btn-secondary" type="submit" name="action_primary" >{% trans 'Make Primary' %}</button>
+      <button class="secondaryAction btn btn-secondary" type="submit" name="action_send" >{% trans 'Re-send Verification' %}</button>
+      <button class="primaryAction btn btn-primary" type="submit" name="action_remove" >{% trans 'Remove' %}</button>
 </div>
 
 </fieldset>
@@ -49,11 +55,11 @@
 
     <form method="post" action="{% url 'account_email' %}" class="add_email">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form | crispy }}
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
   {% endif %}
-
+</div>
 {% endblock %}
 
 
@@ -72,3 +78,4 @@
 })();
 </script>
 {% endblock %}
+

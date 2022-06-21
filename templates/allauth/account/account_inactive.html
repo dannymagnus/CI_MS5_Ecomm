@@ -1,11 +1,17 @@
 {% extends "account/base.html" %}
+{% load static %}
 
 {% load i18n %}
 
 {% block head_title %}{% trans "Account Inactive" %}{% endblock %}
 
 {% block inner_content %}
-<h1>{% trans "Account Inactive" %}</h1>
+<div class = "col-12 col-lg-4 d-flex flex-column mt-5 p-3 auth-pages-border bg-light">
+    <div class="w-100 d-flex align-items-center">
+  <h1 class = "fs-3 text-uppercase w-75">{% trans "Account Inactive" %}</h1>
+  <img class = "w-25" src="{% static 'img/form-logo.webp' %}" alt="scubasport logo">
+  </div>
+  <p>{% trans "This account is inactive." %}</p>
+</div>
 
-<p>{% trans "This account is inactive." %}</p>
 {% endblock %}

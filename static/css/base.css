@@ -418,3 +418,18 @@ input[type=number] {
 .bold{
     font-weight: bold;
 }
+
+/* ----------auth pages------------------------------ */
+
+@media only screen and (min-width : 992px) {
+    .auth-pages-border{
+        border:1px solid black;
+        border-radius: 25px;
+    }
+    .auth-background{
+        background-image: url(../img/dive-shop-sign-in.jpg);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}

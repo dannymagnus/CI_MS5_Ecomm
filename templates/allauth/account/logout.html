@@ -1,21 +1,24 @@
 {% extends "account/base.html" %}
-
+{% load static %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block inner_content %}
-<h1>{% trans "Sign Out" %}</h1>
-
+<div class = "col-12 col-lg-4 d-flex flex-column mt-5 p-3 auth-pages-border bg-light">
+  <div class="w-100 d-flex align-items-center">
+<h1 class = "fs-3 text-uppercase w-75">{% trans "Sign Out" %}</h1>
+<img class = "w-25" src="{% static 'img/form-logo.webp' %}" alt="scubasport logo">
+</div>
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
-
 <form method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
+  <button class="btn btn-primary mt-3" type="submit">{% trans 'Sign Out' %}</button>
 </form>
-
+</div>
 
 {% endblock %}

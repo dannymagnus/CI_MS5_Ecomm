@@ -1,5 +1,6 @@
 {% extends "account/base.html" %}
-
+{% load static %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 {% load account %}
 
@@ -7,7 +8,11 @@
 
 
 {% block inner_content %}
-<h1>{% trans "Confirm E-mail Address" %}</h1>
+<div class = "col-12 col-lg-4 d-flex flex-column mt-5 p-3 auth-pages-border bg-light">
+    <div class="w-100 d-flex align-items-center">
+  <h1 class = "fs-3 text-uppercase w-75">{% trans "Confirm E-mail Address" %}</h1>
+  <img class = "w-25" src="{% static 'img/form-logo.webp' %}" alt="scubasport logo">
+  </div>
 
 {% if confirmation %}
 
@@ -17,7 +22,7 @@
 
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+<button class="btn btn-success mt-3"type="submit">{% trans 'Confirm' %}</button>
 </form>
 
 {% else %}
@@ -27,5 +32,6 @@
 <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
 
 {% endif %}
+</div>
 
 {% endblock %}

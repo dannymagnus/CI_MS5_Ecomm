@@ -1,21 +1,27 @@
 {% extends "account/base.html" %}
+{% load static %}
 
 {% load i18n %}
-
+{% load crispy_forms_tags %}
 {% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block inner_content %}
+<div class = "col-12 col-lg-4 d-flex flex-column mt-5 p-3 auth-pages-border bg-light">
+  <div class="w-100 d-flex align-items-center">
+<h1 class = "fs-3 text-uppercase w-75">{% trans "Sign Up" %}</h1>
+<img class = "w-25" src="{% static 'img/form-logo.webp' %}" alt="scubasport logo">
+</div>
 
-{% block content %}
-<h1>{% trans "Sign Up" %}</h1>
 
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  {{ form | crispy }}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+  <button class="btn btn-success mt-3"type="submit">{% trans "Sign Up" %} &raquo;</button>
 </form>
+</div>
 
 {% endblock %}

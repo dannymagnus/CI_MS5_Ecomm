@@ -1,12 +1,16 @@
 {% extends "account/base.html" %}
-
+{% load static %}
 {% load i18n %}
 
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
-{% block content %}
-    <h1>{% trans "Verify Your E-mail Address" %}</h1>
+{% block inner_content %}
+<div class = "col-12 col-lg-4 d-flex flex-column mt-5 p-3 auth-pages-border bg-light">
+    <div class="w-100 d-flex align-items-center">
+  <h1 class = "fs-3 text-uppercase w-75">{% trans "Verify Your E-mail Address" %}</h1>
+  <img class = "w-25" src="{% static 'img/form-logo.webp' %}" alt="scubasport logo">
+  </div>
 
     <p>{% blocktrans %}We have sent an e-mail to you for verification. Follow the link provided to finalize the signup process. If you do not see the verification e-mail in your main inbox, check your spam folder. Please contact us if you do not receive the verification e-mail within a few minutes.{% endblocktrans %}</p>
-
+</div>
 {% endblock %}
