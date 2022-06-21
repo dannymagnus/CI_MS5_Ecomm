@@ -20,19 +20,20 @@
         4. [Physical database model](#physical-database-model)
         5. [Models](#models)
             1. [User Model](#user-model)
-            2. [Meal Model](#meal-model)
-            3. [Category Model](#category-model)
-            4. [Allergen Model](#allergen-model)
-            5. [Drink Model](#drink-model)
-            6. [DrinkCategory Model](#drinkcategory-model)
-            7. [Comment Model](#comment-model)
-            8. [Booking Model](#booking-model)
-            9. [Contact Model](#contact-model)
-            10. [Reason Model](#reason-model)
-            11. [About Model](#about-model)
-            12. [Chef Model](#chef-model)
-            13. [Reasons Model](#reasons-model)
-            14. [Home Model](#home-model)
+            2. [UserProfile Model](#userprofile-model)
+            3. [Product Model](#product-model)
+            4. [Category Model](#category-model)
+            5. [Brand Model](#brand-model)
+            6. [Size Model](#size-model)
+            7. [DrinkCategory Model](#drinkcategory-model)
+            8. [Color Model](#color-model)
+            9. [Inventory Model](#inventory-model)
+            10. [Course Model](#contact-model)
+            11. [Contact Model](#reason-model)
+            12. [Faq Model](#about-model)
+            13. [Chef Model](#chef-model)
+            14. [Reasons Model](#reasons-model)
+            15. [Home Model](#home-model)
     3. [Scope](#scope)
         1. [User Stories](#user-stories)
     4. [Skeleton](#skeleton)
@@ -133,6 +134,9 @@ This model contains all fields stored in the database collections with their dat
 - The User model contains information about the user. It is part of the Django allauth library
 - The model contains the following fields: username, password, first_name, last_name, email, is_staff, is_active, is_superuser, last_login, date_joined
 
+##### UserProfile Model
+- The UserProfile model contains information about the users address.  This can be created at anytime through the nav link or automatically added post checkout.  The UserProfile Model contains the following fields: userdefault_phone_number,default_street_address1,default_street_address2,default_town_or_city,default_county,default_postcode,default_country.
+
 ##### Product Model
 - The Product model contains information about products available within each of the categories
 - It contains Category as a foreign-key.
@@ -176,29 +180,36 @@ This model contains all fields stored in the database collections with their dat
 
 
 ------------------------TBC------------------------------------------------
-<!-- ## Scope
+## Scope
 ### User stories:
 
 #### First time user
-1.	As a first time user, I want to be able to view the type of food the restaurant provides
-2.	As a first time user, I want to see professional and appealing images of the food
-3.	As a first time user, I want to be able to navigate the website quickly and easily
-4.	As a first time user, I want to be able to view the full menu
-5.	As a first time user, I want to be able to view food allergies and calories
-6.	As a first time user, I want to be able to view a description and price of the food
-7.	As a logged in user, I want to be able to leave a comment or review
-8.	As a logged in user, I want to be able to see other user’s comments and reviews
-9.	As a logged in user, I want to be able to edit and delete a comment I have made
-10.	As a first time user, I want to be able contact the restaurant
-11.	As a first time user, I want to be able to make a reservation
-12.	As a first time user, I want to be able to view the restaurants location and opening hours
-13.	As a first time user, I want to know about the business and it’s ethos
-14.	As a first time user, I want to be able to see special offers and promotions.
-15. As a logged in user, I want to be able to to sign in to, or create an account
-16. As a logged in user, I want to be able to log out of an account
-17. As a first time user, I want to be able to see separate menus for lunch, dinner and drinks
-18. As a first time user, I want to be able to view the business’ social media
 
+1. As an unauthenticated user, I want to be able to navigate the website quickly and easily 
+2. As an unauthenticated user, I want to browse all products available
+3. As an unauthenticated user, I want to be able to search the website for specific products and brands.
+4. As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
+5. As an unauthenticated user, I want to be able to order the product pages by price, high to low, and alphabetically.
+6. As an unauthenticated user, I want to be able to view all products on the site.
+7. As an unauthenticated user, I want to be able to sort products by category.
+8. As an unauthenticated user, I want to be able to view brands sold on the site.
+9. As an unauthenticated user, I want to be able to add a product to my bag and see how many items are in my bag.
+10. As an unauthenticated user, I want to be able to sort products by category.
+11. As an unauthenticated user, I want to be able to view my shopping bag.
+12. As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
+13. As an unauthenticated user, I want to be able to view products in my shopping bag.
+14. As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag.
+15. As an unauthenticated user, I want to be able to checkout and purchase products.
+16. As an unauthenticated user, I want to be able to create an account.
+17. As an unauthenticated user, I want to be able to log in to  / sign out of an existing account.
+18. As an authenticated user, I want to be able to view and update my profile information.
+19. As an authenticated user, I want to be able to view my order history.
+20. As an unauthenticated user, I want to be able contact the business
+21. As an unauthenticated user, I want to be able to receive news and updates from the business
+22. As an unauthenticated user, I want to be able to view the business location
+
+
+<!--
 #### Site Owner
 19.	As a site owner, I want to attract customers to our restaurant
 20.	As a site owner, I show appealing and professional images of our food
