@@ -1,14 +1,25 @@
-from django.shortcuts import render, get_object_or_404, reverse, HttpResponseRedirect, redirect
+"""
+A module for views
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
+from django.shortcuts import HttpResponseRedirect
 from django.contrib import messages
-
-from .models import UserProfile
 from django.views.generic import DetailView, UpdateView
-from .models import UserProfile, User
+# Internal
+from .models import UserProfile
 from .forms import UserProfileForm
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class ProfileDetailView(DetailView):
-
+    """
+    Display the user's profile.
+    Args:
+        request (object): HTTP request object.
+    Returns:
+        Render of users profile page with context
+    """
     model = UserProfile
     context_object_name = 'user_object'
     template_name = 'profiles/profile.html'
@@ -18,7 +29,6 @@ class ProfileDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         return context
-
 
 class ProfileUpdateView(UpdateView):
     """

@@ -1,14 +1,19 @@
 """
 A module for views in the products app
 """
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd Party
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.shortcuts import render, get_object_or_404, HttpResponseRedirect,reverse
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+# Internal
 from .models import Product, Inventory, Category, Color, Brand
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class ProductListView(ListView):
     """

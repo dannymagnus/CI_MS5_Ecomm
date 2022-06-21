@@ -97,14 +97,16 @@ The primary goal of the website from a site users perspective is as follows:
 
 ## Structure
 ### Code Structure
-<!-- The project is organised into a variety of applications, as is constructed using the Django Framework.
+The project is organised into a variety of applications, as is constructed using the Django Framework.
 
 App details as follows:
-- Home - this app contains information about the restaurant home page with quick links to the menus on page and table booking via the nav bar.
-- Meals - this app contains the menu structure, users can choose between the lunch drink and dinner menu.  Clicking individual items opens a sub  page where users can see detailed food information including allergens and calories.
-- About - this app contains information relating to the business heritage the opportunity for users to view, add, edit, delete comments with authentication.
+- Home - this app contains information about the dive centre home page with quick links to the dive courses and product page, contact-us and about us via the nav bar.
+
+It contains a footer with links to external sites and a mailchimp signup form.
+- Products - this app contains the the product listings and detail views, users can add items to a shopping cart, filter for items in categories and hosts the results of the product search.  Clicking individual items opens a sub  page where users can see detailed product information.  The product app has a stock inventory so customers cannot add more to the bag than what is physically in stock.  When items are out of stock at that time this is rendered to the user.  Staff can create, read, update and delete product and inventory items.
+- About - this app contains information relating to the business and frequently asked questions.
 - Contact - this app is for users to be able to submit a message to the site owners and recieve acknowledgment.
-- Booking - this app is for users to be able to submit a booking reqeuest with date validation so cannot be booked in past and also only within restaurant opening hours. -->
+- Profile - Users can choose to have a profile either when checking out or when authenticated.  Edit functionality exists and users can view thier purchase history.
 
 To complement the apps there are
 - project: Project level files - settings.py for project level settings and urls.py to route the website URLS

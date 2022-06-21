@@ -1,13 +1,14 @@
 """
 A module for models in the products app
 """
-
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd Party
 import random
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
-
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Category(models.Model):
     """
     A class for the category model
@@ -50,7 +51,6 @@ class Product(models.Model):
     """
     A class for the product model
     """
-
     class Meta:
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
@@ -123,7 +123,7 @@ class Product(models.Model):
         )
     promoted = models.BooleanField(
         default=False,
-    )
+        )
     image = models.ImageField(
         upload_to='products/',
         blank=True,
@@ -138,7 +138,6 @@ class Product(models.Model):
         if not self.slug and self.name:
             self.slug = slugify(self.name)
         super(Product, self).save(*args, **kwargs)
-
 
     def get_absolute_url(self):
         """
@@ -167,7 +166,7 @@ class Brand(models.Model):
 
     name = models.CharField(
         max_length=254
-    )
+        )
 
     # Show object by name in admin panel
     def __str__(self):
@@ -265,7 +264,11 @@ class Inventory(models.Model):
             #Function to create unique SKU number
     def create_new_sku_number():
         """
-        Create new SKU number
+        Returns a random unique sku string
+        Args:
+            self (object): self.
+        Returns:
+            The sku string
         """
         not_unique = True
         while not_unique:
