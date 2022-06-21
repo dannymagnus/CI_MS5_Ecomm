@@ -61,8 +61,8 @@ class ProductSearchView(ListView):
         # search_results = ProductOrderFilter(self.request.GET, queryset)
         if search_results:
             self.no_search_result = False
-        # Returns the default queryset if an empty queryset is returned by the django_filters
-        return search_results #or self.model.objects.all()
+        # Returns the queryset returned by the django_filters
+        return search_results
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

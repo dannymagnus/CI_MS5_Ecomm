@@ -1,3 +1,13 @@
+"""
+checkout/views.py: views to process an order made on the site.
+Some of the code is derived from the Code Institute
+Boutique Ado project.
+"""
+# Imports
+import json
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
+import stripe
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse
 )
@@ -5,22 +15,26 @@ from django.views.generic import DetailView
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-
-from .forms import OrderForm
-from .models import Order, OrderLineItem
-
+# Internal:
 from products.models import Product
 from products.models import Inventory
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
 from bag.context_processors import bag_contents
-
-import stripe
-import json
-
+from .models import Order, OrderLineItem
+from .forms import OrderForm
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    This function caches the cart, order and user data if and catches an error
+    if it doesn't go through. Credit: Boutique Ado project, Code Institute.
+    Args:
+        request (object)
+    Returns:
+        A HTTP response with the relevant status and a message.
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -38,6 +52,15 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    This function processes the checkout: the cart contents, user info and
+    the payment, validating it in the process.
+    Credit: Boutique Ado project, Code Institute.
+    Args:
+        request (object)
+    Returns:
+        The request object, the checkout template and the context.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -143,7 +166,13 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkouts
+    Handles the checkout if successful, saves the order to the users profile.
+    Credit: Boutique Ado project, Code Institute.
+    Args:
+        request (object)
+        order_number (string)
+    Returns:
+        The request object, the template and the context.
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)

@@ -1,11 +1,11 @@
 # Imports
+import tempfile
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django.contrib.auth.models import User
-from django.contrib.messages import get_messages
-from django.test import RequestFactory, TestCase
+from django.test import TestCase
 from django.urls import reverse
-import tempfile
+
 
 # Internal:
 from products.models import Category, Product, Brand, Color, Size, Inventory
@@ -13,18 +13,10 @@ from products.views import ProductListView, ProductSearchView, product_detail, P
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-
-# class HomePageTest(TestCase):
-#     def test_environment_set_in_context(self):
-#         request = RequestFactory().get('/')
-#         view = HomeView()
-#         view.setup(request)
-
-#         context = view.get_context_data()
-#         self.assertIn('environment', context)
-
 class TestProductsClassView(TestCase):
-
+    """
+    A class for testing product views
+    """
     def setUp(self):
         """
         Create test user(regular and super user), category and product
@@ -61,7 +53,6 @@ class TestProductsClassView(TestCase):
             count=1
         )
 
-
     def tearDown(self):
         """
         Delete test user, category, product and review
@@ -88,8 +79,6 @@ class TestProductsClassView(TestCase):
         self.assertTemplateUsed(response, template_name='products/product_list.html')
 
         context_products = response.context['product_list']
-        print(context_products)
-
         expected_products = [repr(r) for r in Product.objects.all()]
 
         self.assertEqual(1, len(context_products))
@@ -101,7 +90,16 @@ class TestProductsClassView(TestCase):
         self.assertContains(response, product.friendly_name)
         self.assertContains(response, product.price)
         self.assertContains(response, product.brand)
-        self.assertNotContains(response, '<p class = "fs-6">Sorry no products match your search</p>')
+        self.assertNotContains(
+            response, '<p class = "fs-6">Sorry no products match your search</p>'
+            )
+
+    def test_search_all_products_no_query_string(self):
+        """
+        This test tests search all products with no query string
+        """
+        response = self.client.get(reverse('search_products'), {'q': ''})
+        self.assertContains(response, '<p class = "fs-6">Sorry no products match your search</p>')
 
     def test_get_product_detail(self):
         """
@@ -112,7 +110,7 @@ class TestProductsClassView(TestCase):
                                    {'product': product})
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/product_detail.html')
- 
+
     def test_add_product_as_superuser(self):
         """
         This test tests add product page as a superuser and verifies
@@ -207,14 +205,3 @@ class TestProductsClassView(TestCase):
 
         self.assertEqual(0, len(response.context["object_list"]))
         self.assertContains(response, '<p class = "fs-6">Sorry no products match your search</p>')
-
-
-
-
-
-
-
-
-
-
-
