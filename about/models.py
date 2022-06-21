@@ -1,3 +1,4 @@
+
 # Imports
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
@@ -6,7 +7,9 @@ from django.db import models
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 class Faq(models.Model):
-
+    """
+    A model class to record and present faqs
+    """
     class Meta:
         verbose_name = "FAQ"
         verbose_name_plural = "FAQs"

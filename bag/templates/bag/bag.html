@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!-- Page title text -->
 <div class="container content">
     <div class="row">
         <div class="col">
@@ -10,6 +11,7 @@
         </div>
     </div>
 </div>
+<!-- Dynamic responsive table containing bag contents -->
 <div class="d-none d-md-block container content">
     <div class="row">
         <div class="col">
@@ -47,19 +49,23 @@
                                 {{item.inventory.product.price}}
                             </td>
                             <td style="width:150px">
+                                <!-- Form to adjust item quantity in background -->
                                 <form id="update_qty" method="POST" action="{% url 'adjust_bag' item.inventory.id %}">
                                     {% csrf_token %}
                                     <div class="input-group d-flex">
+                                        <!-- Form buttons to decrease bag quantity disables at 0 -->
                                         <div class="input-group-prepend">
                                             <span class="input-group-btn">
                                                 <button type="submit" class="quantity-left-minus btn btn-secondary bi bi-dash-lg" data-type="minus" data-field="">
                                                 </button>
                                             </span>
                                         </div>
+                                        <!-- Product quantity input js pulls in inventory count as max value -->
                                         <input type="number" id="quantity" name="quantity"
                                             class="form-control qty_input qty-input input-number"
                                             value="{{item.quantity}}" min="1" max="{{item.inventory.count}}"
                                             data-inventory-count="{{item.inventory.count}}">
+                                        <!-- Form buttons to increase bag quantity disables at inventory max value -->
                                         <div class="input-group-append">
                                             <span class="input-group-btn">
                                                 <button type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
@@ -69,6 +75,7 @@
                                     </div>
                                 </form>
                             </td>
+                            <!-- Item subtotal with link to checkout -->
                             <td>£{{ item.subtotal }}</td>
                             <td><a href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i></a></td>
                         </tr>
@@ -76,6 +83,7 @@
                     </tbody>
                 </table>
                 <div>
+                    <!-- Grand total including delivery -->
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8"></div>
@@ -101,7 +109,9 @@
         </div>
     </div>
 </div>
+<!-- As above but display structure for mobile devices -->
 <div class=" d-md-none container content">
+    <!-- Table to display bag items if they exist -->
     {% if bag_items %}
     <div class="container table-responsive">
         <table class="table">
@@ -132,10 +142,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <!-- Form to adjust quantity of items in bag if not exceeding inventory count or below 0-->
                     <td style="width:150px">
                         <form id="update_qty" method="POST" action="{% url 'adjust_bag' item.inventory.id %}">
                             {% csrf_token %}
                             <div class="input-group d-flex">
+                                <!-- Button to decrease bag quantity -->
                                 <div class="input-group-prepend">
                                     <span class="input-group-btn">
                                         <button type="submit"
@@ -144,6 +156,7 @@
                                         </button>
                                     </span>
                                 </div>
+                                <!-- Button to increase bag quantity -->
                                 <input type="number" id="quantity" name="quantity" class="form-control qty_input qty-input input-number" value="{{item.quantity}}" min="1" max="{{item.inventory.count}}" data-inventory-count="{{item.inventory.count}}">
                                 <div class="input-group-append">
                                     <span class="input-group-btn">
@@ -155,18 +168,21 @@
                         </form>
                     </td>
                     <td>£{{ item.subtotal }}</td>
+                    <!-- Styled link to remove items from bag -->
                     <td>
-                        <a href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i></a>
+                        <a class = "text-reset" href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i></a>
                     </td>  
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+    <!-- Total cost displayed -->
     <div class = " container d-flex flex-column align-items-end">
         <p><strong>Delivery: ${{delivery}}</strong></p>
         <p><strong>Grand Total: ${{grand_total}}</strong></p>
     </div>
+    <!-- Buttons to proceed to checkout -->
     <div class = "container d-flex justify-content-end">
         <a href="{% url 'all_products' %}" class="btn btn-dark me-2"><i class="bi bi-chevron-double-left"></i>Continue Shopping</a>
         <a class="btn btn-primary" href="{% url 'checkout' %}">Proceed to Checkout</a>

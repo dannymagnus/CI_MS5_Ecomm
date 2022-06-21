@@ -1,8 +1,14 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+"""
+A module for bag app views
+"""
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Imports
+# 3rd Party
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-from products.models import Inventory, Product
-
-# Create your views here.
+# Internal
+from products.models import Inventory
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def view_bag(request):
     """
@@ -11,7 +17,7 @@ def view_bag(request):
     return render(request, 'bag/bag.html')
 
 def add_to_bag(request, slug):
-    """ 
+    """
     Add a quantity of the specified product to the shopping bag
     """
     quantity = int(request.POST.get('quantity'))
@@ -20,8 +26,6 @@ def add_to_bag(request, slug):
     redirect_url = request.POST.get('redirect_url')
     sku = request.POST.get('sku')
     item = get_object_or_404(Inventory, sku=sku)
-    name = item.product.friendly_name
-    product = get_object_or_404(Product, slug=slug)
 
     if sku in list(bag.keys()):
         bag[sku] += quantity
@@ -43,10 +47,10 @@ def adjust_bag(request, inventory_id):
     bag = request.session.get('bag', {})
     item = get_object_or_404(Inventory, pk=inventory_id)
     sku = item.sku
-    
+
     if quantity > 0:
         bag[sku] = quantity
-    
+
     else:
         messages.success(request, f'Removed {item.product.friendly_name} from your bag')
         bag.pop(sku)
@@ -65,5 +69,5 @@ def remove_from_bag(request, inventory_id):
 
     bag.pop(sku)
     messages.success(request, f'Removed {item.product.friendly_name} from your bag')
-    
+
     return redirect(reverse('view_bag'))

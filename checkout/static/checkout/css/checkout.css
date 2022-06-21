@@ -1,3 +1,5 @@
+/* Styling Stripe Form Elements (Credit Code Institute Boutique Ado--------------- */
+
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -45,6 +47,8 @@ select:invalid,
 select option[value=""] {
     color: #aab7c4 !important;
 }
+
+/*  Processing payment overlay----------------------- */
 
 #loading-overlay {
 	display: none;

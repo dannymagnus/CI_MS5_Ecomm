@@ -1,11 +1,25 @@
+"""
+A module for the bag context manager
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from products.models import Product, Inventory
+# Internal
+from products.models import Inventory
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 def bag_contents(request):
-
+    """
+    A context that contains the bag contents
+    Args:
+        request (object): HTTP request object.
+    Returns:
+        The bag contents context
+    """
     bag_items = []
     total = 0
     product_count = 0

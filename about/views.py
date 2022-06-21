@@ -2,8 +2,6 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
 from django.shortcuts import render
-
-
 # Internal:
 from .models import Faq
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -11,9 +9,7 @@ from .models import Faq
 
 def about(request):
     """
-    A view to show restaurant bio,
-    reasons to dine, chef images and bio,
-    and comments
+    A view to show business Faqs
     Args:
         request (object): HTTP request object.
     Returns:

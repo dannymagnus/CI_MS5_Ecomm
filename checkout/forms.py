@@ -1,8 +1,17 @@
+"""
+A module for forms for checkout app
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd party:
 from django import forms
+# Internal
 from .models import Order
 
-
 class OrderForm(forms.ModelForm):
+    """
+    A class for the order form
+    """
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',

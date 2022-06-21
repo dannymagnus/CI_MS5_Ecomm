@@ -1,4 +1,6 @@
-
+/*
+ * Function to increase qty in bag and disable once max value reached
+*/
     $('.quantity-right-plus').click(function (e) {
         e.preventDefault();
         var qtyform = $(this).closest('form');
@@ -13,7 +15,9 @@
         qtyform.submit();
     });
 
-
+/*
+ * Function to decrease qty in bag and disable once max value reached
+*/
 $('.quantity-left-minus').click(function (e) {
         // Stop acting like a button
         e.preventDefault();
