@@ -1,10 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-
 {% block content %}
-
-<h1>Content not found</h1>
-<h1>Opps and error seems to have occurred</h1>
-<h1>Return <a href = "{% url 'home' %}">HOME</a>
+<div class="container content">
+    <div class="row">
+      <div class="col">
+        <h1 class="my-5">
+          ERROR 404
+        </h1>
+      </div>
+    </div>
+</div>
+<div class="container d-flex flex-column align-items-center content justify-content-center"></div>
+<h2 class = "fs-4">Content not found</h2>
+<p>Opps and error seems to have occurred</p>
+<p>Return <a href = "{% url 'home' %}">HOME</p>
 
 {% endblock %}

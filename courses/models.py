@@ -42,7 +42,7 @@ class Course(models.Model):
         BEGINNER = "beginner", "Beginner"
         INTERMEDIATE = "intermediate", "Intermediate"
         ADVANCED = "advanced", "Advanced"
-        PRO = "4", "professional"
+        PRO = "professional", "Professional"
 
     level = models.CharField(
         max_length=50,

@@ -30,7 +30,6 @@ class ProductFilter(django_filters.FilterSet):
             'category__name': ['iexact'],
             'brand__name': ['iexact'],
         }
-        widgets = {'name': forms.HiddenInput()}
 
     def filter_by_order(self,queryset,name,value):
         """
@@ -41,9 +40,9 @@ class ProductFilter(django_filters.FilterSet):
         elif value == 'pricedesc':
             expression = '-price'
         elif value == 'namedesc':
-            expression = 'name'
+            expression = 'friendly_name'
         else:
-            expression = '-name'
+            expression = '-friendly_name'
         return queryset.order_by(expression)
 
 
@@ -92,7 +91,7 @@ class ProductOrderFilter(django_filters.FilterSet):
         elif value == 'pricedesc':
             expression = '-price'
         elif value == 'namedesc':
-            expression = 'name'
+            expression = 'friendly_name'
         else:
-            expression = '-name'
+            expression = '-friendly_name'
         return queryset.order_by(expression)
