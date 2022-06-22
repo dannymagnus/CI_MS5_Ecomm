@@ -4,7 +4,7 @@ A module for bag app views
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Imports
 # 3rd Party
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 # Internal
 from products.models import Inventory
@@ -63,11 +63,16 @@ def remove_from_bag(request, inventory_id):
     """
     Remove the item from the shopping bag
     """
-    bag = request.session.get('bag', {})
-    item = get_object_or_404(Inventory, pk=inventory_id)
-    sku = item.sku
+    try:
+        bag = request.session.get('bag', {})
+        item = get_object_or_404(Inventory, pk=inventory_id)
+        sku = item.sku
 
-    bag.pop(sku)
-    messages.success(request, f'Removed {item.product.friendly_name} from your bag')
+        bag.pop(sku)
+        messages.success(request, f'Removed {item.product.friendly_name} from your bag')
 
-    return redirect(reverse('view_bag'))
+        return redirect(reverse('view_bag'))
+
+    except Exception as e:
+        messages.error(request, f'Error removing item: {e}')
+        return HttpResponse(status=500)

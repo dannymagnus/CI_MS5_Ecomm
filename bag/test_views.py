@@ -59,3 +59,48 @@ class TestBagViews(TestCase):
         self.assertEqual(list(bag.keys())[0], '777777')
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(str(messages[0]), 'Added Test Name to your bag')
+
+    def test_adjust_bag_quantity_to_zero(self):
+        """
+        This test reduces the bag from 1 item to 0 items and verifies
+        """
+        product = Product.objects.get(name='test-name')
+        inventory=Inventory.objects.get(sku='777777')
+        response = self.client.post(f'/bag/{product.slug}/add/',
+                                    {"quantity": 1, 'sku': '777777', "redirect_url": "view_bag"})
+        bag = self.client.session['bag']
+        self.assertEqual(list(bag.keys())[0], '777777')
+        response = self.client.post(f'/bag/adjust/{inventory.id}/', {
+            'quantity': 0, "redirect_url": "view_bag",
+        })
+        self.assertRedirects(response, '/bag/')
+        bag = self.client.session['bag']
+        self.assertEqual(bag, {})
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(str(messages[1]), 'Removed Test Name from your bag')
+
+    def test_remove_product_from_bag(self):
+        """
+        This test removes a product from the bag and verifies
+        """
+        product = Product.objects.get(name='test-name')
+        inventory=Inventory.objects.get(sku='777777')
+        response = self.client.post(f'/bag/{product.slug}/add/',
+                                    {"quantity": 1, 'sku': '777777', "redirect_url": "view_bag"})
+        bag = self.client.session['bag']
+        self.assertEqual(list(bag.keys())[0], '777777')
+        response = self.client.post(f'/bag/remove/{inventory.id}/')
+        bag = self.client.session['bag']
+        self.assertEqual(bag, {})
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(str(messages[1]), 'Removed Test Name from your bag')
+  
+    def test_remove_product_from_bag_exception(self):
+        """
+        This test tries to remove a product from a bag
+        that doesnt exist, and an exception is thrown is verified
+        """
+        inventory = Inventory.objects.get(sku='777777')
+        response = self.client.post(f'/bag/remove/{inventory.id}/')
+        messages = list(get_messages(response.wsgi_request))
+        self.assertEqual(str(messages[0]), "Error removing item: '777777'")
