@@ -2,7 +2,6 @@
 A module for filters in the products app
 """
 import django_filters
-from django import forms
 from .models import Product, Inventory
 
 class ProductFilter(django_filters.FilterSet):

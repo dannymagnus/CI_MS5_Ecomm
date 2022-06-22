@@ -1,7 +1,13 @@
+"""
+A module for models
+"""
+# Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd Party
 from django.db import models
 from django.utils.text import slugify
 from django.urls import reverse
-
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Course(models.Model):
     """

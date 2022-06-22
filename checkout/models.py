@@ -146,8 +146,8 @@ class OrderLineItem(models.Model):
     A model for a website order line item
     """
     order = models.ForeignKey(
-        Order, 
-        null=False, 
+        Order,
+        null=False,
         blank=False,
         on_delete=models.CASCADE,
         related_name='lineitems'
@@ -168,7 +168,7 @@ class OrderLineItem(models.Model):
         default=0
         )
     lineitem_total = models.DecimalField(
-        max_digits=6, 
+        max_digits=6,
         decimal_places=2,
         null=False,
         blank=False,

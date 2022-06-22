@@ -1,11 +1,18 @@
+"""
+A module for views
+"""
+#Imports
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# 3rd Party
 from django.urls import reverse
 from django.shortcuts import get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
+# Internal
 from .filters import CourseFilter
-
 from .models import Course
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class CourseListView(ListView):
     """

@@ -1,3 +1,6 @@
+"""
+A module for tests
+"""
 # Imports
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # 3rd party:
@@ -13,7 +16,7 @@ class TestBagViews(TestCase):
     """
     A class for testing bag views
     """
-    
+
     def setUp(self):
         test_brand = Brand.objects.create(
             name='test-brand',
@@ -35,8 +38,7 @@ class TestBagViews(TestCase):
             count=1,
             sku = '777777'
         )
-        
-    
+
     def test_get_bag_page(self):
         """
         This test checks that the bag page is displayed
