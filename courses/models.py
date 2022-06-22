@@ -21,6 +21,7 @@ class Course(models.Model):
         max_length=(254),
         null=True,
         blank=True,
+        unique=True,
     )
     friendly_name = models.CharField(
         max_length=(254),
@@ -66,11 +67,10 @@ class Course(models.Model):
         unique=True,
         )
 
-    def save(self, *args, **kwargs):  # new
-        super(Course, self).save(*args, **kwargs)
-        if not self.slug:
+    def save(self, *args, **kwargs):
+        if not self.slug and self.name:
             self.slug = slugify(self.name)
-        return super().save(*args, **kwargs)
+        super(Course, self).save(*args, **kwargs)
 
     def get_absolute_url(self):
         """

@@ -57,6 +57,7 @@ class Product(models.Model):
 
     name = models.CharField(
         max_length=254,
+        unique=True,
         )
     friendly_name = models.CharField(
         max_length=254,
@@ -137,6 +138,7 @@ class Product(models.Model):
         if not self.slug and self.name:
             self.slug = slugify(self.name)
         super(Product, self).save(*args, **kwargs)
+
 
     def get_absolute_url(self):
         """

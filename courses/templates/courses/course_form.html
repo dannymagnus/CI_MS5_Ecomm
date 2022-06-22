@@ -7,7 +7,7 @@
 {% block content %}
 
 {% with product.inventory_set.all as inventory %}
-
+<!-- Main Header -->
 <div class="container content">
     <div class="row">
         <div class="col test">
@@ -17,14 +17,13 @@
         </div>
     </div>
 </div>
-
 <div class="container content">
     <div class="d-flex align-items-center p-lg-5">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-6 pt-2">
                     <img class="img-fluid"
-                        src="{%if not object.image.url %}{% static 'img/scuba-equipment-shop.jpg'%} {% else %}{{object.image.url}}{% endif %}" alt="{{object.name}}">
+                        src="{%if not object.image %}{% static 'img/scuba-equipment-shop.jpg'%} {% else %}{{object.image.url}}{% endif %}" alt="{{object.name}}">
                 </div>
                 <div class="col-12 col-lg-6 translucent-body mb-5">
                     <form method="POST" class="p-1" enctype="multipart/form-data">

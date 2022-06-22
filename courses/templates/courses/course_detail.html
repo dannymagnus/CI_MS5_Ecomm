@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'courses/css/courses.css' %}">
 {% endblock %}
 {% block content %}
-
+<!-- Main Header -->
 <div class="container content">
     <div class="row">
       <div class="col">
@@ -15,7 +15,7 @@
       </div>
     </div>
 </div>
-
+<!-- Container for staff update and delete buttons -->
 <div class="row content" style="min-height:50px;">
     <div class="col">
         {% if request.user.is_staff %}
@@ -29,12 +29,16 @@
         {% endif %}
     </div>
 </div>
-
+<!-- Product Details image container -->
 <div class="content container">
     <div class="row">
+        <!-- Product image or placeholder text -->
         <div class="col-12 col-md-6">
             {% if not object.image %}
-            <img src="" alt="awaiting image" class="img-responsive w-100 mt-3">
+            <div class="d-flex flex-column background-awaiting justify-contents-center align-items-center position-relative w-100 h-100 overflow-hidden">
+            
+            <div class = "position-absolute top-50 right-50"><p class = "fs-3 heading-font white-text">AWAITING IMAGE</p></div>
+            </div>
             {% else %}
             <img src="{{ object.image.url }}" alt="{{ object.friendly_name }}" class="img-responsive w-100 mt-3">
             {% endif %}
@@ -54,5 +58,4 @@
         <hr>
     </div>
 </div>
-
 {% endblock %}

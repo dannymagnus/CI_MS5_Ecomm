@@ -21,6 +21,7 @@ class ProductListView(ListView):
     """
     model = Product
     paginate_by = 12
+    ordering = ['name']
 
     def __init__(self):
         self.no_search_result = True

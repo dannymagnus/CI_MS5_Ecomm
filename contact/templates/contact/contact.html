@@ -6,22 +6,28 @@
 {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
-
 <section>
-    <div class = "about-background contact-background d-flex flex-column justify-content-center content align-items-center">
+    <!-- Main container with background image -->
+    <div class = "contact-background contact-background d-flex flex-column justify-content-center content align-items-center">
         <div class="container">
             <div class="row">
+                <!-- Bootstrap grid col to center main form -->
                 <div class="col"></div>
+                <!-- Main responsive form container -->
                 <div class="col-12 col-md-6 my-sm-5 my-auto bg-light bg-gradient rounded">
                     <h1 class = "text-center p-3 fs-3">CONTACT US</h1>
+                    <!-- Submitted contact message -->
+                    <!-- Borrowed from my own Elgini Restaurant Project-->
                     {% if contacted %}
                         <div class="alert alert-success">
                             Thank you for your message, we'll be in touch soon!
                         </div>
                         <div >
+                            <!-- Link to shopping pages -->
                             <a href="{% url 'all_products' %}" class="btn btn-primary my-3">Back to Shopping</a>
                         </div>
                     {% else %}
+                    <!-- Contact Form -->
                         <form method = "POST" class = "p-3 translucent-body">
                             {% csrf_token %}
                             {{ contact_form | crispy }}
@@ -30,6 +36,7 @@
                         </form>
                     {% endif %}
                 </div>
+                <!-- Bootstrap grid col to center main form -->
                 <div class="col"></div>
             </div>
         </div>
