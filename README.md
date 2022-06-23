@@ -285,149 +285,288 @@ The search bar is part of the header and features across all pages. This allows 
 This feature covers the following user stories:
 *3 As an unauthenticated user, I want to be able to search the website for specific products and brands.*
 
-Feature 3 – Image carousel
+#### Feature 3 – Image carousel
+<br>![Home page](readme/features/home-page-carousel.png)
+
 The image carousel is the first image the user is presented with, the carousel provides an aesthetic to engage the user through activity, rather than just having static images
-Carousel image
+
 This feature covers the following user stories:
-1As an unauthenticated user, I want to be able to navigate the website quickly and easily
-Feature 4 – Mailing list
+*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily*
+
+#### Feature 4 – Mailing list
+<br>![Home page](readme/features/mailing-list.png)
+
 The mailing list appears across all pages, to make it as visible as possible and encourage the user to sign up to the newsletter.
-Mailing list
-This feature covers the following user stories:
-20As an unauthenticated user, I want to be able to receive news and updates from the business
-23As a site owner, I want users to be sign up to a newsletter to capture user information.
 
-Feature 5 – Footer
+This feature covers the following user stories:
+*20 As an unauthenticated user, I want to be able to receive news and updates from the business*
+
+*23 As a site owner, I want users to be sign up to a newsletter to capture user information*
+
+#### Feature 5 – Footer
+<br>![Home page](readme/features/footer.png)
+
 The footer appears across all pages, and contains links to direct the user to all main pages – shop, information, account. As well as links to social media pages and the address of the business. It also ensures the mailing list sign up features across all pages to prompt user engagement.
-Footer image
+
 This feature covers the following user stories:
-2As an unauthenticated user, I want to have the option to view all products on the site.
-7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
-15As an unauthenticated user, I want to be able to create an account
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-19As an unauthenticated user, I want to be able contact the business
-20As an unauthenticated user, I want to be able to receive news and updates from the business
-21As an unauthenticated user, I want to be able to view the business location
-24As a site owner, I want users to be able to view the business social media
-23As a site owner, I want users to be sign up to a newsletter to capture user information.
+*2 As an unauthenticated user, I want to have the option to view all products on the site*
+
+*7 As an unauthenticated user, I want to be able to view specific brand’s products sold on the site*
+
+*15 As an unauthenticated user, I want to be able to create an account*
+
+*16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account*
+
+*19 As an unauthenticated user, I want to be able contact the business*
+
+*20 As an unauthenticated user, I want to be able to receive news and updates from the business*
+
+*21 As an unauthenticated user, I want to be able to view the business location*
+
+*23 As a site owner, I want users to be sign up to a newsletter to capture user information*
+
+*24 As a site owner, I want users to be able to view the business social media*
 
 
-Page 2 – Products
+### Page 2 – Products
+
 The product listing menu consists of the following features:
-Feature 1 – All products
-When the use first selects the shop link, they have an option to view ‘all products’ or select one of the product categories. On selecting the all products page, every product listing appears in an automatic alphabetical order.
+
+#### Feature 1 – All products
+<br>![products page](readme/features/all-products-menu.png)
+<br>![products page](readme/features/all-products.png)
+
+When the user first selects the shop link, they have an option to view ‘all products’ or select one of the product categories. On selecting the all products page, every product listing appears in an automatic alphabetical order.
+
 This feature covers the following user stories:
-2As an unauthenticated user, I want to have the option to view all products on the site.
-3As an unauthenticated user, I want to be able to search the website for specific products and brands.
-2As an unauthenticated user, I want to have the option to view all products on the site.
+*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily*
 
+*2 As an unauthenticated user, I want to have the option to view all products on the site*
 
-Feature 2 – Categories
-The category list appears when the user selects the shop link in the header, as well as on the all product page / products pages. The categories allow the user to filter and browse certain products.
-This feature covers the following user stories:
-2As an unauthenticated user, I want to have the option to view all products on the site.
-3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
-6As an unauthenticated user, I want to be able to sort and view products by category.
+#### Feature 2 – Product details
+<br>![products page](readme/features/product-details.png)
 
-Feature 3 – Product details
 The user has the option to view details of any product listing. They have to select this to be able to purchase the product. The product details appear in a new window and gives the user the product name and brand, detailed product description, an option to select size and quantity. The user can then add the product to their cart, and either go to the bag or continue shopping.
+
 When the user adds a product to the cart, they are unable to add more than is listed in inventory.
+
 When an item becomes out of stock, the size selection automatically shows out of stock, and the user will be unable to select this product for purchase.
+
 This feature covers the following user stories:
-4As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
-9As an unauthenticated user, I want to be able to add a product to my bag.
-12As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
-37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
-38As a site owner, I want to make sure that customers can see which products are out of stock
+*4 As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products*
 
+*9 As an unauthenticated user, I want to be able to add a product to my bag*
 
-Feature 4 – Managing product details
+*12 As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details*
+
+*37 As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory*
+
+*38 As a site owner, I want to make sure that customers can see which products are out of stock*
+
+#### Feature 3 – Managing product details
 
 When logged in as a staff user or admin, the user has the ability to create and update any product from the product details page. Upon selection the staff user can edit the title, description, friendly name, category, brand, sizing options, colour options, price and image. The staff user has the option to save or cancel any changes.
 
 This feature covers the following user stories.
-25As a staff user, I want to be able to update and edit product descriptions, details and prices.
-26As a staff user, I want to be able to add a brands to the brand list.
-277As a staff user, I want to be able to update the brands listed.
-287As a staff user, I want to be able to remove any brands listed.
-29As a staff user, I want to be able to view and update products 
-30As a staff user, I want to be able to add products
-31As a staff user, I want to be able to delete products
+*25 As a staff user, I want to be able to update and edit product descriptions, details and prices*
 
-Feature 5 – Page order
-The user has the option to select the order in which the products are listed. They can order by price (ascending or descending) or alphabetically (ascending or descending). 
+*29 As a staff user, I want to be able to view and update products*
+
+*30 As a staff user, I want to be able to add products*
+
+#### Feature 4 – Page order
+<br>![products page](readme/features/product-order.png)
+
+The user has the option to select the order in which to view the products are listed. They can order by price (ascending or descending) or alphabetically (ascending or descending). 
+
 This feature covers the following user stories:
-5As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
+*5 As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically*
 
-Feature 6 – Pagination
+#### Feature 6 – Pagination
+<br>![products page](readme/features/pagination.png)
+
 The pagination appears at the top and bottom of the products page, it shows the user which product page they are on, and gives the user the ability to easily navigate through the product pages.
+
 This feature covers the following user stories:
-10As an unauthenticated user, I want to be able to quickly navigate through product listing pages
+*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily *
+
+*10 As an unauthenticated user, I want to be able to quickly navigate through product listing pages*
+
+#### Feature 7 – Create product
+<br>![products page](readme/features/create-product.png)
+
+The option to create a product appears in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to create a new product with blank required fields. 
+
+This feature covers the following user stories:
+*30 As a staff user, I want to be able to add products*
 
 
-Feature 7 – Create/update product
+#### Feature 8 – Update product
+<br>![products page](readme/features/update-product.png)
 
-The option to create a product appears in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to create a new product with the required fields.
-This feature covers the following user stories: 
+When logged in as a staff user or admin, when on any product details page, the user has the ability to update the selected item.
 
-29As a staff user, I want to be able to view and update products 
-30As a staff user, I want to be able to add products
-31As a staff user, I want to be able to delete products
+This feature covers the following user stories:
+*29 As a staff user, I want to be able to view and update products*
 
+#### Feature 9 – Deleting a product
+<br>![products page](readme/features/delete-product.png)
 
-Feature 8 – Category management
+When logged in as a staff user or admin, when they select any product the user has the ability to delete the selected item. They are taken to a new page for them to confirm the deletion.
+
+This feature covers the following user stories:
+*31 As a staff user, I want to be able to delete products*
+
+#### Feature 10 – Categories
+<br>![products page](readme/features/categories-header.png)
+<br>![products page](readme/features/categories-all-products.png)
+
+The category list appears when the user selects the shop link in the header, as well as on the all product page / products pages. The categories allow the user to filter and browse certain products.
+
+This feature covers the following user stories:
+*2 As an unauthenticated user, I want to have the option to view all products on the site*
+
+*3 As an unauthenticated user, I want to be able to search the website for specific products and brands*
+
+*6 As an unauthenticated user, I want to be able to sort and view products by category*
+
+#### Feature 11 – Category management
+<br>![products page](readme/features/category-management.png)
 
 The category management features in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to view, add, update or remove product categories.
 
 This feature covers the following user stories: 
 
-33As a staff user, I want to be able to view and update product categories
-34As a staff user, I want to be able to add product categories
-35As a staff user, I want to be able to delete product categories
+*33 As a staff user, I want to be able to view and update product categories*
 
-Feature 9 – Inventory management
+*34 As a staff user, I want to be able to add product categories*
+
+*35 As a staff user, I want to be able to delete product categories*
+
+#### Feature 12 – Inventory management
+<br>![products page](readme/features/inventory-management.png)
+<br>![products page](readme/features/update-inventory.png)
+<br>![products page](readme/features/out-of-stock.png)
 
 The inventory management features in the shop dropdown menu when logged in as a staff user or admin. It enables the user to view all products listed alphabetically, or they can search by SKU, product name and brand name.
 After selecting adjust quantity, the user is taken to an update inventory page where they can adjust the quantity of stock.
 
 This feature covers the following user stories:
+*32 As a staff user, I want to be able to manage product inventory*
 
-32As a staff user, I want to be able to manage product inventory
-37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+*37 As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory*
 
+### Page 3 – Brands
 
-Page 3 – Brands
 This page consists of the following features:
-Feature 1- The brand link is featured on the header, this page allows the user to organise products solely by brand. 
 
-Feature 2 – Brand management.
-When a staff user is logged in the option to manage brands appears in the brand menu. The brand management page appears when selected and allows the staff user to view, add, update or remove brands.
+#### Feature 1 - Brands link 
+<br>![brands page](readme/features/brands-header.png)
+
+The brand link is featured on the header, this page allows the user to organise products solely by brand via a dropdown menu. 
+
 This feature covers the following user stories:
-7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
-26As a staff user, I want to be able to add a brands to the brand list.
-277As a staff user, I want to be able to update the brands listed.
-287As a staff user, I want to be able to remove any brands listed.
-Page 4 – Courses
+*7 As an unauthenticated user, I want to be able to view specific brand’s products sold on the site*
+
+#### Feature 2 – Brand management
+<br>![brands page](readme/features/brand-management.png)
+
+When a staff user is logged in the option to manage brands appears in the brand menu. The brand management page appears when selected and allows the staff user to view, add, update or remove brands.
+
+This feature covers the following user stories:
+*26 As a staff user, I want to be able to add a brands to the brand list*
+
+*27 As a staff user, I want to be able to update the brands listed*
+
+*28 As a staff user, I want to be able to remove any brands listed*
+
+#### Feature 3 - Update brands
+<br>![brands page](readme/features/update-brand.png)
+
+When a staff user selects update from the brand management page, they are able to update the brand name.
+This feature covers the following user stories:
+*27 As a staff user, I want to be able to update the brands listed*
+
+#### Feature 4 - Add brands
+<br>![brands page](readme/features/add-brand.png)
+
+When a staff user selects update from the brand management page, they are able to add a brand to the brand list.
+
+This feature covers the following user stories:
+*26 As a staff user, I want to be able to add a brands to the brand list*
+
+#### Feature 4 - Delete brands
+<br>![brands page](readme/features/delete-brand.png)
+
+When a staff user selects update from the brand management page, they are able to add a brand to the brand list.
+
+This feature covers the following user stories:
+*28 As a staff user, I want to be able to remove any brands listed*
+
+
+### Page 4 – Courses
+
 This page consists of the following features:
-Feature 1 – course list
-The courses are listed with the descriptions and an option to view more details
-39As an unauthenticated user, I want to be able to browse available courses
-40As an unauthenticated user, I want to be able to view course details and request a booking
-41As a staff user, I want to be able to view and update the courses listed.
-42As a staff user, I want to be able to add a course.
-43As a staff user, I want to be able to delete a course.
-Feature 2 – course details
-19As an unauthenticated user, I want to be able contact the business
-39As an unauthenticated user, I want to be able to browse available courses
-40As an unauthenticated user, I want to be able to view course details and request a booking
-41As a staff user, I want to be able to view and update the courses listed.
-42As a staff user, I want to be able to add a course.
-43As a staff user, I want to be able to delete a course.
-Page 5 - Log in
+
+#### Feature 1 – Course list
+
+The course link is located in the header, and the dropdown menu lists all available courses. Each courses has it's descriptions and an option to view more details or enquire to book.
+
+This feature covers the following user stories:
+*19 As an unauthenticated user, I want to be able contact the business*
+
+*39 As an unauthenticated user, I want to be able to browse available courses*
+
+*40 As an unauthenticated user, I want to be able to view course details and request a booking*
+
+*41 As a staff user, I want to be able to view and update the courses listed*
+
+*42 As a staff user, I want to be able to add a course*
+
+*43 As a staff user, I want to be able to delete a course*
+
+#### Feature 2 – course details
+<br>![course page](readme/features/course-details.png)
+The course details page shows the selected course with a more detailed description, and options to reserve or go back to the previous page.
+
+This feature covers the following user stories:
+*19 As an unauthenticated user, I want to be able contact the business*
+
+*39 As an unauthenticated user, I want to be able to browse available courses*
+
+*40 As an unauthenticated user, I want to be able to view course details and request a booking*
+
+#### Feature 3 - Update courses
+<br>![brands page](readme/features/update-brand.png)
+
+When a staff user selects update details from the course details page, they are able to update the course in any required field.
+
+This feature covers the following user stories:
+*41 As a staff user, I want to be able to view and update the courses listed.*
+
+#### Feature 4 - Add courses
+<br>![brands page](readme/features/add-brand.png)
+
+When a staff user selects create a course from the dropdown menu in the header, they are able to add a course.
+
+This feature covers the following user stories:
+*42 As a staff user, I want to be able to add a course*
+
+#### Feature 4 - Delete courses
+<br>![brands page](readme/features/delete-brand.png)
+
+When a staff user selects update details from the course details page, they are able to delete the course.
+
+This feature covers the following user stories:
+*43 As a staff user, I want to be able to delete a course*
+
+### Page 5 - Log in
+
 The user can access the log in via the links in the header and footer, they are taken to a sign in page that also features a link to create a new account.
 A confirmation box appears above the login links to tell the user they have logged in successfully.
+
 This page covers the following user stories:
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+*16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account*
 
 
 Page 6 - Log out
@@ -460,6 +599,7 @@ This page covers the following user stories:
 10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
 12As an unauthenticated user, I want to be able to view products added to my shopping bag.
 14As an unauthenticated user, I want to be able to checkout and purchase products.
+
 Feature 2 – Checkout
 When the user is happy with the items placed in the bag they can choose to checkout. This takes them to the checkout page which displays the items in their bag, as well as payment details.
 When the user is logged in the form is prepopulated with their delivery and contact information.
