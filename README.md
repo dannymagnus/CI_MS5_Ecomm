@@ -253,12 +253,14 @@ The site consists of 12 pages, with the features detailed under each page.
 
 ### Page 1 – Home page
 <br>![Home page](readme/features/home-page-nav-bar.png)
+
 The home page consists of the following features:
 
 #### Feature 1 – Header and navigation bar
 The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
 
 This feature covers the following user stories:
+
 *1 As an unauthenticated user, I want to be able to navigate the website quickly and easily *
 
 *2 As an unauthenticated user, I want to have the option to view all products on the site.*
@@ -283,6 +285,7 @@ This feature covers the following user stories:
 The search bar is part of the header and features across all pages. This allows the user to easily search products by brand, product type, colour. For this first release the functionality is limited to only one keyword per search, for future releases the search would include multiple keyword search functionality.
 
 This feature covers the following user stories:
+
 *3 As an unauthenticated user, I want to be able to search the website for specific products and brands.*
 
 #### Feature 3 – Image carousel
@@ -299,6 +302,7 @@ This feature covers the following user stories:
 The mailing list appears across all pages, to make it as visible as possible and encourage the user to sign up to the newsletter.
 
 This feature covers the following user stories:
+
 *20 As an unauthenticated user, I want to be able to receive news and updates from the business*
 
 *23 As a site owner, I want users to be sign up to a newsletter to capture user information*
@@ -309,6 +313,7 @@ This feature covers the following user stories:
 The footer appears across all pages, and contains links to direct the user to all main pages – shop, information, account. As well as links to social media pages and the address of the business. It also ensures the mailing list sign up features across all pages to prompt user engagement.
 
 This feature covers the following user stories:
+
 *2 As an unauthenticated user, I want to have the option to view all products on the site*
 
 *7 As an unauthenticated user, I want to be able to view specific brand’s products sold on the site*
@@ -339,6 +344,7 @@ The product listing menu consists of the following features:
 When the user first selects the shop link, they have an option to view ‘all products’ or select one of the product categories. On selecting the all products page, every product listing appears in an automatic alphabetical order.
 
 This feature covers the following user stories:
+
 *1 As an unauthenticated user, I want to be able to navigate the website quickly and easily*
 
 *2 As an unauthenticated user, I want to have the option to view all products on the site*
@@ -353,6 +359,7 @@ When the user adds a product to the cart, they are unable to add more than is li
 When an item becomes out of stock, the size selection automatically shows out of stock, and the user will be unable to select this product for purchase.
 
 This feature covers the following user stories:
+
 *4 As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products*
 
 *9 As an unauthenticated user, I want to be able to add a product to my bag*
@@ -368,6 +375,7 @@ This feature covers the following user stories:
 When logged in as a staff user or admin, the user has the ability to create and update any product from the product details page. Upon selection the staff user can edit the title, description, friendly name, category, brand, sizing options, colour options, price and image. The staff user has the option to save or cancel any changes.
 
 This feature covers the following user stories.
+
 *25 As a staff user, I want to be able to update and edit product descriptions, details and prices*
 
 *29 As a staff user, I want to be able to view and update products*
@@ -380,6 +388,7 @@ This feature covers the following user stories.
 The user has the option to select the order in which to view the products are listed. They can order by price (ascending or descending) or alphabetically (ascending or descending). 
 
 This feature covers the following user stories:
+
 *5 As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically*
 
 #### Feature 6 – Pagination
@@ -388,6 +397,7 @@ This feature covers the following user stories:
 The pagination appears at the top and bottom of the products page, it shows the user which product page they are on, and gives the user the ability to easily navigate through the product pages.
 
 This feature covers the following user stories:
+
 *1 As an unauthenticated user, I want to be able to navigate the website quickly and easily *
 
 *10 As an unauthenticated user, I want to be able to quickly navigate through product listing pages*
@@ -398,6 +408,7 @@ This feature covers the following user stories:
 The option to create a product appears in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to create a new product with blank required fields. 
 
 This feature covers the following user stories:
+
 *30 As a staff user, I want to be able to add products*
 
 
@@ -407,6 +418,7 @@ This feature covers the following user stories:
 When logged in as a staff user or admin, when on any product details page, the user has the ability to update the selected item.
 
 This feature covers the following user stories:
+
 *29 As a staff user, I want to be able to view and update products*
 
 #### Feature 9 – Deleting a product
@@ -415,6 +427,7 @@ This feature covers the following user stories:
 When logged in as a staff user or admin, when they select any product the user has the ability to delete the selected item. They are taken to a new page for them to confirm the deletion.
 
 This feature covers the following user stories:
+
 *31 As a staff user, I want to be able to delete products*
 
 #### Feature 10 – Categories
@@ -424,6 +437,7 @@ This feature covers the following user stories:
 The category list appears when the user selects the shop link in the header, as well as on the all product page / products pages. The categories allow the user to filter and browse certain products.
 
 This feature covers the following user stories:
+
 *2 As an unauthenticated user, I want to have the option to view all products on the site*
 
 *3 As an unauthenticated user, I want to be able to search the website for specific products and brands*
@@ -449,9 +463,11 @@ This feature covers the following user stories:
 <br>![products page](readme/features/out-of-stock.png)
 
 The inventory management features in the shop dropdown menu when logged in as a staff user or admin. It enables the user to view all products listed alphabetically, or they can search by SKU, product name and brand name.
+
 After selecting adjust quantity, the user is taken to an update inventory page where they can adjust the quantity of stock.
 
 This feature covers the following user stories:
+
 *32 As a staff user, I want to be able to manage product inventory*
 
 *37 As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory*
@@ -466,6 +482,7 @@ This page consists of the following features:
 The brand link is featured on the header, this page allows the user to organise products solely by brand via a dropdown menu. 
 
 This feature covers the following user stories:
+
 *7 As an unauthenticated user, I want to be able to view specific brand’s products sold on the site*
 
 #### Feature 2 – Brand management
@@ -474,6 +491,7 @@ This feature covers the following user stories:
 When a staff user is logged in the option to manage brands appears in the brand menu. The brand management page appears when selected and allows the staff user to view, add, update or remove brands.
 
 This feature covers the following user stories:
+
 *26 As a staff user, I want to be able to add a brands to the brand list*
 
 *27 As a staff user, I want to be able to update the brands listed*
@@ -484,7 +502,9 @@ This feature covers the following user stories:
 <br>![brands page](readme/features/update-brand.png)
 
 When a staff user selects update from the brand management page, they are able to update the brand name.
+
 This feature covers the following user stories:
+
 *27 As a staff user, I want to be able to update the brands listed*
 
 #### Feature 4 - Add brands
@@ -493,6 +513,7 @@ This feature covers the following user stories:
 When a staff user selects update from the brand management page, they are able to add a brand to the brand list.
 
 This feature covers the following user stories:
+
 *26 As a staff user, I want to be able to add a brands to the brand list*
 
 #### Feature 4 - Delete brands
@@ -501,6 +522,7 @@ This feature covers the following user stories:
 When a staff user selects update from the brand management page, they are able to add a brand to the brand list.
 
 This feature covers the following user stories:
+
 *28 As a staff user, I want to be able to remove any brands listed*
 
 
@@ -509,10 +531,11 @@ This feature covers the following user stories:
 This page consists of the following features:
 
 #### Feature 1 – Course list
-
+<br>![courses page](readme/features/course-list.png)
 The course link is located in the header, and the dropdown menu lists all available courses. Each courses has it's descriptions and an option to view more details or enquire to book.
 
 This feature covers the following user stories:
+
 *19 As an unauthenticated user, I want to be able contact the business*
 
 *39 As an unauthenticated user, I want to be able to browse available courses*
@@ -527,9 +550,11 @@ This feature covers the following user stories:
 
 #### Feature 2 – course details
 <br>![course page](readme/features/course-details.png)
+
 The course details page shows the selected course with a more detailed description, and options to reserve or go back to the previous page.
 
 This feature covers the following user stories:
+
 *19 As an unauthenticated user, I want to be able contact the business*
 
 *39 As an unauthenticated user, I want to be able to browse available courses*
@@ -537,43 +562,53 @@ This feature covers the following user stories:
 *40 As an unauthenticated user, I want to be able to view course details and request a booking*
 
 #### Feature 3 - Update courses
-<br>![brands page](readme/features/update-brand.png)
+<br>![courses page](readme/features/update-course.png)
 
 When a staff user selects update details from the course details page, they are able to update the course in any required field.
 
 This feature covers the following user stories:
+
 *41 As a staff user, I want to be able to view and update the courses listed.*
 
 #### Feature 4 - Add courses
-<br>![brands page](readme/features/add-brand.png)
+<br>![courses page](readme/features/create-course.png)
 
 When a staff user selects create a course from the dropdown menu in the header, they are able to add a course.
 
 This feature covers the following user stories:
+
 *42 As a staff user, I want to be able to add a course*
 
 #### Feature 4 - Delete courses
-<br>![brands page](readme/features/delete-brand.png)
+<br>![courses page](readme/features/delete-course.png)
 
 When a staff user selects update details from the course details page, they are able to delete the course.
 
 This feature covers the following user stories:
+
 *43 As a staff user, I want to be able to delete a course*
 
 ### Page 5 - Log in
+<br>![login page](readme/features/sign-in.png)
 
 The user can access the log in via the links in the header and footer, they are taken to a sign in page that also features a link to create a new account.
 A confirmation box appears above the login links to tell the user they have logged in successfully.
 
 This page covers the following user stories:
+
 *16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account*
 
+### Page 6 - Log out
+<br>![logout page](readme/features/sign-out.png)
 
-Page 6 - Log out
 The user can access the log out via the links in the header and footer, they are taken to a log out page and confirmation box appears above the login links to tell the user they have logged in successfully.
+
 This page covers the following user stories:
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-36As an authenticated user, I want confirmation that I have signed out of my account
+
+*16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account*
+
+*36 As an authenticated user, I want confirmation that I have signed out of my account*
+
 Page 7 – Register
 The register page can be accessed from the header link across all pages. The user is asked to create a username for future logins. 
 The user gains benefits such as saving shipping details and viewing past orders.
