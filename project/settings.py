@@ -33,7 +33,7 @@ if 'DEVELOPMENT' in os.environ:
 else:
     DEBUG = False
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['scubasport.heroku-app.com','localhost']
 
