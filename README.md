@@ -187,7 +187,7 @@ This model contains all fields stored in the database collections with their dat
 4. As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
 5. As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
 6. As an unauthenticated user, I want to be able to sort and view products by category.
-7. As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+7. As an unauthenticated user, I want to be able to view specific brands' products sold on the site.
 8. As an unauthenticated user, I want to be able to add a product to my bag.
 9. As an unauthenticated user, I want to be able to quickly navigate through product listing pages EPIC??
 10. As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
@@ -236,37 +236,55 @@ This model contains all fields stored in the database collections with their dat
 
 ## Features
 
-Home page
-Shop
-Brands
-Courses
-Log in
-Log out
-Register
-Profile page
-Shopping Cart
-Contact
-About
+The site consists of 12 pages, with the features detailed under each page.
 
-Page 1 – Home page
-<br>![Database model](readme/features/database_schema.png)
+1. Home page
+2. Shop
+3. Brands
+4. Courses
+5. Log in
+6. Log out
+7. Register
+8. Profile page
+9. Shopping Cart
+10. Contact
+11. About
+12. Admin
+
+### Page 1 – Home page
+<br>![Home page](readme/features/home-page-nav-bar.png)
 The home page consists of the following features:
-Feature 1 – Header and navigation bar
-The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
-Header image
-This feature covers the following user stories:
-1 As an unauthenticated user, I want to be able to navigate the website quickly and easily 
-2As an unauthenticated user, I want to have the option to view all products on the site.
-3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
-7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
-10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
-12As an unauthenticated user, I want to be able to view products added to my shopping bag.
-15As an unauthenticated user, I want to be able to create an account
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-22As a site owner, I want users to be able to navigate the website quickly and easily
 
-Feature 2 – Search bar
+#### Feature 1 – Header and navigation bar
+The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
+
+This feature covers the following user stories:
+*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily *
+
+*2 As an unauthenticated user, I want to have the option to view all products on the site.*
+
+*3 As an unauthenticated user, I want to be able to search the website for specific products and brands.*
+
+*7 As an unauthenticated user, I want to be able to view specific brands' products sold on the site.*
+
+*10 As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.*
+
+*12 As an unauthenticated user, I want to be able to view products added to my shopping bag.*
+
+*15 As an unauthenticated user, I want to be able to create an account.*
+
+*16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account.*
+
+*22 As a site owner, I want users to be able to navigate the website quickly and easily*
+
+#### Feature 2 – Search bar
+<br>![Home page](readme/features/search-bar.png)
+
 The search bar is part of the header and features across all pages. This allows the user to easily search products by brand, product type, colour. For this first release the functionality is limited to only one keyword per search, for future releases the search would include multiple keyword search functionality.
+
+This feature covers the following user stories:
+*3 As an unauthenticated user, I want to be able to search the website for specific products and brands.*
+
 Feature 3 – Image carousel
 The image carousel is the first image the user is presented with, the carousel provides an aesthetic to engage the user through activity, rather than just having static images
 Carousel image
