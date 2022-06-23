@@ -227,6 +227,7 @@ This model contains all fields stored in the database collections with their dat
 44. As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form
 45. As a user, I want to have confirmation that my order has been successful
 46. As admin, I want to be able to create batch actions and manipulate all the data tables in one place
+47. As a user, I want to be shown messages that my actions have been successful and unsuccessful*
 
 #### Error Flow
 45. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
@@ -474,6 +475,7 @@ This feature covers the following user stories:
 
 *37 As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory*
 
+
 ### Page 3 – Brands
 
 This page consists of the following features:
@@ -590,6 +592,7 @@ This feature covers the following user stories:
 
 *43 As a staff user, I want to be able to delete a course*
 
+
 ### Page 5 - Log in
 <br>![login page](readme/features/sign-in.png)
 
@@ -679,6 +682,7 @@ When the user is happy with the items placed in the bag they can choose to check
 When the user is logged in the form is prepopulated with their delivery and contact information.
 
 When the user is not logged in the form is empty for the user to complete, and they are given the option to create an account or log in.
+<br>![shopping page](readme/features/checkout-unauthenticated.png)
 
 When the card details have been entered correctly a confirmation page is displayed and the order confirmation is sent the to the user’s email address.
 <br>![shopping page](readme/features/order-confirmation.png)
@@ -712,6 +716,7 @@ This page covers the following user stories:
 
 *44 As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form*
 
+
 ### Page 12 – Administration
 <br>![admin page](readme/features/admin-panel.png)
 
@@ -719,6 +724,17 @@ The Django admin panel is a built in tool that enables the admin users to create
 
 This page covers the following user stories:
 *46 As admin, I want to be able to create batch actions and manipulate all the data tables in one place*
+
+
+### Feature 13 - Messaging
+<br>![admin page](readme/features/success-message.png)
+
+After certain actions, success confirmation messages are shown at the top of the screenn to confirm the user's action has been applied.
+After certain actions, error messages are shown at the top of the screenn to confirm the user's action has been not been applied.
+
+This page covers the following user stories:
+*47 As a user, I want to be shown messages that my actions have been successful and unsuccessful*
+
 
 
 
