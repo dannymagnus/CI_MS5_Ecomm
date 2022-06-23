@@ -249,12 +249,13 @@ Contact
 About
 
 Page 1 – Home page
+<br>![Database model](readme/features/database_schema.png)
 The home page consists of the following features:
 Feature 1 – Header and navigation bar
 The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
 Header image
 This feature covers the following user stories:
-1As an unauthenticated user, I want to be able to navigate the website quickly and easily 
+1 As an unauthenticated user, I want to be able to navigate the website quickly and easily 
 2As an unauthenticated user, I want to have the option to view all products on the site.
 3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
 7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
