@@ -70,7 +70,7 @@
                 </li>
                 {% for category in categories %}
                 <li>
-                  <a class="dropdown-item" href="{% url 'all_products' %}?category__name__iexact={{category.name}}"">{{category.friendly_name|upper}}</a>
+                  <a class="dropdown-item" href="{% url 'all_products' %}?category__name__iexact={{category.name}}">{{category.friendly_name|upper}}</a>
                 </li>
                 {% endfor %}
                 {% if user.is_authenticated %}
@@ -142,7 +142,7 @@
           <ul class="navbar-nav me-auto me-lg-1 ms-lg-auto mb-2 mb-lg-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                aria-expanded="false"><span class = "d-lg-none">ACCOUNT</span><i class="d-none d-lg-inline-block bi bi-person"></i></a>
+                aria-expanded="false"><span class="d-lg-none" >ACCOUNT</span><i class="d-none d-lg-inline-block bi bi-person"></i></a>
               <ul class="dropdown-menu left-auto">
                 {% if user.is_authenticated %}
                 <li>
@@ -153,7 +153,7 @@
                 </li>
                 {% else %}
                 <li>
-                  <a class="dropdown-item" href="{% url 'account_login' %}"">LOGIN</a>
+                  <a class="dropdown-item" href="{% url 'account_login' %}">LOGIN</a>
                 </li>
                 <li>
                   <a class=" dropdown-item" href="{% url 'account_signup' %}">REGISTER</a>
