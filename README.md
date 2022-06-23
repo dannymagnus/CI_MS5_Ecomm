@@ -61,36 +61,38 @@
 # User Experience
 ## Strategy
 ### Primary Goal
-The primary goal of the website from the site 
-owners perspective is as follows:
-- To attract customers to the business by showing an attractive and appealing set of products and services.
-- To allow a user to navigate the website and see course and product options easily
-- To allow a user to make reservations, bookings, enquiries and purchases
-- To allow users to engage with the business through local business and industry news
+The primary goal of the website from the site owners perspective is as follows:
+- To enable customers to purchase products listed on the site
+- To allow a user to navigate the website and view product details
+- To allow a user to create an account & log in to an existing account
+- To allow a user to view their order history and account details
+- To allow users to keep updated with a newsletter signup
+- To be able to edit, add and remove products from the site
+- The primary goal of the website from a site users perspective is as follows:
+- To view products and product details
+- To easily search for products
+- To filter products 
+- To register for an account
+- To log into/out of an existing account
+- To be able to view and edit their account profile
+- To add a product to bag and purchase order
+- To be able to view order history
+- To contact the site owner
+- To sign up to a newsletter
 
-The primary goal of the website from a site users perspective is as follows:
-- To view and purchase the dive shops products
-- To view details about courses and book courses
-- To search and filter the site for products
-- To shop the site by category
-- To contact the business or make enquiries
-- To be made aware of social events
-
-## Target Audience
-- Families
-- Couples
-- Small groups of friends
+### Target Audience
 - Diving enthusiasts
-- Holiday makers (potential)
-- Hobyists
-- People looking for activities to increase social network (make friends)
-
+- Active people
+- People who want to learn to dive
+- Qualified divers
 ## User Requirements and Expectations
 - An easy navigation system with instant learning.
 - Able to navigate the site quickly and easily.
 - No broken links.
 - Responsive and visually appealing on all devices.
+- Ability to view products and complete purchases
 - Ability to contact the business
+
 
 
 ## Structure
@@ -179,50 +181,288 @@ This model contains all fields stored in the database collections with their dat
 ## Scope
 ### User stories:
 
-#### First time user
-
 1. As an unauthenticated user, I want to be able to navigate the website quickly and easily 
-2. As an unauthenticated user, I want to browse all products available
+2. As an unauthenticated user, I want to have the option to view all products on the site.
 3. As an unauthenticated user, I want to be able to search the website for specific products and brands.
 4. As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
 5. As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
-6. As an unauthenticated user, I want to have the option to view all products on the site.
-7. As an unauthenticated user, I want to be able to sort products by category.
-8. As an unauthenticated user, I want to be able to view certain brand’s products sold on the site.
-9. As an unauthenticated user, I want to be able to add a product to my bag.
-10. As an unauthenticated user, I want to be able to quickly navigate through pages
-11. As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
-12. As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
-13. As an unauthenticated user, I want to be able to view products added to my shopping bag.
-14. As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag.
-15. As an unauthenticated user, I want to be able to checkout and purchase products.
-16. As an unauthenticated user, I want to be able to create an account.
-17. As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-18. As an authenticated user, I want to be able to view and update my profile information.
-19. As an authenticated user, I want to be able to view my order history.
-20. As an unauthenticated user, I want to be able contact the business
-21. As an unauthenticated user, I want to be able to receive news and updates from the business
-22. As an unauthenticated user, I want to be able to view the business location
-23. As a site owner, I want users to be able to navigate the website quickly and easily
-24. As a site owner, I want users to be sign up to a newsletter to capture user information.
-25. As a site owner, I want users to be able to view the business social media
-26. As a staff user, I want to be able to update and edit product descriptions, details and prices.
-27. As a staff user, I want to be able to view, add, update or remove the brands listed.
-28. As a staff user, I want to be able to view, add, update and delete products and product categories
-29. As a staff user, I want to be able to manage product inventory
-30. As a staff user, I want to be able to view customer orders
-31. As an authenticated user, I want confirmation that I have signed out of my account
-32. As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
-33. As an unauthenticated user, I want to be able to browse available courses
-34. As an unauthenticated user, I want to be able to view course details and request a booking
-35. As a staff user, I want to be able to view, add, update or remove the courses listed.
-36. As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful.
+6. As an unauthenticated user, I want to be able to sort and view products by category.
+7. As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+8. As an unauthenticated user, I want to be able to add a product to my bag.
+9. As an unauthenticated user, I want to be able to quickly navigate through product listing pages EPIC??
+10. As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
+11. As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
+12. As an unauthenticated user, I want to be able to view products added to my shopping bag.
+13. As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag.
+14. As an unauthenticated user, I want to be able to checkout and purchase products.
+15. As an unauthenticated user, I want to be able to create an account.
+16. As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+17. As an authenticated user, I want to be able to view and update my personal information in my profile.
+18. As an authenticated user, I want to be able to view my order history.
+19. As an unauthenticated user, I want to be able contact the business
+20. As an unauthenticated user, I want to be able to receive news and updates from the business
+21. As an unauthenticated user, I want to be able to view the business location
+22. As a site owner, I want users to be able to navigate the website quickly and easily
+23. As a site owner, I want users to be sign up to a newsletter to capture user information.
+24. As a site owner, I want users to be able to view the business social media
+25. As a staff user, I want to be able to update and edit product descriptions, details and prices.
+26. As a staff user, I want to be able to add a brands to the brand list.
+27. 7As a staff user, I want to be able to update the brands listed.
+28. 7As a staff user, I want to be able to remove any brands listed.
+29. As a staff user, I want to be able to view and update products 
+30. As a staff user, I want to be able to add products
+31. As a staff user, I want to be able to delete products
+32. As a staff user, I want to be able to manage product inventory
+33. As a staff user, I want to be able to view and update product categories
+34. As a staff user, I want to be able to add product categories
+35. As a staff user, I want to be able to delete product categories
+36. As an authenticated user, I want confirmation that I have signed out of my account
+37. As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+38. As a site owner, I want to make sure that customers can see which products are out of stock
+39. As an unauthenticated user, I want to be able to browse available courses
+40. As an unauthenticated user, I want to be able to view course details and request a booking
+41. As a staff user, I want to be able to view and update the courses listed.
+42. As a staff user, I want to be able to add a course.
+43. As a staff user, I want to be able to delete a course.
+44. As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form.
 
 #### Error Flow
-37. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
-38. As a site owner, I want error pages that enables users to be able to return to valid areas of the site without using browser controls.
+45. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
+46. As a site owner, I want error pages that enables users to be able to return to valid areas of the site without using browser controls.
 
 ------------------------TBC------------------------------------------------
+
+
+
+## Features
+
+Home page
+Shop
+Brands
+Courses
+Log in
+Log out
+Register
+Profile page
+Shopping Cart
+Contact
+About
+
+Page 1 – Home page
+The home page consists of the following features:
+Feature 1 – Header and navigation bar
+The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
+Header image
+This feature covers the following user stories:
+1As an unauthenticated user, I want to be able to navigate the website quickly and easily 
+2As an unauthenticated user, I want to have the option to view all products on the site.
+3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
+7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
+12As an unauthenticated user, I want to be able to view products added to my shopping bag.
+15As an unauthenticated user, I want to be able to create an account
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+22As a site owner, I want users to be able to navigate the website quickly and easily
+
+Feature 2 – Search bar
+The search bar is part of the header and features across all pages. This allows the user to easily search products by brand, product type, colour. For this first release the functionality is limited to only one keyword per search, for future releases the search would include multiple keyword search functionality.
+Feature 3 – Image carousel
+The image carousel is the first image the user is presented with, the carousel provides an aesthetic to engage the user through activity, rather than just having static images
+Carousel image
+This feature covers the following user stories:
+1As an unauthenticated user, I want to be able to navigate the website quickly and easily
+Feature 4 – Mailing list
+The mailing list appears across all pages, to make it as visible as possible and encourage the user to sign up to the newsletter.
+Mailing list
+This feature covers the following user stories:
+20As an unauthenticated user, I want to be able to receive news and updates from the business
+23As a site owner, I want users to be sign up to a newsletter to capture user information.
+
+Feature 5 – Footer
+The footer appears across all pages, and contains links to direct the user to all main pages – shop, information, account. As well as links to social media pages and the address of the business. It also ensures the mailing list sign up features across all pages to prompt user engagement.
+Footer image
+This feature covers the following user stories:
+2As an unauthenticated user, I want to have the option to view all products on the site.
+7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+15As an unauthenticated user, I want to be able to create an account
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+19As an unauthenticated user, I want to be able contact the business
+20As an unauthenticated user, I want to be able to receive news and updates from the business
+21As an unauthenticated user, I want to be able to view the business location
+24As a site owner, I want users to be able to view the business social media
+23As a site owner, I want users to be sign up to a newsletter to capture user information.
+
+
+Page 2 – Products
+The product listing menu consists of the following features:
+Feature 1 – All products
+When the use first selects the shop link, they have an option to view ‘all products’ or select one of the product categories. On selecting the all products page, every product listing appears in an automatic alphabetical order.
+This feature covers the following user stories:
+2As an unauthenticated user, I want to have the option to view all products on the site.
+3As an unauthenticated user, I want to be able to search the website for specific products and brands.
+2As an unauthenticated user, I want to have the option to view all products on the site.
+
+
+Feature 2 – Categories
+The category list appears when the user selects the shop link in the header, as well as on the all product page / products pages. The categories allow the user to filter and browse certain products.
+This feature covers the following user stories:
+2As an unauthenticated user, I want to have the option to view all products on the site.
+3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
+6As an unauthenticated user, I want to be able to sort and view products by category.
+
+Feature 3 – Product details
+The user has the option to view details of any product listing. They have to select this to be able to purchase the product. The product details appear in a new window and gives the user the product name and brand, detailed product description, an option to select size and quantity. The user can then add the product to their cart, and either go to the bag or continue shopping.
+When the user adds a product to the cart, they are unable to add more than is listed in inventory.
+When an item becomes out of stock, the size selection automatically shows out of stock, and the user will be unable to select this product for purchase.
+This feature covers the following user stories:
+4As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
+9As an unauthenticated user, I want to be able to add a product to my bag.
+12As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
+37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+38As a site owner, I want to make sure that customers can see which products are out of stock
+
+
+Feature 4 – Managing product details
+
+When logged in as a staff user or admin, the user has the ability to create and update any product from the product details page. Upon selection the staff user can edit the title, description, friendly name, category, brand, sizing options, colour options, price and image. The staff user has the option to save or cancel any changes.
+
+This feature covers the following user stories.
+25As a staff user, I want to be able to update and edit product descriptions, details and prices.
+26As a staff user, I want to be able to add a brands to the brand list.
+277As a staff user, I want to be able to update the brands listed.
+287As a staff user, I want to be able to remove any brands listed.
+29As a staff user, I want to be able to view and update products 
+30As a staff user, I want to be able to add products
+31As a staff user, I want to be able to delete products
+
+Feature 5 – Page order
+The user has the option to select the order in which the products are listed. They can order by price (ascending or descending) or alphabetically (ascending or descending). 
+This feature covers the following user stories:
+5As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
+
+Feature 6 – Pagination
+The pagination appears at the top and bottom of the products page, it shows the user which product page they are on, and gives the user the ability to easily navigate through the product pages.
+This feature covers the following user stories:
+10As an unauthenticated user, I want to be able to quickly navigate through product listing pages
+
+
+Feature 7 – Create/update product
+
+The option to create a product appears in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to create a new product with the required fields.
+This feature covers the following user stories: 
+
+29As a staff user, I want to be able to view and update products 
+30As a staff user, I want to be able to add products
+31As a staff user, I want to be able to delete products
+
+
+Feature 8 – Category management
+
+The category management features in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to view, add, update or remove product categories.
+
+This feature covers the following user stories: 
+
+33As a staff user, I want to be able to view and update product categories
+34As a staff user, I want to be able to add product categories
+35As a staff user, I want to be able to delete product categories
+
+Feature 9 – Inventory management
+
+The inventory management features in the shop dropdown menu when logged in as a staff user or admin. It enables the user to view all products listed alphabetically, or they can search by SKU, product name and brand name.
+After selecting adjust quantity, the user is taken to an update inventory page where they can adjust the quantity of stock.
+
+This feature covers the following user stories:
+
+32As a staff user, I want to be able to manage product inventory
+37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+
+
+Page 3 – Brands
+This page consists of the following features:
+Feature 1- The brand link is featured on the header, this page allows the user to organise products solely by brand. 
+
+Feature 2 – Brand management.
+When a staff user is logged in the option to manage brands appears in the brand menu. The brand management page appears when selected and allows the staff user to view, add, update or remove brands.
+This feature covers the following user stories:
+7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+26As a staff user, I want to be able to add a brands to the brand list.
+277As a staff user, I want to be able to update the brands listed.
+287As a staff user, I want to be able to remove any brands listed.
+Page 4 – Courses
+This page consists of the following features:
+Feature 1 – course list
+The courses are listed with the descriptions and an option to view more details
+39As an unauthenticated user, I want to be able to browse available courses
+40As an unauthenticated user, I want to be able to view course details and request a booking
+41As a staff user, I want to be able to view and update the courses listed.
+42As a staff user, I want to be able to add a course.
+43As a staff user, I want to be able to delete a course.
+Feature 2 – course details
+19As an unauthenticated user, I want to be able contact the business
+39As an unauthenticated user, I want to be able to browse available courses
+40As an unauthenticated user, I want to be able to view course details and request a booking
+41As a staff user, I want to be able to view and update the courses listed.
+42As a staff user, I want to be able to add a course.
+43As a staff user, I want to be able to delete a course.
+Page 5 - Log in
+The user can access the log in via the links in the header and footer, they are taken to a sign in page that also features a link to create a new account.
+A confirmation box appears above the login links to tell the user they have logged in successfully.
+This page covers the following user stories:
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+
+
+Page 6 - Log out
+The user can access the log out via the links in the header and footer, they are taken to a log out page and confirmation box appears above the login links to tell the user they have logged in successfully.
+This page covers the following user stories:
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+36As an authenticated user, I want confirmation that I have signed out of my account
+Page 7 – Register
+The register page can be accessed from the header link across all pages. The user is asked to create a username for future logins. 
+The user gains benefits such as saving shipping details and viewing past orders.
+This page covers the following user stories:
+15As an unauthenticated user, I want to be able to create an account
+36As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful.
+
+Page 8 - Profile page
+Feature 1 – Profile information 
+When the user is logged in or registered, they are able to view their profile. This features their personal details which they are able to update and change.
+Feature 2 – Order history 
+When the user is logged in, they are able to view their previous order history. They are given the option to view any order in more detail. This page includes order number, product and cost, delivery address and billing information.
+The user is then given the option to return to profile or continue shopping.
+This page covers the following user stories:
+17As an authenticated user, I want to be able to view and update my personal information in my profile.
+18As an authenticated user, I want to be able to view my order history.
+
+Page 9 - Shopping Cart
+The shopping cart is always visible in the header on each page. The quantity is always visible and updates whenever a product is added.
+Feature 1 – Shopping cart
+When the user chooses to view their cart all items, they can adjust the quantities of the products, selecting minus to take the quantity to zero removes the item from the bag altogether. The user has confirmation that the product has then been removed.
+This page covers the following user stories:
+10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
+12As an unauthenticated user, I want to be able to view products added to my shopping bag.
+14As an unauthenticated user, I want to be able to checkout and purchase products.
+Feature 2 – Checkout
+When the user is happy with the items placed in the bag they can choose to checkout. This takes them to the checkout page which displays the items in their bag, as well as payment details.
+When the user is logged in the form is prepopulated with their delivery and contact information.
+When the user is not logged in the form is empty for the user to complete, and they are given the option to create an account or log in.
+
+When the card details have been entered correctly a confirmation page is displayed and the order confirmation is sent the to the user’s email address.
+
+Page 10 – Contact
+The contact page contains a form for any user to complete to enable them to contact the business. It features different subject matters for the user to select from which helps the staff user / site owner deal with customer messages.
+This form is also the form users are taken to when they wish to reserve a dive course placement. 
+19As an unauthenticated user, I want to be able contact the business
+
+
+Page 11 - About
+The about page features an overview of the business to engage users and help build trust to make them purchase products from the site. 
+It contains an easy to use FAQ menu with questions, the aim of this is to resolve customer queries so the staff users can focus on other messages via the contact form, and enable users to quickly resolve common questions.
+44As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form.
+
+Page 12 – Administration
+The Django admin panel is a built in tool that enables the admin users to create batch actions and manipulate all the data tables in one place.
+
+
 
 
 <!--
@@ -282,36 +522,262 @@ This model contains all fields stored in the database collections with their dat
 <details><summary>Errors</summary>
 <img src="readme/wireframes/error.png">
 </details>
-
+-->
 ## Surface
-### Design choices
-
-The overall design of the website was to keep it clean and simple, to allow the imagery of the food to shine through, and to choose colours that didn’t distract or take focus. The website also needs to act as a portfolio to attract users to book and visit the restaurant, so we chose a gallery image layout for the menu, and made sure to include photography of the staff and restaurant interior.
-
-The site is straightforward to navigate, with a high contrasting navigation bar to enable ease of use for the user to find other main pages.
-
-The background is neutral but bright, the images are the focal point of the home page so the user has an immediate view of the food. The rest of the colour scheme is reflecting the rustic Italian interior of the restaurant.
-
+Surface
+Design choices
+The aim of the design of the website was to create a clean and modern website, photography imagery is used to show business values and create an enticing site that the visitor wants to explore. 
+The fonts are bold, clear and modern, with clear headings to enable easy navigation.
 ### Colours
-
-The colour palette is fairly neutral and warm. The bold colours that are used in focal points such as buttons and titles, and the neutrals are used for backgrounds and body text.
-
-- #212529 - Title text
-- #4F4F4F - Body text
-- #5A753A - Buttons
-- #703D30 - Lines and subtitles
-- #FBF4E1 - Background
-- #FFFFFF  - Logo and header links
-
+The colour scheme is primarily blues to represent water which matches the business theme. 
+#FFFFFF – Titles & subtitles
+#FFFFFF - Body text
+##315673- Buttons
+##5392C2– Button highlight & search bar
+#000000 – Image overlay text
+insert colour palette image
 After choosing a colour scheme I tested a number of palette options to make sure the it met accessibility standards.
-
+insert accessibility image
+### Typography
+Poller One is the font uses for the logo, this font is from the Google Fonts.
+Urbanist is the font used across all of the headings and text across the website, it has been used in different weights and different cases to highlight titles. This font is from the Google Fonts Library.
 <br>![Database model](readme/misc/accessible-color.jpg)
 
-### Typography
-Maria Rose is the font uses for the logo, and is replicated in the main headings of the website. This font is licensed from Creative Market, with a standard license for personal use.
+## Features
 
-Josefin Sans is the font used across all of the body text, this font is from the Google Fonts Library.
+Home page
+Shop
+Brands
+Courses
+Log in
+Log out
+Register
+Profile page
+Shopping Cart
+Contact
+About
 
+Page 1 – Home page
+The home page consists of the following features:
+Feature 1 – Header and navigation bar
+The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
+Header image
+This feature covers the following user stories:
+1As an unauthenticated user, I want to be able to navigate the website quickly and easily 
+2As an unauthenticated user, I want to have the option to view all products on the site.
+3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
+7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
+12As an unauthenticated user, I want to be able to view products added to my shopping bag.
+15As an unauthenticated user, I want to be able to create an account
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+22As a site owner, I want users to be able to navigate the website quickly and easily
+<br>![Navbar model](readme/features/navbar.png)
+
+Feature 2 – Search bar
+The search bar is part of the header and features across all pages. This allows the user to easily search products by brand, product type, colour. For this first release the functionality is limited to only one keyword per search, for future releases the search would include multiple keyword search functionality.
+Feature 3 – Image carousel
+The image carousel is the first image the user is presented with, the carousel provides an aesthetic to engage the user through activity, rather than just having static images
+Carousel image
+This feature covers the following user stories:
+1As an unauthenticated user, I want to be able to navigate the website quickly and easily
+Feature 4 – Mailing list
+The mailing list appears across all pages, to make it as visible as possible and encourage the user to sign up to the newsletter.
+Mailing list
+This feature covers the following user stories:
+20As an unauthenticated user, I want to be able to receive news and updates from the business
+23As a site owner, I want users to be sign up to a newsletter to capture user information.
+
+Feature 5 – Footer
+The footer appears across all pages, and contains links to direct the user to all main pages – shop, information, account. As well as links to social media pages and the address of the business. It also ensures the mailing list sign up features across all pages to prompt user engagement.
+Footer image
+This feature covers the following user stories:
+2As an unauthenticated user, I want to have the option to view all products on the site.
+7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+15As an unauthenticated user, I want to be able to create an account
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+19As an unauthenticated user, I want to be able contact the business
+20As an unauthenticated user, I want to be able to receive news and updates from the business
+21As an unauthenticated user, I want to be able to view the business location
+24As a site owner, I want users to be able to view the business social media
+23As a site owner, I want users to be sign up to a newsletter to capture user information.
+
+
+Page 2 – Products
+The product listing menu consists of the following features:
+Feature 1 – All products
+When the use first selects the shop link, they have an option to view ‘all products’ or select one of the product categories. On selecting the all products page, every product listing appears in an automatic alphabetical order.
+This feature covers the following user stories:
+2As an unauthenticated user, I want to have the option to view all products on the site.
+3As an unauthenticated user, I want to be able to search the website for specific products and brands.
+2As an unauthenticated user, I want to have the option to view all products on the site.
+
+
+Feature 2 – Categories
+The category list appears when the user selects the shop link in the header, as well as on the all product page / products pages. The categories allow the user to filter and browse certain products.
+This feature covers the following user stories:
+2As an unauthenticated user, I want to have the option to view all products on the site.
+3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
+6As an unauthenticated user, I want to be able to sort and view products by category.
+
+Feature 3 – Product details
+The user has the option to view details of any product listing. They have to select this to be able to purchase the product. The product details appear in a new window and gives the user the product name and brand, detailed product description, an option to select size and quantity. The user can then add the product to their cart, and either go to the bag or continue shopping.
+When the user adds a product to the cart, they are unable to add more than is listed in inventory.
+When an item becomes out of stock, the size selection automatically shows out of stock, and the user will be unable to select this product for purchase.
+This feature covers the following user stories:
+4As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
+9As an unauthenticated user, I want to be able to add a product to my bag.
+12As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
+37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+38As a site owner, I want to make sure that customers can see which products are out of stock
+
+
+Feature 4 – Managing product details
+
+When logged in as a staff user or admin, the user has the ability to create and update any product from the product details page. Upon selection the staff user can edit the title, description, friendly name, category, brand, sizing options, colour options, price and image. The staff user has the option to save or cancel any changes.
+
+This feature covers the following user stories.
+25As a staff user, I want to be able to update and edit product descriptions, details and prices.
+26As a staff user, I want to be able to add a brands to the brand list.
+277As a staff user, I want to be able to update the brands listed.
+287As a staff user, I want to be able to remove any brands listed.
+29As a staff user, I want to be able to view and update products 
+30As a staff user, I want to be able to add products
+31As a staff user, I want to be able to delete products
+
+Feature 5 – Page order
+The user has the option to select the order in which the products are listed. They can order by price (ascending or descending) or alphabetically (ascending or descending). 
+This feature covers the following user stories:
+5As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
+
+Feature 6 – Pagination
+The pagination appears at the top and bottom of the products page, it shows the user which product page they are on, and gives the user the ability to easily navigate through the product pages.
+This feature covers the following user stories:
+10As an unauthenticated user, I want to be able to quickly navigate through product listing pages
+
+
+Feature 7 – Create/update product
+
+The option to create a product appears in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to create a new product with the required fields.
+This feature covers the following user stories: 
+
+29As a staff user, I want to be able to view and update products 
+30As a staff user, I want to be able to add products
+31As a staff user, I want to be able to delete products
+
+
+Feature 8 – Category management
+
+The category management features in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to view, add, update or remove product categories.
+
+This feature covers the following user stories: 
+
+33As a staff user, I want to be able to view and update product categories
+34As a staff user, I want to be able to add product categories
+35As a staff user, I want to be able to delete product categories
+
+Feature 9 – Inventory management
+
+The inventory management features in the shop dropdown menu when logged in as a staff user or admin. It enables the user to view all products listed alphabetically, or they can search by SKU, product name and brand name.
+After selecting adjust quantity, the user is taken to an update inventory page where they can adjust the quantity of stock.
+
+This feature covers the following user stories:
+
+32As a staff user, I want to be able to manage product inventory
+37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+
+
+Page 3 – Brands
+This page consists of the following features:
+Feature 1- The brand link is featured on the header, this page allows the user to organise products solely by brand. 
+
+Feature 2 – Brand management.
+When a staff user is logged in the option to manage brands appears in the brand menu. The brand management page appears when selected and allows the staff user to view, add, update or remove brands.
+This feature covers the following user stories:
+7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
+26As a staff user, I want to be able to add a brands to the brand list.
+277As a staff user, I want to be able to update the brands listed.
+287As a staff user, I want to be able to remove any brands listed.
+Page 4 – Courses
+This page consists of the following features:
+Feature 1 – course list
+The courses are listed with the descriptions and an option to view more details
+39As an unauthenticated user, I want to be able to browse available courses
+40As an unauthenticated user, I want to be able to view course details and request a booking
+41As a staff user, I want to be able to view and update the courses listed.
+42As a staff user, I want to be able to add a course.
+43As a staff user, I want to be able to delete a course.
+Feature 2 – course details
+19As an unauthenticated user, I want to be able contact the business
+39As an unauthenticated user, I want to be able to browse available courses
+40As an unauthenticated user, I want to be able to view course details and request a booking
+41As a staff user, I want to be able to view and update the courses listed.
+42As a staff user, I want to be able to add a course.
+43As a staff user, I want to be able to delete a course.
+Page 5 - Log in
+The user can access the log in via the links in the header and footer, they are taken to a sign in page that also features a link to create a new account.
+A confirmation box appears above the login links to tell the user they have logged in successfully.
+This page covers the following user stories:
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+
+
+Page 6 - Log out
+The user can access the log out via the links in the header and footer, they are taken to a log out page and confirmation box appears above the login links to tell the user they have logged in successfully.
+This page covers the following user stories:
+16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
+36As an authenticated user, I want confirmation that I have signed out of my account
+Page 7 – Register
+The register page can be accessed from the header link across all pages. The user is asked to create a username for future logins. 
+The user gains benefits such as saving shipping details and viewing past orders.
+This page covers the following user stories:
+15As an unauthenticated user, I want to be able to create an account
+36As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful.
+
+Page 8 - Profile page
+Feature 1 – Profile information 
+When the user is logged in or registered, they are able to view their profile. This features their personal details which they are able to update and change.
+Feature 2 – Order history 
+When the user is logged in, they are able to view their previous order history. They are given the option to view any order in more detail. This page includes order number, product and cost, delivery address and billing information.
+The user is then given the option to return to profile or continue shopping.
+This page covers the following user stories:
+17As an authenticated user, I want to be able to view and update my personal information in my profile.
+18As an authenticated user, I want to be able to view my order history.
+
+Page 9 - Shopping Cart
+The shopping cart is always visible in the header on each page. The quantity is always visible and updates whenever a product is added.
+Feature 1 – Shopping cart
+When the user chooses to view their cart all items, they can adjust the quantities of the products, selecting minus to take the quantity to zero removes the item from the bag altogether. The user has confirmation that the product has then been removed.
+This page covers the following user stories:
+10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
+12As an unauthenticated user, I want to be able to view products added to my shopping bag.
+14As an unauthenticated user, I want to be able to checkout and purchase products.
+Feature 2 – Checkout
+When the user is happy with the items placed in the bag they can choose to checkout. This takes them to the checkout page which displays the items in their bag, as well as payment details.
+When the user is logged in the form is prepopulated with their delivery and contact information.
+When the user is not logged in the form is empty for the user to complete, and they are given the option to create an account or log in.
+
+When the card details have been entered correctly a confirmation page is displayed and the order confirmation is sent the to the user’s email address.
+
+Page 10 – Contact
+The contact page contains a form for any user to complete to enable them to contact the business. It features different subject matters for the user to select from which helps the staff user / site owner deal with customer messages.
+This form is also the form users are taken to when they wish to reserve a dive course placement. 
+19As an unauthenticated user, I want to be able contact the business
+
+
+Page 11 - About
+The about page features an overview of the business to engage users and help build trust to make them purchase products from the site. 
+It contains an easy to use FAQ menu with questions, the aim of this is to resolve customer queries so the staff users can focus on other messages via the contact form, and enable users to quickly resolve common questions.
+44As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form.
+
+Page 12 – Administration
+The Django admin panel is a built in tool that enables the admin users to create batch actions and manipulate all the data tables in one place.
+
+
+
+
+
+
+<!--
 ## Features
 
 The site contains 12 pages and
