@@ -33,7 +33,9 @@ if 'DEVELOPMENT' in os.environ:
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['scubasport.heroku-app.com','localhost' ,'*']
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+ALLOWED_HOSTS = ['scubasport.heroku-app.com','localhost']
 
 # Application definition
 

@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: /acounts/
+Disallow: /accounts/
 Disallow: /bag/
 Sitemap: https://scubasport.herokuapp.com/sitemap.xml
