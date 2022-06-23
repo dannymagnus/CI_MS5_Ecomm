@@ -33,9 +33,7 @@ if 'DEVELOPMENT' in os.environ:
 else:
     DEBUG = False
 
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-ALLOWED_HOSTS = ['scubasport.heroku-app.com','localhost']
+ALLOWED_HOSTS = ['scubasport.heroku-app.com','localhost','*']
 
 # Application definition
 
@@ -128,7 +126,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'boutique_ado.wsgi.application'
+WSGI_APPLICATION = 'project.wsgi.application'
 
 
 WSGI_APPLICATION = 'project.wsgi.application'
