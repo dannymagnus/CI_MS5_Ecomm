@@ -182,33 +182,33 @@ This model contains all fields stored in the database collections with their dat
 ### User stories:
 
 1. As an unauthenticated user, I want to be able to navigate the website quickly and easily 
-2. As an unauthenticated user, I want to have the option to view all products on the site.
-3. As an unauthenticated user, I want to be able to search the website for specific products and brands.
+2. As an unauthenticated user, I want to have the option to view all products on the site
+3. As an unauthenticated user, I want to be able to search the website for specific products and brands
 4. As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
-5. As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
-6. As an unauthenticated user, I want to be able to sort and view products by category.
-7. As an unauthenticated user, I want to be able to view specific brands' products sold on the site.
-8. As an unauthenticated user, I want to be able to add a product to my bag.
-9. As an unauthenticated user, I want to be able to quickly navigate through product listing pages EPIC??
-10. As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
-11. As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
-12. As an unauthenticated user, I want to be able to view products added to my shopping bag.
-13. As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag.
-14. As an unauthenticated user, I want to be able to checkout and purchase products.
-15. As an unauthenticated user, I want to be able to create an account.
-16. As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-17. As an authenticated user, I want to be able to view and update my personal information in my profile.
-18. As an authenticated user, I want to be able to view my order history.
+5. As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically
+6. As an unauthenticated user, I want to be able to sort and view products by category
+7. As an unauthenticated user, I want to be able to view specific brands' products sold on the site
+8. As an unauthenticated user, I want to be able to add a product to my bag
+9. As an unauthenticated user, I want to be able to quickly navigate through product listing pages
+10. As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times
+11. As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details
+12. As an unauthenticated user, I want to be able to view products added to my shopping bag
+13. As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag
+14. As an unauthenticated user, I want to be able to checkout and purchase products
+15. As an unauthenticated user, I want to be able to create an account
+16. As an unauthenticated user, I want to be able to log in to / sign out of an existing account
+17. As an authenticated user, I want to be able to view and update my personal information in my profile
+18. As an authenticated user, I want to be able to view my order history
 19. As an unauthenticated user, I want to be able contact the business
 20. As an unauthenticated user, I want to be able to receive news and updates from the business
 21. As an unauthenticated user, I want to be able to view the business location
 22. As a site owner, I want users to be able to navigate the website quickly and easily
-23. As a site owner, I want users to be sign up to a newsletter to capture user information.
+23. As a site owner, I want users to be sign up to a newsletter to capture user information
 24. As a site owner, I want users to be able to view the business social media
-25. As a staff user, I want to be able to update and edit product descriptions, details and prices.
-26. As a staff user, I want to be able to add a brands to the brand list.
-27. 7As a staff user, I want to be able to update the brands listed.
-28. 7As a staff user, I want to be able to remove any brands listed.
+25. As a staff user, I want to be able to update and edit product descriptions, details and prices
+26. As a staff user, I want to be able to add a brands to the brand list
+27. 7As a staff user, I want to be able to update the brands listed
+28. 7As a staff user, I want to be able to remove any brands listed
 29. As a staff user, I want to be able to view and update products 
 30. As a staff user, I want to be able to add products
 31. As a staff user, I want to be able to delete products
@@ -217,14 +217,16 @@ This model contains all fields stored in the database collections with their dat
 34. As a staff user, I want to be able to add product categories
 35. As a staff user, I want to be able to delete product categories
 36. As an authenticated user, I want confirmation that I have signed out of my account
-37. As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
+37. As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory
 38. As a site owner, I want to make sure that customers can see which products are out of stock
 39. As an unauthenticated user, I want to be able to browse available courses
 40. As an unauthenticated user, I want to be able to view course details and request a booking
-41. As a staff user, I want to be able to view and update the courses listed.
-42. As a staff user, I want to be able to add a course.
-43. As a staff user, I want to be able to delete a course.
-44. As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form.
+41. As a staff user, I want to be able to view and update the courses listed
+42. As a staff user, I want to be able to add a course
+43. As a staff user, I want to be able to delete a course
+44. As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form
+45. As a user, I want to have confirmation that my order has been successful
+46. As admin, I want to be able to create batch actions and manipulate all the data tables in one place
 
 #### Error Flow
 45. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
@@ -598,6 +600,7 @@ This page covers the following user stories:
 
 *16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account*
 
+
 ### Page 6 - Log out
 <br>![logout page](readme/features/sign-out.png)
 
@@ -609,53 +612,113 @@ This page covers the following user stories:
 
 *36 As an authenticated user, I want confirmation that I have signed out of my account*
 
-Page 7 – Register
+
+### Page 7 – Register
+<br>![register page](readme/features/sign-up.png)
+
 The register page can be accessed from the header link across all pages. The user is asked to create a username for future logins. 
 The user gains benefits such as saving shipping details and viewing past orders.
-This page covers the following user stories:
-15As an unauthenticated user, I want to be able to create an account
-36As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful.
 
-Page 8 - Profile page
-Feature 1 – Profile information 
+This page covers the following user stories:
+
+*15 As an unauthenticated user, I want to be able to create an account*
+
+*36 As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful*
+
+
+### Page 8 - Profile page
+
+#### Feature 1 – Profile information 
+<br>![profile page](readme/features/profile-info.png)
+<br>![profile page](readme/features/edit-profile.png)
+
 When the user is logged in or registered, they are able to view their profile. This features their personal details which they are able to update and change.
-Feature 2 – Order history 
+
+This feature covers the following user stories:
+
+*17. As an authenticated user, I want to be able to view and update my personal information in my profile*
+
+#### Feature 2 – Order history 
+<br>![profile page](readme/features/profile-info.png)
+<br>![profile page](readme/features/order-history.png)
+
 When the user is logged in, they are able to view their previous order history. They are given the option to view any order in more detail. This page includes order number, product and cost, delivery address and billing information.
+
 The user is then given the option to return to profile or continue shopping.
-This page covers the following user stories:
-17As an authenticated user, I want to be able to view and update my personal information in my profile.
-18As an authenticated user, I want to be able to view my order history.
 
-Page 9 - Shopping Cart
+This page covers the following user stories:
+
+*17 As an authenticated user, I want to be able to view and update my personal information in my profile*
+
+*18 As an authenticated user, I want to be able to view my order history*
+
+
+### Page 9 - Shopping Cart
+
 The shopping cart is always visible in the header on each page. The quantity is always visible and updates whenever a product is added.
-Feature 1 – Shopping cart
-When the user chooses to view their cart all items, they can adjust the quantities of the products, selecting minus to take the quantity to zero removes the item from the bag altogether. The user has confirmation that the product has then been removed.
-This page covers the following user stories:
-10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
-12As an unauthenticated user, I want to be able to view products added to my shopping bag.
-14As an unauthenticated user, I want to be able to checkout and purchase products.
 
-Feature 2 – Checkout
+#### Feature 1 – Shopping cart
+<br>![shopping page](readme/features/shopping-cart.png)
+<br>![shopping page](readme/features/cart-item-removed.png)
+
+When the user chooses to view their cart all items, they can adjust the quantities of the products, selecting minus to take the quantity to zero removes the item from the bag altogether. The user has confirmation that the product has then been removed.
+
+This feature covers the following user stories:
+
+*10 As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times*
+
+*12 As an unauthenticated user, I want to be able to view products added to my shopping bag*
+
+*13 As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag*
+
+#### Feature 2 – Checkout
+<br>![shopping page](readme/features/checkout.png)
+
 When the user is happy with the items placed in the bag they can choose to checkout. This takes them to the checkout page which displays the items in their bag, as well as payment details.
+
 When the user is logged in the form is prepopulated with their delivery and contact information.
+
 When the user is not logged in the form is empty for the user to complete, and they are given the option to create an account or log in.
 
 When the card details have been entered correctly a confirmation page is displayed and the order confirmation is sent the to the user’s email address.
+<br>![shopping page](readme/features/order-confirmation.png)
 
-Page 10 – Contact
+This feature covers the following user stories:
+
+*14 As an unauthenticated user, I want to be able to checkout and purchase products*
+
+*45 As a user, I want to have confirmation that my order has been successful*
+
+
+### Page 10 – Contact
+<br>![contact page](readme/features/contact.png)
+
 The contact page contains a form for any user to complete to enable them to contact the business. It features different subject matters for the user to select from which helps the staff user / site owner deal with customer messages.
+
 This form is also the form users are taken to when they wish to reserve a dive course placement. 
-19As an unauthenticated user, I want to be able contact the business
+
+This page covers the following user stories:
+
+*19 As an unauthenticated user, I want to be able contact the business*
 
 
-Page 11 - About
+### Page 11 - About
+<br>![about page](readme/features/about-us.png)
+
 The about page features an overview of the business to engage users and help build trust to make them purchase products from the site. 
 It contains an easy to use FAQ menu with questions, the aim of this is to resolve customer queries so the staff users can focus on other messages via the contact form, and enable users to quickly resolve common questions.
-44As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form.
 
-Page 12 – Administration
+This page covers the following user stories:
+
+*44 As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form*
+
+### Page 12 – Administration
+<br>![admin page](readme/features/admin-panel.png)
+
 The Django admin panel is a built in tool that enables the admin users to create batch actions and manipulate all the data tables in one place.
 
+This page covers the following user stories:
+*46 As admin, I want to be able to create batch actions and manipulate all the data tables in one place*
 
 
 
