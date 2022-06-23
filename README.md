@@ -331,8 +331,8 @@ The colour scheme is primarily blues to represent water which matches the busine
 #000000 – Image overlay text
 insert colour palette image
 After choosing a colour scheme I tested a number of palette options to make sure the it met accessibility standards.
-<br>![Color](readme/misc/color.jpg)
-<br>![Accessible Color](readme/misc/accessible-color.jpg)
+<br>![Color](readme/misc/color.png)
+<br>![Accessible Color](readme/misc/accessible-color.png)
 
 ### Typography
 Poller One is the font uses for the logo, this font is from the Google Fonts.
