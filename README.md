@@ -233,9 +233,111 @@ This model contains all fields stored in the database collections with their dat
 45. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
 46. As a site owner, I want error pages that enables users to be able to return to valid areas of the site without using browser controls.
 
-------------------------TBC------------------------------------------------
 
 
+
+## Skeleton
+
+### Wireframes
+
+<details><summary>About Us</summary>
+<img src="readme/wireframes/about-us.png">
+</details>
+
+<details><summary>All-course</summary>
+<img src="readme/wireframes/all-courses.png">
+</details>
+
+<details><summary>All-Products</summary>
+<img src="readme/wireframes/all-products.png">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="readme/wireframes/checkout.png">
+</details>
+
+<details><summary>Contact Us</summary>
+<img src="readme/wireframes/contact-us.png">
+</details>
+
+<details><summary>Course Details</summary>
+<img src="readme/wireframes/course-details.png">
+</details>
+
+<details><summary>Error Page</summary>
+<img src="readme/wireframes/error.png">
+</details>
+
+<details><summary>Home</summary>
+<img src="readme/wireframes/home-page.png">
+</details>
+
+<details><summary>Order History</summary>
+<img src="readme/wireframes/order-history.png">
+</details>
+
+<details><summary>Payment Confirmation</summary>
+<img src="readme/wireframes/payment-confirmation.png">
+</details>
+
+<details><summary>Product Details</summary>
+<img src="readme/wireframes/product-details.png">
+</details>
+
+<details><summary>Profile Edit</summary>
+<img src="readme/wireframes/profile-edit.png">
+</details>
+
+<details><summary>Profile</summary>
+<img src="readme/wireframes/profile.png">
+</details>
+
+<details><summary>Register</summary>
+<img src="readme/wireframes/register.png">
+</details>
+
+<details><summary>Cart</summary>
+<img src="readme/wireframes/shopping-cart.png">
+</details>
+
+<details><summary>Sign-in</summary>
+<img src="readme/wireframes/sign-in.png">
+</details>
+
+<details><summary>Sign-out</summary>
+<img src="readme/wireframes/sign-out.png">
+</details>
+
+<details><summary>Manage Categories</summary>
+<img src="readme/wireframes/staff-manage-categories.png">
+</details>
+
+<details><summary>Manage Brands</summary>
+<img src="readme/wireframes/staff-manage-brands.png">
+</details>
+
+## Surface
+Surface
+Design choices
+The aim of the design of the website was to create a clean and modern website, photography imagery is used to show business values and create an enticing site that the visitor wants to explore. 
+The fonts are bold, clear and modern, with clear headings to enable easy navigation.
+
+### Colours
+The colour scheme is primarily blues to represent water which matches the business theme. 
+#FFFFFF – Titles & subtitles
+#FFFFFF - Body text
+##315673- Buttons
+##5392C2– Button highlight & search bar
+#000000 – Image overlay text
+insert colour palette image
+After choosing a colour scheme I tested a number of palette options to make sure the it met accessibility standards.
+<br>![Color](readme/misc/color.jpg)
+<br>![Accessible Color](readme/misc/accessible-color.jpg)
+
+### Typography
+Poller One is the font uses for the logo, this font is from the Google Fonts.
+Urbanist is the font used across all of the headings and text across the website, it has been used in different 
+weights and different cases to highlight titles. This font is from the Google Fonts Library.
 
 ## Features
 
@@ -735,793 +837,8 @@ After certain actions, error messages are shown at the top of the screenn to con
 This page covers the following user stories:
 *47 As a user, I want to be shown messages that my actions have been successful and unsuccessful*
 
+------------------------TBC------------------------------------------------
 
-
-
-<!--
-
-## Skeleton
-
-### Wireframes
-
-<details><summary>Home</summary>
-<img src="readme/wireframes/home.png">
-</details>
-
-<details><summary>About</summary>
-<img src="readme/wireframes/about-us.png">
-</details>
-
-<details><summary>Contact</summary>
-<img src="readme/wireframes/contact-us.png">
-</details>
-
-<details><summary>Menus</summary>
-<img src="readme/wireframes/menus.png">
-</details>
-
-<details><summary>Dinner Menu</summary>
-<img src="readme/wireframes/dinner-menu.png">
-</details>
-
-<details><summary>Drinks</summary>
-<img src="readme/wireframes/drinks-menu.png">
-</details>
-
-<details><summary>Lunch Menu</summary>
-<img src="readme/wireframes/lunch-menu.png">
-</details>
-
-<details><summary>Meal Details</summary>
-<img src="readme/wireframes/meal-description.png">
-</details>
-
-<details><summary>Sign In</summary>
-<img src="readme/wireframes/sign-in.png">
-</details>
-
-<details><summary>Sign Up</summary>
-<img src="readme/wireframes/sign-up.png">
-</details>
-
-<details><summary>Logout</summary>
-<img src="readme/wireframes/logout.png">
-</details>
-
-<details><summary>Reservation</summary>
-<img src="readme/wireframes/reserve.png">
-</details>
-
-<details><summary>Errors</summary>
-<img src="readme/wireframes/error.png">
-</details>
--->
-## Surface
-Surface
-Design choices
-The aim of the design of the website was to create a clean and modern website, photography imagery is used to show business values and create an enticing site that the visitor wants to explore. 
-The fonts are bold, clear and modern, with clear headings to enable easy navigation.
-### Colours
-The colour scheme is primarily blues to represent water which matches the business theme. 
-#FFFFFF – Titles & subtitles
-#FFFFFF - Body text
-##315673- Buttons
-##5392C2– Button highlight & search bar
-#000000 – Image overlay text
-insert colour palette image
-After choosing a colour scheme I tested a number of palette options to make sure the it met accessibility standards.
-insert accessibility image
-### Typography
-Poller One is the font uses for the logo, this font is from the Google Fonts.
-Urbanist is the font used across all of the headings and text across the website, it has been used in different weights and different cases to highlight titles. This font is from the Google Fonts Library.
-<br>![Database model](readme/misc/accessible-color.jpg)
-
-## Features
-
-Home page
-Shop
-Brands
-Courses
-Log in
-Log out
-Register
-Profile page
-Shopping Cart
-Contact
-About
-
-Page 1 – Home page
-The home page consists of the following features:
-Feature 1 – Header and navigation bar
-The header contains the logo, products link, brands link, search bar, user account and shopping bag. The header is visible across all pages.
-Header image
-This feature covers the following user stories:
-1As an unauthenticated user, I want to be able to navigate the website quickly and easily 
-2As an unauthenticated user, I want to have the option to view all products on the site.
-3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
-7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
-10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
-12As an unauthenticated user, I want to be able to view products added to my shopping bag.
-15As an unauthenticated user, I want to be able to create an account
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-22As a site owner, I want users to be able to navigate the website quickly and easily
-<br>![Navbar model](readme/features/navbar.png)
-
-Feature 2 – Search bar
-The search bar is part of the header and features across all pages. This allows the user to easily search products by brand, product type, colour. For this first release the functionality is limited to only one keyword per search, for future releases the search would include multiple keyword search functionality.
-Feature 3 – Image carousel
-The image carousel is the first image the user is presented with, the carousel provides an aesthetic to engage the user through activity, rather than just having static images
-Carousel image
-This feature covers the following user stories:
-1As an unauthenticated user, I want to be able to navigate the website quickly and easily
-Feature 4 – Mailing list
-The mailing list appears across all pages, to make it as visible as possible and encourage the user to sign up to the newsletter.
-Mailing list
-This feature covers the following user stories:
-20As an unauthenticated user, I want to be able to receive news and updates from the business
-23As a site owner, I want users to be sign up to a newsletter to capture user information.
-
-Feature 5 – Footer
-The footer appears across all pages, and contains links to direct the user to all main pages – shop, information, account. As well as links to social media pages and the address of the business. It also ensures the mailing list sign up features across all pages to prompt user engagement.
-Footer image
-This feature covers the following user stories:
-2As an unauthenticated user, I want to have the option to view all products on the site.
-7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
-15As an unauthenticated user, I want to be able to create an account
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-19As an unauthenticated user, I want to be able contact the business
-20As an unauthenticated user, I want to be able to receive news and updates from the business
-21As an unauthenticated user, I want to be able to view the business location
-24As a site owner, I want users to be able to view the business social media
-23As a site owner, I want users to be sign up to a newsletter to capture user information.
-
-
-Page 2 – Products
-The product listing menu consists of the following features:
-Feature 1 – All products
-When the use first selects the shop link, they have an option to view ‘all products’ or select one of the product categories. On selecting the all products page, every product listing appears in an automatic alphabetical order.
-This feature covers the following user stories:
-2As an unauthenticated user, I want to have the option to view all products on the site.
-3As an unauthenticated user, I want to be able to search the website for specific products and brands.
-2As an unauthenticated user, I want to have the option to view all products on the site.
-
-
-Feature 2 – Categories
-The category list appears when the user selects the shop link in the header, as well as on the all product page / products pages. The categories allow the user to filter and browse certain products.
-This feature covers the following user stories:
-2As an unauthenticated user, I want to have the option to view all products on the site.
-3As an unauthenticated user, I want to be able to search the website for specific products and brands. 
-6As an unauthenticated user, I want to be able to sort and view products by category.
-
-Feature 3 – Product details
-The user has the option to view details of any product listing. They have to select this to be able to purchase the product. The product details appear in a new window and gives the user the product name and brand, detailed product description, an option to select size and quantity. The user can then add the product to their cart, and either go to the bag or continue shopping.
-When the user adds a product to the cart, they are unable to add more than is listed in inventory.
-When an item becomes out of stock, the size selection automatically shows out of stock, and the user will be unable to select this product for purchase.
-This feature covers the following user stories:
-4As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
-9As an unauthenticated user, I want to be able to add a product to my bag.
-12As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details.
-37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
-38As a site owner, I want to make sure that customers can see which products are out of stock
-
-
-Feature 4 – Managing product details
-
-When logged in as a staff user or admin, the user has the ability to create and update any product from the product details page. Upon selection the staff user can edit the title, description, friendly name, category, brand, sizing options, colour options, price and image. The staff user has the option to save or cancel any changes.
-
-This feature covers the following user stories.
-25As a staff user, I want to be able to update and edit product descriptions, details and prices.
-26As a staff user, I want to be able to add a brands to the brand list.
-277As a staff user, I want to be able to update the brands listed.
-287As a staff user, I want to be able to remove any brands listed.
-29As a staff user, I want to be able to view and update products 
-30As a staff user, I want to be able to add products
-31As a staff user, I want to be able to delete products
-
-Feature 5 – Page order
-The user has the option to select the order in which the products are listed. They can order by price (ascending or descending) or alphabetically (ascending or descending). 
-This feature covers the following user stories:
-5As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically.
-
-Feature 6 – Pagination
-The pagination appears at the top and bottom of the products page, it shows the user which product page they are on, and gives the user the ability to easily navigate through the product pages.
-This feature covers the following user stories:
-10As an unauthenticated user, I want to be able to quickly navigate through product listing pages
-
-
-Feature 7 – Create/update product
-
-The option to create a product appears in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to create a new product with the required fields.
-This feature covers the following user stories: 
-
-29As a staff user, I want to be able to view and update products 
-30As a staff user, I want to be able to add products
-31As a staff user, I want to be able to delete products
-
-
-Feature 8 – Category management
-
-The category management features in the shop dropdown menu when logged in as a staff user or admin. It enables a staff user to view, add, update or remove product categories.
-
-This feature covers the following user stories: 
-
-33As a staff user, I want to be able to view and update product categories
-34As a staff user, I want to be able to add product categories
-35As a staff user, I want to be able to delete product categories
-
-Feature 9 – Inventory management
-
-The inventory management features in the shop dropdown menu when logged in as a staff user or admin. It enables the user to view all products listed alphabetically, or they can search by SKU, product name and brand name.
-After selecting adjust quantity, the user is taken to an update inventory page where they can adjust the quantity of stock.
-
-This feature covers the following user stories:
-
-32As a staff user, I want to be able to manage product inventory
-37As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory.
-
-
-Page 3 – Brands
-This page consists of the following features:
-Feature 1- The brand link is featured on the header, this page allows the user to organise products solely by brand. 
-
-Feature 2 – Brand management.
-When a staff user is logged in the option to manage brands appears in the brand menu. The brand management page appears when selected and allows the staff user to view, add, update or remove brands.
-This feature covers the following user stories:
-7As an unauthenticated user, I want to be able to view specific brand’s products sold on the site.
-26As a staff user, I want to be able to add a brands to the brand list.
-277As a staff user, I want to be able to update the brands listed.
-287As a staff user, I want to be able to remove any brands listed.
-Page 4 – Courses
-This page consists of the following features:
-Feature 1 – course list
-The courses are listed with the descriptions and an option to view more details
-39As an unauthenticated user, I want to be able to browse available courses
-40As an unauthenticated user, I want to be able to view course details and request a booking
-41As a staff user, I want to be able to view and update the courses listed.
-42As a staff user, I want to be able to add a course.
-43As a staff user, I want to be able to delete a course.
-Feature 2 – course details
-19As an unauthenticated user, I want to be able contact the business
-39As an unauthenticated user, I want to be able to browse available courses
-40As an unauthenticated user, I want to be able to view course details and request a booking
-41As a staff user, I want to be able to view and update the courses listed.
-42As a staff user, I want to be able to add a course.
-43As a staff user, I want to be able to delete a course.
-Page 5 - Log in
-The user can access the log in via the links in the header and footer, they are taken to a sign in page that also features a link to create a new account.
-A confirmation box appears above the login links to tell the user they have logged in successfully.
-This page covers the following user stories:
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-
-
-Page 6 - Log out
-The user can access the log out via the links in the header and footer, they are taken to a log out page and confirmation box appears above the login links to tell the user they have logged in successfully.
-This page covers the following user stories:
-16As an unauthenticated user, I want to be able to log in to / sign out of an existing account.
-36As an authenticated user, I want confirmation that I have signed out of my account
-Page 7 – Register
-The register page can be accessed from the header link across all pages. The user is asked to create a username for future logins. 
-The user gains benefits such as saving shipping details and viewing past orders.
-This page covers the following user stories:
-15As an unauthenticated user, I want to be able to create an account
-36As an authenticated user, I want to receive an email confirmation to verify my account and confirmation the registration is successful.
-
-Page 8 - Profile page
-Feature 1 – Profile information 
-When the user is logged in or registered, they are able to view their profile. This features their personal details which they are able to update and change.
-Feature 2 – Order history 
-When the user is logged in, they are able to view their previous order history. They are given the option to view any order in more detail. This page includes order number, product and cost, delivery address and billing information.
-The user is then given the option to return to profile or continue shopping.
-This page covers the following user stories:
-17As an authenticated user, I want to be able to view and update my personal information in my profile.
-18As an authenticated user, I want to be able to view my order history.
-
-Page 9 - Shopping Cart
-The shopping cart is always visible in the header on each page. The quantity is always visible and updates whenever a product is added.
-Feature 1 – Shopping cart
-When the user chooses to view their cart all items, they can adjust the quantities of the products, selecting minus to take the quantity to zero removes the item from the bag altogether. The user has confirmation that the product has then been removed.
-This page covers the following user stories:
-10As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times.
-12As an unauthenticated user, I want to be able to view products added to my shopping bag.
-14As an unauthenticated user, I want to be able to checkout and purchase products.
-Feature 2 – Checkout
-When the user is happy with the items placed in the bag they can choose to checkout. This takes them to the checkout page which displays the items in their bag, as well as payment details.
-When the user is logged in the form is prepopulated with their delivery and contact information.
-When the user is not logged in the form is empty for the user to complete, and they are given the option to create an account or log in.
-
-When the card details have been entered correctly a confirmation page is displayed and the order confirmation is sent the to the user’s email address.
-
-Page 10 – Contact
-The contact page contains a form for any user to complete to enable them to contact the business. It features different subject matters for the user to select from which helps the staff user / site owner deal with customer messages.
-This form is also the form users are taken to when they wish to reserve a dive course placement. 
-19As an unauthenticated user, I want to be able contact the business
-
-
-Page 11 - About
-The about page features an overview of the business to engage users and help build trust to make them purchase products from the site. 
-It contains an easy to use FAQ menu with questions, the aim of this is to resolve customer queries so the staff users can focus on other messages via the contact form, and enable users to quickly resolve common questions.
-44As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form.
-
-Page 12 – Administration
-The Django admin panel is a built in tool that enables the admin users to create batch actions and manipulate all the data tables in one place.
-
-
-
-
-
-
-<!--
-## Features
-
-The site contains 12 pages and
-1. Home page
-2. Full menu
-3. Food description
-4. lunch menu
-5. dinner menu
-6. drinks menu
-7. about
-8. contact
-9. reserve
-10. login
-11. sign up
-12. log out
-
-### Page 1 - Home page
-The home page consists of the following features:
-
-#### Feature 1 - Header and navigation Bar, the header and navigation bar are shown across all pages.
-The header shows the logo of the website, as well as a navigation bar with quick access to the main pages of the website. 
-<br>![Navbar model](readme/features/navbar.png)
-
-This feature covers the following user stories
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*10. As a first time user, I want to be able contact the restaurant*
-
-*11. As a first time user, I want to be able to make a reservation*
-
-*15. As a logged in user, I want to be able to sign in to, or create an account*
-
-*16. As a logged in user, I want to be able to log out of an account*
-
-*21. As a site owner, I want users to be to view our full menu*
-
-*24. As a site owner, I want users to be able to make a reservation with data validation so they can only book future dates and in valid opening times.*
-
-*28. As a site owner, I want users to be able to contact the business*
-
-*32. As a site owner, I want users to be able to navigate the site easily and quickly*
-
-*34. As a site owner, I want users to be able to sign in to, or create an account*
-
-*35. As a site owner, I want users to be able to log out of their account*
-
-#### Feature 2 - Carousel
-
-The carousel consists of 3 hero images, which play automatically upon landing on the page. It can be used by the site owner to promote any special offers and events.
-<br>![Navbar model](readme/features/carousel.png)
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*2.	As a first time user, I want to see professional and appealing images of the food*
-
-*14. As a first time user, I want to be able to see special offers and promotions.*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*33.  As a site owner, I want to be able to promote special offers and events.*
-
-*39. As a logged in administrator, I want to be able to create, edit or remove content on the website.*
-
-#### Feature 3 - lunch, dinner and drinks images with buttons
-
-The menu images show an image of the restaurant food with a clear button overlay which takes the user directly to the relevant menu page quickly and easily.
-<br>![Navbar model](readme/features/ldd-images.png)
-
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*2.	As a first time user, I want to see professional and appealing images of the food*
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*4.	As a first time user, I want to be able to view the full menu*
-
-*17. As a first time user, I want to be able to see separate menus for lunch, dinner and drinks*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*21. As a site owner, I want users to be to view our full menu*
-
-*36. As a site owner, I want users to be able to see separate menus for lunch, dinner and drinks*
-
-#### Feature 4 - footer 
-The footer features the business’ social media links, as well as links to the main pages the user would want to navigate.
-<br>![Navbar model](readme/features/footer.png)
-
-This feature covers the following user stories
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*18. As a first time user, I want to be able to view the business’ social media*
-
-*32.As a site owner, I want users to be able to navigate the site easily and quickly*
-
-*38. As a site owner, I want users to be able to view the business’ social media*
-
-### Page 2 - Full Menu
-The full menu page has an internal navigation bar to guide the user through the menu sections. It also shows the restaurant’s full list of food dishes with images, descriptions, prices and dietary requirements. The images are professional quality and are shown in a clear grid layout, separated with header images.
-
-It consists of the following features:
-
-#### Feature 1 - internal navigation bar
-The internal navigation bar helps the user to browse the menu without scrolling through the whole page.
-<br>![Navbar model](readme/features/food-nav.png)
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-*32. As a site owner, I want users to be able to navigate the site easily and quickly*
-
-
-#### Feature 2 - Full menu image gallery
-The full menu image gallery shows a professional image of each individual dish, with the dish name and brief description, as well as the price and dietary requirements.
-When the user selects on the image a new page opens for the item, which includes additional information including the allergy and nutritional values.
-<br>![Navbar model](readme/features/full-menu.png)
-
-This feature covers the following user stories
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*2.	As a first time user, I want to see professional and appealing images of the food*
-
-*4.	As a first time user, I want to be able to view the full menu*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*21. As a site owner, I want users to be to view our full menu*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-### Page 3 - Food description
-The food description page is shown when a user clicks on the image of an individual item. The page enables users to find out a more detailed description of the item including the allergies and calorie content.
-It consists of the following features:
-<br>![Navbar model](readme/features/food-description.png)
-
-Feature 1 - the additional nutritional information
-The additional nutritional information includes: 
-- Known allergies of the item, shown in text and a clear illustrated symbol.
-- Calorie content
-
-This feature covers the following user stories
-
-*2.	As a first time user, I want to see professional and appealing images of the food*
-
-*5.	As a first time user, I want to be able to view food allergies and calories*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-*23. As a site owner, I want users to be able to view allergies and calories*
-
-### Page 4 - Lunch Menu
-The lunch menu page shows items on the lunch menu only. It has an internal navigation bar to guide the user through the menu sections. It also shows the item’s image, descriptions, price and dietary requirements. The images are professional quality and are shown in a clear grid layout, separated with header images.
-It consists of the following features:
-#### Feature 1 - internal navigation bar
-The internal navigation bar helps the user to browse the menu without scrolling through the whole page.
-<br>![Navbar model](readme/features/lunch-nav.png)
-
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-*32. As a site owner, I want users to be able to navigate the site easily and quickly*
-
-#### Feature 2 - Lunch menu image gallery
-The full menu image gallery shows a professional image of each individual dish, with the dish name and brief description, as well as the price and dietary requirements.
-When the user selects on the image a new page opens for the item, which includes additional information including the allergy and nutritional values.
-<br>![Navbar model](readme/features/lunch-menu.png)
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*2.	As a first time user, I want to see professional and appealing images of the food*
-
-*4.	As a first time user, I want to be able to view the full menu*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*17. As a first time user, I want to be able to see separate menus for lunch, dinner and drinks*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*21. As a site owner, I want users to be to view our full menu*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-*36. As a site owner, I want users to be able to see separate menus for lunch, dinner and drinks*
-
-### Page 5 - Dinner Menu
-The dinner menu page shows items on the dinner menu only. It has an internal navigation bar to guide the user through the menu sections. It also shows the item’s image, descriptions, price and dietary requirements. The images are professional quality and are shown in a clear grid layout, separated with header images.
-It consists of the following features:
-
-#### Feature 1 - internal navigation bar
-The internal navigation bar helps the user to browse the menu without scrolling through the whole page.
-<br>![Navbar model](readme/features/dinner-nav.png)
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-*32. As a site owner, I want users to be able to navigate the site easily and quickly*
-￼
-#### Feature 2 - Dinner image gallery
-The full menu image gallery shows a professional image of each individual dish, with the dish name and brief description, as well as the price and dietary requirements.
-When the user selects the image a new page opens for the item, which includes additional information including the allergy and nutritional values.
-<br>![Navbar model](readme/features/dinner-menu.png)
-
-This feature covers the following user stories
-
-*1.	As a first time user, I want to be able to view the type of food the restaurant provides*
-
-*2.	As a first time user, I want to see professional and appealing images of the food*
-
-*4.	As a first time user, I want to be able to view the full menu*
-
-*6.	As a first time user, I want to be able to view a description and price of the food*
-
-*17. As a first time user, I want to be able to see separate menus for lunch, dinner and drinks*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*20. As a site owner, I show appealing and professional images of our food*
-
-*21. As a site owner, I want users to be to view our full menu*
-
-*22. As a site owner, I want users to be able to view the food descriptions and prices*
-
-*36. As a site owner, I want users to be able to see separate menus for lunch, dinner and drinks*
-
-### Page 6 - Drinks Menu
-The drinks menu page shows items on the drinks menu only. It has an internal navigation bar to guide the user through the menu sections. It also shows the item’s image, descriptions, price and dietary requirements. The images are professional quality and are shown in a clear grid layout, separated with header images.
-<br>![Navbar model](readme/features/drinks-menu.png)
-
-This feature covers the following user stories
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*17. As a first time user, I want to be able to see separate menus for lunch, dinner and drinks*
-
-*32. As a site owner, I want users to be able to navigate the site easily and quickly*
-
-*36. As a site owner, I want users to be able to see separate menus for lunch, dinner and drinks*
-
-### Page 7 - About page
-The about page provides the user with all of the background information of the business.  The page also features a link to enable the user to visit the page showing the business location and opening hours.
-<br>![Navbar model](readme/features/heritage.png)
-
-The page covers the following user stories
-
-*12. As a first time user, I want to be able to view the restaurants location and opening hours*
-
-*13. As a first time user, I want to know about the business and it’s ethos*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*29. As a site owner, I want users to be able to view the location and opening times*
-
-*30. As a site owner, I want users to be able to find out about our business ethos*
-
-The page consists of the following features:
-#### Feature 1 - Text accordion
-The accordion shows the user reasons for them to book a reservation, with the text highlighting the business ethos. The user can select any heading to allow the text to show in a drop down.
-<br>![Navbar model](readme/features/accordion.png)
-
-This feature covers the following user stories
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*13. As a first time user, I want to know about the business and it’s ethos*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*30. As a site owner, I want users to be able to find out about our business ethos*
-
-*31. As a site owner, I want users to be able to have an idea of the restaurant’s welcoming atmosphere so they will make a reservation*
-
-#### Feature 2 - Image carousel
-The image carousel circulates automatically. The images that circulate match each heading in the accordion.
-<br>![Navbar model](readme/features/about-carousel.png)
-
-This feature covers the following user stories
-
-*3.	As a first time user, I want to be able to navigate the website quickly and easily*
-
-*13. As a first time user, I want to know about the business and it’s ethos*
-
-*19. As a site owner, I want to attract customers to our restaurant*
-
-*21. As a site owner, I show appealing and professional images of our food*
-
-*30. As a site owner, I want users to be able to find out about our business ethos*
-
-*31. As a site owner, I want users to be able to have an idea of the restaurant’s welcoming atmosphere so they will make a reservation*
-
-#### Feature 3 - Comment section
-This scrollable comment section allows users to read other user’s comments and see their own comments after posting.
-When the user is logged in they are able to edit and delete the comments that they have made.
-<br>![Navbar model](readme/features/comments.png)
-
-<br>![Navbar model](readme/features/comment-submitted.png)
-
-This feature covers the following user stories
-
-*7.	As a logged in user, I want to be able to leave a comment or review*
-
-*8.	As a logged in user, I want to be able to see other user’s comments and reviews*
-
-*9.	As a logged in user, I want to be able to edit and delete a comment I have made*
-
-*25. As a site owner, I want users to be able to leave a comment or review*
-
-*26. As a site owner, I want users to be able to view other comments and reviews*
-
-*27. As a site owner, I want users to be able to edit and delete comments or reviews*
-
-*37. As a logged in administrator, I want to be able to review and approve or delete user comments.*
-
-#### Feature 4 - Login/Signup
-The login or signup links allow users to sign in to an existing account, or to create a new account to post comments
-<br>![Navbar model](readme/features/signup-in.png)
-
-*15. As a logged in user, I want to be able to create an account*
-
-*34. As a site owner, I want users to be able to sign in to, or create an account*
-
-### Page 8 - Contact page
-The contact page shows the user the business address and opening Hours. It also consists of an image background with the contact form overlay. The form allows the user to choose from a preset communication option from a drop down menu.
-<br>![Navbar model](readme/features/join-us.png)
-
-*12. As a first time user, I want to be able to view the restaurants location and opening hours*
-
-*29. As a site owner, I want users to be able to view the location and opening times*
-
-#### Feature 1 - Contact form
-<br>![Navbar model](readme/features/contact-form.png)
-
-This feature covers the following user stories
-
-*7.	As a logged in user, I want to be able to leave a comment or review*
-
-*10. As a first time user, I want to be able contact the restaurant*
-
-*25. As a site owner, I want users to be able to leave a comment or review*
-
-*28. As a site owner, I want users to be able to contact the business*
-
-### Page 9 - Reservation page
-
-#### Feature 1 - Reservation form
-The reservation form consists of an image background with the reservation form overlay. 
-This feature covers the following user stories
-<br>![Navbar model](readme/features/booking-form.png)
-
-*11. As a first time user, I want to be able to make a reservation*
-
-*12. As a first time user, I want to be able to view the restaurants location and opening hours*
-
-*24. As a site owner, I want users to be able to make a reservation with data validation so they can only book future dates and in valid opening times.*
-
-*29. As a site owner, I want users to be able to view the location and opening times*
-
-The form has required fields and only allows users to book future dates and in the restaurant’s opening hours.
-
-<br>![Navbar model](readme/features/booking-form.png)
-<br>![Navbar model](readme/features/time-picker.png)
-
-### Page 10 - Login & Sign in page and feature
-This page allows the user to sign in to an existing account they have created. There is a link for the user to sign up if they haven’t yet made an account. Once logged in the user is able to post, amend or delete comments.
-<br>![Navbar model](readme/features/sign-in.png)
-
-This page covers the following user stories
-
-*7.	As a logged in user, I want to be able to leave a comment or review*
-
-*9.	As a logged in user, I want to be able to edit and delete a comment I have made*
-
-*15. As a logged in user, I want to be able to to sign in to, or create an account*
-
-*25. As a site owner, I want users to be able to leave a comment or review*
-
-*27. As a site owner, I want users to be able to edit and delete comments or reviews*
-
-*34. As a site owner, I want users to be able to sign in to, or create an account*
-
-### Page 11 - Sing up page and feature
-This page allows the user to create an account. There is a link for the user to log in after making an 
-account.
-<br>![Navbar model](readme/features/sign-up.png)
-
-This page covers the following user stories
-
-*15. As a logged in user, I want to be able to to sign in to, or create an account*
-
-*34. As a site owner, I want users to be able to sign in to, or create an account*
-
-### Page 12 - Log out page and feature
-This page allows a logged in user to sign out of an account they have created.
-<br>![Navbar model](readme/features/sign-out.png)
-
-This page covers the following user stories
-
-*16. As a logged in user, I want to be able to log out of an account*
-
-*35. As a site owner, I want users to be able to log out of their account*
-
-### Page 13 - Error page
-
-This feature redirects the user back to any of the valid links rather than the user using browser controls.
-<br>![Navbar model](readme/features/error.jpg)
-
-This page covers the following user stories
-
-*40. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.*
-
-*41. As a site owner, I want a 404 page that enables users to be able to return to valid areas of the site without using browser controls.*
-
-### Admin Panel Feature
-
-This feature redirects the user back to any of the valid links rather than the user using browser controls.
-<br>![Navbar model](readme/features/admin-panel.png)
-
-This page covers the following user stories
-
-*39. As a logged in administrator, I want to be able to create, edit or remove content on the website.*
 
 ## Technologies Used
 
@@ -1531,23 +848,59 @@ This page covers the following user stories
 - [JS ES6](https://en.wikipedia.org/wiki/JavaScript)
 - [Django](https://www.djangoproject.com/)
 - [Python3](https://en.wikipedia.org/wiki/Python_(programming_language))
+
 #### Python Libraries
 
-- astroid==2.8.4 - for pylinting
-- cloudinary==1.29.0 - for media and static file remote storage and serving
-- crispy-bootstrap5==0.6 - for form styling
-- dj-database-url==0.5.0 - (Support for DATABASE_URL environment variable)
-- dj3-cloudinary-storage==0.0.6 - for media and static file remote storage and serving
-- django-allauth==0.49.0 - (Web framework authentication)
-- django-crispy-forms==1.14.0 - for form rendering and handling
-- flake8==4.0.1 - for linting
-- gunicorn==20.1.0 - (Python WSGI Http server)
-- Pillow==9.0.1 - (Imaging library)
-- postgres==4.0 - (Postgres adapter)
-- psycopg2==2.9.3 (Postgres adapter)
-- psycopg2-binary==2.9.3 (Postgres adapter)
-- psycopg2-pool==1.1 (Postgres adapter)
-- python3-openid==3.2.0 (Support for the OpenID decentralized identity system)
+- astroid==2.11.4
+- boto3==1.24.15
+- asgiref==3.5.1
+- botocore==1.27.15
+- certifi==2021.10.8
+- cffi==1.15.0
+- charset-normalizer==2.0.12
+- cryptography==37.0.2
+- defusedxml==0.7.1
+- dill==0.3.4
+- Django==4.0.5
+- django-allauth==0.50.0
+- django-bootstrap-form==3.4
+- django-countries==7.3.2
+- django-crispy-forms==1.14.0
+- django-database-url==1.0.3
+- django-extensions==3.1.5
+- django-filter==21.1
+- django-storages==1.12.3
+- djhtml==1.5.0
+- gunicorn==20.1.0
+- idna==3.3
+- isort==5.10.1
+- jmespath==1.0.1
+- lazy-object-proxy==1.7.1
+- mccabe==0.7.0
+- oauthlib==3.2.0
+- Pillow==9.1.0
+- platformdirs==2.5.2
+- psycopg2-binary==2.9.3
+- pycparser==2.21
+- pydot==1.4.2
+- PyJWT==2.3.0
+- pylint==2.13.8
+- pylint-django==2.5.3
+- pylint-plugin-utils==0.7
+- pyparsing==3.0.9
+- python-dateutil==2.8.2
+- python3-openid==3.2.0
+- pytz==2022.1
+- requests==2.27.1
+- requests-oauthlib==1.3.1
+- s3transfer==0.6.0
+- six==1.16.0
+- sqlparse==0.4.2
+- stripe==3.3.0
+- tomli==2.0.1
+- typing_extensions==4.2.0
+- urllib3==1.26.9
+- wrapt==1.14.1
 
 ### Frameworks & Tools
 - [Bootstrap 5.0](https://getbootstrap.com/docs/5.0) - for general site layout, grid, flex, carousel.
@@ -1570,6 +923,8 @@ This page covers the following user stories
 - [PEP8](https://www.python.org/dev/peps/pep-0008/) - for python validation.
 - [Quick Database diagrams](https://www.quickdatabasediagrams.com)- for the database schema diagram.
 - [Facebook](https://www.facebook.com) - for social media marketing
+- [Stripe](https://stripe.com/gb) - For payments
+- [Amazon Web Services](https://aws.amazon.com/) - For static file hosting
 
 ## Validation
 
