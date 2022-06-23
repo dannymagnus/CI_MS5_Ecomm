@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://scubasport.herokuapp.com/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=bcd</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Regs</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Wetsuit</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Drysuit</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Fins</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Mask</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Mares</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=scubapro</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Aqualung</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Oceanic</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Cressi</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Avatar</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Beuchat</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Hollis</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=fourth%20element</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/discover-scuba/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/test-course/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/divemaster/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/instructor/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/rescue/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/advanced/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/about-us</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/contact-us/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/bag/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/?level__iexact=beginner</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/?level__iexact=advanced</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/courses/?level__iexact=professional</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-omni/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-scorpion-bcd/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cress-lightwing-bcd/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-aquaflex-5mm-wetsuit/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-aquaflex-5mm-wetsuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-reaction-fins-yellow/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-avanti-quattro-fins-black/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-avanti-quattro-fins-green/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-linea-mask-whitetransparent/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?page=2</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?page=5</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-abyss-22-navy-ii/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/oceanic-alpha-8-sport/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-chroma-up-mask-blackorange/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-pure-wire-mask-redblack/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-pure-wire-mask-blue-clear/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-fushion-sport-drysuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-axiom-blue/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-flexa-322-wetsuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-core-acd-supreme-yoke/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-frog-plus-fins-white/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/fourth-element-navigator-mask/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-axiom-black/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-pearl/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/agualung-leg3nd-elite/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/oceanic-delta-5-edx/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-atlas-adj-62x/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-dive-3mm-wetsuit/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-dynaflex-55mm-wetsuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-dynaflex-55mm-wetsuit-men/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/sdnkldn/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/test-product2/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-blizzard-pro-drysuit-men/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-fushion-sport-drysuit-men/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/avatar-101-drysuit-men/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/avatar-101-undersuit-men/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/avatar-101-undersuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/avatar-101-drysuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-blizzard-pro-drysuit-women/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Fins&amp;page=2</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-phazer-fins/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-phazer-fins-white-pink/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-phazer-fins-whiteblue/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-reaction-fins-black/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-reaction-fins-blue/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-frog-plus-fins-bluewhite/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/cressi-frog-plus-fins-blackpink/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/beuchat-aquabionic-evo-diving-fins-black/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/beuchat-aquabionic-evo-diving-fins-yellow/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-linea-mask-black/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/beuchat-maxlux-mask/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/aqualung-plazma-mask-black-tinted/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-chroma-up-mask-blackwhite/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/mares-avanti-quattro-fins-blue/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=scubapro&amp;page=2</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=scubapro&amp;page=5</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Aqualung&amp;page=2</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/detail/hollis-f1-fins-black/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?page=1</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?page=3</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?page=4</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?category__name__iexact=Fins&amp;page=1</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=scubapro&amp;page=1</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=scubapro&amp;page=3</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=scubapro&amp;page=4</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://scubasport.herokuapp.com/products/?brand__name__iexact=Aqualung&amp;page=1</loc>
+  <lastmod>2022-06-23T18:58:45+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
