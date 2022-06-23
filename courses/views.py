@@ -19,6 +19,7 @@ class CourseListView(ListView):
     A class view to view all products
     """
     model = Course
+    ordering = ['level']
 
     def __init__(self):
         self.no_search_result = True
