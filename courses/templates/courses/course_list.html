@@ -22,7 +22,7 @@
     <div class="row d-flex {% if forloop.counter|divisibleby:2 %} flex-row-reverse {% endif %} mb-3">
         <div class="col-12 col-md-6 d-flex flex-column">
             <h2>{{ object.friendly_name }}</h2>
-            <p>{{ object.description | linebreaks }}</p>
+            <div>{{ object.description | linebreaks }}</div>
             <p><strong>Duration:</strong> {{ object.duration_weeks }} week</p>
             <p><strong>Price:</strong> ${{object.price}} </p>
             <div class = "align-self-end">
