@@ -1095,6 +1095,16 @@ The Python of the each page of the site was validated using [Python validation t
 <img src="readme/validation/py-validation/py-validation-project-urls.png">
 </details>
 
+#### Context py validation
+
+<details><summary>bag/context_processor.py</summary>
+<img src="readme/validation/py-validation/py-validation-bag-context.png">
+</details>
+
+<details><summary>products/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-products-context.png">
+</details>
+
 #### Views py validation
 
 <details><summary>about/views.py</summary>
