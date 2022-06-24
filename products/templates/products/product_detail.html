@@ -93,12 +93,9 @@
         </div>
     </div>
 </div>
-
-    {% endwith %}
-
-    {% endblock %}
-
-    {% block postloadjs %}
-    {{ block.super }}
-    <script src="{% static 'products/js/products.js' %}"></script>
-    {% endblock %}
+{% endwith %}
+{% endblock %}
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'products/js/products.js' %}"></script>
+{% endblock %}

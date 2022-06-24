@@ -8,131 +8,115 @@
 <link rel="stylesheet" href="{% static 'products/css/products.css' %}">
 {% endblock %}
 {{object.product.name}}
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1 class="my-5">
-          INVENTORY
-        </h1>
-      </div>
-    </div>
-</div>
-  <div class="container">
-    <div class="row">
-      <div class="col-9">
-        <form>
-              <div class="row">
-                <div class="col-4"><label for="id_sku__iexact" class="form-label">SKU:</label></div>
-                <div class="col">{{ filter.form.sku__iexact }}</div>
-              </div>
-              <div class="row">
-                <div class="col-4"><label for="id_product__name__icontains" class="form-label">Product Name:</label>
-                </div>
-                <div class="col">{{ filter.form.product__name__icontains }}</div>
-              </div>
-              <div class="row">
-                <div class="col-4"><label for="id_product__brand__name__icontains" class="form-label">Brand
-                    Name:</label>
-                </div>
-                <div class="col">{{ filter.form.product__brand__name__icontains}}</div>
-              </div>
-              <div class="row mb-3">
-                <div class="col-4"></div>
-                <div class="col"><button type="submit" class="btn btn-primary ms-auto">Search</button></div>
-              </div>
-        </form>
-      </div>
-      <div class="col d-flex align-items-end justify-content-end">
-          {% if is_paginated %}
-          <p class = 'text-end'>
-          {% if page_obj.has_previous %}
-          <a href="?{% param_replace page=1 %}">First</a>
-          {% if page_obj.previous_page_number != 1 %}
-          <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
-          {% endif %}
-          {% endif %}
-          Page {{ page_obj.number }} of {{ paginator.num_pages }}
-          {% if page_obj.has_next %}
-          {% if page_obj.next_page_number != paginator.num_pages %}
-          <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
-          {% endif %}
-          <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i></a>
-        </p>
-          {% endif %}
-          {% endif %}
-      </div>
-    </div>
-    </div>
-    <div class = "container">
-      <div class="table-responsive">
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">SKU</th>
-            <th scope="col">BRAND</th>
-            <th scope="col">PRODUCT</th>
-            <th scope="col">SIZE</th>
-            <th scope="col">QTY</th>
-            <th scope="col">UPDATE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            {% for object in object_list %}
-            <th scope="row">{{ object.sku }}</th>
-            <td>{{ object.product.brand| upper }}</td>
-            <td>{{ object.product }}</td>
-            <td>{{ object.size }}</td>
-            <td>{{ object.count }}</td>
-            <td><a class = "btn btn-primary" href="{% url 'update_inventory' object.id %}">Adjust Qty</a></td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-    </div>
-    </div>
-    <div class="ms-auto">
-      {% if is_paginated %}
-      {% if page_obj.has_previous %}
-      <a href="?{% param_replace page=1 %}">First</a>
-      {% if page_obj.previous_page_number != 1 %}
-      <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
-      {% endif %}
-      {% endif %}
-      Page {{ page_obj.number }} of {{ paginator.num_pages }}
-      {% if page_obj.has_next %}
-      {% if page_obj.next_page_number != paginator.num_pages %}
-      <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
-      {% endif %}
-      <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i></a>
-      {% endif %}
-      {% endif %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="my-5">
+        INVENTORY
+      </h1>
     </div>
   </div>
-
-
-  {% endblock %}
-
-
-
-
-
-  <!-- Test code for reverse relationship lookup
-
-
-<h1>This is the products page</h1>
-{{ products }}
-
-{% for product in products %}
-    Rendering the product: {{ product }}
-    Rendering the product color: {{ product.color }}
-    {% for product in product.inventory_set.all %}
-        product: {{product.product}}
-        qty: {{ product.count }}
-        color: {{ product.color }}
-    {% endfor %}
-{% endfor %}
-
-
-
--->
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-9">
+      <form>
+        <div class="row">
+          <div class="col-4">
+            <label for="id_sku__iexact" class="form-label">SKU:</label>
+          </div>
+          <div class="col">
+            {{ filter.form.sku__iexact }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4">
+            <label for="id_product__name__icontains" class="form-label">Product Name:</label>
+          </div>
+          <div class="col">
+            {{ filter.form.product__name__icontains }}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-4"><label for="id_product__brand__name__icontains" class="form-label">Brand
+              Name:</label>
+          </div>
+          <div class="col">
+            {{ filter.form.product__brand__name__icontains}}
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-4"></div>
+          <div class="col">
+            <button type="submit" class="btn btn-primary ms-auto">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col d-flex align-items-end justify-content-end">
+      {% if is_paginated %}
+      <p class = 'text-end'>
+        {% if page_obj.has_previous %}
+        <a href="?{% param_replace page=1 %}">First</a>
+        {% if page_obj.previous_page_number != 1 %}
+        <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+        {% endif %}
+        {% endif %}
+        Page {{ page_obj.number }} of {{ paginator.num_pages }}
+        {% if page_obj.has_next %}
+        {% if page_obj.next_page_number != paginator.num_pages %}
+        <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
+        {% endif %}
+        <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i></a>
+      </p>
+        {% endif %}
+        {% endif %}
+    </div>
+  </div>
+</div>
+<div class = "container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">SKU</th>
+          <th scope="col">BRAND</th>
+          <th scope="col">PRODUCT</th>
+          <th scope="col">SIZE</th>
+          <th scope="col">QTY</th>
+          <th scope="col">UPDATE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {% for object in object_list %}
+          <th scope="row">{{ object.sku }}</th>
+          <td>{{ object.product.brand| upper }}</td>
+          <td>{{ object.product }}</td>
+          <td>{{ object.size }}</td>
+          <td>{{ object.count }}</td>
+          <td><a class = "btn btn-primary" href="{% url 'update_inventory' object.id %}">Adjust Qty</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="ms-auto">
+  {% if is_paginated %}
+  {% if page_obj.has_previous %}
+  <a href="?{% param_replace page=1 %}">First</a>
+  {% if page_obj.previous_page_number != 1 %}
+  <a href="?{% param_replace page=page_obj.previous_page_number %}">Previous</a>
+  {% endif %}
+  {% endif %}
+  Page {{ page_obj.number }} of {{ paginator.num_pages }}
+  {% if page_obj.has_next %}
+  {% if page_obj.next_page_number != paginator.num_pages %}
+  <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
+  {% endif %}
+  <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i></a>
+  {% endif %}
+  {% endif %}
+</div>
+{% endblock %}

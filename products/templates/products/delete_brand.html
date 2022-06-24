@@ -16,9 +16,11 @@
   <div>
     <form action='.' method='POST'>{% csrf_token %}
       <p>Are you sure you want to delete {{ object.name }}?</p>
-      <p><input class = "btn btn-primary" type = 'submit' value='Yes' />  <a class = "btn btn-secondary" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</a></p>
+      <p>
+        <input class = "btn btn-primary" type = 'submit' value='Yes' />  <a class = "btn btn-secondary" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</a>
+      </p>
     </form>
-</div>
+  </div>
 </div>
 
 {% endblock %}

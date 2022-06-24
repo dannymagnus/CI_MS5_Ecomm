@@ -17,7 +17,6 @@
         </div>
     </div>
 </div>
-
 <div class="container content">
     <div class="d-flex align-items-center p-md-5">
         <div class="container">
@@ -35,8 +34,8 @@
                         <a id = "category_link" class = "btn btn-primary" href = "{% url 'category_list' %}">Categories</a>
                         <a id = "brand_link" class = "btn btn-primary" href = "{% url 'brand_list' %}">Brand</a>
                         <br>
-                        <button class="btn btn-primary ms-auto me-3" type="submit">Save</button><a
-                            href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-secondary">Cancel</a>
+                        <button class="btn btn-primary ms-auto me-3" type="submit">Save</button>
+                        <a href="{{request.META.HTTP_REFERER|escape}}" class="btn btn-secondary">Cancel</a>
                     </form>
                 </div>
             </div>

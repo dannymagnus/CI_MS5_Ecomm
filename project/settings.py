@@ -33,7 +33,7 @@ if 'DEVELOPMENT' in os.environ:
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = ['scubasport.herokuapp.com','localhost','*']
+ALLOWED_HOSTS = ['scubasport.herokuapp.com','localhost']
 
 # Application definition
 

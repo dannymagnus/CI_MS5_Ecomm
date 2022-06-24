@@ -5,35 +5,33 @@
 {% endblock %}
 {% block content %}
 <div class="container-fluid content">
-<div id="carouselExampleCaptions" class="carousel slide d-none d-sm-flex position-relative" data-bs-ride="carousel">
-    <div class = "container-fluid position-absolute top-0 start-0 w-100 h-100" id="overlay-text">
-        <div class="row h-100 w-100">
-            <div class="col col-md-6 d-flex flex-column align-items-center justify-content-center z-index-9999">
-                <h1 class="z-index-9999 white-text font-size-3em text-uppercase ms-5 me-auto">Learn to Scuba Dive</h1>
-                <p class="white-text align-self-start fs-4 ms-5 me-auto">Start your Scuba Diving journey with us</p>
-                <a class="align-self-start btn btn-primary fs-3 ms-5 me-auto" href="{% url 'course_list' %}?level__iexact=beginner">Start Now</a>
+    <div id="carouselExampleCaptions" class="carousel slide d-none d-sm-flex position-relative" data-bs-ride="carousel">
+        <div class = "container-fluid position-absolute top-0 start-0 w-100 h-100" id="overlay-text">
+            <div class="row h-100 w-100">
+                <div class="col col-md-6 d-flex flex-column align-items-center justify-content-center z-index-9999">
+                    <h1 class="z-index-9999 white-text font-size-3em text-uppercase ms-5 me-auto">Learn to Scuba Dive</h1>
+                    <p class="white-text align-self-start fs-4 ms-5 me-auto">Start your Scuba Diving journey with us</p>
+                    <a class="align-self-start btn btn-primary fs-3 ms-5 me-auto" href="{% url 'course_list' %}?level__iexact=beginner">Start Now</a>
+                </div>
+                <div class="d-none col-md-6"></div>
             </div>
-            <div class="d-none col-md-6"></div>
         </div>
-    </div>
-    <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-            aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-            aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-            aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-        <div class="carousel-item height-85 active">
-            <!-- Images Oleksandr Sushko unsplash -->
-            <img src="{% static 'img/learn-to-scuba-home.jpg' %}" class="d-block w-100" alt="dolphins with coral">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-item height-85">
-            <img src="{% static 'img/learn-to-scuba-home-2.jpg' %}" class="d-block w-100" alt="learning to scuba dive">
-        </div>
-        <div class="carousel-item height-85">
-            <img src="{% static 'img/home-carousel-1.jpg' %}" class="d-block w-100" alt="dolphins swimming">
+        <div class="carousel-inner">
+            <div class="carousel-item height-85 active">
+                <!-- Images Oleksandr Sushko unsplash -->
+                <img src="{% static 'img/learn-to-scuba-home.jpg' %}" class="d-block w-100" alt="dolphins with coral">
+            </div>
+            <div class="carousel-item height-85">
+                <img src="{% static 'img/learn-to-scuba-home-2.jpg' %}" class="d-block w-100" alt="learning to scuba dive">
+            </div>
+            <div class="carousel-item height-85">
+                <img src="{% static 'img/home-carousel-1.jpg' %}" class="d-block w-100" alt="dolphins swimming">
+            </div>
         </div>
     </div>
 </div>
@@ -78,7 +76,7 @@
     <hr>
 </div>
 <div class="container-fluid p-0">
-    <div id="shop-now-holder" class="bg-img-holder-home">
+    <div class="bg-img-holder-home">
         <div class="holder-home-inner">
             <div class="home-inner-headline">
                 <h2><strong>SCUBA DIVING EQUIPMENT</strong></h2>
@@ -88,8 +86,8 @@
                     EQUIPMENT TRUSTED BY OUR INSTRUCTORS
                 </p>
             </div>
-            <div role="button" class="home-inner-button-container btn btn-primary">
-                <a id="shop-now" href="{% url 'all_products' %}">Shop Now</a>
+            <div class="home-inner-button-container btn btn-primary">
+                <a class="shop-now" href="{% url 'all_products' %}">Shop Now</a>
             </div>
         </div>
     </div>
@@ -99,7 +97,6 @@
 </div>
 <p class = "fs-4 text-bold" >OUR INSTRUCTORS RECOMMEND...</p>
 <div class="container flex-row d-flex flex-nowrap no-wrap overflow-scroll">
-    
     {% for product in products %}
     <div class = "d-flex flex-column width-320px me-5">
         <a href="{% url 'product_detail' product.slug %}"><img class="img fluid height-320px" src="{{ product.image.url }}"
@@ -114,7 +111,7 @@
     <hr>
 </div>
 <div class="container-fluid p-0 about-background home">
-    <div id="shop-now-holder" class="bg-img-holder-home about-background">
+    <div class="bg-img-holder-home about-background">
         <div class="holder-home-inner">
             <div class="home-inner-headline">
                 <h2><strong>GET IN TOUCH</strong></h2>
@@ -125,7 +122,7 @@
                 </p>
             </div>
             <div role="button" class="home-inner-button-container btn btn-primary">
-                <a id="shop-now" href="{% url 'contact' %}">Contact</a>
+                <a class="shop-now" href="{% url 'contact' %}">Contact</a>
             </div>
         </div>
     </div>

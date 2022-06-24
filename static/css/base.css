@@ -310,7 +310,7 @@ input[type=number] {
     border:var(--baby-blue);
 }
 
-#shop-now{
+.shop-now{
     text-decoration: none;
     color: rgba(255,255,255,1);
 }

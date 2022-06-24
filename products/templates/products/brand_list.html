@@ -30,12 +30,16 @@
         <tr>
           {% for object in object_list %}
           <th scope="row">{{ object.name }}</th>
-          <td><div class = 'd-flex justify-content-end'><a class = 'me-3 btn btn-primary' href="{% url 'update_brand' object.id %}">Update</a><a class = 'btn btn-danger' href="{% url 'delete_brand' object.id %}">Remove</a></div></td>
+          <td>
+            <div class = 'd-flex justify-content-end'>
+              <a class = 'me-3 btn btn-primary' href="{% url 'update_brand' object.id %}">Update</a><a class = 'btn btn-danger' href="{% url 'delete_brand' object.id %}">Remove</a>
+            </div>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
-  </div>
+</div>
 
 {% endblock %}

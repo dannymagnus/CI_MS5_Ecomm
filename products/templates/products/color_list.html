@@ -18,7 +18,9 @@
 </div>
 <div class = "container d-flex flex-column align-items-center content justify-content-center">
     <div class="table-responsive">
-        <div class = "d-flex w-100 justify-content-end"><a class = "btn btn-success" href="{% url 'add_color' %}">Add</a></div>
+        <div class = "d-flex w-100 justify-content-end">
+          <a class = "btn btn-success" href="{% url 'add_color' %}">Add</a>
+        </div>
     <table class="table table-sm">
       <thead class="thead-dark">
         <tr>
@@ -30,12 +32,17 @@
         <tr>
           {% for object in object_list %}
           <th scope="row">{{ object.name }}</th>
-          <td><div class = 'd-flex justify-content-end'><a class = 'me-3 btn btn-primary' href="{% url 'update_color' object.id %}">Update</a><a class = 'btn btn-danger' href="{% url 'delete_color' object.id %}">Remove</a></div></td>
+          <td>
+            <div class = 'd-flex justify-content-end'>
+              <a class = 'me-3 btn btn-primary' href="{% url 'update_color' object.id %}">Update</a>
+              <a class = 'btn btn-danger' href="{% url 'delete_color' object.id %}">Remove</a>
+            </div>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
-  </div>
+</div>
 
 {% endblock %}
