@@ -965,10 +965,29 @@ The [W3C CSS Validation Service](http://jigsaw.w3.org/css-validator/validator) w
 
 The custom CSS file for the site passed with 0 errors.
 
-<details><summary>Custom CSS file</summary>
-<img src="readme/validation/css-validation/css-validation.png">
+<details><summary>base.css</summary>
+<img src="readme/validation/css-validation/base-css-validation.png">
 </details>
 
+<details><summary>checkout.css</summary>
+<img src="readme/validation/css-validation/checkout-css-validation.png">
+</details>
+
+<details><summary>contact.css</summary>
+<img src="readme/validation/css-validation/contact-css-validation.png">
+</details>
+
+<details><summary>courses.css</summary>
+<img src="readme/validation/css-validation/courses-css-validation.png">
+</details>
+
+<details><summary>colors.css</summary>
+<img src="readme/validation/css-validation/colors-css-validation.png">
+</details>
+
+<details><summary>products.css</summary>
+<img src="readme/validation/css-validation/products-css-validation.png">
+</details>
 
 ### JS Validation
 The Javascript of the each page of the site was validated using [JSHint validation tool](https://jshint.com/).  All pages returned a pass with 0 errors and 0 warnings.
