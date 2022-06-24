@@ -8,12 +8,14 @@
     <div id="carouselExampleCaptions" class="carousel slide d-none d-sm-flex position-relative" data-bs-ride="carousel">
         <div class = "container-fluid position-absolute top-0 start-0 w-100 h-100" id="overlay-text">
             <div class="row h-100 w-100">
-                <div class="col col-md-6 d-flex flex-column align-items-center justify-content-center z-index-9999">
-                    <h1 class="z-index-9999 white-text font-size-3em text-uppercase ms-5 me-auto">Learn to Scuba Dive</h1>
-                    <p class="white-text align-self-start fs-4 ms-5 me-auto">Start your Scuba Diving journey with us</p>
-                    <a class="align-self-start btn btn-primary fs-3 ms-5 me-auto" href="{% url 'course_list' %}?level__iexact=beginner">Start Now</a>
+                <div class="col col-md-5 d-flex flex-column align-items-center justify-content-center z-index-9999">
+                    <div class = "black-background-filter p-3 rounded">
+                        <h1 class="z-index-9999 white-text font-size-3em text-uppercase ms-3 me-auto">Learn to Scuba Dive</h1>
+                        <p class="white-text align-self-start fs-4 ms-3 me-auto">Start your Scuba Diving journey with us</p>
+                        <a class="align-self-start btn btn-primary fs-3 ms-3 me-auto" href="{% url 'course_list' %}?level__iexact=beginner">Start Now</a>
+                    </div>
                 </div>
-                <div class="d-none col-md-6"></div>
+                <div class="d-none col-md-7"></div>
             </div>
         </div>
         <div class="carousel-indicators">
@@ -77,7 +79,7 @@
 </div>
 <div class="container-fluid p-0">
     <div class="bg-img-holder-home">
-        <div class="holder-home-inner">
+        <div class="holder-home-inner black-background-filter p-3">
             <div class="home-inner-headline">
                 <h2><strong>SCUBA DIVING EQUIPMENT</strong></h2>
             </div>
@@ -112,7 +114,7 @@
 </div>
 <div class="container-fluid p-0 about-background home">
     <div class="bg-img-holder-home about-background">
-        <div class="holder-home-inner">
+        <div class="holder-home-inner black-background-filter p-3">
             <div class="home-inner-headline">
                 <h2><strong>GET IN TOUCH</strong></h2>
             </div>
