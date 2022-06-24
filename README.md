@@ -1138,12 +1138,23 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <details><summary>Home</summary>
 <img src="readme/validation/wave-validation/wave-validation-index.png">
 </details>
-<details><summary>Menus</summary>
-<img src="readme/validation/wave-validation/wave-validation-menu.png">
-<img src="readme/validation/wave-validation/wave-validation-lunch.png">
-<img src="readme/validation/wave-validation/wave-validation-dinner.png">
-<img src="readme/validation/wave-validation/wave-validation-drinks.png">
-<img src="readme/validation/wave-validation/wave-validation-details.png">
+<details><summary>Products</summary>
+<img src="readme/validation/wave-validation/wave-validation-products.png">
+<img src="readme/validation/wave-validation/wave-validation-products-detail.png">
+<img src="readme/validation/wave-validation/wave-validation-products-edit.png">
+<img src="readme/validation/wave-validation/wave-validation-products-delete.png">
+<img src="readme/validation/wave-validation/wave-validation-products-create.png">
+<img src="readme/validation/wave-validation/wave-validation-categories-list.png">
+<img src="readme/validation/wave-validation/wave-validation-categories-add.png">
+<img src="readme/validation/wave-validation/wave-validation-brands-list.png">
+<img src="readme/validation/wave-validation/wave-validation-brands-update.png">
+<img src="readme/validation/wave-validation/wave-validation-brands-remove.png">
+<img src="readme/validation/wave-validation/wave-validation-brands-remove.png">
+<img src="readme/validation/wave-validation/wave-validation-colors-list.png">
+<img src="readme/validation/wave-validation/wave-validation-colors-update.png">
+
+
+
 </details>
 <details><summary>About</summary>
 <img src="readme/validation/wave-validation/wave-validation-about.png">

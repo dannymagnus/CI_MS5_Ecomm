@@ -21,7 +21,7 @@
   <form action='.' method='POST'>{% csrf_token %}
     {{ form | crispy }}
     <div class = "mt-3 d-flex w-100 justify-content-center">
-        <input class = "btn btn-primary me-3" type='submit' value='Save'><a class = "btn btn-secondary" href='../'>Cancel</a>
+        <input class = "btn btn-primary me-3" type='submit' value='Save'><a class = "btn btn-secondary" href='{{request.META.HTTP_REFERER|escape}}'>Cancel</a>
       </div>  
 </form>
 </div>
