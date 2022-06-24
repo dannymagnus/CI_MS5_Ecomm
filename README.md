@@ -1022,14 +1022,14 @@ The Python of the each page of the site was validated using [Python validation t
 <details><summary>about/admin.py</summary>
 <img src="readme/validation/py-validation/py-validation-about-admin.png">
 </details>
-<details><summary>bookings/admin.py</summary>
-<img src="readme/validation/py-validation/py-validation-bookings-admin.png">
+<details><summary>checkout/admin.py</summary>
+<img src="readme/validation/py-validation/py-validation-checkout-admin.png">
 </details>
 <details><summary>contact/admin.py</summary>
 <img src="readme/validation/py-validation/py-validation-contact-admin.png">
 </details>
-<details><summary>home/admin.py</summary>
-<img src="readme/validation/py-validation/py-validation-home-admin.png">
+<details><summary>courses/admin.py</summary>
+<img src="readme/validation/py-validation/py-validation-courses-admin.png">
 </details>
 <details><summary>meals/admin.py</summary>
 <img src="readme/validation/py-validation/py-validation-meals-admin.png">

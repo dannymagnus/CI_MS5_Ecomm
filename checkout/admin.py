@@ -1,13 +1,22 @@
+"""
+A class for django admin
+"""
 from django.contrib import admin
 from .models import Order, OrderLineItem
 
 
 class OrderLineItemAdminInline(admin.TabularInline):
+    """
+    Inline class for OrderlineItem
+    """
     model = OrderLineItem
     readonly_fields = ('lineitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
+    """
+    A class for Order Admin
+    """
     inlines = (OrderLineItemAdminInline,)
 
     readonly_fields = (
@@ -22,7 +31,7 @@ class OrderAdmin(admin.ModelAdmin):
 
     fields = (
         'order_number',
-        # 'user_profile',
+        'user_profile',
         'date',
         'full_name',
         'email',
@@ -36,8 +45,8 @@ class OrderAdmin(admin.ModelAdmin):
         'delivery_cost',
         'order_total',
         'grand_total',
-        # 'original_bag',
-        # 'stripe_pid'
+        'original_bag',
+        'stripe_pid'
         )
 
     list_display = (

@@ -7,6 +7,7 @@ from django.contrib import admin
 from .models import Category, Product, Brand, Size, Inventory, Color
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """
@@ -78,6 +79,7 @@ class ProductAdmin(admin.ModelAdmin):
         method to set promoted to false
         """
         queryset.update(promoted=False)
+
 
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
