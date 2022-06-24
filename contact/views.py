@@ -30,7 +30,8 @@ def contact_us(request):
                     'email': request.user.email,
                     'phone': request.user.userprofile.default_phone_number,
                     'postcode': request.user.userprofile.default_postcode,
-                    'street_address': request.user.userprofile.default_street_address1,
+                    'street_address':
+                        request.user.userprofile.default_street_address1,
                         }
                 )
         else:

@@ -4,17 +4,20 @@ A module for bag app views
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Imports
 # 3rd Party
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, HttpResponse
 from django.contrib import messages
 # Internal
 from products.models import Inventory
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 def view_bag(request):
     """
     A view that renders the bag contents page
     """
     return render(request, 'bag/bag.html')
+
 
 def add_to_bag(request, slug):
     """
@@ -29,11 +32,15 @@ def add_to_bag(request, slug):
 
     if sku in list(bag.keys()):
         bag[sku] += quantity
-        messages.success(request, f'Added {item.product.friendly_name} to your bag')
+        messages.success(
+            request, f'Added {item.product.friendly_name} to your bag'
+            )
 
     else:
-        bag[sku] = quantity        
-        messages.success(request, f'Added {item.product.friendly_name} to your bag')
+        bag[sku] = quantity
+        messages.success(
+            request, f'Added {item.product.friendly_name} to your bag'
+            )
 
     request.session['bag'] = bag
     return redirect(redirect_url)
@@ -52,7 +59,9 @@ def adjust_bag(request, inventory_id):
         bag[sku] = quantity
 
     else:
-        messages.success(request, f'Removed {item.product.friendly_name} from your bag')
+        messages.success(
+            request, f'Removed {item.product.friendly_name} from your bag'
+            )
         bag.pop(sku)
 
     request.session['bag'] = bag
@@ -69,7 +78,9 @@ def remove_from_bag(request, inventory_id):
         sku = item.sku
 
         bag.pop(sku)
-        messages.success(request, f'Removed {item.product.friendly_name} from your bag')
+        messages.success(
+            request, f'Removed {item.product.friendly_name} from your bag'
+            )
 
         return redirect(reverse('view_bag'))
 

@@ -12,6 +12,7 @@ from .models import UserProfile
 from .forms import UserProfileForm
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 class ProfileDetailView(DetailView):
     """
     Display the user's profile.
@@ -29,6 +30,7 @@ class ProfileDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         return context
+
 
 class ProfileUpdateView(UpdateView):
     """

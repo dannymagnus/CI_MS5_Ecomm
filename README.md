@@ -1031,8 +1031,8 @@ The Python of the each page of the site was validated using [Python validation t
 <details><summary>courses/admin.py</summary>
 <img src="readme/validation/py-validation/py-validation-courses-admin.png">
 </details>
-<details><summary>meals/admin.py</summary>
-<img src="readme/validation/py-validation/py-validation-meals-admin.png">
+<details><summary>product/admin.py</summary>
+<img src="readme/validation/py-validation/py-validation-products-admin.png">
 </details>
 
 #### Forms py validation
@@ -1100,25 +1100,26 @@ The Python of the each page of the site was validated using [Python validation t
 <details><summary>about/views.py</summary>
 <img src="readme/validation/py-validation/py-validation-about-views.png">
 </details>
-<details><summary>bookings/views.py</summary>
-<img src="readme/validation/py-validation/py-validation-bookings-views.png">
+<details><summary>bag/views.py</summary>
+<img src="readme/validation/py-validation/py-validation-bag-views.png">
 </details>
 <details><summary>contact/views.py</summary>
 <img src="readme/validation/py-validation/py-validation-contact-views.png">
 </details>
+<details><summary>checkout/views.py</summary>
+<img src="readme/validation/py-validation/py-validation-checkout-views.png">
+</details>
+<details><summary>courses/views.py</summary>
+<img src="readme/validation/py-validation/py-validation-courses-views.png">
+</details>
+<details><summary>products/views.py</summary>
+<img src="readme/validation/py-validation/py-validation-products-views.png">
+</details>
+<details><summary>profiles/views.py</summary>
+<img src="readme/validation/py-validation/py-validation-profiles-views.png">
+</details>
 <details><summary>home/views.py</summary>
 <img src="readme/validation/py-validation/py-validation-home-views.png">
-</details>
-<details><summary>meals/views.py</summary>
-<img src="readme/validation/py-validation/py-validation-meals-views.png">
-</details>
-
-#### Urls py validation
-
-<details><summary>project/urls.py</summary>
-<img src="readme/validation/py-validation/py-validation-urls.png">
-</details>
-
 </details>
 
 ### Accessibility

@@ -25,6 +25,7 @@ from .models import Order, OrderLineItem
 from .forms import OrderForm
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 @require_POST
 def cache_checkout_data(request):
     """

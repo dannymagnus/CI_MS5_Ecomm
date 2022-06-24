@@ -7,13 +7,15 @@ A module for views in the products app
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth.mixins import UserPassesTestMixin
-from django.shortcuts import render, get_object_or_404, HttpResponseRedirect,reverse
+from django.shortcuts import render, get_object_or_404
+from django.shortcuts import HttpResponseRedirect, reverse
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 # Internal
 from .models import Product, Inventory, Category, Color, Brand
 from .forms import ProductModelForm, InventoryModelForm
 from .filters import ProductFilter, InventoryFilter, ProductOrderFilter
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 class ProductListView(ListView):
     """
@@ -30,14 +32,18 @@ class ProductListView(ListView):
         search_results = ProductFilter(self.request.GET, self.queryset)
         if search_results.qs:
             self.no_search_result = False
-        # Returns the default queryset if an empty queryset is returned by the django_filters
+        # Returns the default queryset if an empty
+        # queryset is returned by the django_filters
         return search_results.qs.distinct() or self.model.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        context['filter'] = ProductFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = ProductFilter(
+            self.request.GET, queryset=self.get_queryset()
+            )
         return context
+
 
 class ProductSearchView(ListView):
     """
@@ -51,20 +57,21 @@ class ProductSearchView(ListView):
 
     def get_queryset(self, **kwargs):
         search_results = ProductFilter(self.request.GET, self.queryset)
-        queryset=search_results.qs.distinct()
+        queryset = search_results.qs.distinct()
         query = self.request.GET.get('q')
         if not query:
-            messages.info(self.request,'You did not enter any search criteria')
+            messages.info(
+                self.request, 'You did not enter any search criteria'
+                )
             return Product.objects.none()
         if query:
             search_results = queryset.filter(
                 Q(name__icontains=query) |
                 Q(description__icontains=query) |
                 Q(category__name__icontains=query) |
-                Q(brand__name__icontains=query)  |
-                Q(holding__name__icontains=query)   |
+                Q(brand__name__icontains=query) |
+                Q(holding__name__icontains=query) |
                 Q(holding__friendly_name__icontains=query)).distinct()
-        # search_results = ProductOrderFilter(self.request.GET, queryset)
         if search_results:
             self.no_search_result = False
         # Returns the queryset returned by the django_filters
@@ -73,7 +80,9 @@ class ProductSearchView(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        context['filter'] = ProductOrderFilter(self.request.GET, queryset=Product.objects.all())
+        context['filter'] = ProductOrderFilter(
+            self.request.GET, queryset=Product.objects.all()
+            )
         return context
 
 
@@ -105,7 +114,7 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = True
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -119,10 +128,8 @@ class ProductCreateView(UserPassesTestMixin, CreateView):
         messages.error(self.request, 'Sorry, something went wrong')
         return self.render_to_response(context)
 
-    # success_url = '/products'
 
-
-class ProductUpdateView(UserPassesTestMixin,UpdateView):
+class ProductUpdateView(UserPassesTestMixin, UpdateView):
     """
     A class view to update products
     """
@@ -136,12 +143,10 @@ class ProductUpdateView(UserPassesTestMixin,UpdateView):
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
-    def get_object(self,queryset=queryset):
+    def get_object(self, queryset=queryset):
         slug_ = self.kwargs.get("slug")
         return get_object_or_404(Product, slug=slug_)
 
-    # def form_valid(self, form):
-    #     return super().form_valid(form)
     def form_valid(self, form):
         messages.success(self.request, "Product updated succesfully")
         super().form_valid(form)
@@ -153,7 +158,7 @@ class ProductUpdateView(UserPassesTestMixin,UpdateView):
         return self.render_to_response(self.get_context_data(form=form))
 
 
-class ProductDeleteView(UserPassesTestMixin,DeleteView):
+class ProductDeleteView(UserPassesTestMixin, DeleteView):
     """
     A class view to delete products
     """
@@ -162,7 +167,7 @@ class ProductDeleteView(UserPassesTestMixin,DeleteView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -189,21 +194,26 @@ class InventoryListView(UserPassesTestMixin, ListView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
     def get_queryset(self, **kwargs):
-        search_results = InventoryFilter(self.request.GET, self.queryset)
+        search_results = InventoryFilter(
+            self.request.GET, self.queryset
+            )
         if search_results.qs:
             self.no_search_result = False
-        # Returns the default queryset if an empty queryset is returned by the django_filters
+        # Returns the default queryset if an empty
+        # queryset is returned by the django_filters
         return search_results.qs.distinct() or self.model.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
-        context['filter'] = InventoryFilter(self.request.GET, queryset=self.get_queryset())
+        context['filter'] = InventoryFilter(
+            self.request.GET, queryset=self.get_queryset()
+            )
         return context
 
 
@@ -219,7 +229,7 @@ class InventoryUpdateView(UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -237,7 +247,7 @@ class InventoryUpdateView(UserPassesTestMixin, UpdateView):
         return self.render_to_response(self.get_context_data(form=form))
 
 
-class ColorListView(UserPassesTestMixin,ListView):
+class ColorListView(UserPassesTestMixin, ListView):
     """
     A class view to list colors
     """
@@ -247,12 +257,12 @@ class ColorListView(UserPassesTestMixin,ListView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
 
-class ColorDeleteView(UserPassesTestMixin,DeleteView):
+class ColorDeleteView(UserPassesTestMixin, DeleteView):
     """
     A class view to delete colors
     """
@@ -262,7 +272,7 @@ class ColorDeleteView(UserPassesTestMixin,DeleteView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -284,7 +294,7 @@ class ColorUpdateView(UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -310,7 +320,7 @@ class ColorCreateView(UserPassesTestMixin, CreateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -337,7 +347,7 @@ class BrandListView(UserPassesTestMixin, ListView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -352,7 +362,7 @@ class BrandDeleteView(UserPassesTestMixin, DeleteView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -374,7 +384,7 @@ class BrandUpdateView(UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -400,7 +410,7 @@ class BrandCreateView(UserPassesTestMixin, CreateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -417,7 +427,7 @@ class BrandCreateView(UserPassesTestMixin, CreateView):
     success_url = '/products/brands'
 
 
-class CategoryListView(UserPassesTestMixin,ListView):
+class CategoryListView(UserPassesTestMixin, ListView):
     """
     A class view to list categories
     """
@@ -427,7 +437,7 @@ class CategoryListView(UserPassesTestMixin,ListView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -438,10 +448,11 @@ class CategoryDeleteView(UserPassesTestMixin, DeleteView):
     """
     model = Category
     template_name = 'products/delete_category.html'
+
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -463,7 +474,7 @@ class CategoryUpdateView(UserPassesTestMixin, UpdateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
@@ -489,7 +500,7 @@ class CategoryCreateView(UserPassesTestMixin, CreateView):
     def test_func(self):
         return self.request.user.is_staff
     raise_exception = False
-    redirect_field_name='/'
+    redirect_field_name = '/'
     permission_denied_message = "You are not authorised to view this page"
     login_url = '/accounts/login'
 
