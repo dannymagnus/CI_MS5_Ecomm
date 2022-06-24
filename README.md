@@ -1052,17 +1052,17 @@ The Python of the each page of the site was validated using [Python validation t
 <details><summary>about/models.py</summary>
 <img src="readme/validation/py-validation/py-validation-about-models.png">
 </details>
-<details><summary>bookings/models.py</summary>
-<img src="readme/validation/py-validation/py-validation-bookings-models.png">
+<details><summary>checkout/models.py</summary>
+<img src="readme/validation/py-validation/py-validation-checkout-models.png">
 </details>
 <details><summary>contact/models.py</summary>
-<img src="readme/validation/py-validation/py-validation-contract-models.png">
+<img src="readme/validation/py-validation/py-validation-contact-models.png">
 </details>
-<details><summary>home/models.py</summary>
-<img src="readme/validation/py-validation/py-validation-home-models.png">
+<details><summary>courses/models.py</summary>
+<img src="readme/validation/py-validation/py-validation-course-models.png">
 </details>
-<details><summary>meals/models.py</summary>
-<img src="readme/validation/py-validation/py-validation-meals-models.png">
+<details><summary>products/models.py</summary>
+<img src="readme/validation/py-validation/py-validation-products-models.png">
 </details>
 
 #### Urls py validation

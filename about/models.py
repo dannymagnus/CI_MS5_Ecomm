@@ -8,6 +8,8 @@ from django.db import models
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 class Faq(models.Model):
     """
     A model class to record and present faqs

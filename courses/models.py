@@ -9,6 +9,7 @@ from django.utils.text import slugify
 from django.urls import reverse
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 class Course(models.Model):
     """
     A model class for courses
@@ -38,10 +39,11 @@ class Course(models.Model):
     )
     price = models.DecimalField(
         decimal_places=2,
-        max_digits = 6,
+        max_digits=6,
     )
     duration_weeks = models.IntegerField(
     )
+
     class Level(models.TextChoices):
         """
         A class for choices of dive level

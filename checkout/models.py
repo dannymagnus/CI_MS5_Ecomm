@@ -14,6 +14,7 @@ from products.models import Inventory
 from profiles.models import UserProfile
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 class Order(models.Model):
     """
     A class for a model for a website order

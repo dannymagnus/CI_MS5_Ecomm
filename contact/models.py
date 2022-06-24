@@ -45,6 +45,7 @@ class Contact(models.Model):
     message = models.TextField(
         max_length=300
         )
+
     class Meta:
         verbose_name = 'Message'
         verbose_name_plural = 'Messages'

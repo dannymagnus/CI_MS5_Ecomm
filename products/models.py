@@ -9,6 +9,8 @@ from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 class Category(models.Model):
     """
     A class for the category model
@@ -46,6 +48,7 @@ class Category(models.Model):
             The category friendly name string
         """
         return self.friendly_name
+
 
 class Product(models.Model):
     """
@@ -88,9 +91,9 @@ class Product(models.Model):
         )
 
     GENDER_CHOICES = (
-    ('M', 'Male'),
-    ('F', 'Female'),
-    )
+        ('M', 'Male'),
+        ('F', 'Female'),
+        )
 
     gender = models.CharField(
         max_length=1,
@@ -138,7 +141,6 @@ class Product(models.Model):
         if not self.slug and self.name:
             self.slug = slugify(self.name)
         super(Product, self).save(*args, **kwargs)
-
 
     def get_absolute_url(self):
         """
@@ -251,18 +253,18 @@ class Inventory(models.Model):
         Size,
         on_delete=models.CASCADE,
         null=True,
-        blank = True,
+        blank=True,
         )
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE,
-        blank = True,
-        null = True,
+        blank=True,
+        null=True,
         )
     count = models.IntegerField(
         default=0
         )
 
-            #Function to create unique SKU number
+    # Function to create unique SKU number
     def create_new_sku_number():
         """
         Returns a random unique sku string
@@ -279,7 +281,7 @@ class Inventory(models.Model):
         return str(unique_ref)
 
     sku = models.CharField(
-        max_length = 10,
+        max_length=10,
         blank=False,
         editable=False,
         unique=True,
