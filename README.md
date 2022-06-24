@@ -934,10 +934,10 @@ The HTML of the each page of the site was validated using [W3C Markup Validation
 <details><summary>Home</summary>
 <img src="readme/validation/html-validation/html-validation-home-index.png">
 </details>
-<details><summary>Full Menu</summary>
+<details><summary>Products</summary>
 <img src="readme/validation/html-validation/html-validation-meals-full-menu.png">
 </details>
-<details><summary>Meal Information</summary>
+<details><summary>Product Detail</summary>
 <img src="readme/validation/html-validation/html-validation-meals-information.png">
 </details>
 <details><summary>Dinner Menu</summary>
