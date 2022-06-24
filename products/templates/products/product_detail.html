@@ -41,7 +41,7 @@
             <h1 class="fs-2 mb-4">{{ product.name }}</h1>
             <h2 class="fs-5 my-3">{{ product.brand | upper }}</h2>
             <h3 class="fs-5 my-3">$ {{ product.price}}</h3>
-            <p class="w-lg-75 my-4">{{ product.description|linebreaks }}</p>
+            <div class="w-lg-75 my-4">{{ product.description | linebreaks }}</div>
             <form method="POST" action="{% url 'add_to_bag' product.slug %}">
                 {% csrf_token %}
                 <div class="form-group">
