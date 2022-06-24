@@ -1,6 +1,6 @@
 #id_description{
     height:100px;
-};
+}
 
 #div_id_brand::after{
     content:".";
