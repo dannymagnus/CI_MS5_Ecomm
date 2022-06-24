@@ -34,4 +34,4 @@ class InventoryModelForm(forms.ModelForm):
     """
     class Meta:
         model = Inventory
-        fields = ['count',]
+        fields = ['count', ]

@@ -1037,14 +1037,17 @@ The Python of the each page of the site was validated using [Python validation t
 
 #### Forms py validation
 
-<details><summary>about/forms.py</summary>
-<img src="readme/validation/py-validation/py-validation-about-forms.png">
+<details><summary>checkout/forms.py</summary>
+<img src="readme/validation/py-validation/py-validation-checkout-forms.png">
 </details>
-<details><summary>bookings/forms.py</summary>
-<img src="readme/validation/py-validation/py-validation-bookings-forms.png">
+<details><summary>products/forms.py</summary>
+<img src="readme/validation/py-validation/py-validation-products-forms.png">
 </details>
 <details><summary>contact/forms.py</summary>
 <img src="readme/validation/py-validation/py-validation-contact-forms.png">
+</details>
+<details><summary>profiles/forms.py</summary>
+<img src="readme/validation/py-validation/py-validation-profiles-forms.png">
 </details>
 
 #### Models py validation
@@ -1067,20 +1070,29 @@ The Python of the each page of the site was validated using [Python validation t
 
 #### Urls py validation
 
+<details><summary>bag/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-bag-urls.png">
+</details>
 <details><summary>about/urls.py</summary>
 <img src="readme/validation/py-validation/py-validation-about-urls.png">
 </details>
-<details><summary>bookings/urls.py</summary>
-<img src="readme/validation/py-validation/py-validation-bookings-urls.png">
+<details><summary>checkout/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-checkout-urls.png">
 </details>
 <details><summary>contact/urls.py</summary>
 <img src="readme/validation/py-validation/py-validation-contact-urls.png">
 </details>
-<details><summary>home/urls.py</summary>
-<img src="readme/validation/py-validation/py-validation-home-urls.png">
+<details><summary>courses/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-courses-urls.png">
 </details>
-<details><summary>meals/urls.py</summary>
-<img src="readme/validation/py-validation/py-validation-meals-urls.png">
+<details><summary>products/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-products-urls.png">
+</details>
+<details><summary>profiles/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-profiles-urls.png">
+</details>
+<details><summary>project/urls.py</summary>
+<img src="readme/validation/py-validation/py-validation-project-urls.png">
 </details>
 
 #### Views py validation

@@ -30,4 +30,5 @@ urlpatterns = [
         'order_detail/<int:pk>',
         views.OrderDetailView.as_view(),
         name='order_detail'
-        ),]
+        ),
+    ]

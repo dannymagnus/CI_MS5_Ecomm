@@ -9,6 +9,7 @@ from django import forms
 from .models import UserProfile
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 class UserProfileForm(forms.ModelForm):
     """
     A class for the user profile form

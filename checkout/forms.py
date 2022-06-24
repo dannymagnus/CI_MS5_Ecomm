@@ -9,6 +9,7 @@ from django import forms
 # Internal
 from .models import Order
 
+
 class OrderForm(forms.ModelForm):
     """
     A class for the order form
