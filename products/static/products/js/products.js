@@ -14,7 +14,7 @@ function disableOption(){
 
 function populateAvailableQty(){
     ($('.qty-input').val(1));
-    sessionQtyRaw = parseInt($('option:selected').attr('data-session-quantity'));
+    var sessionQtyRaw = parseInt($('option:selected').attr('data-session-quantity'));
     console.log(sessionQtyRaw);
     if (Number.isNaN(sessionQtyRaw)){
         ($('.qty-input').attr("max", parseInt($('option:selected').attr('data-count'))));

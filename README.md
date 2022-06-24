@@ -992,14 +992,25 @@ The custom CSS file for the site passed with 0 errors.
 ### JS Validation
 The Javascript of the each page of the site was validated using [JSHint validation tool](https://jshint.com/).  All pages returned a pass with 0 errors and 0 warnings.
 
-<details><summary>about.js</summary>
-<img src="readme/validation/js-validation/js-validation-about.png">
+<details><summary>bag.js</summary>
+<img src="readme/validation/js-validation/js-validation-bag.png">
 </details>
 
-<details><summary>bookings.js</summary>
-<img src="readme/validation/js-validation/js-validation-bookings.png">
+<details><summary>checkout.js</summary>
+<img src="readme/validation/js-validation/js-validation-js-stripe.png">
 </details>
 
+<details><summary>courses.js</summary>
+<img src="readme/validation/js-validation/js-validation-courses.png">
+</details>
+
+<details><summary>inventory.js</summary>
+<img src="readme/validation/js-validation/js-validation-inventory.png">
+</details>
+
+<details><summary>products.js</summary>
+<img src="readme/validation/js-validation/js-validation-products.png">
+</details>
 
 ### Py Validation
 The Python of the each page of the site was validated using [Python validation tool](http://pep8online.com/).  All pages returned a pass with 0 errors and 0 warnings.
