@@ -34,17 +34,17 @@
                     <div class="pagination">  
                         {% if is_paginated %}
                           {% if page_obj.has_previous %}
-                            <a href="?{% param_replace page=1 %}"><i class="bi bi-chevron-bar-left"></i></a>
+                            <a href="?{% param_replace page=1 %}"><i class="bi bi-chevron-bar-left"></i><span class="sr-only">Beginning</span></a>
                             {% if page_obj.previous_page_number != 1 %}
-                              <a href="?{% param_replace page=page_obj.previous_page_number %}"><i class="bi bi-chevron-left"></i></a>
+                              <a href="?{% param_replace page=page_obj.previous_page_number %}"><i class="bi bi-chevron-left"></i><span class="sr-only">Previous</span></a>
                             {% endif %}
                           {% endif %}                        
                           Page {{ page_obj.number }} of {{ paginator.num_pages }}                        
                           {% if page_obj.has_next %}
                             {% if page_obj.next_page_number != paginator.num_pages %}
-                              <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
+                              <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i><span class="sr-only">Next</span></a>
                             {% endif %}
-                            <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i></a>
+                            <a href="?{% param_replace page=paginator.num_pages %}"><i class="bi bi-chevron-bar-right"></i><span class="sr-only">End</span></a>
                           {% endif %}                        
                         {% endif %}
                     </div>
@@ -75,17 +75,17 @@
             <div class="pagination justify-content-end">  
                 {% if is_paginated %}
                   {% if page_obj.has_previous %}
-                    <a href="?{% param_replace page=1 %}"><i class="bi bi-chevron-bar-left"></i></a>
+                    <a href="?{% param_replace page=1 %}"><i class="bi bi-chevron-bar-left"></i><span class="sr-only">Beginning</span></a>
                     {% if page_obj.previous_page_number != 1 %}
-                      <a href="?{% param_replace page=page_obj.previous_page_number %}"><i class="bi bi-chevron-left"></i></a>
+                      <a href="?{% param_replace page=page_obj.previous_page_number %}"><i class="bi bi-chevron-left"></i><span class="sr-only">Next</span></a>
                     {% endif %}
                   {% endif %}                        
                   Page {{ page_obj.number }} of {{ paginator.num_pages }}                        
                   {% if page_obj.has_next %}
                     {% if page_obj.next_page_number != paginator.num_pages %}
-                      <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i></a>
+                      <a href="?{% param_replace page=page_obj.next_page_number %}"><i class="bi bi-chevron-right"></i><span class="sr-only">Next</span></a>
                     {% endif %}
-                    <a href="?{% param_replace page=paginator.num_pages %}"><i class=" me-4 bi bi-chevron-bar-right"></i></a>
+                    <a href="?{% param_replace page=paginator.num_pages %}"><i class=" me-4 bi bi-chevron-bar-right"></i><span class="sr-only">End</span></a>
                   {% endif %}                        
                 {% endif %}
             </div>

@@ -21,11 +21,11 @@
                     <thead>
                         <tr>
                             <th scope="col">Item</th>
-                            <th scope="col"></th>
+                            <th scope="col"><span class = "sr-only">Details</span></th>
                             <th scope="col">Price</th>
-                            <th scope="col">Qty</th>
+                            <th scope="col"><label for = "quantity">Qty</label></th>
                             <th scope="col">Total</th>
-                            <th scope="col"></th>
+                            <th scope="col"><span class = "sr-only">Bin</span></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,8 +56,8 @@
                                         <!-- Form buttons to decrease bag quantity disables at 0 -->
                                         <div class="input-group-prepend">
                                             <span class="input-group-btn">
-                                                <button type="submit" class="quantity-left-minus btn btn-secondary bi bi-dash-lg" data-type="minus" data-field="">
-                                                </button>
+                                                <div type="submit" class="quantity-left-minus btn btn-secondary bi bi-dash-lg" data-type="minus" data-field="">
+                                                </div>
                                             </span>
                                         </div>
                                         <!-- Product quantity input js pulls in inventory count as max value -->
@@ -68,8 +68,8 @@
                                         <!-- Form buttons to increase bag quantity disables at inventory max value -->
                                         <div class="input-group-append">
                                             <span class="input-group-btn">
-                                                <button type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
-                                                </button>
+                                                <div class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
+                                                </div>
                                             </span>
                                         </div>
                                     </div>
@@ -77,7 +77,7 @@
                             </td>
                             <!-- Item subtotal with link to checkout -->
                             <td>£{{ item.subtotal }}</td>
-                            <td><a href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i></a></td>
+                            <td><a href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i><span class = "sr-only">Remove</span></a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -117,8 +117,8 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col"></th>
-                    <th scope="col"></th>
+                    <th scope="col"><span class = "sr-only">Details</span></th>
+                    <th scope="col"><span class = "sr-only">Details extended</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -150,18 +150,18 @@
                                 <!-- Button to decrease bag quantity -->
                                 <div class="input-group-prepend">
                                     <span class="input-group-btn">
-                                        <button type="submit"
+                                        <div type="submit"
                                             class="quantity-left-minus btn btn-secondary bi bi-dash-lg"
                                             data-type="minus" data-field="">
-                                        </button>
+                                    </div>
                                     </span>
                                 </div>
                                 <!-- Button to increase bag quantity -->
                                 <input type="number" id="quantity" name="quantity" class="form-control qty_input qty-input input-number" value="{{item.quantity}}" min="1" max="{{item.inventory.count}}" data-inventory-count="{{item.inventory.count}}">
                                 <div class="input-group-append">
                                     <span class="input-group-btn">
-                                        <button type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
-                                        </button>
+                                        <div type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
+                                        </div>
                                     </span>
                                 </div>
                             </div>
@@ -170,7 +170,7 @@
                     <td>£{{ item.subtotal }}</td>
                     <!-- Styled link to remove items from bag -->
                     <td>
-                        <a class = "text-reset" href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i></a>
+                        <a class = "text-reset" href = "{% url 'remove_from_bag' item.inventory.id %}"><i class="bi bi-trash3"></i><span class = "sr-only">Remove</span></a>
                     </td>  
                 </tr>
                 {% endfor %}

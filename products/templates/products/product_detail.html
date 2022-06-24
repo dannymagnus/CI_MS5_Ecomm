@@ -51,20 +51,20 @@
                         <option class="size-option" value="{{ variant.size }}" data-sku="{{variant.sku}}" data-session-quantity="{% if bag_items %} {% for item in bag_items %} {% if item.inventory.sku == variant.sku %}{{ item.quantity }}{% endif %}{% endfor %}{% endif %}" data-count="{{ variant.count }}">{{variant.size}}</option>
                         {% endfor %}
                     </select>
-                    <p class="mt-3"><strong>Quantity:</strong></p>
+                    <label for = "id_qty" class="mt-3"><strong>Quantity:</strong></label>
                     <div class="form-group d-flex">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-btn">
-                                        <button type="button" class="quantity-left-minus btn btn-secondary bi bi-dash-lg" data-type="minus" data-field="">
-                                        </button>
+                                        <div type="button" class="quantity-left-minus btn btn-secondary bi bi-dash-lg" data-type="minus" data-field="">
+                                        </div>
                                     </span>
                                 </div>
                                 <input class="form-control qty_input qty-input input-number" type="number" name="quantity" value="0" min="0" max="0" id="id_qty" data-sku="">
                                 <div class="input-group-append">
                                     <span class="input-group-btn">
-                                        <button type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
-                                        </button>
+                                        <div type="button" class="quantity-right-plus btn btn-secondary bi bi-plus-lg" data-type="plus" data-field="">
+                                        </div>
                                     </span>
                                 </div>
                             </div>

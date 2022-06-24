@@ -65,6 +65,14 @@ h1,h2,h3,h4,h5,h6{
     margin-bottom:10px;
 }
 
+#mc_embed_signup input{
+    border-color: black;
+}
+
+#mc_embed_signup .asterisk{
+    color: black;
+}
+
 /* --Style bag icon--------------------------------------- */
 .bi-bag{
     font-size: 1.5em;
