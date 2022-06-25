@@ -1646,6 +1646,71 @@ User story too vague - rejected.
 
 ## Automated Testing
 
+### Unit testing
+
+As part of the project I have used a number of automated tests using the built in Django testing framework which is based on python unittest.
+
+I have demonstrated some proficiency in using these tests however due to the tight time constraints on this project, the code does not have full coverage.  For future releases and project I could endeavor to increase the number of unit tests and coverage of the code.
+
+#### About
+
++ Testing Models
+<code>
+1. Test str method
+</code>
+
++ Testing Views
+<code>
+
+</code>
+
++ Testing Forms
+<code>
+
+</code>
+
+#### Bag
+
++ Testing Views
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
+
+<code>
+
+</code>
 
 
 ## Bugs
