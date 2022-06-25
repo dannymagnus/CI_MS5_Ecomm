@@ -1716,6 +1716,14 @@ I have demonstrated some proficiency in using these tests however due to the tig
 1. Test str method
 </code>
 
+#### Home
+
++ Testing Views
+<code>
+1. Test home page loads
+2. Test 404 returned if url error
+</code>
+
 #### Products
 
 + Testing Models
