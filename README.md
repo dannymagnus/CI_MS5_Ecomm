@@ -1315,15 +1315,14 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/us-testing/us-8-add-to-bag.jpg">
 </details>
 
-9.	As a logged in user, I want to be able to edit and delete a comment I have made
+9.	As an unauthenticated user, I want to be able to quickly navigate through product listing pages
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-|  Edit comment           | Login to site (precondition) select a valid comment you have written (approved), click edit, complete edit, submit           | Comment is edited with visual feeback         | Works as expected |
-| Delete comment            | Login to site (precondition) select a valid comment you have written (approved), click delete, confirm delete          |  Comment is deleted and no longer displayed            | Works as expected |
+|  product listing page           | selected desired pagination buttons            | taken to first or last page and can easily skip to next or previous page        | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-9.jpg">
+<img src="readme/validation/us-testing/us-9-pagination.jpg">
 </details>
 
 10.	As a logged in user, I want to be able contact the restaurant
