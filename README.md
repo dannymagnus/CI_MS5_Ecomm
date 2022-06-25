@@ -734,9 +734,14 @@ This feature covers the following user stories:
 The user can access the log in via the links in the header and footer, they are taken to a sign in page that also features a link to create a new account.
 A confirmation box appears above the login links to tell the user they have logged in successfully.
 
+If the user has forgotten their password, there is a link to perform a password reset where an email is sent to the user's requested email address.
+
 This page covers the following user stories:
 
 *16 As an unauthenticated user, I want to be able to log in to / sign out of an existing account*
+
+*48 As a user, I want to be able to reset my password if I have forgotten it*
+
 
 
 ### Page 6 - Log out
@@ -1227,93 +1232,87 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 ### Manual Testing
 ### Testing user stories
 
-1. As a first time user, I want to be able to view the type of food the restaurant provides
+1. As an unauthenticated user, I want to be able to navigate the website quickly and easily 
+
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-|  Menu pages   | Select any menu option from main nav bar           |     Menu page is displayed with images and information by category                | Works as expected |
-|      Menu pages       |    Select lunch, dinner, drinks sorted button links        |    Menu page is displayed with images and information by category                 | Works as expected |
+|   nav bar   | Select any nav link from the main nav bar           |     selected page is displayed with images and information | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-1.jpg">
-<img src="readme/validation/us-testing/us-1-lunch-sorted.jpg">
+<img src="readme/validation/us-testing/us-1-navigation.jpg">
 </details>
 
-2.	As a first time user, I want to see professional and appealing images of the food
+2. As an unauthenticated user, I want to have the option to view all products on the site
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-|  Meal details page           |  From any menu page, click meal image          |  Meal information page is displayed with larger image                   | Works as expected |
-|  Menu pages           | From any page, select a menu from the top nav bar           |  Menu page is displayed with meal images                   | Works as expected |
+|  nav bar           |  from any page, select all products from product link in nav bar         |  all products page is displayed            | Works as expected |
+|  footer          | from any page, select the products link in the footer          |  all products page is displayed                   | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-2.jpg">
-<img src="readme/validation/us-testing/us-2-menu-pages.jpg">
+<img src="readme/validation/us-testing/us-2-all-products.jpg">
 </details>
 
-3.	As a first time user, I want to be able to navigate the website quickly and easily
+3. As an unauthenticated user, I want to be able to search the website for specific products and brands
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-|  Main Nav bar           |   From any page click desired navbar link         |    Correct page is displayed and nav bar remains                 | Works as expected |
-| Footer nav bar            | From any page click desired navbar link           | orrect page is displayed and nav bar remains                    | Works as expected |
-|  Menu page category nav bar           | Click required category link           | Page scrolls to correct internal link                    | Works as expected |
+|  search bar          |   from any page enter a keyword relating to a product, or a brandname into the search bar        |    products matching keywords are displayed                 | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-3.jpg">
+<img src="readme/validation/us-testing/us-3-searchbar.jpg">
 </details>
 
-4.	As a first time user, I want to be able to view the full menu
+4. As an unauthenticated user, I want to be able to view detailed descriptions and prices of the products
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Full menu page            | From any page, select main menu from nav header            | Full menu page is displayed with context                    | Works as expected |
-| Full menu page            | From the footer, select the menu link           |  Correct menu page is displayed with context                   | Works as expected |
+| product listing page            | From any product listing page, select the details button            | taken to product details page, images and description displayed                    | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-4.jpg">
+<img src="readme/validation/us-testing/us-4-product-details.jpg">
 </details>
 
-5.	As a first time user, I want to be able to view food allergies and calories
+5.	As an unauthenticated user, I want to be able to order the product pages by price, and alphabetically
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Meal details page            | From any menu page, click the meal item image           | Meal detail page is displayed for requested item with allergen info and calories displayed               | Works as expected |
-
+| product listing page            | select order by button and choose option in which to sort and view products, then select search          | products are organised in the selected order               | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-5.jpg">
+<img src="readme/validation/us-testing/us-5-product-order.jpg">
 </details>
 
-6.	As a first time user, I want to be able to view a description and price of the food
+6.	As an unauthenticated user, I want to be able to sort and view products by category
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Menu pages            | From any page, click a link to a menu option           | Menu page is displayed with description and price                    | Works as expected |
-| Meal details page            | From any menu page, click the meal item image           | Meal detail page is displayed for requested item with full description, allergen info, calories and price displayed               | Works as expected |
+| nav bar          | From any page, select the shop button in the header           | product catergories are displayed in dropdown menu, when selected taken to the correct page                   | Works as expected |
+| product listing page            | select any product category listed in side category menu         | correct product category page is displayed               | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-6.jpg">
+<img src="readme/validation/us-testing/us-6-product-category.jpg">
 </details>
 
-7.	As a logged in user, I want to be able to leave a comment or review
+7.	As an unauthenticated user, I want to be able to view specific brands' products sold on the site
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Comments section            | Navigate to about page, login(signup prerequisite), write comment and submit           | Comment is submitted and feedback is given (waiting approval)                    | Works as expected |
+| nav bar            | select any brand from brand link dropdown menu in header          | products matching brand criteria are displayed                    | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-7.jpg">
+<img src="readme/validation/us-testing/us-7-view-brands.jpg">
 </details>
 
-8.	As a logged in user, I want to be able to see other user’s comments and reviews
+8.	As an unauthenticated user, I want to be able to add a product to my bag
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Comments section            |  Navigate to about page, scroll down to comments section          | Comments section is displayed with posted by, date and the comment                    | Works as expected |
+| product details page           |  when product size and quantity have been selected, select add to cart         | product is added to bag and success message is displayed                   | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-8.jpg">
+<img src="readme/validation/us-testing/us-8-add-to-bag.jpg">
 </details>
 
 9.	As a logged in user, I want to be able to edit and delete a comment I have made
