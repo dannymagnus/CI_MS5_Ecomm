@@ -1219,9 +1219,9 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <details><summary>Home</summary>
 <img src="readme/validation/lighthouse-validation/lighthouse-validation-index.png">
 </details>
-<details><summary>Menus</summary>
-<img src="readme/validation/lighthouse-validation/lighthouse-lunch-menu.png">
-<img src="readme/validation/lighthouse-validation/lighthouse-main-menu.png">
+<details><summary>Products</summary>
+<img src="readme/validation/lighthouse-validation/lighthouse-validation-products.png">
+<img src="readme/validation/lighthouse-validation/lighthouse-validation-product-detail.png">
 <img src="readme/validation/lighthouse-validation/lighthouse-dinner-menu.png">
 <img src="readme/validation/lighthouse-validation/lighthouse-drinks-menu.png">
 <img src="readme/validation/lighthouse-validation/lighthouse-details-menu.png">
