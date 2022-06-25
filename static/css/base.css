@@ -229,7 +229,7 @@ input[type=number] {
 
 .bg-img-holder-home::after{
     content: '';
-    background-image: url(../img/scuba-equipment-shop.jpg);
+    background-image: url(../img/scuba-equipment-shop.webp);
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
@@ -333,7 +333,7 @@ input[type=number] {
 }
 
 .bg-img-holder-home.about-background{
-    background-image: url(../img/get-in-touch-learn-to-scuba-dive.jpg);
+    background-image: url(../img/get-in-touch-learn-to-scuba-dive.webp);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
