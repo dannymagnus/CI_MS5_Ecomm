@@ -1747,6 +1747,9 @@ I have demonstrated some proficiency in using these tests however due to the tig
 10. Test list view with no records
 </code>
 
+<br>![Auto test results](readme/validation/atest/results.png)
+
+
 ## Bugs
 
 | **Bug** | **Fix** |
