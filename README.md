@@ -10,6 +10,9 @@
 1. [Project Goals](#project-goals)
     1. [User Goals](#user-goals)
     2. [Site Owner Goals](#site-owner-goals)
+    3. [Business Model](#business-model)
+    4. [SEO](#seo)
+    5. [Marketing](#marketing)
 2. [User Experience](#user-experience)
     1. [Strategy](#strategy)
         + [Primary Goal](#primary-goal)
@@ -93,7 +96,40 @@ The primary goal of the website from the site owners perspective is as follows:
 - Ability to view products and complete purchases
 - Ability to contact the business
 
+## Business Model
 
+For this project, as the primary goal is to sell products direct to consumers, I have chosen a B2C business model.  To align with this all considerations have been made on imagery, ability to search, an instructor recommends section on the home page, speed and ease to purchase, a product inventory with out of stock visibilty, and restrictions on purchasing more items than in stock.
+
+The business model would be that scubasport buys products from wholesalers and then retails those products to the end customer at increased margin.
+
+
+Alternatively, the business could arrange sale or return from the the supplier or sell driect from supplier stock in the online store and carry physical stock in thier own warehouse.
+
+For the nature of this project, the stock is held pysically in the business.
+
+## SEO
+
+Long tag and short tag keyword were searched for in regards to SEO using Google tools and other online resources.  These tags have been used in the main HTML head and throughout the project to name images and within main body text.
+
+![SEO keywords HTML](readme/misc/seo-keywords-html.png)
+
+## Marketing
+
+### Facebook Business Page
+
+To assist with marketing the website, it has a link to its own social media page in the footer and that has a recipricol link to the site.
+
+Facebook site can be viewed [here](https://www.facebook.com/Scubasport-103293935757804). 
+
+![Facebook Screenshot](readme/misc/facebook-screenshot.png)
+![Facebook Screenshot2](readme/misc/facebook-screenshot-2.png)
+
+### Newsletter Signup
+
+The site includes a signup form to a newsletter so the business can keep in touch with it's vistors.
+![Sign-up](readme/misc/mailchimp-signup.png)
+
+![Email-success](readme/misc/email-success.png)
 
 ## Structure
 ### Code Structure
