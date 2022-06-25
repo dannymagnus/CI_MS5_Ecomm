@@ -269,7 +269,8 @@ This model contains all fields stored in the database collections with their dat
 44. As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form
 45. As a user, I want to have confirmation that my order has been successful
 46. As admin, I want to be able to create batch actions and manipulate all the data tables in one place
-47. As a user, I want to be shown messages that my actions have been successful and unsuccessful*
+47. As a user, I want to be shown messages that my actions have been successful and unsuccessful
+48. As a user, I want to be able to reset my password if I have forgotten it
 
 #### Error Flow
 45. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
@@ -405,7 +406,7 @@ The header contains the logo, products link, brands link, search bar, user accou
 
 This feature covers the following user stories:
 
-*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily *
+*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily*
 
 *2 As an unauthenticated user, I want to have the option to view all products on the site.*
 
@@ -542,7 +543,7 @@ The pagination appears at the top and bottom of the products page, it shows the 
 
 This feature covers the following user stories:
 
-*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily *
+*1 As an unauthenticated user, I want to be able to navigate the website quickly and easily*
 
 *10 As an unauthenticated user, I want to be able to quickly navigate through product listing pages*
 
@@ -1451,7 +1452,7 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 | mailing list           |  From any page, observe mailing list as part of footer and enter email address        |  email added to mailing list and success message is displayed                  | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-20-mailing-list">
+<img src="readme/validation/us-testing/us-20-mailing-list.jpg">
 </details>
 
 21.	As an unauthenticated user, I want to be able to view the business location
@@ -1482,7 +1483,7 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 | mailing list           |  From any page, observe mailing list as part of footer and enter email address        |  email added to mailing list and success message is displayed                  | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-20-mailing-list">
+<img src="readme/validation/us-testing/us-20-mailing-list.jpg">
 </details>
 
 24.	As a site owner, I want users to be able to view the business social media
