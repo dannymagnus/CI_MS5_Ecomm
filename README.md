@@ -7,33 +7,30 @@
 
 ## Table of Content
 
-1. [Project Goals](#project-goals)
-    1. [User Goals](#user-goals)
-    2. [Site Owner Goals](#site-owner-goals)
+1. [Strategy](#project-goals)
+    1. [Site Owner Goals](#site-owner-goals)
+    2. [User Goals](#user-goals)
+    3. [Target Audience](#target-audience)
     3. [Business Model](#business-model)
     4. [SEO](#seo)
     5. [Marketing](#marketing)
-2. [User Experience](#user-experience)
-    1. [Strategy](#strategy)
-        + [Primary Goal](#primary-goal)
-        + [Target Audience](#target-audience)
-    2. [Structure](#structure)
-        1. [Website pages](#website-pages)
-        2. [Code Structure](#code-structure)
-        3. [Database](#database)
-        4. [Physical database model](#physical-database-model)
-        5. [Models](#models)
-            1. [User Model](#user-model)
-            2. [UserProfile Model](#userprofile-model)
-            3. [Product Model](#product-model)
-            4. [Category Model](#category-model)
-            5. [Brand Model](#brand-model)
-            6. [Size Model](#size-model)
-            7. [Color Model](#color-model)
-            8. [Inventory Model](#inventory-model)
-            10. [Course Model](#contact-model)
-            11. [Contact Model](#reason-model)
-            12. [Faq Model](#about-model)
+2. [Structure](#structure)
+    1. [Website pages](#website-pages)
+    2. [Code Structure](#code-structure)
+    3. [Database](#database)
+    4. [Physical database model](#physical-database-model)
+    5. [Models](#models)
+        1. [User Model](#user-model)
+        2. [UserProfile Model](#userprofile-model)
+        3. [Product Model](#product-model)
+        4. [Category Model](#category-model)
+        5. [Brand Model](#brand-model)
+        6. [Size Model](#size-model)
+        7. [Color Model](#color-model)
+        8. [Inventory Model](#inventory-model)
+        10. [Course Model](#contact-model)
+        11. [Contact Model](#reason-model)
+        12. [Faq Model](#about-model)
     3. [Scope](#scope)
         1. [User Stories](#user-stories)
     4. [Skeleton](#skeleton)
@@ -63,7 +60,9 @@
 
 # User Experience
 ## Strategy
-### Primary Goal
+
+### Site Owner Goals
+
 The primary goal of the website from the site owners perspective is as follows:
 - To enable customers to purchase products listed on the site
 - To allow a user to navigate the website and view product details
@@ -71,6 +70,8 @@ The primary goal of the website from the site owners perspective is as follows:
 - To allow a user to view their order history and account details
 - To allow users to keep updated with a newsletter signup
 - To be able to edit, add and remove products from the site
+
+### User Goals
 - The primary goal of the website from a site users perspective is as follows:
 - To view products and product details
 - To easily search for products
