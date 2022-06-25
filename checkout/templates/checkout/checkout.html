@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+<!--Checkout header-->
 <div class="container">
     <div class="row">
         <div class="col">
@@ -15,6 +16,7 @@
         </div>
     </div>
 </div>
+<!--Container for main checkout header-->
 <div class="container">
     <div class="row">
         <div class="col-12 col-lg-6">
@@ -23,6 +25,7 @@
                     <div class="col">
                         {% if bag_items %}
                         <div class="container">
+                            <!--Main table for checkout-->
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -34,6 +37,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!--Checkout items-->
                                     {% for item in bag_items %}
                                     <tr>
                                         <td class="w-25">
@@ -64,6 +68,7 @@
                                 </tbody>
                             </table>
                             <div>
+                                <!--Delivery costs and grand total-->
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-8"></div>
@@ -85,6 +90,7 @@
                     {% endif %}
                 </div>
             </div>
+            <!--Mobile version of checkout item summary-->
             <div class=" d-md-none content">
                 {% if bag_items %}
                 <div class="table-responsive">

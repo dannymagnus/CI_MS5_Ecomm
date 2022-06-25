@@ -16,6 +16,7 @@
 2. [User Experience](#user-experience)
     1. [Strategy](#strategy)
         + [Primary Goal](#primary-goal)
+        + [Target Audience](#target-audience)
     2. [Structure](#structure)
         1. [Website pages](#website-pages)
         2. [Code Structure](#code-structure)
@@ -28,9 +29,8 @@
             4. [Category Model](#category-model)
             5. [Brand Model](#brand-model)
             6. [Size Model](#size-model)
-            7. [DrinkCategory Model](#drinkcategory-model)
-            8. [Color Model](#color-model)
-            9. [Inventory Model](#inventory-model)
+            7. [Color Model](#color-model)
+            8. [Inventory Model](#inventory-model)
             10. [Course Model](#contact-model)
             11. [Contact Model](#reason-model)
             12. [Faq Model](#about-model)
@@ -156,7 +156,7 @@ To complement the apps there are
 - Requirements.txt: Containing the project dependencies
 Note: Environment variable values are not exposed in the source code, they are stored locally in env.py that is not checked in(and listed in .gitignore, and on Heroku in app settings
 
-
+### Database
 #### Physical database model
 
 This model contains all fields stored in the database collections with their data type and mimics the structure of what is actually stored in the Postgres database 
@@ -269,9 +269,6 @@ This model contains all fields stored in the database collections with their dat
 45. As first time, I user should be able to navigate back through the site structure in case of page not found without using the browser back button.
 46. As a site owner, I want error pages that enables users to be able to return to valid areas of the site without using browser controls.
 
-
-
-
 ## Skeleton
 
 ### Wireframes
@@ -353,8 +350,8 @@ This model contains all fields stored in the database collections with their dat
 </details>
 
 ## Surface
-Surface
-Design choices
+
+### Design choices
 The aim of the design of the website was to create a clean and modern website, photography imagery is used to show business values and create an enticing site that the visitor wants to explore. 
 The fonts are bold, clear and modern, with clear headings to enable easy navigation.
 
@@ -873,9 +870,6 @@ After certain actions, error messages are shown at the top of the screenn to con
 This page covers the following user stories:
 *47 As a user, I want to be shown messages that my actions have been successful and unsuccessful*
 
-------------------------TBC------------------------------------------------
-
-
 ## Technologies Used
 
 ### Languages
@@ -971,7 +965,7 @@ The HTML of the each page of the site was validated using [W3C Markup Validation
 <img src="readme/validation/html-validation/html-validation-home-index.png">
 </details>
 <details><summary>Products</summary>
-<img src="readme/validation/html-validation/html-validation-meals-full-menu.png">
+<img src="readme/validation/html-validation/html-validation-products.png">
 </details>
 <details><summary>Product Detail</summary>
 <img src="readme/validation/html-validation/html-validation-meals-information.png">
@@ -1225,6 +1219,9 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/lighthouse-validation/lighthouse-validation-accounts.png">
 </details>
 
+## Testing
+
+### Manual Testing
 ### Testing user stories
 
 1. As a first time user, I want to be able to view the type of food the restaurant provides
@@ -1645,6 +1642,10 @@ User story too vague - rejected.
 <details><summary>Images</summary>
 <img src="readme/validation/us-testing/us-39.jpg">
 </details>
+
+## Automated Testing
+
+
 
 ## Bugs
 
