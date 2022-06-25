@@ -1454,207 +1454,276 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/us-testing/us-20-mailing-list">
 </details>
 
-21.	As a site owner, I want users to be to view our full menu
+130. 21.	As an unauthenticated user, I want to be able to view the business location
+131.     
+132. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+133. |-------------|------------|---------------------|-------------------|
+134. | footer            | From any page, observe business address in footer            | business address is displayed                    | Works as expected |
+135. 
+136. <details><summary>Images</summary>
+137. <img src="readme/validation/us-testing/us-21-business-location.jpg">
+138. </details>
+139. 
+140. 22.	As a site owner, I want users to be able to navigate the website quickly and easily
+141.     
+142. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+143. |-------------|------------|---------------------|-------------------|
+144. | checkout     | from shopping cart, select proceed to checkout          | checkout page is displayed                    | Works as expected |
+145. | checkout     | from checkout page, complete all required fields and select complete order       | order confirmation page is displayed showing order has been successful, confirmation email sent to user                   | Works as expected |
+146. 
+147. <details><summary>Images</summary>
+148. <img src="readme/validation/us-testing/us-14-checkout.jpg">
+149. </details>
+150. 
+151. 23. As a site owner, I want users to be sign up to a newsletter to capture user information
+152. 
+153. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+154. |-------------|------------|---------------------|-------------------|
+155. | mailing list           |  From any page, observe mailing list as part of footer and enter email address        |  email added to mailing list and success message is displayed                  | Works as expected |
+156. 
+157. <details><summary>Images</summary>
+158. <img src="readme/validation/us-testing/us-20-mailing-list">
+159. </details>
+160. 
+161. 24.	As a site owner, I want users to be able to view the business social media
+162.     
+163. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+164. |-------------|------------|---------------------|-------------------|
+165. | footer           | From any page, select any social media link in footer          | taken to correct social media page        | Works as expected |
+166. 
+167. <details><summary>Images</summary>
+168. <img src="readme/validation/us-testing/us-24-social-media.jpg">
+169. </details>
+170. 
+171. 25.	As a staff user, I want to be able to update and edit product descriptions, details and prices
+172. 
+173. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+174. |-------------|------------|---------------------|-------------------|
+175. | product details           | from product details page, select update product details and create/update product page is displayed          | able to update required fields, once saved product is updated                    | Works as expected |
+176. 
+177. <details><summary>Images</summary>
+178. <img src="readme/validation/us-testing/us-25-product-details">
+179. </details>
+180. 
+181. 26.	As a staff user, I want to be able to add a brands to the brand list
+182. 
+183. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+184. |-------------|------------|---------------------|-------------------|
+185. | brand management            |  from brand management page, select add and add brand page is displayed where name can be inputted, select save          | name is saved and brand appears in brand list                  | Works as expected |
+186. 
+187. <details><summary>Images</summary>
+188. <img src="readme/validation/us-testing/us-26-add-brand.jpg">
+189. </details>
+190. 
+191. 27.	As a staff user, I want to be able to update the brands listed
+192. 
+193. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+194. |-------------|------------|---------------------|-------------------|
+195. |  brand management          | from brand management page select update, update brand page is displayed where name can be updated, select save | name is updated and visual confirmation message is displayed                           | Works as expected |
+196. 
+197. <details><summary>Images</summary>
+198. <img src="readme/validation/us-testing/us-27-update-brand.jpg">
+199. </details>
+200. 
+201. 28.	As a staff user, I want to be able to remove any brands listed
+202. 
+203. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+204. |-------------|------------|---------------------|-------------------|
+205. | brand management          | from brand management page select remove, delete brand page is displayed where confirmation of deletion is required         | after confirming yes brand is successfully removed         | Works as expected |
+206. 
+207. <details><summary>Images</summary>
+208. <img src="readme/validation/us-testing/us-28-delete-brand.jpg">
+209. </details>
+210. 
+211. 29.	As a staff user, I want to be able to view and update products 
+212. 
+213. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+214. |-------------|------------|---------------------|-------------------|
+215. | product details page          | from product details page, select update, edit required fields and select save           | visual confirmation message is displayed that product has been updated                    | Works as expected |
+216. 
+217. <details><summary>Images</summary>
+218. <img src="readme/validation/us-testing/us-29-update-product.jpg">
+219. </details>
+220. 
+221. 30.	As a staff user, I want to be able to add products
+222.     
+223. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+224. |-------------|------------|---------------------|-------------------|
+225. | create/update product page            | from create/update product page, complete required fields and select save         | visual confirmation message is displayed that product has been added successfully                      | Works as expected |
+226. 
+227. <details><summary>Images</summary>
+228. <img src="readme/validation/us-testing/us-30-add-product.jpg">
+229. </details>
+230. 
+231. 31.	As a staff user, I want to be able to delete products
+232. 
+233. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+234. |-------------|------------|---------------------|-------------------|
+235. | product details page            | from product details page, select remove and confirm deletion of product           | product is deleted and visual confirmation message is displayed                   | Works as expected |
+236. 
+237. <details><summary>Images</summary>
+238. <img src="readme/validation/us-testing/us-31-delete-product.jpg">
+239. </details>
+240. 
+241. 32. As a staff user, I want to be able to manage product inventory
+242. 
+243. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+244. |-------------|------------|---------------------|-------------------|
+245. |  manage inventory           |   from shop link in header select manage inventory, observe product to update or search for product using search function, select adjust inventory to adjust quantity          |   inventory quantity is updated and visual confirmation message is displayed                 | Works as expected |
+246. 
+247. <details><summary>Images</summary>
+248. <img src="readme/validation/us-testing/us-32-manage-inventory.jpg">
+249. </details>
+250. 
+251. 33. As a staff user, I want to be able to view and update product categories
+252. 
+253. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+254. |-------------|------------|---------------------|-------------------|
+255. | category management       | from category management page, select update and edit required fields           | category is updated and visual confirmation is displayed                    | Works as expected |
+256. 
+257. <details><summary>Images</summary>
+258. <img src="readme/validation/us-testing/us-33-update-category.jpg">
+259. </details>
+260. 
+261. 34. As a staff user, I want to be able to add product categories
+262. 
+263. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+264. |-------------|------------|---------------------|-------------------|
+265. | category management             | from category management page, select add and enter required fields, select save           | category is successfully added and visual confirmation is displayed            | Works as expected |
+266. 
+267. <details><summary>Images</summary>
+268. <img src="readme/validation/us-testing/us-34-add-category.jpg">
+269. </details>
+270. 
+271. 35. As a staff user, I want to be able to delete product categories
+272.     
+273. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+274. |-------------|------------|---------------------|-------------------|
+275. | category management             | from category management page, select delete on category to remove, confirm that category is to be deleted           | category is successfully deleted and visual confirmation is displayed            | Works as expected |
+276. 
+277. <details><summary>Images</summary>
+278. <img src="readme/validation/us-testing/us-35-delete-category.jpg">
+279. </details>
+280. 
+281. 36. As an authenticated user, I want confirmation that I have signed out of my account
+282. 
+283. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
+284. |-------------|------------|---------------------|-------------------|
+285. |  account           | from profile icon in header, select sign out and confirm on sign out page that is displayed          | user is signed out and confirmation message is displayed                    | Works as expected |
+
+
+37.As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Full menu page            | From any page, select main menu from nav header            | Full menu page is displayed with context                    | Works as expected |
-| Full menu page            | From the footer, select the menu link           |  Correct menu page is displayed with context                   | Works as expected |
+| product details page            | from the product details page, using the increase button you are unable to increase the quantity past the max inventory           | observe product quantity will increment no further than inventory                   | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-4.jpg">
+<img src="readme/validation/us-testing/us-37-product-inventory-max.jpg">
 </details>
 
-22.	As a site owner, I want users to be able to view the food descriptions and prices
+38. As a site owner, I want to make sure that customers can see which products are out of stock
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Menu pages            | From any page, click a link to a menu option           | Menu page is displayed with description and price                    | Works as expected |
-| Meal details page            | From any menu page, click the meal item image           | Meal detail page is displayed for requested item with full description, allergen info, calories and price displayed               | Works as expected |
+| product details page             | from product details page, select sizing options, observe any sizes that are out of stock            | sizes that are out of stock are displayed and unable to be added to bag                    | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-6.jpg">
+<img src="readme/validation/us-testing/us-38-out-of-stock.jpg">
 </details>
 
-23.	As a site owner, I want users to be able to view allergies and calories
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Meal details page            | From any menu page, click the meal item image           | Meal detail page is displayed for requested item with allergen info and calories displayed               | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-5.jpg">
-</details>
-
-24.	As a site owner, I want users to be able to make a reservation with data validation so they can only book future dates and in valid opening times.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact page address and phone number            | From any page, click nav link to contact page           | Restaurant phone number and address are displayed         | Works as expected |
-| Booking form            | From booking page, complete all required form fields and submit           | Booking form is submitted with visual feeback                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-11.jpg">
-</details>
-
-25.	As a site owner, I want users to be able to leave a comment or review
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Comments section            | Navigate to about page, login(signup prerequisite), write comment and submit           | Comment is submitted and feedback is given (waiting approval)                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-7.jpg">
-</details>
-
-26.	As a site owner, I want users to be able to view other comments and reviews
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Comments section            |  Navigate to about page, scroll down to comments section          | Comments section is displayed with posted by, date and the comment                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-8.jpg">
-</details>
-
-27.	As a site owner, I want users to be able to edit and delete comments or reviews
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|  Edit comment           | Login to site, post a comment, refresh site, select a valid comment you have written (approved), click edit, complete edit, submit           | Comment is edited with visual feeback         | Works as expected |
-| Delete comment            | Login to site, post a comment, refresh site, select a valid comment you have written (approved), click delete, confirm delete          |  Comment is deleted and no longer displayed            | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-9.jpg">
-</details>
-
-28.	As a site owner, I want users to be able to contact the business
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact page address and phone number            | From any page, click nav link to contact page           | Restaurant phone number and address are displayed         | Works as expected |
-| Contact form           | From contact page, complete all required form fields and submit           |  Contact form is submitted with visual feeback            | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-10.jpg">
-</details>
-
-29.	As a site owner, I want users to be able to view the location and opening times
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Contact page address and phone number            | From any page, click nav link to contact page           | Restaurant address and opening hours are displayed                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-12.jpg">
-</details>
-
-30.	As a site owner, I want users to be able to find out about our business ethos
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| About page            | From any other page, click nav bar link to about page           | About page is displayed with herritage, reasons to dine and chef bios                     | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-13.jpg">
-</details>
-
-31.	As a site owner, I want users to be able to have an idea of the restaurant’s welcoming atmosphere so they will make a reservation
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| About page            | From any other page, click nav bar link to about page           | About page is displayed with professional imagery of staff                     | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-31.jpg">
-</details>
-
-32.	As a site owner, I want users to be able to navigate the site easily and quickly
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|  Main Nav bar           |   From any page click desired navbar link         |    Correct page is displayed and nav bar remains                 | Works as expected |
-| Footer nav bar            | From any page click desired navbar link           | orrect page is displayed and nav bar remains                    | Works as expected |
-|  Menu page category nav bar           | Click required category link           | Page scrolls to correct internal link                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-3.jpg">
-</details>
-
-33. As a site owner, I want to be able to promote special offers and events.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Carousel       | Navigate to site home page           | Carousel displays any special offers on rotation                     | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-14.jpg">
-</details>
-
-34. As a site owner, I want users to be able to sign in to, or create an account
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Signup/login            | From any page select login link in navbar/ about page comments section login/signup anchor           | User is directed to signup/login page and can set username/password            | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-15.jpg">
-</details>
-
-35. As a site owner, I want users to be able to log out of their account
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Account logout            | From navbar select logout link and confirm           | User is logged out of accoutn and nav bar reflects this                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-16.jpg">
-</details>
-
-36. As a site owner, I want users to be able to see separate menus for lunch, dinner and drinks
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|  Lunch Menu           | From any page, select lunch menu from nav bar           | Lunch menu is rendered with available meal options                    | Works as expected |
-|  Dinner Menu           | From any page, select dinner menu from nav bar           | Dinner menu is rendered with available meal options                    | Works as expected |
-|  Drinks Menu           | From any page, select drinks menu from nav bar           | Drinks menu is rendered with available drinks options                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-17.jpg">
-<img src="readme/validation/us-testing/us-17-home-page-options.jpg">
-</details>
-
-37. As a logged in administrator, I want to be able to review and approve or delete user comments.
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Admin panel            | From the admin panel, select option to approve comment           | Approved comments are rendered in the about content area                    | Works as expected |
-| Admin panel            | From the admin panel, select option to delete comment           | Selected comments are deleted once confirmed                   | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-37.jpg">
-</details>
-
-38. As a site owner, I want users to be able to view the business’ social media
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-| Social media links            | From footer select desired social link           | Link opens in new tab                    | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-18.jpg">
-</details>
-
-39. As a logged in administrator, I want to be able to add new content to the website.
+39. As an unauthenticated user, I want to be able to browse available courses
 
  **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Admin panel            | From the admin panel, select any option to add media           | New media is rendered in selected area                    | Works as expected |
+| nav bar          | from any page, select course link in nav bar and observe courses        | available courses are displayed in dropdown menu                   | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-39.jpg">
+<img src="readme/validation/us-testing/us-39-view-courses.jpg">
 </details>
 
+40. As an unauthenticated user, I want to be able to view course details and request a booking
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| courses         | from courses page select more details, course details are displayed and select reserve now button to book        | detailed course description is displayed, taken to contact form after selecting reserve now                  | Works as expected |
+| courses         | from courses page select enquire now, contact form displayed      | contact form page displayed to complete                  | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-40-book-courses.jpg">
+<img src="readme/validation/us-testing/us-40-book-courses-2.jpg">
+</details>
+
+41. As a staff user, I want to be able to view and update the courses listed
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| courses         | from course details page, select update details, complete required fields and select save      | course details are updated and visual confirmation is displayed                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-41-update-course.jpg">
+</details>
+
+42. As a staff user, I want to be able to add a course
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| courses         | select create course from course link in header, complete required fields and select save      | course is created and visual confirmation is displayed                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-42-add-course.jpg">
+</details>
+
+43. As a staff user, I want to be able to delete a course
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| courses         | from course details page, select delete course, confirm deletion when prompted      | after confirmation course is deleted and visual confirmation is displayed                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-43-delete-course.jpg">
+</details>
+
+44. As an unauthenticated user, I want to be able to find answers to frequently asked questions without having to wait for an answer from the site owner by filling in the contact form
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| about page         | from about page, observe FAQ section with questions displayed in accordian menu      | FAQ questions and answers are visible                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-44-faq.jpg">
+</details>
+
+45. As a user, I want to have confirmation that my order has been successful
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| checkout     | from checkout page, complete all required fields and select complete order       | order confirmation page is displayed showing order has been successful, confirmation email sent to user                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-14-checkout.jpg">
+</details>
+
+47. As a user, I want to be shown messages that my actions have been successful and unsuccessful
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| account     | on any page where fields are required, if completed incorrectly form won't be submitted      | error message displayed and form isn't submitted                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-47-action-error.jpg">
+</details>
+
+48. As a user, I want to be able to reset my password if I have forgotten it
+
+ **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| account     | on sign in page, select forgotten password link and enter recovery email into password reset page      | email is sent to recover email to reset password                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-48-password-reset.jpg">
+</details>
+ 
 ## Automated Testing
 
 ### Unit testing
