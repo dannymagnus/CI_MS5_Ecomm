@@ -215,7 +215,7 @@ This model contains all fields stored in the database collections with their dat
 - It contains Reasons subclass as a with preconfigured choices for the user to select
 - The model contains the following fields: reason, name, email, phone, postcode, street_address, message.
 
-#### Faq Model
+##### Faq Model
 - The Faq model contains a collection of frequently asked questions and answers for users to be able to get commonly sought information from the site without having to get in touch.
 - The model contains the following fields: name, friendly-name, question, answer.
 
@@ -994,7 +994,7 @@ The HTML of the each page of the site was validated using [W3C Markup Validation
 <img src="readme/validation/html-validation/html-validation-bag.png">
 </details>
 <details><summary>Checkout Success</summary>
-<img src="readme/validation/html-validation/html-validation-booking.png">
+<img src="readme/validation/html-validation/html-validation-checkout-success.png">
 </details>
 <details><summary>Contact Us</summary>
 <img src="readme/validation/html-validation/html-validation-contact.png">
@@ -1196,7 +1196,6 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/wave-validation/wave-validation-colors-update.png">
 
 
-
 </details>
 <details><summary>About</summary>
 <img src="readme/validation/wave-validation/wave-validation-about.png">
@@ -1206,6 +1205,12 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 </details>
 <details><summary>Accounts</summary>
 <img src="readme/validation/wave-validation/wave-validation-accounts.png">
+<img src="readme/validation/wave-validation/wave-validation-logout.png">
+<img src="readme/validation/wave-validation/wave-validation-profile.png">
+</details>
+
+<details><summary>Bag/Checkout</summary>
+<img src="readme/validation/wave-validation/wave-validation-cart.png">
 </details>
 
 ### Performance 
