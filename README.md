@@ -1673,44 +1673,71 @@ I have demonstrated some proficiency in using these tests however due to the tig
 
 + Testing Views
 <code>
-
+1. Check bag page is displayed
+2. Add product to empty Bag
+3. Adjust qty to zero
+4. Remove product from Bag
+5. Remove product from bag exception
 </code>
 
+#### Checkout
+
++ Testing Models
 <code>
-
+1. Test str method
 </code>
 
++ Testing Views
 <code>
-
+1. Test empty cart is displayed
 </code>
 
++ Testing Forms
 <code>
-
+1. Tests the orderform object
 </code>
 
+#### Contact
+
++ Testing Models
 <code>
-
+1. Test str method
 </code>
 
++ Testing Forms
 <code>
-
+1. Tests the contact form
 </code>
 
+#### Courses
+
++ Testing Models
 <code>
-
+1. Test str method
 </code>
 
+#### Products
+
++ Testing Models
 <code>
-
+1. Test str method
 </code>
 
++ Testing Views
 <code>
-
+1. Test List View with one record
+2. Test search all products no query string
+3. Test get product detail page and Verify
+4. Test add product as a superuser
+5. Test add product as a non superuser
+6. Test add product post as a superuser
+7. Test get product edit page
+8. Test delete product as a superuser
+9. Test delete product as a non super user
+10. Test list view with no records
 </code>
 
-<code>
 
-</code>
 
 
 ## Bugs
