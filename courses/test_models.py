@@ -20,8 +20,8 @@ class TestProductModels(TestCase):
             email='test@email.com'
         )
         Course.objects.create(
-            name='test-course',
-            friendly_name='Test Course',
+            name='test-course-398983798487923',
+            friendly_name='Test Course ',
             price='1000',
             duration_weeks='1'
         )
@@ -38,5 +38,5 @@ class TestProductModels(TestCase):
         """
         This test tests the categories str method and verifies
         """
-        course = Course.objects.get(name='test-course')
+        course = Course.objects.get(name='test-course-398983798487923')
         self.assertEqual((course.__str__()), course.name)

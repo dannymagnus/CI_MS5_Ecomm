@@ -968,24 +968,27 @@ The HTML of the each page of the site was validated using [W3C Markup Validation
 <img src="readme/validation/html-validation/html-validation-products.png">
 </details>
 <details><summary>Product Detail</summary>
-<img src="readme/validation/html-validation/html-validation-meals-information.png">
+<img src="readme/validation/html-validation/html-validation-product-detail.png">
 </details>
-<details><summary>Dinner Menu</summary>
-<img src="readme/validation/html-validation/html-validation-meals-dinner-menu.png">
+<details><summary>Courses List</summary>
+<img src="readme/validation/html-validation/html-validation-courses-list.png">
 </details>
-<details><summary>Lunch Menu</summary>
-<img src="readme/validation/html-validation/html-validation-meals-lunch-menu.png">
+<details><summary>Course Detail</summary>
+<img src="readme/validation/html-validation/html-validation-course-details.png">
 </details>
-<details><summary>Drinks Menu</summary>
+<details><summary>Checkout</summary>
 <img src="readme/validation/html-validation/html-validation-meals-drinks-menu.png">
 </details>
-<details><summary>About</summary>
+<details><summary>Bag</summary>
 <img src="readme/validation/html-validation/html-validation-about.png">
 </details>
-<details><summary>Booking</summary>
+<details><summary>Checkout Success</summary>
 <img src="readme/validation/html-validation/html-validation-booking.png">
 </details>
 <details><summary>Contact Us</summary>
+<img src="readme/validation/html-validation/html-validation-contact.png">
+</details>
+<details><summary>About</summary>
 <img src="readme/validation/html-validation/html-validation-contact.png">
 </details>
 
