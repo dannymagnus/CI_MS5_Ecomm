@@ -56,7 +56,16 @@ class CourseCreateView(UserPassesTestMixin, CreateView):
     A view for Course details
     """
     model = Course
-    fields = ('__all__')
+    fields = (
+        'name',
+        'friendly_name',
+        'description',
+        'extra_details',
+        'price',
+        'duration_weeks',
+        'level',
+        'image'
+        )
 
     def test_func(self):
         return self.request.user.is_staff
