@@ -1454,162 +1454,162 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/us-testing/us-20-mailing-list">
 </details>
 
-130. 21.	As an unauthenticated user, I want to be able to view the business location
-131.     
-132. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-133. |-------------|------------|---------------------|-------------------|
-134. | footer            | From any page, observe business address in footer            | business address is displayed                    | Works as expected |
-135. 
-136. <details><summary>Images</summary>
-137. <img src="readme/validation/us-testing/us-21-business-location.jpg">
-138. </details>
-139. 
-140. 22.	As a site owner, I want users to be able to navigate the website quickly and easily
-141.     
-142. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-143. |-------------|------------|---------------------|-------------------|
-144. | checkout     | from shopping cart, select proceed to checkout          | checkout page is displayed                    | Works as expected |
-145. | checkout     | from checkout page, complete all required fields and select complete order       | order confirmation page is displayed showing order has been successful, confirmation email sent to user                   | Works as expected |
-146. 
-147. <details><summary>Images</summary>
-148. <img src="readme/validation/us-testing/us-14-checkout.jpg">
-149. </details>
-150. 
-151. 23. As a site owner, I want users to be sign up to a newsletter to capture user information
-152. 
-153. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-154. |-------------|------------|---------------------|-------------------|
-155. | mailing list           |  From any page, observe mailing list as part of footer and enter email address        |  email added to mailing list and success message is displayed                  | Works as expected |
-156. 
-157. <details><summary>Images</summary>
-158. <img src="readme/validation/us-testing/us-20-mailing-list">
-159. </details>
-160. 
-161. 24.	As a site owner, I want users to be able to view the business social media
-162.     
-163. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-164. |-------------|------------|---------------------|-------------------|
-165. | footer           | From any page, select any social media link in footer          | taken to correct social media page        | Works as expected |
-166. 
-167. <details><summary>Images</summary>
-168. <img src="readme/validation/us-testing/us-24-social-media.jpg">
-169. </details>
-170. 
-171. 25.	As a staff user, I want to be able to update and edit product descriptions, details and prices
-172. 
-173. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-174. |-------------|------------|---------------------|-------------------|
-175. | product details           | from product details page, select update product details and create/update product page is displayed          | able to update required fields, once saved product is updated                    | Works as expected |
-176. 
-177. <details><summary>Images</summary>
-178. <img src="readme/validation/us-testing/us-25-product-details">
-179. </details>
-180. 
-181. 26.	As a staff user, I want to be able to add a brands to the brand list
-182. 
-183. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-184. |-------------|------------|---------------------|-------------------|
-185. | brand management            |  from brand management page, select add and add brand page is displayed where name can be inputted, select save          | name is saved and brand appears in brand list                  | Works as expected |
-186. 
-187. <details><summary>Images</summary>
-188. <img src="readme/validation/us-testing/us-26-add-brand.jpg">
-189. </details>
-190. 
-191. 27.	As a staff user, I want to be able to update the brands listed
-192. 
-193. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-194. |-------------|------------|---------------------|-------------------|
-195. |  brand management          | from brand management page select update, update brand page is displayed where name can be updated, select save | name is updated and visual confirmation message is displayed                           | Works as expected |
-196. 
-197. <details><summary>Images</summary>
-198. <img src="readme/validation/us-testing/us-27-update-brand.jpg">
-199. </details>
-200. 
-201. 28.	As a staff user, I want to be able to remove any brands listed
-202. 
-203. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-204. |-------------|------------|---------------------|-------------------|
-205. | brand management          | from brand management page select remove, delete brand page is displayed where confirmation of deletion is required         | after confirming yes brand is successfully removed         | Works as expected |
-206. 
-207. <details><summary>Images</summary>
-208. <img src="readme/validation/us-testing/us-28-delete-brand.jpg">
-209. </details>
-210. 
-211. 29.	As a staff user, I want to be able to view and update products 
-212. 
-213. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-214. |-------------|------------|---------------------|-------------------|
-215. | product details page          | from product details page, select update, edit required fields and select save           | visual confirmation message is displayed that product has been updated                    | Works as expected |
-216. 
-217. <details><summary>Images</summary>
-218. <img src="readme/validation/us-testing/us-29-update-product.jpg">
-219. </details>
-220. 
-221. 30.	As a staff user, I want to be able to add products
-222.     
-223. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-224. |-------------|------------|---------------------|-------------------|
-225. | create/update product page            | from create/update product page, complete required fields and select save         | visual confirmation message is displayed that product has been added successfully                      | Works as expected |
-226. 
-227. <details><summary>Images</summary>
-228. <img src="readme/validation/us-testing/us-30-add-product.jpg">
-229. </details>
-230. 
-231. 31.	As a staff user, I want to be able to delete products
-232. 
-233. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-234. |-------------|------------|---------------------|-------------------|
-235. | product details page            | from product details page, select remove and confirm deletion of product           | product is deleted and visual confirmation message is displayed                   | Works as expected |
-236. 
-237. <details><summary>Images</summary>
-238. <img src="readme/validation/us-testing/us-31-delete-product.jpg">
-239. </details>
-240. 
-241. 32. As a staff user, I want to be able to manage product inventory
-242. 
-243. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-244. |-------------|------------|---------------------|-------------------|
-245. |  manage inventory           |   from shop link in header select manage inventory, observe product to update or search for product using search function, select adjust inventory to adjust quantity          |   inventory quantity is updated and visual confirmation message is displayed                 | Works as expected |
-246. 
-247. <details><summary>Images</summary>
-248. <img src="readme/validation/us-testing/us-32-manage-inventory.jpg">
-249. </details>
-250. 
-251. 33. As a staff user, I want to be able to view and update product categories
-252. 
-253. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-254. |-------------|------------|---------------------|-------------------|
-255. | category management       | from category management page, select update and edit required fields           | category is updated and visual confirmation is displayed                    | Works as expected |
-256. 
-257. <details><summary>Images</summary>
-258. <img src="readme/validation/us-testing/us-33-update-category.jpg">
-259. </details>
-260. 
-261. 34. As a staff user, I want to be able to add product categories
-262. 
-263. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-264. |-------------|------------|---------------------|-------------------|
-265. | category management             | from category management page, select add and enter required fields, select save           | category is successfully added and visual confirmation is displayed            | Works as expected |
-266. 
-267. <details><summary>Images</summary>
-268. <img src="readme/validation/us-testing/us-34-add-category.jpg">
-269. </details>
-270. 
-271. 35. As a staff user, I want to be able to delete product categories
-272.     
-273. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-274. |-------------|------------|---------------------|-------------------|
-275. | category management             | from category management page, select delete on category to remove, confirm that category is to be deleted           | category is successfully deleted and visual confirmation is displayed            | Works as expected |
-276. 
-277. <details><summary>Images</summary>
-278. <img src="readme/validation/us-testing/us-35-delete-category.jpg">
-279. </details>
-280. 
-281. 36. As an authenticated user, I want confirmation that I have signed out of my account
-282. 
-283. | **Feature** | **Action** | **Expected Result** | **Actual Result** |
-284. |-------------|------------|---------------------|-------------------|
-285. |  account           | from profile icon in header, select sign out and confirm on sign out page that is displayed          | user is signed out and confirmation message is displayed                    | Works as expected |
+21.	As an unauthenticated user, I want to be able to view the business location
+    
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| footer            | From any page, observe business address in footer            | business address is displayed                    | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-21-business-location.jpg">
+</details>
+
+22.	As a site owner, I want users to be able to navigate the website quickly and easily
+    
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| checkout     | from shopping cart, select proceed to checkout          | checkout page is displayed                    | Works as expected |
+| checkout     | from checkout page, complete all required fields and select complete order       | order confirmation page is displayed showing order has been successful, confirmation email sent to user                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-14-checkout.jpg">
+</details>
+
+23. As a site owner, I want users to be sign up to a newsletter to capture user information
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| mailing list           |  From any page, observe mailing list as part of footer and enter email address        |  email added to mailing list and success message is displayed                  | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-20-mailing-list">
+</details>
+
+24.	As a site owner, I want users to be able to view the business social media
+    
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| footer           | From any page, select any social media link in footer          | taken to correct social media page        | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-24-social-media.jpg">
+</details>
+
+25.	As a staff user, I want to be able to update and edit product descriptions, details and prices
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| product details           | from product details page, select update product details and create/update product page is displayed          | able to update required fields, once saved product is updated                    | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-25-product-details">
+</details>
+
+26.	As a staff user, I want to be able to add a brands to the brand list
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| brand management            |  from brand management page, select add and add brand page is displayed where name can be inputted, select save          | name is saved and brand appears in brand list                  | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-26-add-brand.jpg">
+</details>
+
+27.	As a staff user, I want to be able to update the brands listed
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+|  brand management          | from brand management page select update, update brand page is displayed where name can be updated, select save | name is updated and visual confirmation message is displayed                           | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-27-update-brand.jpg">
+</details>
+
+28.	As a staff user, I want to be able to remove any brands listed
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| brand management          | from brand management page select remove, delete brand page is displayed where confirmation of deletion is required         | after confirming yes brand is successfully removed         | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-28-delete-brand.jpg">
+</details>
+
+29.	As a staff user, I want to be able to view and update products 
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| product details page          | from product details page, select update, edit required fields and select save           | visual confirmation message is displayed that product has been updated                    | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-29-update-product.jpg">
+</details>
+
+30.	As a staff user, I want to be able to add products
+    
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| create/update product page            | from create/update product page, complete required fields and select save         | visual confirmation message is displayed that product has been added successfully                      | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-30-add-product.jpg">
+</details>
+
+31.	As a staff user, I want to be able to delete products
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| product details page            | from product details page, select remove and confirm deletion of product           | product is deleted and visual confirmation message is displayed                   | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-31-delete-product.jpg">
+</details>
+
+32. As a staff user, I want to be able to manage product inventory
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+|  manage inventory           |   from shop link in header select manage inventory, observe product to update or search for product using search function, select adjust inventory to adjust quantity          |   inventory quantity is updated and visual confirmation message is displayed                 | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-32-manage-inventory.jpg">
+</details>
+
+33. As a staff user, I want to be able to view and update product categories
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| category management       | from category management page, select update and edit required fields           | category is updated and visual confirmation is displayed                    | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-33-update-category.jpg">
+</details>
+
+34. As a staff user, I want to be able to add product categories
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| category management             | from category management page, select add and enter required fields, select save           | category is successfully added and visual confirmation is displayed            | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-34-add-category.jpg">
+</details>
+
+35. As a staff user, I want to be able to delete product categories
+    
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| category management             | from category management page, select delete on category to remove, confirm that category is to be deleted           | category is successfully deleted and visual confirmation is displayed            | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-35-delete-category.jpg">
+</details>
+
+36. As an authenticated user, I want confirmation that I have signed out of my account
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+|  account           | from profile icon in header, select sign out and confirm on sign out page that is displayed          | user is signed out and confirmation message is displayed                    | Works as expected |
 
 
 37.As a site owner, I want to make sure that customers aren’t able to purchase more products than what is listed in the inventory
