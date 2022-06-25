@@ -98,7 +98,7 @@
     <hr>
 </div>
 <p class = "fs-4 text-bold" >OUR INSTRUCTORS RECOMMEND...</p>
-<div class="container flex-row d-flex flex-nowrap no-wrap overflow-scroll">
+<div class="content container d-flex flex-row flex-nowrap w-100 overflow-scroll">
     {% for product in products %}
     <div class = "d-flex flex-column width-320px me-5">
         <a href="{% url 'product_detail' product.slug %}"><img class="img fluid height-320px" src="{{ product.image.url }}"

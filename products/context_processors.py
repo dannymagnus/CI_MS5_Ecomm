@@ -1,7 +1,7 @@
 """
 A module for context in the products app
 """
-from .models import Brand, Category
+from .models import Brand, Category, Product
 
 
 def brands(request):
@@ -19,4 +19,12 @@ def categories(request):
     """
     return{
         'categories': Category.objects.all()
+    }
+
+def products(request):
+    """
+    A function to return products
+    """
+    return{
+        'products':Product.objects.all()
     }
