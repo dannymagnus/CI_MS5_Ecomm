@@ -5,6 +5,13 @@
 
 [View live site](https://scubasport.herokuapp.com/)
 
+** For testing payment with this site please use the following card details:**
+
+A regular user has been setup with the username of testcustomer1 and password of 2testpassword2
+
++ When making a payment as a regular user, a test credit card of 4242424242424242 has been set up for the card number
+For the expiry date, cvc and postal code any series number(s) can be used(once they meet the mimimum values)
+
 ## Table of Content
 
 1. [Strategy](#project-goals)
@@ -1833,10 +1840,11 @@ To show code coverage a python test plugin called coverage was used to generate 
 
 | **Bug** | **Fix** |
 | ----------- | ----------- |
-| Site images not rendering on Heroku | Change source path from relative to static directory |
-| Transluscent overlay remaining after resevervation request has been received  | Applied style to form instead of parent div |
-| Comment edit does not show awaiting approval | Fix would be to require additional view, bout out of scope for projectt timebox |
- -->
+| Confirmation emails not sent to real life mail addresses | Not an issue - development uses back end |
+| Instructor recommends section dissapear on adding scroll  | Fixed using flex shrink |
+| Images not displaying in product list pages | Issues with AWS static hosting re set up |
+|  Folder path shown at top of courses page    |   Deleted rogue text  |
+
 
 <!-- Deployement steps modified from Paul Meeny Love Rugby -->
 ## Google emails
