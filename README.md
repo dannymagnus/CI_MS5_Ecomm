@@ -1325,122 +1325,124 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/us-testing/us-9-pagination.jpg">
 </details>
 
-10.	As a logged in user, I want to be able contact the restaurant
+10.	As an unauthenticated user, I want to be able to view how many products are in my shopping bag at all times
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Contact page address and phone number            | From any page, click nav link to contact page           | Restaurant phone number and address are displayed         | Works as expected |
-| Contact form           | From contact page, complete all required form fields and submit           |  Contact form is submitted with visual feeback            | Works as expected |
+| nav bar           | add product to cart and observe shopping icon on any page          | cart icon and product count is displayed in header         | Works as expected |
+
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-10.jpg">
+<img src="readme/validation/us-testing/us-10-view-bag-count.jpg">
 </details>
 
-11.	As a first time user, I want to be able to make a reservation
+11.	As an unauthenticated user, I want to be able to navigate back to the products page after viewing product details
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Contact page address and phone number            | From any page, click nav link to contact page           | Restaurant phone number and address are displayed         | Works as expected |
-| Booking form            | From booking page, complete all required form fields and submit           | Booking form is submitted with visual feeback                    | Works as expected |
+| product details        | from product details page, select continue shopping          | taken back to all products page         | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-11.jpg">
+<img src="readme/validation/us-testing/us-11-continue-shopping.jpg">
 </details>
 
-12.	As a first time user, I want to be able to view the restaurants location and opening hours
+12.	As an unauthenticated user, I want to be able to view products added to my shopping bag
+    
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| nav bar - shopping cart           | From any page, select shopping cart icon in nav bar           | shopping bag is displayed with added products                     | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-12-view-bag.jpg">
+</details>
+
+13.	As an unauthenticated user, I want to be able to increase quantities and remove items from my shopping bag
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Contact page address and phone number            | From any page, click nav link to contact page           | Restaurant address and opening hours are displayed                    | Works as expected |
+| shopping cart            | when in shopping cart, select the increase or decrease buttons to adjust product quantity           | product quantity is updated                     | Works as expected |
+| shopping cart            | when in shopping cart, decrease buttons to adjust product quantity to zero         | product is removed from bag and visual confirmation message appears                     | Works as expected |
+| shopping cart            | when in shopping cart, select the bin icon to remove product from bag           | product is removed from bag and visual confirmation message appears                    | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-12.jpg">
+<img src="readme/validation/us-testing/us-13-updating-bag-quantities.jpg">
 </details>
 
-13.	As a first time user, I want to know about the business and it’s ethos
+14.	As an unauthenticated user, I want to be able to checkout and purchase products
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| About page            | From any other page, click nav bar link to about page           | About page is displayed with herritage, reasons to dine and chef bios                     | Works as expected |
+| checkout     | from shopping cart, select proceed to checkout          | checkout page is displayed                    | Works as expected |
+| checkout     | from checkout page, complete all required fields and select complete order       | order confirmation page is displayed showing order has been successful, confirmation email sent to user                   | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-13.jpg">
+<img src="readme/validation/us-testing/us-14-checkout.jpg">
 </details>
 
-14.	As a first time user, I want to be able to see special offers and promotions.
+15. As an unauthenticated user, I want to be able to create an account
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Carousel       | Navigate to site home page           | Carousel displays any special offers on rotation                     | Works as expected |
+| account            | From any page observe profile icon in navbar and select register, sign up page displayed and complete required fields           | account is created and verification email sent to user            | Works as expected |
+| account            | From any page select register link in footer, sign up page displayed and complete required fields           | account is created and verification email sent to user            | Works as expected |
+| account            | From the checkout page select option to register link, sign up page displayed and complete required fields           | account is created and verification email sent to user            | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-14.jpg">
+<img src="readme/validation/us-testing/us-15-register-1.jpg">
+<img src="readme/validation/us-testing/us-15-register-2.jpg">
+<img src="readme/validation/us-testing/us-15-register-3.jpg">
 </details>
+    
 
-15. As a logged in user, I want to be able to to sign in to, or create an account
+16. As an unauthenticated user, I want to be able to log in to / sign out of an existing account
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Signup/login            | From any page select login link in navbar/ about page comments section login/signup anchor           | User is directed to signup/login page and can set username/password            | Works as expected |
+| account     | From navbar select profile icon and enter details in sign in page        | User is logged in and success message displayed                  | Works as expected |
+| account     | From navbar select profile icon, select sign out buton on sign out page        | User is logged out and success message displayed                  | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-15.jpg">
+<img src="readme/validation/us-testing/us-16-login.jpg">
+<img src="readme/validation/us-testing/us-16-logout.jpg">
 </details>
 
-16. As a logged in user, I want to be able to log out of an account
+17. As an authenticated user, I want to be able to view and update my personal information in my profile
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Account logout            | From navbar select logout link and confirm           | User is logged out of accoutn and nav bar reflects this                    | Works as expected |
+|  profile           | From update section of profile page, change personal details and select save          | details saved and confirmation displayed that details have been updated                    | Works as expected |
+| profile           | From any page, select profile icon           | profile page is displayed with user details visible                   | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-16.jpg">
+<img src="readme/validation/us-testing/us-17-view-update-profile.jpg">
 </details>
 
-17. As a first time user, I want to be able to see separate menus for lunch, dinner and drinks
+18.  As an authenticated user, I want to be able to view my order history
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-|  Lunch Menu           | From any page, select lunch menu from nav bar           | Lunch menu is rendered with available meal options                    | Works as expected |
-|  Dinner Menu           | From any page, select dinner menu from nav bar           | Dinner menu is rendered with available meal options                    | Works as expected |
-|  Drinks Menu           | From any page, select drinks menu from nav bar           | Drinks menu is rendered with available drinks options                    | Works as expected |
-|  Lunch Menu           | From the home page, select lunch menu from button on body image           | Lunch menu is rendered with available meal options                    | Works as expected |
-|  Dinner Menu           | From the home page, select dinner menu from button on body image           | Dinner menu is rendered with available meal options                    | Works as expected |
-|  Drinks Menu           | From the home page, select drinks menu from button on body image           | Drinks menu is rendered with available drinks options                    | Works as expected |
+| profile         | when logged in select profile icon, profile page is displayed and observe order history           | all order history is displayed                    | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-17.jpg">
-<img src="readme/validation/us-testing/us-17-home-page-options.jpg">
+<img src="readme/validation/us-testing/us-18-order-history.jpg">
 </details>
 
-18. As a first time user, I want to be able to view the business’ social media
+19.As an unauthenticated user, I want to be able contact the business
+
+| nav bar         | from any page select the contact link in the header         | contact form is displayed                    | Works as expected |
+
+<details><summary>Images</summary>
+<img src="readme/validation/us-testing/us-19-contact.jpg">
+</details>
+
+20.	As an unauthenticated user, I want to be able to receive news and updates from the business
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| Social media links            | From footer select desired social link           | Link opens in new tab                    | Works as expected |
+| mailing list           |  From any page, observe mailing list as part of footer and enter email address        |  email added to mailing list and success message is displayed                  | Works as expected |
 
 <details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-18.jpg">
-</details>
-
-19.	As a site owner, I want to attract customers to our restaurant
-
-User story too vague - rejected.
-
-<details><summary>Images</summary>
-<img src="">
-</details>
-
-20.	As a site owner, I want to show appealing and professional images of our food
-
-| **Feature** | **Action** | **Expected Result** | **Actual Result** |
-|-------------|------------|---------------------|-------------------|
-|  Meal details page           |  From any menu page, click meal image          |  Meal information page is displayed with larger image                   | Works as expected |
-|  Menu pages           | From any page, select a menu from the top nav bar           |  Menu page is displayed with meal images                   | Works as expected |
-
-<details><summary>Images</summary>
-<img src="readme/validation/us-testing/us-2.jpg">
-<img src="readme/validation/us-testing/us-2-menu-pages.jpg">
+<img src="readme/validation/us-testing/us-20-mailing-list">
 </details>
 
 21.	As a site owner, I want users to be to view our full menu
@@ -1645,106 +1647,6 @@ User story too vague - rejected.
 </details>
 
 ## Automated Testing
-
-### Unit testing
-
-As part of the project I have used a number of automated tests using the built in Django testing framework which is based on python unittest.
-
-I have demonstrated some proficiency in using these tests however due to the tight time constraints on this project, the code does not have full coverage.  For future releases and project I could endeavor to increase the number of unit tests and coverage of the code.
-
-#### About
-
-+ Testing Models
-<code>
-1. Test str method
-</code>
-
-+ Testing Views
-<code>
-
-</code>
-
-+ Testing Forms
-<code>
-
-</code>
-
-#### Bag
-
-+ Testing Views
-<code>
-1. Check bag page is displayed
-2. Add product to empty Bag
-3. Adjust qty to zero
-4. Remove product from Bag
-5. Remove product from bag exception
-</code>
-
-#### Checkout
-
-+ Testing Models
-<code>
-1. Test str method
-</code>
-
-+ Testing Views
-<code>
-1. Test empty cart is displayed
-</code>
-
-+ Testing Forms
-<code>
-1. Tests the orderform object
-</code>
-
-#### Contact
-
-+ Testing Models
-<code>
-1. Test str method
-</code>
-
-+ Testing Forms
-<code>
-1. Tests the contact form
-</code>
-
-#### Courses
-
-+ Testing Models
-<code>
-1. Test str method
-</code>
-
-#### Home
-
-+ Testing Views
-<code>
-1. Test home page loads
-2. Test 404 returned if url error
-</code>
-
-#### Products
-
-+ Testing Models
-<code>
-1. Test str method
-</code>
-
-+ Testing Views
-<code>
-1. Test List View with one record
-2. Test search all products no query string
-3. Test get product detail page and Verify
-4. Test add product as a superuser
-5. Test add product as a non superuser
-6. Test add product post as a superuser
-7. Test get product edit page
-8. Test delete product as a superuser
-9. Test delete product as a non super user
-10. Test list view with no records
-</code>
-
 
 
 
