@@ -1059,8 +1059,6 @@ The Javascript of the each page of the site was validated using [JSHint validati
 ### Py Validation
 The Python of the each page of the site was validated using [Python validation tool](http://pep8online.com/).  All pages returned a pass with 0 errors and 0 warnings.
 
-<details><summary>Details</summary>
-
 #### Admin py-validation
 
 <details><summary>about/admin.py</summary>
@@ -1665,16 +1663,6 @@ I have demonstrated some proficiency in using these tests however due to the tig
 + Testing Models
 <code>
 1. Test str method
-</code>
-
-+ Testing Views
-<code>
-
-</code>
-
-+ Testing Forms
-<code>
-
 </code>
 
 #### Bag
