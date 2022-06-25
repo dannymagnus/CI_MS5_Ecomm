@@ -1204,7 +1204,6 @@ The [WAVE WebAIM web accessibility evaluation tool](https://wave.webaim.org/ was
 <img src="readme/validation/wave-validation/wave-validation-contact.png">
 </details>
 <details><summary>Accounts</summary>
-<img src="readme/validation/wave-validation/wave-validation-accounts.png">
 <img src="readme/validation/wave-validation/wave-validation-logout.png">
 <img src="readme/validation/wave-validation/wave-validation-profile.png">
 </details>
