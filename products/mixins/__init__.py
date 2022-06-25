@@ -1,4 +1,11 @@
+"""
+A module for init
+"""
 from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from django.conf import settings
+from django.contrib import messages
 
 class StaffRequiredMixin(object):
     """
@@ -8,6 +15,9 @@ class StaffRequiredMixin(object):
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
+        """
+        Overide dispatch for messages
+        """
         if not request.user.is_staff:
             messages.error(
                 request,

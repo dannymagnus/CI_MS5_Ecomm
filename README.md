@@ -1749,6 +1749,15 @@ I have demonstrated some proficiency in using these tests however due to the tig
 
 <br>![Auto test results](readme/validation/atest/results.png)
 
+### Coverage
+
+To show code coverage a python test plugin called coverage was used to generate the following results
+
+<details><summary>Images</summary>
+<img src="readme/validation/atest/coverage1.jpg"><br>
+<img src="readme/validation/atest/coverage2.jpg"><br>
+<img src="readme/validation/atest/coverage3.jpg">
+</details>
 
 ## Bugs
 

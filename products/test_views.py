@@ -91,7 +91,8 @@ class TestProductsClassView(TestCase):
         self.assertContains(response, product.price)
         self.assertContains(response, product.brand)
         self.assertNotContains(
-            response, '<p class = "fs-6">Sorry no products match your search</p>'
+            response,
+            '<p class="text-center w-100 fs-6 mt-5">Sorry no products match your search</p>'
             )
 
     def test_search_all_products_no_query_string(self):
@@ -99,7 +100,10 @@ class TestProductsClassView(TestCase):
         This test tests search all products with no query string
         """
         response = self.client.get(reverse('search_products'), {'q': ''})
-        self.assertContains(response, '<p class = "fs-6">Sorry no products match your search</p>')
+        self.assertContains(
+            response,
+            '<p class="text-center w-100 fs-6 mt-5">Sorry no products match your search</p>'
+            )
 
     def test_get_product_detail(self):
         """
@@ -204,4 +208,7 @@ class TestProductsClassView(TestCase):
         self.assertTemplateUsed(response, template_name='products/product_list.html')
 
         self.assertEqual(0, len(response.context["object_list"]))
-        self.assertContains(response, '<p class = "fs-6">Sorry no products match your search</p>')
+        self.assertContains(
+            response,
+            '<p class="text-center w-100 fs-6 mt-5">Sorry no products match your search</p>'
+            )
