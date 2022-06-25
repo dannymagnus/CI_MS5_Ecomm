@@ -3,7 +3,7 @@
 
 ![Mockup of Scubasport International](readme/mockup.png)
 
-[View live site](https://elginis-restaurant.herokuapp.com/)
+[View live site](https://scubasport.herokuapp.com/)
 
 ## Table of Content
 
