@@ -1754,9 +1754,9 @@ I have demonstrated some proficiency in using these tests however due to the tig
 To show code coverage a python test plugin called coverage was used to generate the following results
 
 <details><summary>Images</summary>
-<img src="readme/validation/atest/coverage1.jpg"><br>
-<img src="readme/validation/atest/coverage2.jpg"><br>
-<img src="readme/validation/atest/coverage3.jpg">
+<img src="readme/validation/atest/coverage1.png"><br>
+<img src="readme/validation/atest/coverage2.png"><br>
+<img src="readme/validation/atest/coverage3.png">
 </details>
 
 ## Bugs
