@@ -977,10 +977,10 @@ The HTML of the each page of the site was validated using [W3C Markup Validation
 <img src="readme/validation/html-validation/html-validation-course-details.png">
 </details>
 <details><summary>Checkout</summary>
-<img src="readme/validation/html-validation/html-validation-meals-drinks-menu.png">
+<img src="readme/validation/html-validation/html-validation-checkout.png">
 </details>
 <details><summary>Bag</summary>
-<img src="readme/validation/html-validation/html-validation-about.png">
+<img src="readme/validation/html-validation/html-validation-bag.png">
 </details>
 <details><summary>Checkout Success</summary>
 <img src="readme/validation/html-validation/html-validation-booking.png">
