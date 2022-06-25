@@ -1,7 +1,7 @@
 # Scubasport International
 (Developer: Daniel Richards)
 
-![Mockup of Scubasport International](readme/mockup.png)
+![Mockup of Scubasport International](readme/mockup.jpg)
 
 [View live site](https://scubasport.herokuapp.com/)
 
